@@ -51,9 +51,23 @@ export const PartnerSubscriptionModal: React.FC<PartnerSubscriptionModalProps> =
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [personnummer, setPersonnummer] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardExpiry, setCardExpiry] = useState("");
+  const [cardCvc, setCardCvc] = useState("");
+  const [copiedTestCard, setCopiedTestCard] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const handleFillTest = () => {
+    setCardNumber("4242 4242 4242 4242");
+    setCardExpiry("12/28");
+    setCardCvc("123");
+    if (!name) setName("Karin Larsson");
+    if (!email) setEmail("karin@goteborg.se");
+    setCopiedTestCard(true);
+    setTimeout(() => setCopiedTestCard(false), 2000);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,6 +83,35 @@ export const PartnerSubscriptionModal: React.FC<PartnerSubscriptionModalProps> =
     if (personnummer) formData.append("personnummer", personnummer);
 
     startTransition(async () => {
+      if (paymentMethod === "card") {
+        try {
+          const res = await fetch("/api/stripe/checkout", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              amount: selectedTier.amount.toString(),
+              currency: "SEK",
+              frequency: "monthly",
+              donorName: name,
+              donorEmail: email,
+              fund: `Kingdom Partner — ${selectedTier.name} Tier`,
+            }),
+          });
+          const data = await res.json();
+          if (data.isLiveStripe && data.url) {
+            window.location.href = data.url;
+            return;
+          }
+          setSuccessMsg(
+            `Tack så mycket, ${name}! Your monthly partnership as a ${selectedTier.name} (${selectedTier.amount} kr/mo) has been registered in Stripe Test Mode. A confirmation email has been dispatched to ${email}.`
+          );
+          return;
+        } catch (err: any) {
+          setErrorMsg(err.message || "Failed to process card with Stripe Test Mode.");
+          return;
+        }
+      }
+
       const res = await submitKingdomPartnerSubscription(formData);
       if (res.success) {
         setSuccessMsg(res.message || "Tack så mycket för ditt partnerskap!");
@@ -249,6 +292,52 @@ export const PartnerSubscriptionModal: React.FC<PartnerSubscriptionModalProps> =
                     </button>
                   </div>
                 </div>
+
+                {/* Stripe Test Mode Card Details */}
+                {paymentMethod === "card" && (
+                  <div className="space-y-2 p-3 bg-amber-50/70 border border-amber-200/80 rounded-lg">
+                    <div className="flex items-center justify-between text-xs">
+                      <div className="flex items-center gap-1.5 text-amber-800 font-medium text-[11px]">
+                        <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                        <span>Stripe Test Mode (4242 4242...)</span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={handleFillTest}
+                        className="px-2 py-0.5 text-[10px] font-bold bg-amber-200/90 hover:bg-amber-300 text-amber-900 rounded transition-colors cursor-pointer"
+                      >
+                        {copiedTestCard ? "Autofilled!" : "Autofill Test Card"}
+                      </button>
+                    </div>
+
+                    <div>
+                      <input
+                        type="text"
+                        value={cardNumber}
+                        onChange={(e) => setCardNumber(e.target.value)}
+                        placeholder="4242 4242 4242 4242"
+                        className="w-full bg-white border border-slate-300 rounded px-2.5 py-1.5 text-xs font-mono text-slate-900 focus:border-[#0D9488] outline-none"
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <input
+                        type="text"
+                        value={cardExpiry}
+                        onChange={(e) => setCardExpiry(e.target.value)}
+                        placeholder="12/28"
+                        className="w-full bg-white border border-slate-300 rounded px-2.5 py-1 text-xs font-mono text-slate-900 focus:border-[#0D9488] outline-none"
+                      />
+                      <input
+                        type="text"
+                        value={cardCvc}
+                        onChange={(e) => setCardCvc(e.target.value)}
+                        placeholder="123"
+                        maxLength={4}
+                        className="w-full bg-white border border-slate-300 rounded px-2.5 py-1 text-xs font-mono text-slate-900 focus:border-[#0D9488] outline-none"
+                      />
+                    </div>
+                  </div>
+                )}
 
                 {/* Swedish Personnummer for Tax Relief */}
                 <div>

@@ -16,6 +16,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { SwishGivingModal } from "@/components/give/SwishGivingModal";
+import { StripeGivingModal } from "@/components/give/StripeGivingModal";
 import { submitKingdomPartnerSubscription, submitDonationIntent } from "@/app/actions";
 
 interface Tier {
@@ -63,6 +64,7 @@ export const GiveMethodsBento: React.FC = () => {
   const [isPendingPartner, startPartnerTransition] = useTransition();
 
   // International & Card Checkout State
+  const [stripeModalOpen, setStripeModalOpen] = useState(false);
   const [cardFrequency, setCardFrequency] = useState<"one-time" | "monthly">("one-time");
   const [currency, setCurrency] = useState<"SEK" | "EUR" | "USD" | "NOK">("SEK");
   const [cardAmount, setCardAmount] = useState<string>("250");
@@ -80,6 +82,13 @@ export const GiveMethodsBento: React.FC = () => {
     e.preventDefault();
     setPartnerErrorMsg(null);
     setPartnerSuccessMsg(null);
+
+    if (partnerPaymentMethod === "card") {
+      setCardAmount(selectedTier.amount.toString());
+      setCardFrequency("monthly");
+      setStripeModalOpen(true);
+      return;
+    }
 
     const formData = new FormData();
     formData.append("name", partnerName);
@@ -102,20 +111,7 @@ export const GiveMethodsBento: React.FC = () => {
   };
 
   const handleCardDonation = (method: string) => {
-    setCardSuccessMsg(null);
-    const formData = new FormData();
-    formData.append("amount", cardAmount);
-    formData.append("currency", currency);
-    formData.append("frequency", cardFrequency);
-    formData.append("method", method);
-    formData.append("email", cardDonorEmail);
-
-    startCardTransition(async () => {
-      const res = await submitDonationIntent(formData);
-      if (res.success) {
-        setCardSuccessMsg(res.message || "Thank you for your generous gift!");
-      }
-    });
+    setStripeModalOpen(true);
   };
 
   return (
@@ -471,11 +467,16 @@ export const GiveMethodsBento: React.FC = () => {
       <div className="bg-white border border-slate-200/90 rounded-lg md:rounded-xl p-6 sm:p-8 shadow-sm font-inter space-y-6">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-5 border-b border-slate-200">
           <div className="space-y-1">
-            <div className="flex items-center gap-2">
-              <Globe2 className="w-5 h-5 text-[#0D9488]" />
-              <h2 className="font-hanken text-lg sm:text-xl font-bold text-slate-900">
-                International Friends &amp; Card Checkout
-              </h2>
+            <div className="flex flex-wrap items-center gap-2.5">
+              <div className="flex items-center gap-2">
+                <Globe2 className="w-5 h-5 text-[#0D9488]" />
+                <h2 className="font-hanken text-lg sm:text-xl font-bold text-slate-900">
+                  International Friends &amp; Card Checkout
+                </h2>
+              </div>
+              <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-amber-500/10 text-amber-700 border border-amber-500/20">
+                Stripe Test Mode
+              </span>
             </div>
             <p className="text-xs sm:text-sm text-slate-600">
               Giving from Norway, Denmark, Europe or across the global worship diaspora.
@@ -621,6 +622,15 @@ export const GiveMethodsBento: React.FC = () => {
         isOpen={swishModalOpen}
         onClose={() => setSwishModalOpen(false)}
         initialAmount={swishAmount}
+      />
+
+      {/* Interactive Stripe Test Mode Modal Dialog */}
+      <StripeGivingModal
+        isOpen={stripeModalOpen}
+        onClose={() => setStripeModalOpen(false)}
+        initialAmount={cardAmount}
+        initialCurrency={currency}
+        initialFrequency={cardFrequency}
       />
     </section>
   );

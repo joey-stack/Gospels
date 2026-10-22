@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ChevronRight, ShieldCheck, Ticket, Landmark } from "lucide-react";
+import { ArrowUpRight, ChevronRight, ShieldCheck, Ticket, Landmark, CreditCard } from "lucide-react";
 import { SwishGivingModal } from "@/components/give/SwishGivingModal";
+import { StripeGivingModal } from "@/components/give/StripeGivingModal";
 
 export const GiveHero: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [stripeModalOpen, setStripeModalOpen] = useState(false);
 
   return (
     <>
@@ -95,15 +97,27 @@ export const GiveHero: React.FC = () => {
               <span className="text-[#2DD4BF] font-semibold">Swish: 123 456 78 90</span>
             </div>
 
-            {/* Morrow Church Style "Give online ↗" Action Button */}
-            <button
-              type="button"
-              onClick={() => setModalOpen(true)}
-              className="px-6 py-2.5 bg-white hover:bg-slate-100 text-slate-900 rounded-md font-inter text-xs sm:text-sm font-semibold transition-all shadow-md active:scale-95 flex items-center gap-1.5 self-start sm:self-auto"
-            >
-              <span>Give online</span>
-              <ArrowUpRight className="w-4 h-4 text-slate-700" />
-            </button>
+            {/* Action Buttons: Stripe Card Giving + Swish */}
+            <div className="flex flex-wrap items-center gap-2.5">
+              <button
+                type="button"
+                onClick={() => setStripeModalOpen(true)}
+                className="px-5 py-2.5 bg-[#2DD4BF] hover:bg-[#14B8A6] text-slate-950 rounded-md font-inter text-xs sm:text-sm font-bold transition-all shadow-md active:scale-95 flex items-center gap-1.5 cursor-pointer"
+              >
+                <CreditCard className="w-4 h-4" />
+                <span>Give with Card (Stripe)</span>
+                <span className="px-1.5 py-0.2 text-[9px] bg-slate-950/20 rounded font-bold uppercase tracking-wider">Test</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setModalOpen(true)}
+                className="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-inter text-xs sm:text-sm font-semibold transition-all border border-white/20 active:scale-95 flex items-center gap-1.5 cursor-pointer"
+              >
+                <span>Swish</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-slate-300" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -113,6 +127,15 @@ export const GiveHero: React.FC = () => {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         initialAmount={150}
+      />
+
+      {/* Stripe Test Mode Giving Modal */}
+      <StripeGivingModal
+        isOpen={stripeModalOpen}
+        onClose={() => setStripeModalOpen(false)}
+        initialAmount="250"
+        initialCurrency="SEK"
+        initialFrequency="one-time"
       />
     </>
   );

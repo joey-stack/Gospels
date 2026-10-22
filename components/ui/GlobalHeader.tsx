@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { LanguageToggle } from "@/components/ui/LanguageToggle";
 
 interface DropdownItem {
   name: string;
@@ -196,31 +197,10 @@ export const GlobalHeader: React.FC = () => {
             </div>
           </nav>
 
-          {/* Right: Desktop Dual Actions */}
+          {/* Right: Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3">
-            {isAboutPage ? (
-              <button
-                type="button"
-                onClick={toggleLanguage}
-                aria-label="Toggle language between English and Swedish"
-                className="flex items-center gap-2 border border-slate-300/80 dark:border-slate-600 bg-white/90 hover:bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-md px-3.5 py-1.5 text-xs sm:text-sm font-semibold transition-all shadow-xs active:scale-95 cursor-pointer"
-              >
-                <span className="text-sm">{language === "sv" ? "🇸🇪" : "🇬🇧"}</span>
-                <span className="text-xs uppercase tracking-wider font-bold text-[#0D9488]">
-                  {language === "sv" ? "Svenska" : "English"}
-                </span>
-                <span className="text-[10px] text-slate-400 font-normal">
-                  ({language === "sv" ? "Switch to EN" : "Byt till SV"})
-                </span>
-              </button>
-            ) : (
-              <Link
-                href="/give"
-                className="border border-slate-300/80 dark:border-slate-600 bg-white/50 hover:bg-white dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-md px-4 py-2 text-sm font-semibold transition-all shadow-xs active:scale-95 whitespace-nowrap"
-              >
-                Kingdom Giving
-              </Link>
-            )}
+            {/* Language Toggle: ENG | SWE */}
+            <LanguageToggle />
 
             <Link
               href="/events/holy-spirit-worship"
@@ -233,18 +213,9 @@ export const GlobalHeader: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Right Cluster (Language toggle / Next Event Pill + Rounded Hamburger Toggle) */}
+          {/* Mobile Right Cluster (Language Toggle + Next Event Pill + Rounded Hamburger Toggle) */}
           <div className="flex items-center gap-2 lg:hidden">
-            {isAboutPage && (
-              <button
-                type="button"
-                onClick={toggleLanguage}
-                aria-label="Toggle language between English and Swedish"
-                className="flex items-center gap-1 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-[11px] font-bold text-[#0D9488] px-2 py-1.5 rounded-md shadow-xs active:scale-95 cursor-pointer"
-              >
-                <span>{language === "sv" ? "🇸🇪 SV" : "🇬🇧 EN"}</span>
-              </button>
-            )}
+            <LanguageToggle size="sm" />
 
             <Link
               href="/events/holy-spirit-worship"
@@ -380,15 +351,14 @@ export const GlobalHeader: React.FC = () => {
                 </nav>
               </div>
 
-              {/* Bottom Dual Action Buttons (Morrow Style) */}
-              <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800 flex flex-col gap-2.5">
-                <Link
-                  href="/give"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full text-center py-3 text-sm font-semibold text-slate-800 dark:text-slate-200 border border-slate-300/80 dark:border-slate-600 bg-white/80 dark:bg-slate-800/80 rounded-xl transition-colors active:scale-95 shadow-xs"
-                >
-                  Kingdom Giving
-                </Link>
+              {/* Bottom Actions Cluster */}
+              <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800 flex flex-col gap-3">
+                <div className="flex items-center justify-between px-1">
+                  <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                    Language / Språk
+                  </span>
+                  <LanguageToggle size="sm" />
+                </div>
 
                 <Link
                   href="/events/holy-spirit-worship"

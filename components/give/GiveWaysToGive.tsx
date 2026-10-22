@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { Smartphone, HeartHandshake, Landmark, ArrowUpRight, Check, Copy } from "lucide-react";
+import { Smartphone, HeartHandshake, Landmark, ArrowUpRight, Check, Copy, CreditCard } from "lucide-react";
 import { SwishGivingModal } from "@/components/give/SwishGivingModal";
 import { PartnerSubscriptionModal } from "@/components/give/PartnerSubscriptionModal";
+import { StripeGivingModal } from "@/components/give/StripeGivingModal";
 
 export const GiveWaysToGive: React.FC = () => {
   const [swishModalOpen, setSwishModalOpen] = useState(false);
+  const [stripeModalOpen, setStripeModalOpen] = useState(false);
   const [partnerModalOpen, setPartnerModalOpen] = useState(false);
   const [bankgiroCopied, setBankgiroCopied] = useState(false);
 
@@ -68,15 +70,25 @@ export const GiveWaysToGive: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right Column: CTA Button */}
-              <div className="lg:w-1/4 flex lg:justify-end">
+              {/* Right Column: CTA Buttons */}
+              <div className="lg:w-1/4 flex flex-col sm:flex-row lg:flex-col gap-2 lg:items-end">
+                <button
+                  type="button"
+                  onClick={() => setStripeModalOpen(true)}
+                  className="w-full sm:w-auto px-5 py-2.5 bg-[#0D9488] hover:bg-[#0F766E] text-white rounded-md text-xs sm:text-sm font-semibold transition-all shadow-xs active:scale-95 flex items-center justify-center gap-2 font-inter cursor-pointer"
+                >
+                  <CreditCard className="w-4 h-4" />
+                  <span>Card via Stripe</span>
+                  <span className="px-1.5 py-0.2 text-[9px] bg-white/20 rounded font-bold uppercase tracking-wider">Test</span>
+                </button>
                 <button
                   type="button"
                   onClick={() => setSwishModalOpen(true)}
-                  className="w-full sm:w-auto px-6 py-3 bg-[#0F172A] hover:bg-[#1E293B] text-white rounded-md text-xs sm:text-sm font-semibold transition-all shadow-xs active:scale-95 flex items-center justify-center gap-2 font-inter"
+                  className="w-full sm:w-auto px-5 py-2.5 bg-[#0F172A] hover:bg-[#1E293B] text-white rounded-md text-xs sm:text-sm font-semibold transition-all shadow-xs active:scale-95 flex items-center justify-center gap-2 font-inter cursor-pointer"
                 >
-                  <span>Give once</span>
-                  <ArrowUpRight className="w-4 h-4 text-slate-300" />
+                  <Smartphone className="w-3.5 h-3.5 text-[#2DD4BF]" />
+                  <span>Swish</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-300" />
                 </button>
               </div>
             </div>
@@ -199,6 +211,15 @@ export const GiveWaysToGive: React.FC = () => {
       <PartnerSubscriptionModal
         isOpen={partnerModalOpen}
         onClose={() => setPartnerModalOpen(false)}
+      />
+
+      {/* Stripe Test Mode Giving Modal */}
+      <StripeGivingModal
+        isOpen={stripeModalOpen}
+        onClose={() => setStripeModalOpen(false)}
+        initialAmount="250"
+        initialCurrency="SEK"
+        initialFrequency="one-time"
       />
     </>
   );
