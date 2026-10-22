@@ -25,15 +25,16 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
 
   if (!isOpen || !ticket) return null;
 
-  // 1. High-resolution canvas PNG export for saving directly to smartphone photos / downloads
+  // 1. High-resolution canvas PNG export for saving cleanly to smartphone photos / downloads
   const handleDownloadImage = async () => {
     if (!ticket) return;
     setIsDownloadingImage(true);
 
     try {
       const canvas = document.createElement("canvas");
+      // Clean proportions with generous vertical breathing room: 1080 x 1650
       const width = 1080;
-      const height = 1620;
+      const height = 1650;
       canvas.width = width;
       canvas.height = height;
       const ctx = canvas.getContext("2d");
@@ -68,7 +69,7 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
       // 1. Base Gradient Background
       const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
       bgGrad.addColorStop(0, "#DDFCF5");
-      bgGrad.addColorStop(0.2, "#F0FDFA");
+      bgGrad.addColorStop(0.18, "#F0FDFA");
       bgGrad.addColorStop(0.55, "#FFFFFF");
       bgGrad.addColorStop(0.85, "#F0FDFA");
       bgGrad.addColorStop(1, "#CCFBF1");
@@ -76,25 +77,25 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
       ctx.fillRect(0, 0, width, height);
 
       // Outer Rounded Border
-      const outerMargin = 20;
-      const cornerRadius = 52;
+      const outerMargin = 22;
+      const cornerRadius = 50;
       ctx.save();
       roundRectPolyfill(ctx, outerMargin, outerMargin, width - outerMargin * 2, height - outerMargin * 2, cornerRadius);
       ctx.lineWidth = 5;
       ctx.strokeStyle = "#5EEAD4";
       ctx.stroke();
-      ctx.clip(); // Clip decorative ribbons within border
+      ctx.clip(); // Keep corner ribbons cleanly within border
 
       // 2. Radiant celestial glow behind top header
-      const topGlow = ctx.createRadialGradient(width / 2, 110, 30, width / 2, 110, 480);
-      topGlow.addColorStop(0, "rgba(45, 212, 191, 0.45)");
-      topGlow.addColorStop(0.5, "rgba(20, 184, 166, 0.16)");
+      const topGlow = ctx.createRadialGradient(width / 2, 100, 20, width / 2, 100, 460);
+      topGlow.addColorStop(0, "rgba(45, 212, 191, 0.4)");
+      topGlow.addColorStop(0.5, "rgba(20, 184, 166, 0.12)");
       topGlow.addColorStop(1, "rgba(255, 255, 255, 0)");
       ctx.fillStyle = topGlow;
-      ctx.fillRect(0, 0, width, 550);
+      ctx.fillRect(0, 0, width, 500);
 
       // 3. Fluid Turquoise Ribbon Waves
-      // Bottom left wave 1
+      // Bottom left ribbons
       ctx.save();
       ctx.beginPath();
       ctx.moveTo(-50, height + 20);
@@ -107,7 +108,6 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
       ctx.fillStyle = bLeftGrad1;
       ctx.fill();
 
-      // Bottom left wave 2
       ctx.beginPath();
       ctx.moveTo(-30, height - 40);
       ctx.bezierCurveTo(90, height - 340, 320, height - 280, 440, height + 20);
@@ -118,7 +118,7 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
       ctx.fillStyle = bLeftGrad2;
       ctx.fill();
 
-      // Bottom right wave 1
+      // Bottom right ribbons
       ctx.beginPath();
       ctx.moveTo(width + 50, height + 20);
       ctx.bezierCurveTo(width - 60, height - 260, width - 240, height - 220, width - 360, height + 20);
@@ -130,7 +130,6 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
       ctx.fillStyle = bRightGrad1;
       ctx.fill();
 
-      // Bottom right wave 2
       ctx.beginPath();
       ctx.moveTo(width + 30, height - 40);
       ctx.bezierCurveTo(width - 90, height - 340, width - 320, height - 280, width - 440, height + 20);
@@ -154,32 +153,11 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
       ctx.fill();
       ctx.restore();
 
-      // 4. Radiant Cross Symbol at Top Center
-      ctx.save();
-      ctx.strokeStyle = "#0D9488";
-      ctx.lineWidth = 6;
-      ctx.beginPath();
-      ctx.moveTo(width / 2, 60);
-      ctx.lineTo(width / 2, 126);
-      ctx.moveTo(width / 2 - 20, 80);
-      ctx.lineTo(width / 2 + 20, 80);
-      ctx.stroke();
+      // 4. Gospels Logo (Has cross & open Bible built-in)
+      const logoW = 290;
+      const logoH = (649 / 996) * logoW; // approx 189px
+      const logoY = 65;
 
-      // Sunburst Rays
-      ctx.strokeStyle = "rgba(45, 212, 191, 0.75)";
-      ctx.lineWidth = 2.5;
-      [-70, -45, -20, 0, 20, 45, 70].forEach((deg) => {
-        const rad = ((deg - 90) * Math.PI) / 180;
-        const cx = width / 2;
-        const cy = 80;
-        ctx.beginPath();
-        ctx.moveTo(cx + Math.cos(rad) * 36, cy + Math.sin(rad) * 36);
-        ctx.lineTo(cx + Math.cos(rad) * 70, cy + Math.sin(rad) * 70);
-        ctx.stroke();
-      });
-      ctx.restore();
-
-      // 5. Gospels Logo
       try {
         const logoImg = new window.Image();
         logoImg.crossOrigin = "anonymous";
@@ -189,51 +167,55 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
           logoImg.src = "/brand/gospels-logo-color.png";
         });
         if (logoImg.width > 0) {
-          const logoW = 340;
-          const logoH = (logoImg.height / logoImg.width) * logoW;
-          ctx.drawImage(logoImg, (width - logoW) / 2, 142, logoW, logoH);
+          ctx.drawImage(logoImg, (width - logoW) / 2, logoY, logoW, logoH);
         }
       } catch (e) {
-        // Fallback
         ctx.font = "bold 56px 'EB Garamond', Georgia, serif";
         ctx.fillStyle = "#0D9488";
         ctx.textAlign = "center";
-        ctx.fillText("Gospels", width / 2, 205);
+        ctx.fillText("Gospels", width / 2, logoY + 120);
       }
 
-      // 6. Subtitle Tagline
+      // 5. Subtitle Tagline (Positioned below the logo with dedicated gap)
+      const taglineY = logoY + logoH + 34; // approx 288px
       ctx.font = "bold 18px 'Plus Jakarta Sans', sans-serif";
       ctx.fillStyle = "#0D9488";
       ctx.textAlign = "center";
-      ctx.fillText("◆   GOSPELS GOTHENBURG  •  OFFICIAL PASS   ◆", width / 2, 275);
+      ctx.letterSpacing = "2px";
+      ctx.fillText("◆   GOSPELS GOTHENBURG  •  OFFICIAL PASS   ◆", width / 2, taglineY);
 
-      // 7. Event Title
-      ctx.font = "bold 54px 'EB Garamond', Georgia, serif";
+      // 6. Event Title (Cleanly below tagline, NO overlap)
+      const titleY = taglineY + 68; // approx 356px
+      ctx.font = "bold 52px 'EB Garamond', Georgia, serif";
       ctx.fillStyle = "#042F2E";
-      ctx.fillText(ticket.eventTitle || "Holy Spirit Worship 2026", width / 2, 350);
+      ctx.letterSpacing = "-0.5px";
+      ctx.fillText(ticket.eventTitle || "Holy Spirit Worship 2026", width / 2, titleY);
 
-      // 8. Event Subtitle
-      ctx.font = "italic 28px 'EB Garamond', Georgia, serif";
+      // 7. Event Subtitle
+      const subtitleY = titleY + 48; // approx 404px
+      ctx.font = "italic 27px 'EB Garamond', Georgia, serif";
       ctx.fillStyle = "#334155";
-      ctx.fillText(ticket.eventSubtitle || "Night of Adoration & Gospel Praise", width / 2, 400);
+      ctx.letterSpacing = "0px";
+      ctx.fillText(ticket.eventSubtitle || "Night of Adoration & Gospel Praise", width / 2, subtitleY);
 
-      // Diamond separator
+      // 8. Diamond separator
+      const dividerY = subtitleY + 36; // approx 440px
       ctx.strokeStyle = "#5EEAD4";
       ctx.lineWidth = 1.5;
       ctx.beginPath();
-      ctx.moveTo(width / 2 - 110, 432);
-      ctx.lineTo(width / 2 - 16, 432);
-      ctx.moveTo(width / 2 + 16, 432);
-      ctx.lineTo(width / 2 + 110, 432);
+      ctx.moveTo(width / 2 - 100, dividerY);
+      ctx.lineTo(width / 2 - 16, dividerY);
+      ctx.moveTo(width / 2 + 16, dividerY);
+      ctx.lineTo(width / 2 + 100, dividerY);
       ctx.stroke();
 
       ctx.fillStyle = "#0D9488";
       ctx.font = "14px sans-serif";
-      ctx.fillText("◆", width / 2, 436);
+      ctx.fillText("◆", width / 2, dividerY + 4);
 
       // 9. Info Card (2x2 Grid)
       const cardX = 64;
-      const cardY = 470;
+      const cardY = dividerY + 36; // approx 476px
       const cardW = width - 128;
       const cardH = 260;
       const cardRadius = 26;
@@ -278,7 +260,6 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
         ctx.lineWidth = 2.5;
 
         if (type === "user") {
-          // Person head + body
           ctx.beginPath();
           ctx.arc(iconCx, iconCy - 7, 7, 0, Math.PI * 2);
           ctx.fill();
@@ -286,7 +267,6 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
           ctx.arc(iconCx, iconCy + 15, 12, Math.PI, 0, false);
           ctx.fill();
         } else if (type === "ticket") {
-          // Ticket stub
           roundRectPolyfill(ctx, iconCx - 12, iconCy - 9, 24, 18, 3);
           ctx.stroke();
           ctx.beginPath();
@@ -295,7 +275,6 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
           ctx.fillStyle = "#0D9488";
           ctx.fill();
         } else if (type === "calendar") {
-          // Calendar
           roundRectPolyfill(ctx, iconCx - 11, iconCy - 10, 22, 20, 3);
           ctx.stroke();
           ctx.beginPath();
@@ -303,7 +282,6 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
           ctx.lineTo(iconCx + 11, iconCy - 3);
           ctx.stroke();
         } else if (type === "pin") {
-          // Location pin
           ctx.beginPath();
           ctx.arc(iconCx, iconCy - 4, 7, 0, Math.PI * 2);
           ctx.fill();
@@ -366,8 +344,8 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
       );
 
       // 10. QR Code Box
-      const qrY = 760;
-      const qrH = 780;
+      const qrY = cardY + cardH + 34; // approx 770px
+      const qrH = height - qrY - 60; // approx 820px
       ctx.save();
       ctx.fillStyle = "#FFFFFF";
       ctx.shadowColor = "rgba(13, 148, 136, 0.1)";
@@ -415,7 +393,7 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
         qrY + 665
       );
 
-      ctx.restore(); // unclip
+      ctx.restore(); // unclip outer border
 
       // Trigger instant PNG file download
       canvas.toBlob((blob) => {
@@ -467,32 +445,21 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
             .pass-card {
               position: relative;
               width: 100%;
-              max-width: 520px;
+              max-width: 480px;
               background: linear-gradient(180deg, #DDFCF5 0%, #F0FDFA 18%, #FFFFFF 50%, #F0FDFA 85%, #CCFBF1 100%);
               border: 2px solid #5EEAD4;
               border-radius: 28px;
-              padding: 32px 28px;
+              padding: 28px 24px;
               box-shadow: 0 16px 36px rgba(13,148,136,0.12);
               overflow: hidden;
             }
-            .radiant-cross {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              margin-bottom: 6px;
-            }
-            .radiant-cross svg {
-              width: 44px;
-              height: 44px;
-              color: #0D9488;
-            }
             .logo-wrap {
               text-align: center;
-              margin-bottom: 4px;
+              margin-bottom: 6px;
             }
             .logo-wrap img {
-              height: 44px;
-              max-width: 240px;
+              height: 48px;
+              max-width: 200px;
               object-fit: contain;
             }
             .tagline {
@@ -506,33 +473,33 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
             }
             .event-title {
               font-family: 'EB Garamond', Georgia, serif;
-              font-size: 32px;
+              font-size: 28px;
               font-weight: 700;
               color: #042F2E;
               text-align: center;
-              margin-top: 10px;
-              line-height: 1.1;
+              margin-top: 8px;
+              line-height: 1.15;
               letter-spacing: -0.5px;
             }
             .event-subtitle {
               font-family: 'EB Garamond', Georgia, serif;
               font-style: italic;
-              font-size: 17px;
+              font-size: 15px;
               color: #334155;
               text-align: center;
-              margin-top: 4px;
+              margin-top: 3px;
             }
             .diamond-divider {
               display: flex;
               align-items: center;
               justify-content: center;
               gap: 8px;
-              margin: 14px 0 18px 0;
+              margin: 12px 0 14px 0;
             }
             .diamond-divider::before, .diamond-divider::after {
               content: "";
               height: 1px;
-              width: 48px;
+              width: 44px;
               background: #5EEAD4;
             }
             .diamond-divider span {
@@ -542,22 +509,22 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
             .info-box {
               background: #ffffff;
               border: 1.5px solid #99F6E4;
-              border-radius: 18px;
-              padding: 16px 18px;
+              border-radius: 16px;
+              padding: 14px 16px;
               box-shadow: 0 4px 14px rgba(13,148,136,0.06);
               display: grid;
               grid-template-columns: 1fr 1fr;
-              gap: 14px;
-              margin-bottom: 16px;
+              gap: 12px;
+              margin-bottom: 14px;
             }
             .info-item {
               display: flex;
               align-items: flex-start;
-              gap: 10px;
+              gap: 8px;
             }
             .info-icon {
-              width: 32px;
-              height: 32px;
+              width: 28px;
+              height: 28px;
               border-radius: 50%;
               background: #0D9488;
               color: white;
@@ -567,7 +534,7 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
               flex-shrink: 0;
             }
             .info-label {
-              font-size: 10px;
+              font-size: 9px;
               font-weight: 800;
               text-transform: uppercase;
               letter-spacing: 0.05em;
@@ -576,14 +543,14 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
               margin-bottom: 2px;
             }
             .info-val {
-              font-size: 14px;
+              font-size: 13px;
               font-weight: 700;
               color: #0F172A;
               line-height: 1.2;
               display: block;
             }
             .info-sub {
-              font-size: 11px;
+              font-size: 10px;
               font-weight: 500;
               color: #64748B;
               margin-top: 2px;
@@ -592,55 +559,39 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
             .qr-box {
               background: #ffffff;
               border: 1.5px solid #99F6E4;
-              border-radius: 20px;
-              padding: 22px 18px;
+              border-radius: 18px;
+              padding: 16px 14px;
               text-align: center;
               box-shadow: 0 6px 20px rgba(13,148,136,0.08);
             }
             .qr-img {
-              width: 230px;
-              height: 230px;
+              width: 190px;
+              height: 190px;
               margin: 0 auto;
               display: block;
             }
             .pass-code {
               font-family: monospace;
-              font-size: 20px;
+              font-size: 18px;
               font-weight: 800;
               color: #0D9488;
               letter-spacing: 2px;
-              margin-top: 14px;
+              margin-top: 10px;
             }
             .gate-instruction {
-              font-size: 12px;
+              font-size: 11px;
               color: #64748B;
-              margin-top: 6px;
-              line-height: 1.4;
-            }
-            .bottom-waves {
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              height: 120px;
-              pointer-events: none;
-              z-index: 0;
+              margin-top: 4px;
+              line-height: 1.35;
             }
             @media print {
               body { background: white; padding: 0; }
-              .pass-card { max-width: 100%; border: none; box-shadow: none; padding: 20px 10px; }
+              .pass-card { max-width: 100%; border: none; box-shadow: none; padding: 16px 8px; }
             }
           </style>
         </head>
         <body>
           <div class="pass-card">
-            <!-- Radiant cross -->
-            <div class="radiant-cross">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11 2h2v7h7v2h-7v11h-2V11H4V9h7V2z" />
-              </svg>
-            </div>
-
             <!-- Logo -->
             <div class="logo-wrap">
               <img src="${window.location.origin}/brand/gospels-logo-color.png" alt="Gospels" onerror="this.style.display='none'" />
@@ -656,7 +607,7 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
             <div class="info-box">
               <div class="info-item">
                 <div class="info-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                   </svg>
                 </div>
@@ -668,7 +619,7 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
 
               <div class="info-item">
                 <div class="info-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M22 10V6c0-1.11-.9-2-2-2H4c-1.1 0-1.99.89-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2z"/>
                   </svg>
                 </div>
@@ -680,7 +631,7 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
 
               <div class="info-item">
                 <div class="info-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
                   </svg>
                 </div>
@@ -693,7 +644,7 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
 
               <div class="info-item">
                 <div class="info-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
                 </div>
@@ -731,52 +682,52 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-slate-950/75 backdrop-blur-md"
+          className="fixed inset-0"
         />
 
-        {/* Modal Window Container */}
+        {/* Modal Window Container (Cleanly sized & centered like StripeGivingModal) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.94, y: 15 }}
+          initial={{ opacity: 0, scale: 0.95, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.94, y: 15 }}
-          transition={{ duration: 0.28, ease: "easeOut" }}
-          className="relative w-full max-w-xl z-10 my-auto text-slate-900"
+          exit={{ opacity: 0, scale: 0.95, y: 12 }}
+          transition={{ duration: 0.22, ease: "easeOut" }}
+          className="relative w-full max-w-[420px] max-h-[92vh] flex flex-col z-10 my-auto"
         >
-          {/* Top Bar with Close button */}
-          <div className="flex items-center justify-between pb-3 px-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold uppercase tracking-wider backdrop-blur-xs">
-              <span className="w-2 h-2 rounded-full bg-[#2DD4BF] animate-pulse" />
+          {/* Top Bar with Badge & Dismiss Icon */}
+          <div className="flex items-center justify-between pb-2 px-1">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300 text-[11px] font-semibold uppercase tracking-wider backdrop-blur-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2DD4BF] animate-pulse" />
               <span>{isSv ? "Officiellt Inträdespass" : "Official Event Pass"}</span>
             </div>
 
             <button
               onClick={onClose}
-              className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
+              className="p-1 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors cursor-pointer"
               aria-label="Close"
             >
-              <span className="material-symbols-outlined text-[20px]">close</span>
+              <span className="material-symbols-outlined text-[18px]">close</span>
             </button>
           </div>
 
           {/* ======================================================== */}
-          {/* THE EXACT PASS CARD MATCHING THE USER'S REFERENCE DESIGN */}
+          {/* THE EXACT PASS CARD (Perfect Laptop Sizing, Zero Overlap) */}
           {/* ======================================================== */}
           <div
             ref={passCardRef}
-            className="relative w-full rounded-[28px] overflow-hidden border-2 border-[#5EEAD4] bg-gradient-to-b from-[#DDFCF5] via-white to-[#CCFBF1] shadow-[0_20px_60px_rgba(13,148,136,0.2)] p-5 sm:p-7 text-[#0F172A]"
+            className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#5EEAD4] bg-gradient-to-b from-[#DDFCF5] via-white to-[#CCFBF1] shadow-[0_16px_48px_rgba(13,148,136,0.22)] p-4 sm:p-5 text-[#0F172A] overflow-y-auto"
           >
             {/* Top Radiant Background Glow */}
-            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-80 h-44 bg-gradient-to-b from-[#2DD4BF]/30 via-[#14B8A6]/15 to-transparent rounded-full blur-2xl pointer-events-none z-0" />
+            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-64 h-36 bg-gradient-to-b from-[#2DD4BF]/25 via-[#14B8A6]/10 to-transparent rounded-full blur-xl pointer-events-none z-0" />
 
             {/* Corner Decorative Ribbon Wave Flourishes */}
-            <div className="absolute top-0 left-0 w-36 h-36 pointer-events-none opacity-40 z-0">
+            <div className="absolute top-0 left-0 w-28 h-28 pointer-events-none opacity-35 z-0">
               <svg viewBox="0 0 150 150" fill="none" className="w-full h-full">
                 <path
                   d="M-20,-20 C50,20 80,70 30,130 C0,100 -10,40 -20,-20 Z"
@@ -791,7 +742,7 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
               </svg>
             </div>
 
-            <div className="absolute top-0 right-0 w-36 h-36 pointer-events-none opacity-40 z-0">
+            <div className="absolute top-0 right-0 w-28 h-28 pointer-events-none opacity-35 z-0">
               <svg viewBox="0 0 150 150" fill="none" className="w-full h-full">
                 <path
                   d="M170,-20 C100,20 70,70 120,130 C150,100 160,40 170,-20 Z"
@@ -807,191 +758,150 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
             </div>
 
             {/* Bottom 3D Ribbon Swooshes */}
-            <div className="absolute bottom-0 left-0 w-52 h-44 pointer-events-none z-0">
+            <div className="absolute bottom-0 left-0 w-40 h-32 pointer-events-none z-0">
               <svg viewBox="0 0 200 180" fill="none" className="w-full h-full">
                 <path
                   d="M-30,190 C30,100 120,110 170,190 Z"
                   fill="url(#bRibbon1)"
                   opacity="0.85"
                 />
-                <path
-                  d="M-20,170 C50,60 160,80 200,190 Z"
-                  fill="url(#bRibbon2)"
-                  opacity="0.6"
-                />
                 <defs>
                   <linearGradient id="bRibbon1" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stopColor="#0D9488" />
                     <stop offset="100%" stopColor="#5EEAD4" />
                   </linearGradient>
-                  <linearGradient id="bRibbon2" x1="0" y1="1" x2="1" y2="0">
-                    <stop offset="0%" stopColor="#14B8A6" />
-                    <stop offset="100%" stopColor="#99F6E4" stopOpacity="0.3" />
-                  </linearGradient>
                 </defs>
               </svg>
             </div>
 
-            <div className="absolute bottom-0 right-0 w-52 h-44 pointer-events-none z-0">
+            <div className="absolute bottom-0 right-0 w-40 h-32 pointer-events-none z-0">
               <svg viewBox="0 0 200 180" fill="none" className="w-full h-full">
                 <path
                   d="M230,190 C170,100 80,110 30,190 Z"
                   fill="url(#bRibbon3)"
                   opacity="0.85"
                 />
-                <path
-                  d="M220,170 C150,60 40,80 0,190 Z"
-                  fill="url(#bRibbon4)"
-                  opacity="0.6"
-                />
                 <defs>
                   <linearGradient id="bRibbon3" x1="1" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#0D9488" />
                     <stop offset="100%" stopColor="#5EEAD4" />
                   </linearGradient>
-                  <linearGradient id="bRibbon4" x1="1" y1="1" x2="0" y2="0">
-                    <stop offset="0%" stopColor="#14B8A6" />
-                    <stop offset="100%" stopColor="#99F6E4" stopOpacity="0.3" />
-                  </linearGradient>
                 </defs>
               </svg>
             </div>
 
-            {/* Pass Foreground Content */}
+            {/* Pass Foreground Content with Pristine Vertical Spacing */}
             <div className="relative z-10 flex flex-col items-center text-center">
-              {/* Radiant Cross Emblem */}
-              <div className="relative flex flex-col items-center justify-center mb-1">
-                <svg
-                  className="w-8 h-8 text-[#0D9488] drop-shadow-[0_2px_8px_rgba(45,212,191,0.5)]"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M12 2V22M6 8H18"
-                    stroke="currentColor"
-                    strokeWidth="2.8"
-                    strokeLinecap="round"
-                  />
-                  {/* Sunburst radiant rays */}
-                  <path
-                    d="M12 2L12 0M17 5L19 3M19 11L21 11M7 5L5 3M5 11L3 11"
-                    stroke="#2DD4BF"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-
-              {/* Gospels Logo */}
-              <div className="relative h-10 sm:h-12 w-44 sm:w-52 mb-1.5 flex items-center justify-center">
+              {/* Official Gospels Logo (Contains glowing cross & Bible) */}
+              <div className="relative h-11 sm:h-12 w-36 sm:w-44 flex items-center justify-center">
                 <Image
                   src="/brand/gospels-logo-color.png"
                   alt="Gospels Gothenburg"
-                  width={200}
-                  height={50}
-                  className="h-10 sm:h-12 w-auto object-contain mx-auto"
+                  width={180}
+                  height={55}
+                  className="h-11 sm:h-12 w-auto object-contain mx-auto"
                   priority
                 />
               </div>
 
-              {/* Tagline */}
-              <div className="flex items-center justify-center gap-1.5 text-[10px] sm:text-[11px] font-extrabold text-[#0D9488] tracking-[0.18em] uppercase mt-0.5">
-                <span className="text-[8px]">◆</span>
+              {/* Tagline (Cleanly below logo with proper gap) */}
+              <div className="flex items-center justify-center gap-1.5 text-[9px] sm:text-[10px] font-extrabold text-[#0D9488] tracking-[0.16em] uppercase mt-2">
+                <span className="text-[7px]">◆</span>
                 <span>GOSPELS GOTHENBURG</span>
                 <span>•</span>
                 <span>OFFICIAL PASS</span>
-                <span className="text-[8px]">◆</span>
+                <span className="text-[7px]">◆</span>
               </div>
 
               {/* Headline */}
-              <h1 className="font-serif text-[28px] sm:text-[34px] font-bold text-[#042F2E] tracking-tight leading-tight mt-2.5">
+              <h1 className="font-serif text-2xl sm:text-[26px] font-bold text-[#042F2E] tracking-tight leading-tight mt-2.5">
                 {ticket.eventTitle}
               </h1>
 
               {/* Subtitle */}
-              <p className="font-serif italic text-sm sm:text-base text-slate-600 mt-0.5">
+              <p className="font-serif italic text-xs sm:text-sm text-slate-600 mt-0.5">
                 {ticket.eventSubtitle}
               </p>
 
               {/* Diamond Divider */}
-              <div className="flex items-center justify-center gap-2 my-3">
-                <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#2DD4BF]" />
-                <span className="text-[#0D9488] text-[9px]">◆</span>
-                <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#2DD4BF]" />
+              <div className="flex items-center justify-center gap-2 my-2.5">
+                <div className="h-[1px] w-10 bg-gradient-to-r from-transparent to-[#2DD4BF]" />
+                <span className="text-[#0D9488] text-[8px]">◆</span>
+                <div className="h-[1px] w-10 bg-gradient-to-l from-transparent to-[#2DD4BF]" />
               </div>
 
               {/* 2x2 Rounded Info Card */}
-              <div className="w-full bg-white/95 backdrop-blur-xs rounded-2xl border border-[#99F6E4] shadow-[0_4px_16px_rgba(13,148,136,0.06)] p-3.5 sm:p-4 mb-3.5 text-left">
-                <div className="grid grid-cols-2 gap-x-2 sm:gap-x-4 gap-y-3.5">
+              <div className="w-full bg-white/95 backdrop-blur-xs rounded-xl sm:rounded-2xl border border-[#99F6E4] shadow-[0_4px_14px_rgba(13,148,136,0.06)] p-3 sm:p-3.5 mb-3 text-left">
+                <div className="grid grid-cols-2 gap-x-2 sm:gap-x-3 gap-y-2.5 sm:gap-y-3">
                   {/* Attendee */}
-                  <div className="flex items-start gap-2.5 min-w-0">
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#0D9488] text-white flex items-center justify-center shrink-0 shadow-xs">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <div className="flex items-start gap-2 min-w-0">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#0D9488] text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
                     </div>
                     <div className="min-w-0">
-                      <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                      <span className="text-[8.5px] sm:text-[9.5px] font-bold text-slate-400 uppercase tracking-wider block">
                         ATTENDEE / DELTAGARE
                       </span>
-                      <span className="text-xs sm:text-sm font-bold text-slate-900 block truncate mt-0.5 font-hanken">
+                      <span className="text-xs sm:text-[13px] font-bold text-slate-900 block truncate mt-0.5 font-hanken leading-tight">
                         {ticket.name}
                       </span>
                     </div>
                   </div>
 
                   {/* Admission */}
-                  <div className="flex items-start gap-2.5 min-w-0">
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#0D9488] text-white flex items-center justify-center shrink-0 shadow-xs">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <div className="flex items-start gap-2 min-w-0">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#0D9488] text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M22 10V6c0-1.11-.9-2-2-2H4c-1.1 0-1.99.89-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2zm-2-1.5c-1.25.78-2 2.17-2 3.5s.75 2.72 2 3.5V18H4v-2.5c1.25-.78 2-2.17 2-3.5s-.75-2.72-2-3.5V6h16v2.5z" />
                       </svg>
                     </div>
                     <div className="min-w-0">
-                      <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                      <span className="text-[8.5px] sm:text-[9.5px] font-bold text-slate-400 uppercase tracking-wider block">
                         ADMISSION / PLATSER
                       </span>
-                      <span className="text-xs sm:text-sm font-bold text-slate-900 block truncate mt-0.5 font-hanken">
+                      <span className="text-xs sm:text-[13px] font-bold text-slate-900 block truncate mt-0.5 font-hanken leading-tight">
                         {ticket.guests} {ticket.guests > 1 ? "Seats" : "Seat"} (Complimentary)
                       </span>
                     </div>
                   </div>
 
                   {/* Date & Time */}
-                  <div className="flex items-start gap-2.5 min-w-0">
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#0D9488] text-white flex items-center justify-center shrink-0 shadow-xs">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <div className="flex items-start gap-2 min-w-0">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#0D9488] text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" />
                       </svg>
                     </div>
                     <div className="min-w-0">
-                      <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                      <span className="text-[8.5px] sm:text-[9.5px] font-bold text-slate-400 uppercase tracking-wider block">
                         DATE & TIME / DATUM
                       </span>
-                      <span className="text-xs sm:text-sm font-bold text-slate-900 block mt-0.5 leading-snug">
+                      <span className="text-xs font-bold text-slate-900 block mt-0.5 leading-tight">
                         {ticket.dateString}
                       </span>
-                      <span className="text-[10px] sm:text-[11px] text-slate-500 block font-medium leading-tight mt-0.5">
+                      <span className="text-[10px] text-slate-500 block font-medium leading-tight mt-0.5">
                         {ticket.timeString}
                       </span>
                     </div>
                   </div>
 
                   {/* Sanctuary */}
-                  <div className="flex items-start gap-2.5 min-w-0">
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#0D9488] text-white flex items-center justify-center shrink-0 shadow-xs">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <div className="flex items-start gap-2 min-w-0">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#0D9488] text-white flex items-center justify-center shrink-0 shadow-xs mt-0.5">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                       </svg>
                     </div>
                     <div className="min-w-0">
-                      <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                      <span className="text-[8.5px] sm:text-[9.5px] font-bold text-slate-400 uppercase tracking-wider block">
                         SANCTUARY / LOKAL
                       </span>
-                      <span className="text-xs sm:text-sm font-bold text-slate-900 block mt-0.5 leading-snug">
+                      <span className="text-xs font-bold text-slate-900 block mt-0.5 leading-tight">
                         {ticket.venueName}
                       </span>
-                      <span className="text-[10px] sm:text-[11px] text-slate-500 block font-medium leading-tight mt-0.5">
+                      <span className="text-[10px] text-slate-500 block font-medium leading-tight mt-0.5">
                         {ticket.hall}
                       </span>
                     </div>
@@ -1000,28 +910,28 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
               </div>
 
               {/* QR Code Container Box */}
-              <div className="w-full bg-white/98 rounded-2xl border border-[#99F6E4] shadow-[0_6px_22px_rgba(13,148,136,0.08)] p-4 sm:p-5 text-center">
-                <div className="inline-block p-2 bg-white rounded-xl border border-slate-100 shadow-2xs">
+              <div className="w-full bg-white/98 rounded-xl sm:rounded-2xl border border-[#99F6E4] shadow-[0_6px_20px_rgba(13,148,136,0.08)] p-3.5 sm:p-4 text-center">
+                <div className="inline-block p-1.5 bg-white rounded-lg border border-slate-100 shadow-2xs">
                   {qrCodeUrl ? (
                     <img
                       src={qrCodeUrl}
                       alt={`Pass QR #${ticket.id}`}
-                      className="w-44 h-44 sm:w-52 sm:h-52 object-contain mx-auto block"
+                      className="w-36 h-36 sm:w-44 sm:h-44 object-contain mx-auto block"
                     />
                   ) : (
-                    <div className="w-44 h-44 sm:w-52 sm:h-52 bg-slate-50 flex items-center justify-center text-slate-400 text-xs">
+                    <div className="w-36 h-36 sm:w-44 sm:h-44 bg-slate-50 flex items-center justify-center text-slate-400 text-xs">
                       Generating scannable QR...
                     </div>
                   )}
                 </div>
 
                 {/* Ticket ID # */}
-                <div className="font-mono text-base sm:text-lg font-extrabold text-[#0D9488] tracking-widest mt-2.5">
+                <div className="font-mono text-sm sm:text-base font-extrabold text-[#0D9488] tracking-widest mt-2">
                   #{ticket.id}
                 </div>
 
                 {/* Admission note */}
-                <p className="text-[11px] sm:text-xs text-slate-500 max-w-[280px] mx-auto mt-1 leading-snug">
+                <p className="text-[10.5px] sm:text-[11.5px] text-slate-500 max-w-[260px] mx-auto mt-0.5 leading-snug">
                   {isSv
                     ? "Visa denna QR-kod vid Entré B (Västra Narthex) för omedelbart inträde."
                     : "Show this QR code at Entrance B (West Narthex) for swift admission."}
@@ -1031,29 +941,29 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
           </div>
 
           {/* ======================================================== */}
-          {/* ACTION BUTTONS (Save PNG to Phone, Print/PDF, Calendar) */}
+          {/* ACTION BUTTONS (Clean, Centered, Matching Stripe Modal) */}
           {/* ======================================================== */}
-          <div className="mt-3.5 space-y-2">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="mt-2.5 space-y-1.5">
+            <div className="grid grid-cols-2 gap-2">
               {/* 1. Download Pass Image (.png) for direct phone saving */}
               <button
                 type="button"
                 onClick={handleDownloadImage}
                 disabled={isDownloadingImage}
-                className="w-full bg-[#0D9488] hover:bg-[#0F766E] disabled:opacity-50 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-lg shadow-teal-900/30 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                className="w-full bg-[#0D9488] hover:bg-[#0F766E] disabled:opacity-50 text-white font-bold text-xs py-2.5 px-3 rounded-lg sm:rounded-xl shadow-md shadow-teal-900/25 transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-95"
               >
                 {isDownloadingImage ? (
                   <>
-                    <svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24" fill="none">
+                    <svg className="animate-spin h-3.5 w-3.5 text-white" viewBox="0 0 24 24" fill="none">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                     </svg>
-                    <span>{isSv ? "Genererar Bild..." : "Generating Pass..."}</span>
+                    <span>{isSv ? "Genererar..." : "Saving..."}</span>
                   </>
                 ) : (
                   <>
-                    <span className="material-symbols-outlined text-[18px]">photo_camera</span>
-                    <span>{isSv ? "Spara Biljettbild (.png)" : "Save Pass Image (.png)"}</span>
+                    <span className="material-symbols-outlined text-[16px]">photo_camera</span>
+                    <span>{isSv ? "Spara Bild (.png)" : "Save Image (.png)"}</span>
                   </>
                 )}
               </button>
@@ -1062,31 +972,31 @@ export const DigitalPassModal: React.FC<DigitalPassModalProps> = ({
               <button
                 type="button"
                 onClick={handlePrint}
-                className="w-full bg-white hover:bg-slate-100 text-[#0F172A] font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                className="w-full bg-white hover:bg-slate-100 text-[#0F172A] font-bold text-xs py-2.5 px-3 rounded-lg sm:rounded-xl shadow-xs border border-slate-200 transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-95"
               >
-                <span className="material-symbols-outlined text-[18px] text-[#0D9488]">print</span>
-                <span>{isSv ? "Skriv ut / Spara PDF" : "Print / Save as PDF"}</span>
+                <span className="material-symbols-outlined text-[16px] text-[#0D9488]">print</span>
+                <span>{isSv ? "Skriv ut / PDF" : "Print / PDF"}</span>
               </button>
             </div>
 
             {/* Calendar & Dismiss */}
-            <div className="flex items-center justify-between px-1 pt-1">
+            <div className="flex items-center justify-between px-1 pt-0.5">
               <a
                 href={googleCalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-white/80 hover:text-white transition-colors"
+                className="inline-flex items-center gap-1 text-[11px] text-white/80 hover:text-white transition-colors"
               >
-                <span className="material-symbols-outlined text-[15px] text-[#2DD4BF]">
+                <span className="material-symbols-outlined text-[14px] text-[#2DD4BF]">
                   calendar_add_on
                 </span>
-                <span>{isSv ? "Lägg till i kalender" : "Add to Google Calendar"}</span>
+                <span>{isSv ? "Lägg till i kalender" : "Add to Calendar"}</span>
               </a>
 
               <button
                 type="button"
                 onClick={onClose}
-                className="text-xs text-white/70 hover:text-white font-medium cursor-pointer transition-colors"
+                className="text-[11px] text-white/70 hover:text-white font-medium cursor-pointer transition-colors"
               >
                 {isSv ? "Stäng fönstret" : "Close pass view"}
               </button>
