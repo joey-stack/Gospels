@@ -14,8 +14,8 @@ export const GiveHero: React.FC = () => {
 
   return (
     <>
-      <section className="w-full px-2.5 sm:px-5 pt-3 sm:pt-4 pb-6">
-        <div className="relative w-full rounded-lg md:rounded-xl overflow-hidden bg-[#0A1530] text-white border border-slate-700/60 shadow-xl min-h-[440px] md:min-h-[480px] flex flex-col justify-between p-6 sm:p-10 md:p-14">
+      <section className="w-full px-2.5 sm:px-5 pt-2.5 sm:pt-5 pb-6">
+        <div className="relative w-full rounded-lg md:rounded-xl overflow-hidden bg-[#0A1530] text-white border border-slate-700/60 shadow-xl min-h-[520px] md:min-h-[580px] flex flex-col justify-between pt-28 pb-12 sm:pt-36 sm:pb-14 md:pt-40 md:pb-16 px-6 sm:px-12 md:px-16">
           {/* Background Gothenburg Choir / Worship Backdrop */}
           <div className="absolute inset-0 z-0">
             <Image

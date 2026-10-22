@@ -91,7 +91,7 @@ export const GlobalHeader: React.FC = () => {
     <>
       {/* Floating Navbar Island (Morrow Church Floating Navbar Style) */}
       <header className="fixed top-4 sm:top-7 md:top-9 inset-x-0 z-40 flex justify-center px-4 sm:px-8 md:px-12 pointer-events-none">
-        <div className="w-full max-w-7xl mx-auto pointer-events-auto bg-[#EBF1F6]/90 dark:bg-[#0F172A]/90 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-lg h-14 lg:h-[64px] px-4 md:px-6 flex items-center justify-between transition-all duration-200">
+        <div className="w-full max-w-7xl mx-auto pointer-events-auto bg-[#EBF1F6]/90 dark:bg-[#0F172A]/90 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-lg h-16 lg:h-[70px] px-4 md:px-6 flex items-center justify-between transition-all duration-200">
           {/* Left: Brand Logo (Official Gospels Colored Wordmark) */}
           <Link
             href="/"
