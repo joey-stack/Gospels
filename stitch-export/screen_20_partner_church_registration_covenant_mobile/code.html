@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS - Partner Church Registration &amp; Ecumenical Covenant</title>
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#00201d",
+            "outline": "#6d7a77",
+            "surface-container": "#e5eeff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "surface": "#f8f9ff",
+            "outline-variant": "#bcc9c6",
+            "background": "#f8f9ff",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "on-error": "#ffffff",
+            "primary-fixed": "#89f5e7",
+            "inverse-surface": "#213145",
+            "on-primary-fixed-variant": "#005049",
+            "on-primary-container": "#f4fffc",
+            "tertiary-container": "#008376",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-variant": "#d3e4fe",
+            "secondary-fixed": "#dae2fd",
+            "secondary-container": "#dae2fd",
+            "on-surface-variant": "#3d4947",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#5c647a",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-secondary": "#ffffff",
+            "on-surface": "#0b1c30",
+            "secondary-fixed-dim": "#bec6e0",
+            "error-container": "#ffdad6",
+            "tertiary": "#00685d",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#6bd8cb",
+            "surface-container-high": "#dce9ff",
+            "secondary": "#565e74",
+            "tertiary-fixed": "#71f8e4",
+            "on-tertiary-fixed": "#00201c",
+            "on-tertiary-fixed-variant": "#005048",
+            "surface-bright": "#f8f9ff",
+            "surface-tint": "#006a61",
+            "primary": "#00685f",
+            "surface-dim": "#cbdbf5",
+            "on-background": "#0b1c30",
+            "primary-container": "#008378",
+            "inverse-primary": "#6bd8cb",
+            "on-tertiary-container": "#f4fffb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-2xl": "4rem",
+            "space-md": "1rem",
+            "margin-mobile": "1.25rem",
+            "margin": "3rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Architectural subtle ambient shadows according to Style Guidance */
+    .nordic-card-shadow {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(13, 148, 136, 0.04);
+    }
+    .nordic-floating-shadow {
+      box-shadow: 0 20px 32px -8px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(13, 148, 136, 0.08);
+    }
+    /* Custom range slider styling */
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 22px;
+      width: 22px;
+      border-radius: 9999px;
+      background: #00685f;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 104, 95, 0.4);
+      border: 2px solid #ffffff;
+      margin-top: -8px;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 6px;
+      cursor: pointer;
+      background: #bcc9c6;
+      border-radius: 9999px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased font-body-md min-h-screen pb-32">
+<!-- TOP MOBILE HEADER & STEP ANCHOR -->
+<header class="sticky top-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-200">
+<div class="px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="p-2 -ml-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary">GOSPELS</span>
+<span class="text-outline-variant">/</span>
+<span class="text-xs font-semibold text-secondary tracking-wide uppercase">Covenant</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold">Step 1 of 4</span>
+</div>
+</div>
+<!-- Stepper Progress Bar -->
+<div class="w-full bg-surface-container-highest h-1">
+<div class="bg-primary h-1 rounded-r-full transition-all duration-300" style="width: 28%;"></div>
+</div>
+<!-- Horizontal Step Indicators (Pill Carousel / Tabs) -->
+<div class="px-4 py-2.5 flex items-center gap-2 overflow-x-auto no-scrollbar text-xs font-medium border-t border-outline-variant/10">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary text-on-primary font-semibold shrink-0 shadow-sm">
+<span class="w-4 h-4 rounded-full bg-white text-primary flex items-center justify-center text-[10px] font-bold">1</span>
+<span>Parish Info</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-secondary shrink-0 hover:bg-surface-container">
+<span class="w-4 h-4 rounded-full bg-outline-variant text-on-surface flex items-center justify-center text-[10px] font-bold">2</span>
+<span>Pastoral Liaison</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-secondary shrink-0 hover:bg-surface-container">
+<span class="w-4 h-4 rounded-full bg-outline-variant text-on-surface flex items-center justify-center text-[10px] font-bold">3</span>
+<span>Pledges</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-secondary shrink-0 hover:bg-surface-container">
+<span class="w-4 h-4 rounded-full bg-outline-variant text-on-surface flex items-center justify-center text-[10px] font-bold">4</span>
+<span>BankID Sign</span>
+</button>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="max-w-xl mx-auto px-4 pt-6 space-y-6">
+<!-- HERO SECTION & BADGES -->
+<div class="space-y-3">
+<!-- Covenant Verification Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/40 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Västra Götaland Ecumenical Covenant 2025–2027</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">
+        Unite With the Body of Christ in Gothenburg
+      </h1>
+<p class="font-body-md text-body-md text-secondary">
+        Join over 34 fellowship congregations collaborating across Gothenburg for Holy Spirit worship, shared choir productions, and sanctuary hospitality.
+      </p>
+<!-- Scripture & Meditation Block (Design System Token Compliant) -->
+<div class="p-4 bg-surface-container-low/70 border-l-[3px] border-primary rounded-r-xl space-y-2 mt-4">
+<p class="font-scripture-quote-mobile text-scripture-quote-mobile italic text-on-surface font-serif leading-relaxed">
+          ”Att de alla skall vara ett... för att världen skall tro att du har sänt mig.”
+        </p>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">
+          Johannes 17:21 • Jesus översteprästerliga förbön
+        </p>
+</div>
+</div>
+<!-- STEP 1: PARISH & MINISTRY INFORMATION (CURRENT EXPANDED STEP) -->
+<section class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/40 nordic-card-shadow space-y-5">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+            1
+          </div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Parish Credentials</h2>
+<p class="font-body-sm text-body-sm text-secondary">Sanctuary profile &amp; acoustic registry</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary">church</span>
+</div>
+<form class="space-y-4">
+<!-- Ministry Legal Name -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface font-medium">
+            Ministry Legal Name <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-outline-variant" placeholder="e.g. Smyrna Frihamnskyrkan" type="text" value="Smyrna Frihamnskyrkan"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline-variant pointer-events-none text-[20px]">domain</span>
+</div>
+<span class="font-body-sm text-[12px] text-secondary">Registered Swedish non-profit religious society (Ideell förening).</span>
+</div>
+<!-- Denomination Selector -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface font-medium">
+            Denomination / Church Family <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 appearance-none">
+<option selected="">Pingst (Pentecostal Alliance of Sweden)</option>
+<option>Svenska kyrkan (Church of Sweden)</option>
+<option>EFK (Evangeliska Frikyrkan)</option>
+<option>Equmeniakyrkan</option>
+<option>RCCG (Redeemed Christian Church of God)</option>
+<option>Katolska kyrkan (Catholic Diocese of Stockholm)</option>
+<option>Annan självständig församling</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-secondary pointer-events-none text-[20px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Seating Capacity & Primary Auditorium -->
+<div class="grid grid-cols-2 gap-3">
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface font-medium">
+              Sanctuary Capacity <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="650" type="number" value="650"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline-variant text-[18px]">group</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface font-medium">
+              Municipality <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Göteborg" type="text" value="Göteborg"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline-variant text-[18px]">location_city</span>
+</div>
+</div>
+</div>
+<!-- Sanctuary Postal Address -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface font-medium">
+            Sanctuary Postal Address <span class="text-error">*</span>
+</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Gatuadress, Postnummer" type="text" value="Frihamnen 14, 417 55 Göteborg"/>
+</div>
+<!-- Sanctuary Acoustic Type (Custom Radio Bento Grid) -->
+<div class="space-y-2 pt-1">
+<label class="block font-label-md text-label-md text-on-surface font-medium">
+            Acoustic Architecture <span class="text-error">*</span>
+</label>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Option 1: Selected Pro-Audio -->
+<label class="flex items-start gap-3 p-3 rounded-lg border-2 border-primary bg-primary/5 cursor-pointer transition-colors">
+<input checked="" class="mt-1 text-primary focus:ring-primary h-4 w-4" name="acoustic" type="radio" value="pro-audio"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Pro-Audio Auditorium</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-primary text-white uppercase tracking-wider font-bold">Ideal for Gospel</span>
+</div>
+<p class="font-body-sm text-secondary text-xs mt-0.5">Damped RT60 &lt; 1.2s, line-array installed, multitrack broadcast ready.</p>
+</div>
+</label>
+<!-- Option 2: Cathedral Reverberant -->
+<label class="flex items-start gap-3 p-3 rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="mt-1 text-primary focus:ring-primary h-4 w-4" name="acoustic" type="radio" value="cathedral"/>
+<div class="flex-1">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Cathedral Reverberant</span>
+<p class="font-body-sm text-secondary text-xs mt-0.5">High natural vault reverberation (RT60 &gt; 2.2s), pipe organ, choral projection.</p>
+</div>
+</label>
+<!-- Option 3: Acoustic Chapel -->
+<label class="flex items-start gap-3 p-3 rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="mt-1 text-primary focus:ring-primary h-4 w-4" name="acoustic" type="radio" value="chapel"/>
+<div class="flex-1">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Acoustic Chapel</span>
+<p class="font-body-sm text-secondary text-xs mt-0.5">Intimate worship space under 180 seats, grand piano, warm wooden soundboard.</p>
+</div>
+</label>
+</div>
+</div>
+</form>
+</section>
+<!-- STEP 2: ACCORDION PREVIEW / PASTORAL LIAISON -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden nordic-card-shadow">
+<div class="p-4 flex items-center justify-between bg-surface-container-lowest cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-lg bg-surface-container text-secondary flex items-center justify-center font-bold text-sm">
+            2
+          </div>
+<div>
+<h3 class="font-headline-sm text-body-md font-semibold text-on-surface">Pastoral Liaison &amp; Governance</h3>
+<p class="font-body-sm text-xs text-secondary">Pastor Tomas Sjödin • Confirmed Contact</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Safe Sanctuary Valid
+          </span>
+<span class="material-symbols-outlined text-secondary">expand_more</span>
+</div>
+</div>
+<div class="px-5 py-3 border-t border-outline-variant/20 bg-surface-container-low/40 space-y-2">
+<div class="flex items-center justify-between text-xs text-on-surface-variant">
+<span>Senior Pastor Direct Contact:</span>
+<span class="font-medium text-on-surface">pastor.tomas@smyrna.se</span>
+</div>
+<div class="flex items-center justify-between text-xs text-on-surface-variant">
+<span>Swedish Police Child Protection Registry:</span>
+<span class="font-medium text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span> Belastningsregister Cleared 2025
+          </span>
+</div>
+</div>
+</section>
+<!-- STEP 3: ACCORDION PREVIEW / COLLABORATION PLEDGES -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden nordic-card-shadow p-5 space-y-4">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+            3
+          </div>
+<div>
+<h3 class="font-headline-sm text-body-md font-semibold text-on-surface">Ecumenical Pledges Summary</h3>
+<p class="font-body-sm text-xs text-secondary">Commitment to the 2025 City-Wide Gospel Movement</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">handshake</span>
+</div>
+<!-- Slider Card: Mass Choir Vocalists -->
+<div class="p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/40 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">groups</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Mass Choir Vocalists Pledged</span>
+</div>
+<span class="px-2.5 py-1 rounded bg-primary text-on-primary font-bold text-xs tracking-wider">
+<span id="vocalist-counter">24</span> Singers
+          </span>
+</div>
+<input class="w-full accent-primary" id="vocalist-range" max="80" min="5" oninput="document.getElementById('vocalist-counter').innerText = this.value" type="range" value="24"/>
+<div class="flex justify-between text-[11px] text-secondary font-medium">
+<span>5 Min.</span>
+<span>40 Mid-Parish</span>
+<span>80 Full Cathedral Choir</span>
+</div>
+</div>
+<!-- Bento Checkbox Cards -->
+<div class="grid grid-cols-1 gap-2 pt-1">
+<!-- Equipment Pool -->
+<label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<div class="flex-1">
+<span class="font-body-sm font-semibold text-on-surface">Acoustic &amp; Staging Equipment Pool</span>
+<p class="text-xs text-secondary">Willing to lend IEMs, wireless mics &amp; drum baffles for joint festivals.</p>
+</div>
+</label>
+<!-- Fika Stewarding -->
+<label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<div class="flex-1">
+<span class="font-body-sm font-semibold text-on-surface">Fika Stewarding Crew</span>
+<p class="text-xs text-secondary">Providing volunteer hospitality teams during Gothenburg worship rallies.</p>
+</div>
+</label>
+<!-- Intercessory Vigil Host -->
+<label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant/50 bg-surface-container-lowest hover:bg-surface-container-low cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<div class="flex-1">
+<span class="font-body-sm font-semibold text-on-surface">Intercessory Prayer Vigil Host</span>
+<p class="text-xs text-secondary">Hosting 24-hour Gothenburg Prayer chain 1 weekend every quarter.</p>
+</div>
+</label>
+</div>
+</section>
+<!-- STEP 4: BANKID ATTESTATION & COVENANT SIGNATURE -->
+<section class="bg-surface-container-lowest rounded-xl border-2 border-primary/40 overflow-hidden nordic-card-shadow p-5 space-y-5">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-primary text-on-primary flex items-center justify-center font-bold text-sm">
+            4
+          </div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">BankID Covenant Attestation</h3>
+<p class="font-body-sm text-body-sm text-secondary">Digital signature under Swedish ecumenical law</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">draw</span>
+</div>
+<!-- The 4 Pillars of Gothenburg Worship Unity -->
+<div class="p-3.5 bg-surface-container-low rounded-lg space-y-2.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold block">
+          The 4 Pillars of Gothenburg Worship Unity
+        </span>
+<ul class="text-xs space-y-1.5 text-on-surface">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[15px] shrink-0 mt-0.5">verified</span>
+<span><strong>1. Christ Alone:</strong> Joint confession of Nicene Creed and Jesus Christ as Lord over Gothenburg.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[15px] shrink-0 mt-0.5">verified</span>
+<span><strong>2. Humble Fraternité:</strong> No competition for members; blessing fellow Gothenburg congregations.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[15px] shrink-0 mt-0.5">verified</span>
+<span><strong>3. Sacred Song:</strong> Unreserved choir and musical collaboration for revival across West Sweden.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[15px] shrink-0 mt-0.5">verified</span>
+<span><strong>4. Open Tables:</strong> Mutual prayer intercession and joint humanitarian youth outreach.</span>
+</li>
+</ul>
+</div>
+<!-- Founding Signatories Badge -->
+<div class="p-3 bg-surface border border-outline-variant/30 rounded-lg space-y-2">
+<span class="text-[11px] font-semibold text-secondary uppercase tracking-wider block">Founding Ecumenical Signatories:</span>
+<div class="flex flex-wrap gap-2 text-xs">
+<span class="px-2 py-1 rounded-md bg-surface-container-low font-medium text-on-surface border border-outline-variant/20">
+            Pastor Tomas Sjödin (Smyrna)
+          </span>
+<span class="px-2 py-1 rounded-md bg-surface-container-low font-medium text-on-surface border border-outline-variant/20">
+            Rev. Jonas Lindqvist (Domkyrkan)
+          </span>
+<span class="px-2 py-1 rounded-md bg-surface-container-low font-medium text-on-surface border border-outline-variant/20">
+            Pastor Adeola Bello (RCCG Victory)
+          </span>
+</div>
+</div>
+<!-- Legal Representation Checkmark -->
+<label class="flex items-start gap-3 cursor-pointer pt-1">
+<input checked="" class="mt-1 rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-xs text-on-surface leading-snug">
+          I affirm that I am authorized by my church leadership board (Församlingsstyrelse / Kyrkoråd) to sign this covenant on behalf of <strong>Smyrna Frihamnskyrkan</strong>.
+        </span>
+</label>
+<!-- Primary Action: BankID Signature Button -->
+<div class="space-y-3 pt-2">
+<button class="w-full bg-primary hover:bg-[#00524b] text-on-primary font-semibold py-3.5 px-4 rounded-lg flex items-center justify-center gap-2.5 shadow-md active:scale-[0.98] transition-all duration-150" type="button">
+<!-- Stylized BankID lock icon representation -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12 2C9.24 2 7 4.24 7 7v3H6c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5zm0 2c1.66 0 3 1.34 3 3v3H9V7c0-1.66 1.34-3 3-3zm0 10c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"></path>
+</svg>
+<span class="font-body-md text-body-md font-bold">Sign Covenant via Mobile BankID</span>
+</button>
+<!-- Secondary Draft Button -->
+<button class="w-full bg-surface-container-lowest hover:bg-surface-container-low text-secondary hover:text-on-surface font-medium py-2.5 px-4 rounded-lg border border-outline-variant/60 text-xs active:scale-[0.98] transition-colors" type="button">
+          Save Application Draft &amp; Continue Later
+        </button>
+</div>
+<div class="flex items-center justify-center gap-2 text-center pt-1 text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>256-bit encrypted Swedish BankID authentication</span>
+</div>
+</section>
+<!-- INSPIRATIONAL SANCTUARY COMMUNITY CARD -->
+<div class="rounded-xl overflow-hidden border border-outline-variant/30 bg-surface-container-lowest nordic-card-shadow mb-6">
+<div class="bg-cover bg-center h-44 w-full relative" data-alt="A warm and majestic modern Nordic church auditorium in Gothenburg filled with natural Baltic light streaming through high wood-framed windows. An ethnically diverse gospel choir sings joyfully on stage surrounded by modern musical instruments. The color palette features light whites, pale natural ash wood, deep teal liturgical accents, and luminous airy atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAa400YnYkRcKiaFZ2LOjxBvLYXKY2G7Gm4BaZcEMpsgRJiOP62MQBfKl7_-C5snlnc3MRYoO4LsAVpDg32IJap_15fwAbKig3-VrBLkACSq3c0okclXy7pkXr_H0oJDKNfZOf0qfk7ULFvaZu-o4sRwSc86T85oMgbF_R0V3i9f0GcV9z2ZwM0PUqcXxDVyzpJqgmSQDU9cf5kQ-ngCsCe_CmXKgkyNI0goCq2UBZ87iUWQRrjw9_K')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/30 to-transparent flex items-end p-4">
+<div class="text-white">
+<span class="text-[10px] font-bold tracking-widest uppercase bg-primary px-2 py-0.5 rounded text-white mb-1.5 inline-block">Gothenburg Unity</span>
+<p class="font-headline-sm text-sm font-semibold leading-snug">Together for the city's peace, renewal, and salvation.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- DOCKED BOTTOM NAVIGATION BAR (MANDATORY RESPONSIVE PIVOT FOR MOBILE) -->
+<!-- Fully mapped to 5 core top-level destinations of GOSPELS with Churches active -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md border-t border-outline-variant/20 shadow-lg">
+<div class="max-w-md mx-auto grid grid-cols-5 h-16 px-1">
+<!-- Tab 1: Events -->
+<a class="flex flex-col items-center justify-center gap-1 text-secondary hover:text-on-surface transition-colors py-1" href="#events">
+<span class="material-symbols-outlined text-[22px]">event</span>
+<span class="font-label-sm text-[10px] tracking-tight">Events</span>
+</a>
+<!-- Tab 2: Watch & Listen -->
+<a class="flex flex-col items-center justify-center gap-1 text-secondary hover:text-on-surface transition-colors py-1" href="#watch">
+<span class="material-symbols-outlined text-[22px]">play_circle</span>
+<span class="font-label-sm text-[10px] tracking-tight">Watch</span>
+</a>
+<!-- Tab 3: Churches (CURRENT ACTIVE SCREEN DESTINATION) -->
+<a class="flex flex-col items-center justify-center gap-1 text-primary font-semibold py-1 relative" href="#churches">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center -mb-1">
+<span class="material-symbols-outlined text-[20px] text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">church</span>
+</div>
+<span class="font-label-sm text-[10px] tracking-tight text-primary font-bold">Churches</span>
+</a>
+<!-- Tab 4: Need Prayer? -->
+<a class="flex flex-col items-center justify-center gap-1 text-secondary hover:text-on-surface transition-colors py-1" href="#prayer">
+<span class="material-symbols-outlined text-[22px]">favorite</span>
+<span class="font-label-sm text-[10px] tracking-tight">Prayer</span>
+</a>
+<!-- Tab 5: Support -->
+<a class="flex flex-col items-center justify-center gap-1 text-secondary hover:text-on-surface transition-colors py-1" href="#support">
+<span class="material-symbols-outlined text-[22px]">volunteer_activism</span>
+<span class="font-label-sm text-[10px] tracking-tight">Support</span>
+</a>
+</div>
+</nav>
+</body></html>

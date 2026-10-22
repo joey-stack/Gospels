@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS — Support the Mission</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "on-primary-container": "#f4fffc",
+            "on-secondary-container": "#5c647a",
+            "surface-container-high": "#dce9ff",
+            "primary-fixed": "#89f5e7",
+            "on-error": "#ffffff",
+            "outline-variant": "#bcc9c6",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#d3e4fe",
+            "on-surface": "#0b1c30",
+            "inverse-on-surface": "#eaf1ff",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#6bd8cb",
+            "on-primary-fixed": "#00201d",
+            "secondary": "#565e74",
+            "surface": "#f8f9ff",
+            "surface-tint": "#006a61",
+            "primary": "#00685f",
+            "on-background": "#0b1c30",
+            "secondary-fixed": "#dae2fd",
+            "tertiary-container": "#008376",
+            "primary-container": "#008378",
+            "surface-container": "#e5eeff",
+            "on-tertiary-fixed-variant": "#005048",
+            "background": "#f8f9ff",
+            "tertiary": "#00685d",
+            "on-tertiary-container": "#f4fffb",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary-fixed": "#71f8e4",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "inverse-primary": "#6bd8cb",
+            "surface-bright": "#f8f9ff",
+            "surface-container-low": "#eff4ff",
+            "on-surface-variant": "#3d4947",
+            "surface-dim": "#cbdbf5",
+            "inverse-surface": "#213145",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#00201c",
+            "outline": "#6d7a77",
+            "secondary-container": "#dae2fd",
+            "on-primary-fixed-variant": "#005049"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "4rem",
+            "space-xl": "2.5rem",
+            "margin": "3rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(0, 104, 95, 0.04);
+    }
+    .modal-elevation {
+      box-shadow: 0 20px 32px -8px rgba(15, 23, 42, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-[#F9FAFB] text-on-surface antialiased font-body-md text-body-md min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- ========================================== -->
+<!-- TopNavBar (Shared Component)               -->
+<!-- ========================================== -->
+<header class="docked full-width top-0 sticky z-50 bg-surface-container-lowest/90 dark:bg-inverse-surface/90 backdrop-blur-md shadow-sm">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md tracking-tight font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2" href="#">
+<span class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary text-headline-sm font-bold shadow-sm">G</span>
+<span>GOSPELS</span>
+</a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md" href="#">Events</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md" href="#">Watch &amp; Listen</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md" href="#">Churches</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md" href="#">Need Prayer?</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed font-semibold pb-1 font-label-md text-label-md" href="#">Support</a>
+</nav>
+<!-- Trailing Action Button -->
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary hover:bg-tertiary-container transition-colors duration-150 active:scale-95 px-5 py-2.5 rounded-lg font-headline-sm text-label-md font-semibold shadow-sm flex items-center gap-2">
+<span>Next Event</span>
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- MAIN CONTENT CANVAS                        -->
+<!-- ========================================== -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-6 md:px-12 py-12 md:py-16 space-y-16">
+<!-- 1. Page Hero Section -->
+<section class="text-center max-w-4xl mx-auto space-y-6">
+<!-- Category Pill -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container border border-outline-variant/30 text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>KINGDOM STEWARDSHIP · GOTHENBURG MINISTRY HUB</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-[#0F172A] tracking-tight">
+        Support the Worship of Jesus in Gothenburg
+      </h1>
+<!-- Subtext -->
+<p class="font-body-lg text-body-lg text-secondary max-w-3xl mx-auto leading-relaxed">
+        GOSPELS is entirely non-profit and community supported. Every Swedish krona empowers city square worship, inter-church choral training, free admission concerts, and prayer across West Sweden.
+      </p>
+<!-- Trust Badges Row -->
+<div class="pt-4 flex flex-wrap items-center justify-center gap-y-3 gap-x-8 text-secondary font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Registered Non-Profit 802490-1234</span>
+</div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant hidden sm:block"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span>100% Free Public Entry to All Gatherings</span>
+</div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant hidden sm:block"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<span>Annual Public Audited Accounts</span>
+</div>
+</div>
+</section>
+<!-- 2. Primary Giving Methods: Side-by-side Cards -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+<!-- CARD 1: Official Swish Giving -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-8 custom-shadow flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div>
+<!-- Card Header & Swish Badge -->
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-[#008378]/10 border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">smartphone</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Fastest &amp; Direct</span>
+<h3 class="font-headline-md text-headline-md text-[#0F172A]">Official Swish Giving</h3>
+</div>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-md bg-[#EEF2F6] text-secondary font-label-sm text-label-sm font-semibold">
+              Sverige Instant
+            </span>
+</div>
+<!-- Swish Interactive Centerpiece -->
+<div class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-6 mb-6 flex flex-col sm:flex-row items-center gap-6">
+<!-- QR Code container -->
+<div class="bg-white p-3 rounded-lg border border-[#CBD5E1] shadow-sm flex flex-col items-center flex-shrink-0">
+<div class="w-28 h-28 bg-[#0F172A] rounded flex flex-col items-center justify-center text-white text-center p-2">
+<span class="material-symbols-outlined text-[36px] text-primary-fixed mb-1">qr_code_2</span>
+<span class="font-label-sm text-[9px] uppercase tracking-wider text-slate-300">Scan via Swish</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary mt-1.5">Direct Camera Scan</span>
+</div>
+<!-- Number & Reference Guide -->
+<div class="space-y-3 w-full">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">GOSPELS Swish-nummer</span>
+<div class="flex items-center justify-between bg-white px-3.5 py-2.5 rounded-lg border border-[#CBD5E1] mt-1">
+<span class="font-headline-sm text-headline-sm font-bold text-[#0F172A] tracking-wider" id="swish-val">123 456 78 90</span>
+<button class="text-primary hover:text-tertiary font-label-md text-label-md font-semibold transition-colors flex items-center gap-1" onclick="navigator.clipboard.writeText('1234567890'); this.innerText='Kopierat!';">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Kopiera</span>
+</button>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Meddelande / Reference</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium bg-white/70 px-3 py-1.5 rounded border border-dashed border-[#CBD5E1]">
+                  Märkt: <span class="text-primary font-semibold">GÅVA</span> eller event t.ex. <span class="text-[#0F172A] font-semibold">HSW2026</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Quick Preset Amounts -->
+<div class="space-y-2 mb-6">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Välj snabbbelopp (SEK)</span>
+<div class="grid grid-cols-5 gap-2">
+<button class="py-2 px-2 text-center rounded-lg border border-[#CBD5E1] bg-white hover:border-primary text-secondary hover:text-primary font-headline-sm text-body-sm font-semibold transition-colors">50 kr</button>
+<button class="py-2 px-2 text-center rounded-lg border-2 border-primary bg-primary/5 text-primary font-headline-sm text-body-sm font-bold transition-colors">150 kr</button>
+<button class="py-2 px-2 text-center rounded-lg border border-[#CBD5E1] bg-white hover:border-primary text-secondary hover:text-primary font-headline-sm text-body-sm font-semibold transition-colors">300 kr</button>
+<button class="py-2 px-2 text-center rounded-lg border border-[#CBD5E1] bg-white hover:border-primary text-secondary hover:text-primary font-headline-sm text-body-sm font-semibold transition-colors">500 kr</button>
+<button class="py-2 px-2 text-center rounded-lg border border-[#CBD5E1] bg-white hover:border-primary text-secondary hover:text-primary font-headline-sm text-body-sm font-semibold transition-colors text-ellipsis overflow-hidden">Valfritt</button>
+</div>
+</div>
+</div>
+<!-- Action & Verification Note -->
+<div class="space-y-4 pt-4 border-t border-[#E2E8F0]">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<a class="bg-primary text-on-primary hover:bg-[#0F766E] transition-all duration-150 py-3 rounded-lg font-headline-sm text-label-md font-semibold text-center shadow-sm flex items-center justify-center gap-2 active:scale-95" href="swish://paymentrequest">
+<span class="material-symbols-outlined text-[20px]">launch</span>
+<span>Open Swish on Mobile</span>
+</a>
+<button class="border border-[#CBD5E1] bg-white text-[#0F172A] hover:bg-[#F8FAFC] transition-colors py-3 rounded-lg font-headline-sm text-label-md font-semibold text-center flex items-center justify-center gap-2" onclick="navigator.clipboard.writeText('1234567890'); alert('Swish-nummer 123 456 78 90 kopierat');">
+<span class="material-symbols-outlined text-[18px]">copy_all</span>
+<span>Copy Swish Number</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span>Bankgiro: <strong>5542-8891</strong> · Strict non-profit Swedish accounting standards.</span>
+</div>
+</div>
+</div>
+<!-- CARD 2: Kingdom Partner (Monthly Giving Subscription) -->
+<div class="bg-surface-container-lowest border-2 border-primary/40 rounded-xl p-8 custom-shadow flex flex-col justify-between relative overflow-hidden">
+<!-- Popular Badge -->
+<div class="absolute top-0 right-0 bg-primary text-on-primary font-label-sm text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-bl-xl shadow-sm">
+          Sustaining Pillar
+        </div>
+<div class="space-y-6">
+<div>
+<div class="flex items-center gap-2 text-primary font-label-sm text-label-sm font-bold tracking-wider uppercase mb-1">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span>Continuous Monthly Impact</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-[#0F172A]">Become a Gothenburg Kingdom Partner</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Provide dependable monthly foundation for city-wide choral ministry.</p>
+</div>
+<!-- Tier Selector -->
+<div class="space-y-3">
+<!-- Tier 1 -->
+<label class="relative flex items-start p-3.5 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer transition-all">
+<input checked="" class="mt-1 text-primary focus:ring-primary border-outline" name="partnership_tier" type="radio" value="150"/>
+<div class="ml-3 flex-grow">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-md font-bold text-[#0F172A]">Supporter</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-primary">150 kr<span class="font-body-sm text-body-sm text-secondary font-normal">/mo</span></span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Sponsors choir sheet music, rehearsal tea, and sound cables.</p>
+</div>
+</label>
+<!-- Tier 2 -->
+<label class="relative flex items-start p-3.5 rounded-xl border border-[#CBD5E1] hover:border-primary/60 bg-white cursor-pointer transition-all">
+<input class="mt-1 text-primary focus:ring-primary border-outline" name="partnership_tier" type="radio" value="350"/>
+<div class="ml-3 flex-grow">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-md font-bold text-[#0F172A]">Patron</span>
+<span class="font-headline-sm text-headline-sm font-bold text-[#0F172A]">350 kr<span class="font-body-sm text-body-sm text-secondary font-normal">/mo</span></span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Funds student choir travel grants and guest vocal masterclasses.</p>
+</div>
+</label>
+<!-- Tier 3 -->
+<label class="relative flex items-start p-3.5 rounded-xl border border-[#CBD5E1] hover:border-primary/60 bg-white cursor-pointer transition-all">
+<input class="mt-1 text-primary focus:ring-primary border-outline" name="partnership_tier" type="radio" value="750"/>
+<div class="ml-3 flex-grow">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-md font-bold text-[#0F172A]">Pillar</span>
+<span class="font-headline-sm text-headline-sm font-bold text-[#0F172A]">750 kr<span class="font-body-sm text-body-sm text-secondary font-normal">/mo</span></span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Sponsors city square generator power &amp; acoustic staging at Gustav Adolfs Torg.</p>
+</div>
+</label>
+</div>
+<!-- Subscription Details Form -->
+<div class="space-y-3.5 pt-2">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1">Full Name</label>
+<input class="w-full bg-white border border-[#CBD5E1] rounded-lg px-3.5 py-2.5 text-body-md text-[#0F172A] focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-slate-400" placeholder="Astrid Lindén" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1">Email Address</label>
+<input class="w-full bg-white border border-[#CBD5E1] rounded-lg px-3.5 py-2.5 text-body-md text-[#0F172A] focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-slate-400" placeholder="astrid@goteborg.se" type="email"/>
+</div>
+</div>
+<!-- Payment Type Selector -->
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1">Payment Method</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 border-2 border-primary bg-primary/5 py-2.5 rounded-lg text-primary font-label-md text-label-md font-bold" type="button">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span>Autogiro / Bankgiro</span>
+</button>
+<button class="flex items-center justify-center gap-2 border border-[#CBD5E1] bg-white py-2.5 rounded-lg text-secondary font-label-md text-label-md font-semibold hover:border-primary" type="button">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+<span>Debit / Credit Card</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Partnership Button & Assurance -->
+<div class="space-y-3 pt-6 border-t border-[#E2E8F0]">
+<button class="w-full bg-primary hover:bg-[#0F766E] text-on-primary font-headline-sm text-body-md font-semibold py-3.5 px-6 rounded-lg transition-all duration-150 shadow-md flex items-center justify-center gap-2 active:scale-[0.99]">
+<span>Start Monthly Partnership (150 kr/mo)</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<div class="flex items-center justify-center gap-2 text-center text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">lock_reset</span>
+<span>Cancel anytime with one click. Monthly ministry prayer letter included.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. International & Card Payment Section (Clean secondary option) -->
+<section class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-8 custom-shadow">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-[#E2E8F0]">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">public</span>
+<h3 class="font-headline-sm text-headline-sm text-[#0F172A]">International Friends &amp; Card Checkout</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Giving from Norway, Denmark, Europe or across the global worship diaspora.
+          </p>
+</div>
+<!-- Single vs Recurring Toggle & Currency -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Frequency Toggle -->
+<div class="bg-[#F1F5F9] p-1 rounded-lg flex items-center">
+<button class="px-3.5 py-1.5 rounded-md text-label-md font-label-md font-semibold bg-white text-[#0F172A] shadow-sm">One-Time</button>
+<button class="px-3.5 py-1.5 rounded-md text-label-md font-label-md font-semibold text-secondary hover:text-[#0F172A]">Monthly</button>
+</div>
+<!-- Currency Selector -->
+<div class="flex items-center bg-[#F1F5F9] p-1 rounded-lg">
+<button class="px-2.5 py-1.5 rounded-md text-label-md font-label-md font-bold bg-primary text-white">SEK</button>
+<button class="px-2.5 py-1.5 rounded-md text-label-md font-label-md font-medium text-secondary hover:text-[#0F172A]">EUR</button>
+<button class="px-2.5 py-1.5 rounded-md text-label-md font-label-md font-medium text-secondary hover:text-[#0F172A]">USD</button>
+<button class="px-2.5 py-1.5 rounded-md text-label-md font-label-md font-medium text-secondary hover:text-[#0F172A]">NOK</button>
+</div>
+</div>
+</div>
+<!-- Card / Digital Pay Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 items-center">
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-secondary">Custom Amount (SEK)</label>
+<div class="relative">
+<span class="absolute left-3.5 top-1/2 -translate-y-1/2 font-headline-sm text-body-md text-secondary font-bold">kr</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-white border border-[#CBD5E1] rounded-lg text-body-md font-bold text-[#0F172A] focus:border-primary focus:ring-2 focus:ring-primary/20" type="number" value="250"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-secondary">Secure Digital Express</label>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-2.5 bg-[#0F172A] text-white rounded-lg font-headline-sm text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span>Apple Pay</span>
+</button>
+<button class="flex-1 py-2.5 bg-white border border-[#CBD5E1] text-[#0F172A] rounded-lg font-headline-sm text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Google Pay</span>
+</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-secondary">Card Processing</label>
+<button class="w-full py-2.5 bg-primary text-on-primary rounded-lg font-headline-sm text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-[#0F766E] transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+<span>Credit / Debit Card via Stripe</span>
+</button>
+</div>
+</div>
+<!-- Trust row -->
+<div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">verified</span>
+          Encrypted 256-bit SSL Banking Protocol via Stripe
+        </span>
+<div class="flex items-center gap-3 text-slate-400 font-semibold tracking-wider">
+<span>VISA</span>
+<span>MASTERCARD</span>
+<span>APPLE PAY</span>
+<span>AUTOGIRO</span>
+</div>
+</div>
+</section>
+<!-- 4. Financial Transparency & Stewardship Breakdown -->
+<section class="space-y-8">
+<div class="text-center max-w-2xl mx-auto space-y-2">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Radical Openness</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-[#0F172A]">Where Your Giving Goes</h2>
+<p class="font-body-md text-body-md text-secondary">
+          Audited transparency is sacred. Here is exactly how every 100 SEK is stewarded in ministry:
+        </p>
+</div>
+<!-- Percentage Distribution Bar -->
+<div class="w-full bg-[#E2E8F0] h-4 rounded-full overflow-hidden flex shadow-inner">
+<div class="bg-primary h-full transition-all duration-500" style="width: 60%;" title="60% Public Events"></div>
+<div class="bg-primary-fixed-dim h-full transition-all duration-500" style="width: 20%;" title="20% Choir &amp; Musicians"></div>
+<div class="bg-secondary h-full transition-all duration-500" style="width: 15%;" title="15% Administration &amp; Permits"></div>
+<div class="bg-secondary-fixed h-full transition-all duration-500" style="width: 5%;" title="5% Pastoral Care"></div>
+</div>
+<!-- 4 Progress Breakdown Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Breakdown 1 -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-6 custom-shadow space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">volume_up</span>
+</span>
+<span class="font-display-lg text-headline-lg text-primary font-bold">60%</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-[#0F172A]">Public Events &amp; Acoustics</h4>
+<p class="font-body-sm text-body-sm text-secondary">
+            Free city square acoustic staging, professional sound engineering, and Gustav Adolfs Torg municipal permit fees.
+          </p>
+<div class="pt-2 font-label-sm text-label-sm font-semibold text-primary">60 kr of every 100 kr</div>
+</div>
+<!-- Breakdown 2 -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-6 custom-shadow space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-lg bg-primary-fixed-dim/20 text-[#00685f] flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">music_note</span>
+</span>
+<span class="font-display-lg text-headline-lg text-[#00685f] font-bold">20%</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-[#0F172A]">Choir &amp; Musician Training</h4>
+<p class="font-body-sm text-body-sm text-secondary">
+            Sheet music licenses, choral workshop facilities, and youth choir conductor apprenticeships across Gothenburg.
+          </p>
+<div class="pt-2 font-label-sm text-label-sm font-semibold text-[#00685f]">20 kr of every 100 kr</div>
+</div>
+<!-- Breakdown 3 -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-6 custom-shadow space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-lg bg-secondary/15 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</span>
+<span class="font-display-lg text-headline-lg text-secondary font-bold">15%</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-[#0F172A]">Governance &amp; Compliance</h4>
+<p class="font-body-sm text-body-sm text-secondary">
+            Swedish ideell förening non-profit auditing, public safety insurances, venue bookings, and legal compliance.
+          </p>
+<div class="pt-2 font-label-sm text-label-sm font-semibold text-secondary">15 kr of every 100 kr</div>
+</div>
+<!-- Breakdown 4 -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-6 custom-shadow space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-10 h-10 rounded-lg bg-secondary-fixed/50 text-[#131b2e] flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">diversity_1</span>
+</span>
+<span class="font-display-lg text-headline-lg text-[#131b2e] font-bold">5%</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-[#0F172A]">Intercession &amp; Care</h4>
+<p class="font-body-sm text-body-sm text-secondary">
+            24/7 WhatsApp intercession infrastructure, prayer volunteer support, and pastoral hospital visitation logistics.
+          </p>
+<div class="pt-2 font-label-sm text-label-sm font-semibold text-[#131b2e]">5 kr of every 100 kr</div>
+</div>
+</div>
+</section>
+<!-- 5. Scripture Reflection Box -->
+<section class="max-w-4xl mx-auto">
+<div class="bg-[#F1F5F9] border-l-4 border-primary rounded-xl p-8 md:p-10 shadow-sm relative">
+<span class="material-symbols-outlined absolute right-6 top-6 text-primary/15 text-[54px] select-none" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<blockquote class="font-scripture-quote text-scripture-quote-mobile md:text-scripture-quote italic text-[#111827] leading-relaxed">
+          "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
+        </blockquote>
+<div class="mt-4 flex items-center gap-2">
+<div class="w-6 h-0.5 bg-primary"></div>
+<cite class="font-label-sm text-label-sm font-bold tracking-wider text-[#64748B] uppercase not-italic">
+            2 CORINTHIANS 9:7
+          </cite>
+</div>
+</div>
+</section>
+<!-- 6. Stewardship FAQ Accordion -->
+<section class="max-w-4xl mx-auto space-y-6">
+<div class="text-center space-y-2">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Clarity &amp; Confidence</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-[#0F172A]">Stewardship Questions Answered</h2>
+</div>
+<div class="space-y-4">
+<!-- Question 1 -->
+<details class="group bg-surface-container-lowest border border-[#E2E8F0] rounded-xl overflow-hidden custom-shadow transition-all duration-150">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-headline-sm text-headline-sm text-[#0F172A] hover:text-primary transition-colors">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">help_outline</span>
+<span>Is GOSPELS an officially registered Swedish non-profit (Ideell förening)?</span>
+</span>
+<span class="material-symbols-outlined text-secondary group-open:rotate-180 transition-transform duration-200">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-body-md text-secondary border-t border-slate-100 leading-relaxed">
+            Yes. GOSPELS is registered as an ideell förening under organization number <strong>802490-1234</strong> in Gothenburg, Västra Götaland. We operate under Swedish non-profit governance regulations with independent annual auditing presented at our yearly general meeting.
+          </div>
+</details>
+<!-- Question 2 -->
+<details class="group bg-surface-container-lowest border border-[#E2E8F0] rounded-xl overflow-hidden custom-shadow transition-all duration-150" open="">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-headline-sm text-headline-sm text-[#0F172A] hover:text-primary transition-colors">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">help_outline</span>
+<span>Are tickets or admissions ever charged for GOSPELS events?</span>
+</span>
+<span class="material-symbols-outlined text-secondary group-open:rotate-180 transition-transform duration-200">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-body-md text-secondary border-t border-slate-100 leading-relaxed">
+            Never. It is a foundational pillar of our vision that every gathering, concert, and worship session—including Holy Spirit Worship and Göteborgs Lovsångskonsert—is 100% free of charge to all citizens and visitors, funded solely through voluntary kingdom giving.
+          </div>
+</details>
+<!-- Question 3 -->
+<details class="group bg-surface-container-lowest border border-[#E2E8F0] rounded-xl overflow-hidden custom-shadow transition-all duration-150">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-headline-sm text-headline-sm text-[#0F172A] hover:text-primary transition-colors">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">help_outline</span>
+<span>Can I deduct my donation on Swedish taxes (Skattereduktion för gåvor)?</span>
+</span>
+<span class="material-symbols-outlined text-secondary group-open:rotate-180 transition-transform duration-200">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-body-md text-secondary border-t border-slate-100 leading-relaxed">
+            Giving towards our registered social relief initiatives meets the criteria established under Skatteverket's regulations for gifts to approved organizations (minimum 200 SEK per gift, up to 12,000 SEK annually). If you supply your personnummer with your monthly partnership, your Swedish tax deduction is reported automatically.
+          </div>
+</details>
+<!-- Question 4 -->
+<details class="group bg-surface-container-lowest border border-[#E2E8F0] rounded-xl overflow-hidden custom-shadow transition-all duration-150">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-headline-sm text-headline-sm text-[#0F172A] hover:text-primary transition-colors">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">help_outline</span>
+<span>How do I update or cancel my monthly Kingdom Partner giving?</span>
+</span>
+<span class="material-symbols-outlined text-secondary group-open:rotate-180 transition-transform duration-200">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-2 font-body-md text-body-md text-secondary border-t border-slate-100 leading-relaxed">
+            You maintain full sovereignty over your partnership. Every monthly receipt email contains a one-click direct management link allowing you to adjust tiers, update your bank account or card, or pause contributions instantly. You may also email <span class="text-primary font-semibold">info@gospels.se</span> at any time.
+          </div>
+</details>
+</div>
+</section>
+</main>
+<!-- ========================================== -->
+<!-- Footer (Shared Component)                  -->
+<!-- ========================================== -->
+<footer class="docked full-width bottom bg-inverse-surface dark:bg-surface-container-lowest text-inverse-on-surface dark:text-on-surface border-t border-outline/20 dark:border-outline-variant/30 mt-20">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Brand & Mission Column -->
+<div class="space-y-4 md:col-span-1">
+<a class="font-headline-md text-headline-md font-bold text-inverse-on-surface dark:text-on-surface flex items-center gap-2" href="#">
+<span class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-headline-sm">G</span>
+<span>GOSPELS</span>
+</a>
+<p class="font-body-sm text-body-sm text-surface-dim dark:text-on-surface-variant leading-relaxed">
+          Gothenburg Gospel Ministry. Fostering unity across West Sweden's churches through open-air gospel adoration and sacred choral assembly.
+        </p>
+<div class="pt-2 text-primary-fixed font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">place</span>
+<span>Kungsportsavenyen 10, Göteborg</span>
+</div>
+</div>
+<!-- Links Column 1: Ministry Gatherings -->
+<div class="space-y-3">
+<h5 class="font-headline-sm text-headline-sm font-semibold text-inverse-on-surface dark:text-on-surface">Gatherings</h5>
+<ul class="space-y-2.5 font-body-sm text-body-sm">
+<li>
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary transition-colors duration-150" href="#">Partner Churches</a>
+</li>
+<li>
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary transition-colors duration-150" href="#">Holy Spirit Worship</a>
+</li>
+<li>
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary transition-colors duration-150" href="#">Göteborgs Lovsångskonsert</a>
+</li>
+<li>
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary transition-colors duration-150" href="#">Youth Choir Fellowship</a>
+</li>
+</ul>
+</div>
+<!-- Links Column 2: Stewardship & Care -->
+<div class="space-y-3">
+<h5 class="font-headline-sm text-headline-sm font-semibold text-inverse-on-surface dark:text-on-surface">Stewardship</h5>
+<ul class="space-y-2.5 font-body-sm text-body-sm">
+<li>
+<a class="text-primary-fixed dark:text-primary underline font-medium" href="#">Kingdom Giving</a>
+</li>
+<li>
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary transition-colors duration-150" href="#">Swish Support: 123 456 78 90</a>
+</li>
+<li>
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary transition-colors duration-150" href="#">Privacy &amp; WhatsApp Care</a>
+</li>
+<li>
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary transition-colors duration-150" href="#">Audited Financial Reports</a>
+</li>
+</ul>
+</div>
+<!-- Column 3: Contact & Swedish Org Info -->
+<div class="space-y-3">
+<h5 class="font-headline-sm text-headline-sm font-semibold text-inverse-on-surface dark:text-on-surface">Fellowship Desk</h5>
+<p class="font-body-sm text-body-sm text-surface-dim dark:text-on-surface-variant">
+          Have questions regarding church partnership or volunteer ministry?
+        </p>
+<div class="bg-surface-container-low/10 p-3 rounded-lg border border-outline/20 space-y-1">
+<div class="font-label-md text-label-md text-primary-fixed font-bold">Ideell Förening Org:</div>
+<div class="font-body-sm text-body-sm text-surface-dim">802490-1234 · Göteborg</div>
+<div class="font-body-sm text-body-sm text-surface-dim">Bankgiro: 5542-8891</div>
+</div>
+</div>
+</div>
+<!-- Bottom Copyright -->
+<div class="border-t border-outline/20 max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-surface-dim dark:text-on-surface-variant font-body-sm text-body-sm">
+<p>© 2025 GOSPELS Ministry Gothenburg. All rights reserved. Non-profit Christian fellowship.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">Non-Profit Bylaws</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">Skatteverket Compliance</a>
+</div>
+</div>
+</footer>
+</body></html>

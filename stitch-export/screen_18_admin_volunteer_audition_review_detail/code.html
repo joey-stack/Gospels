@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS Admin — Volunteer Audition Review (Magnus Källström)</title>
+<!-- Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#cbdbf5",
+            "on-secondary-fixed": "#131b2e",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#6bd8cb",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#bec6e0",
+            "primary": "#00685f",
+            "surface-container-high": "#dce9ff",
+            "on-secondary-container": "#5c647a",
+            "secondary-container": "#dae2fd",
+            "on-primary-fixed": "#00201d",
+            "inverse-surface": "#213145",
+            "surface-bright": "#f8f9ff",
+            "on-background": "#0b1c30",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#eaf1ff",
+            "primary-container": "#008378",
+            "on-tertiary-container": "#f4fffb",
+            "surface": "#f8f9ff",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "error": "#ba1a1a",
+            "surface-variant": "#d3e4fe",
+            "background": "#f8f9ff",
+            "outline-variant": "#bcc9c6",
+            "on-surface-variant": "#3d4947",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed": "#dae2fd",
+            "surface-container": "#e5eeff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "outline": "#6d7a77",
+            "surface-container-highest": "#d3e4fe",
+            "tertiary-container": "#008376",
+            "inverse-primary": "#6bd8cb",
+            "on-surface": "#0b1c30",
+            "on-error-container": "#93000a",
+            "secondary": "#565e74",
+            "tertiary": "#00685d",
+            "on-primary-fixed-variant": "#005049",
+            "on-primary-container": "#f4fffc",
+            "on-tertiary-fixed-variant": "#005048",
+            "on-tertiary-fixed": "#00201c",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-tint": "#006a61",
+            "primary-fixed": "#89f5e7",
+            "tertiary-fixed": "#71f8e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1.25rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "gutter-mobile": "1rem",
+            "space-2xl": "4rem",
+            "margin": "3rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"]
+          },
+          "fontSize": {
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #bcc9c6;
+      border-radius: 9999px;
+    }
+    .audio-waveform-bar {
+      transition: height 0.2s ease, background-color 0.2s ease;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar Component (Admin Layout from Shared Components) -->
+<aside class="fixed top-0 left-0 h-screen w-64 flex flex-col z-40 bg-surface-container-low border-r border-outline-variant/30 select-none">
+<div class="w-64 h-full p-4 flex flex-col justify-between custom-scrollbar overflow-y-auto">
+<!-- Top Brand & Ministry Emblem -->
+<div>
+<!-- Brand & Hub Header -->
+<div class="px-2 py-3 border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="library_music" style="font-variation-settings: 'FILL' 1;">library_music</span>
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight leading-none">GOSPELS Admin</h1>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Gothenburg Ministry Hub</span>
+</div>
+</div>
+</div>
+<!-- Ministry Custodian Profile Snippet -->
+<div class="mt-4 p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/20 flex items-center gap-3">
+<div class="relative">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant/30" data-alt="A portrait of a distinguished Swedish ministry pastor and choir custodian with silver hair and warm expression, wearing a minimalist dark charcoal collar and navy knit jacket against warm Nordic cathedral daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7BftujtEhKc4W1FtbhFDGDUMfGAJfUzxqTcb_T76juVeztWd-Y1TXwGTlSKKOiDzRW68EY0Lp1AZM0LSY9HZ8kLF-T4EGU7XMW4sYpUX8a3T2IbWM6LFgKICTwNqIDSCEg5wULlBioJ001aPZdb3lfJOg9A_1T-oqM2g620bDw5r_kf6E_vsGse-7JGjqjSuCQb0sMPizeGFybJcl3gNil5u0I4mkHOtRuLh3MvrZVL439TElQt-I"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="overflow-hidden">
+<p class="font-label-md text-label-md text-on-surface truncate">Tomas Sjödin</p>
+<p class="font-label-sm text-label-sm text-secondary truncate">Ministry Custodian &amp; Pastor</p>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="mt-4">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-sm transition-all duration-150 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span>
+<span>Create Event</span>
+</button>
+</div>
+<!-- Primary Navigation Links (Volunteers Active) -->
+<nav class="mt-6 space-y-1">
+<!-- Non-tab auxiliary dashboard -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</div>
+</a>
+<!-- Tab 1: Events -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="event">event</span>
+<span>Events</span>
+</div>
+<span class="bg-surface-container-high text-on-secondary-container text-[11px] font-bold px-2 py-0.5 rounded-full">4</span>
+</a>
+<!-- Tab 2: Prayer Requests -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="folded_hands">folded_hands</span>
+<span>Prayer Requests</span>
+</div>
+<span class="bg-primary/10 text-primary text-[11px] font-bold px-2 py-0.5 rounded-full">12</span>
+</a>
+<!-- Tab 3: Volunteers (ACTIVE ACCORDING TO RULE) -->
+<a class="bg-secondary-container text-primary font-semibold rounded-lg px-4 py-2.5 flex items-center justify-between active:scale-[0.98] transition-transform duration-150 font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span>Volunteers</span>
+</div>
+<span class="bg-primary text-on-primary text-[11px] font-bold px-2 py-0.5 rounded-full shadow-sm">38 Active</span>
+</a>
+<!-- Partner Churches -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="church">church</span>
+<span>Partner Churches</span>
+</div>
+<span class="text-[11px] text-outline font-semibold">16 Parishes</span>
+</a>
+<!-- Tab 4: Content -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="library_music">library_music</span>
+<span>Content</span>
+</div>
+</a>
+<!-- Giving & Stewardship -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="volunteer_activism">volunteer_activism</span>
+<span>Giving &amp; Stewardship</span>
+</div>
+</a>
+<!-- Tab 5: System Status -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+<span>System Status</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary ring-2 ring-primary/20"></span>
+</a>
+</nav>
+</div>
+<!-- Footer Action Links -->
+<div class="pt-4 border-t border-outline-variant/30 space-y-1">
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center gap-3 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center gap-3 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Canvas Content Area (Offset by 64 Tailwind units = 256px) -->
+<div class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- Top Sticky Sub-Header / Breadcrumb & Action Toolbar -->
+<header class="sticky top-0 z-30 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 px-8 py-4">
+<div class="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Breadcrumbs & Status Lead -->
+<div>
+<div class="flex items-center gap-2 font-label-md text-label-md text-secondary">
+<a class="hover:text-primary transition-colors" href="#">Admin</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Volunteers &amp; Stewards</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-outline">Audition Review</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-semibold">Magnus K. (Tenor Section Lead)</span>
+</div>
+<div class="flex items-center gap-3 mt-1">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">
+              Volunteer Audition Review
+            </h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-semibold bg-surface-container text-primary border border-outline-variant/30">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              Application #VO-2026-884
+            </span>
+</div>
+</div>
+<!-- Action Buttons Cluster -->
+<div class="flex items-center flex-wrap gap-2.5">
+<!-- Back button -->
+<button class="px-3.5 py-2 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_back">arrow_back</span>
+<span>Back to Volunteer Roster</span>
+</button>
+<!-- Export PDF -->
+<button class="px-3.5 py-2 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span>Export Audition Packet (PDF)</span>
+</button>
+<!-- Reject button -->
+<button class="px-3.5 py-2 rounded-lg border border-error-container text-error font-label-md text-label-md hover:bg-error-container/20 transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="archive">archive</span>
+<span>Reject / Archive</span>
+</button>
+<!-- Primary Teal Approve CTA -->
+<button class="px-5 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center gap-2 shadow-sm transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="how_to_reg">how_to_reg</span>
+<span>Approve &amp; Assign Rehearsal Slot</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Operational Workspace Grid (Two Column layout: 65% / 35%) -->
+<main class="flex-1 max-w-[1400px] w-full mx-auto p-8 space-y-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- ================= LEFT COLUMN (Approx 65% = 8 cols) ================= -->
+<div class="lg:col-span-8 space-y-6">
+<!-- 1. Applicant Profile Banner Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-6 relative overflow-hidden">
+<!-- Subtle Nordic architectural accent line on top -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary-fixed to-outline-variant"></div>
+<div class="flex flex-col md:flex-row items-start justify-between gap-6">
+<!-- Left: Avatar & Candidate Identity -->
+<div class="flex items-start gap-5">
+<div class="relative flex-shrink-0">
+<img class="w-20 h-20 rounded-xl object-cover border-2 border-surface-container-low shadow-sm" data-alt="A refined portrait of a thirty-year-old Scandinavian tenor singer with short blonde hair and kind Nordic eyes, smiling gently in clean natural daylight inside a modern Gothenburg concert hall rehearsal studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjz0aCl62d977nxOiySe8C2HxfCwRrZTLQ7-XFiHy-CTnXb8UnO7iGypTdxXtUSZ0SeQlRuz7ZADFq72Gx10m-rs1Ci5l84RiF2t36EiInN8qxDrRQvnhAvZw21QzZjWNI-MWThbwagDcJx-qrrR-1oUqouS-b9pP8iJEan7hzQfsAAQtm7ZT65a61IzEJ9a87X_lRHwn3bLfAtS-t4Pzn8hV6DqEXcu_kOGMq8g5O93E5xQs8rUB0"/>
+<span class="absolute -bottom-2 -right-2 bg-primary text-on-primary rounded-full p-1 border-2 border-surface-container-lowest shadow-sm flex items-center justify-center" title="Lead Vocalist Audition">
+<span class="material-symbols-outlined text-[14px]" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</span>
+</div>
+<div class="space-y-1.5">
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Magnus Källström</h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary/10 text-primary border border-primary/20">
+                      Tenor Section Lead Candidate
+                    </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="church">church</span>
+<span>Home Parish: <strong>Smyrna Frihamnskyrkan</strong> (Active Member for 6 years)</span>
+</p>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-4 font-body-sm text-body-sm text-on-surface-variant pt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="mail">mail</span>
+                      magnus.kallstrom@kyrka.se
+                    </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="call">call</span>
+                      +46 73 892 11 04
+                    </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="location_on">location_on</span>
+                      Majorna / Linné, Göteborg
+                    </span>
+</div>
+</div>
+</div>
+<!-- Right: Status Badge & Application Meta -->
+<div class="flex flex-col items-start md:items-end justify-between self-stretch">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-surface-container-high text-on-secondary-fixed border border-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="hourglass_top">hourglass_top</span>
+                  Pending Final Vocal Approval
+                </span>
+<p class="font-label-sm text-label-sm text-outline mt-3">
+                  Submitted: 14 Feb 2026, 19:42 CET
+                </p>
+</div>
+</div>
+<!-- Vocal Profile Chips & Experience Tags -->
+<div class="mt-6 pt-5 border-t border-outline-variant/30 flex flex-wrap gap-2">
+<div class="px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Vocal Range</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">C3 – G4 (Tenor 1 / High Lead)</span>
+</div>
+<div class="px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Sight Reading</span>
+<span class="font-label-md text-label-md text-primary font-bold">Advanced / Fluent (A-Notläsning)</span>
+</div>
+<div class="px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Choir Pedigree</span>
+<span class="font-label-md text-label-md text-on-surface">5 Seasons Gothenburg Gospel Youth Choir</span>
+</div>
+<div class="px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Education</span>
+<span class="font-label-md text-label-md text-on-surface">Swedish Academy of Music (Högskolan för scen och musik)</span>
+</div>
+</div>
+<!-- Target Gatherings Pill Banner -->
+<div class="mt-3 bg-surface p-3 rounded-lg border border-outline-variant/20 flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="stars">stars</span>
+<span class="font-semibold text-on-surface">Auditioning for Mass Choirs:</span>
+<span class="text-secondary">Göteborgs Lovsångskonsert 2027 (500 Voices) &amp; Holy Spirit Worship 2026</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">Tenor Section 1 Lead Track</span>
+</div>
+</div>
+<!-- 2. Audition Audio & Video Playback Review Module -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-6 space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Audio &amp; Visual Evidence</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Recorded Audition Solo Performance</h3>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-xs font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary" data-icon="equalizer">equalizer</span>
+                  24-bit / 48kHz WAV
+                </span>
+<button class="p-1.5 text-secondary hover:text-on-surface rounded hover:bg-surface-container-low transition-colors" title="Download Master Track">
+<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Master Track Info -->
+<div class="p-4 bg-inverse-surface text-inverse-on-surface rounded-xl flex flex-col md:flex-row items-center gap-5">
+<!-- Video Preview Thumbnail with play overlay -->
+<div class="relative w-full md:w-44 h-28 rounded-lg overflow-hidden flex-shrink-0 group cursor-pointer border border-outline/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A video capture frame showing a Scandinavian male tenor singing in front of a d&amp;b audiotechnik condenser microphone inside the acoustic oak wood rehearsal hall of Smyrna Frihamnskyrkan in Gothenburg." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSS3prq-u_0F10PHBXEb-Uad_4mY1ReMOuefrvM76V4hvTqD17GgoJY7uSU23DLucr1UMUcBhQAiX7SlKMoAUmPIGLNMtmxZdUUGZsYgkofXZlJgoxAsZWegYviHSH7cAb-SXQteVVrKDRyITCtZOtvtvlSX11jmzvfbd5Oqd5ftTLZFBYmEdislC6CeOeV9FE66p1076XuI_rWHhDzmTqoqiWwFesdNXMZ6IddcCIvxM5wUer4pR9"/>
+<div class="absolute inset-0 bg-inverse-surface/40 flex items-center justify-center">
+<div class="w-9 h-9 rounded-full bg-primary/90 text-on-primary flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-1 right-1 bg-on-background/80 px-1.5 py-0.5 rounded text-[10px] text-on-primary font-mono">
+                  1080p60
+                </div>
+</div>
+<!-- Audio Player Core -->
+<div class="flex-1 w-full space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-label-md text-label-md font-bold text-inverse-on-surface">O Store Gud / How Great Thou Art</h4>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim text-xs">Swedish Capella Solo Performance (Recorded in Smyrna Sanctuary Hall)</p>
+</div>
+<div class="text-right font-mono text-xs text-primary-fixed">
+<span>01:18</span> / <span>02:45</span>
+</div>
+</div>
+<!-- Custom Waveform Visualizer & Timestamp Indicators -->
+<div class="relative pt-2 pb-1">
+<!-- Notes Pin Markers -->
+<div class="absolute -top-3 left-[28%] -translate-x-1/2 flex flex-col items-center group cursor-pointer z-10">
+<span class="text-[10px] bg-primary text-on-primary px-1.5 py-0.5 rounded shadow-sm whitespace-nowrap font-sans font-bold">00:42 Crescendo</span>
+<div class="w-0.5 h-3 bg-primary"></div>
+</div>
+<div class="absolute -top-3 left-[68%] -translate-x-1/2 flex flex-col items-center group cursor-pointer z-10">
+<span class="text-[10px] bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded shadow-sm whitespace-nowrap font-sans font-bold">01:50 High G4 Sustained</span>
+<div class="w-0.5 h-3 bg-tertiary-fixed"></div>
+</div>
+<!-- Waveform bars simulated with modern flex bars -->
+<div class="h-12 flex items-center gap-[3px] w-full cursor-pointer px-1">
+<!-- Played bars (Primary Teal) -->
+<div class="w-1.5 h-4 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-6 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-8 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-5 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-7 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-10 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-9 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-6 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-8 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-11 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-7 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-10 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-12 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-9 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-5 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-8 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-11 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-12 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-8 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-6 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-9 bg-primary-fixed rounded-full"></div>
+<div class="w-1.5 h-10 bg-primary-fixed rounded-full"></div>
+<!-- Current Playhead -->
+<div class="w-1 h-12 bg-primary shadow-[0_0_10px_#008378] rounded-full mx-0.5"></div>
+<!-- Remaining bars (Muted Slate) -->
+<div class="w-1.5 h-8 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-6 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-10 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-11 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-7 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-5 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-9 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-12 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-10 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-6 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-8 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-7 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-10 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-6 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-4 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-8 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-5 bg-secondary-fixed-dim/40 rounded-full"></div>
+<div class="w-1.5 h-3 bg-secondary-fixed-dim/40 rounded-full"></div>
+</div>
+</div>
+<!-- Controls & Real-Time Pitch Analysis -->
+<div class="flex items-center justify-between pt-1">
+<!-- Play / Skip Buttons -->
+<div class="flex items-center gap-3">
+<button class="text-secondary-fixed-dim hover:text-inverse-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="replay_10">replay_10</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="pause" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button class="text-secondary-fixed-dim hover:text-inverse-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="forward_10">forward_10</span>
+</button>
+<div class="flex items-center gap-1.5 ml-2 text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]" data-icon="volume_up">volume_up</span>
+<div class="w-16 h-1.5 bg-outline/40 rounded-full overflow-hidden">
+<div class="w-4/5 h-full bg-primary-fixed"></div>
+</div>
+</div>
+</div>
+<!-- Real-time vocal metrics -->
+<div class="flex items-center gap-4 text-xs">
+<div class="flex items-center gap-1 text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Pitch: <strong>98.4% On-Key</strong></span>
+</div>
+<div class="flex items-center gap-1 text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[16px]" data-icon="graphic_eq">graphic_eq</span>
+<span>Vibrato: <strong>Stable &amp; Controlled</strong></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Gear & Acoustic Environment Tags -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+<div class="p-3 rounded-lg bg-surface border border-outline-variant/30 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="settings_voice">settings_voice</span>
+<div>
+<span class="text-secondary block">Mic Rig</span>
+<span class="font-semibold text-on-surface">d&amp;b audiotechnik stage setup</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface border border-outline-variant/30 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="spatial_audio_off">spatial_audio_off</span>
+<div>
+<span class="text-secondary block">Acoustic Space</span>
+<span class="font-semibold text-on-surface">Smyrna Hall 1 (RT60: 1.8s)</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface border border-outline-variant/30 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="music_note">music_note</span>
+<div>
+<span class="text-secondary block">Sight Reading Test</span>
+<span class="font-semibold text-on-surface">Grade 5 Vocal Score Passed</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Pastoral & Choral Evaluation Scorecard -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-6 space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Audition Grading</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Pastoral &amp; Choral Evaluation Scorecard</h3>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-secondary">Evaluated by:</span>
+<span class="text-xs font-bold text-on-surface bg-surface-container px-2.5 py-1 rounded-md">Conductor Samuel Ek</span>
+</div>
+</div>
+<!-- Scorecard Grid: 4 Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Metric 1: Pitch & Intonation -->
+<div class="p-4 rounded-xl border border-outline-variant/30 bg-surface-container-low/40 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Pitch &amp; Intonation</span>
+<div class="flex items-center gap-1 text-primary font-bold">
+<span class="text-lg">4.9</span>
+<span class="text-xs text-secondary">/ 5.0</span>
+</div>
+</div>
+<!-- Progress bar -->
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 98%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary italic">
+                  “Flawless pitch stability during octave leaps and sustained crescendo phrases.”
+                </p>
+</div>
+<!-- Metric 2: Vocal Tone & Resonance -->
+<div class="p-4 rounded-xl border border-outline-variant/30 bg-surface-container-low/40 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Vocal Tone &amp; Resonance</span>
+<div class="flex items-center gap-1 text-primary font-bold">
+<span class="text-lg">4.8</span>
+<span class="text-xs text-secondary">/ 5.0</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 96%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary italic">
+                  “Warm, resonant Nordic gospel tenor timbre; cuts clearly above 400 voices without straining.”
+                </p>
+</div>
+<!-- Metric 3: Rhythmic Timing & Soul Phrasing -->
+<div class="p-4 rounded-xl border border-outline-variant/30 bg-surface-container-low/40 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Rhythmic Timing &amp; Soul Phrasing</span>
+<div class="flex items-center gap-1 text-primary font-bold">
+<span class="text-lg">4.7</span>
+<span class="text-xs text-secondary">/ 5.0</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 94%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary italic">
+                  “Natural gospel syncopation and breath cadence; understands contemporary praise dynamics.”
+                </p>
+</div>
+<!-- Metric 4: Spiritual Devotion & Fellowship Alignment -->
+<div class="p-4 rounded-xl border border-outline-variant/30 bg-surface-container-low/40 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Spiritual Devotion &amp; Fellowship</span>
+<div class="flex items-center gap-1 text-primary font-bold">
+<span class="text-lg">5.0</span>
+<span class="text-xs text-secondary">/ 5.0</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary italic">
+                  “Dedicated servant heart; leads weekly intercessory prayer and choir rehearsal devotions.”
+                </p>
+</div>
+</div>
+<!-- Evaluator's Summary Callout -->
+<div class="p-4 rounded-xl bg-surface border-l-4 border-primary flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-[24px] mt-0.5 flex-shrink-0" data-icon="rate_review">rate_review</span>
+<div class="space-y-1">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Conductor’s Executive Recommendation:</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  “Magnus has outstanding vocal projection and humble servant leadership. He is thoroughly prepared to anchor the 65-voice Tenor section at Gustav Adolfs Torg 2027 and mentor younger singers in sectionals.”
+                </p>
+<p class="font-label-sm text-label-sm text-outline pt-1">— Samuel Ek, Chief Choral Director (Göteborgs Lovsångskonsert)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= RIGHT COLUMN (Approx 35% = 4 cols) ================= -->
+<div class="lg:col-span-4 space-y-6">
+<!-- 1. Sectional Rehearsal Slot Assignment -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-6 space-y-5">
+<div class="flex items-center gap-2 border-b border-outline-variant/30 pb-3">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="assignment_ind">assignment_ind</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Rehearsal Slot Assignment</h3>
+</div>
+<!-- Target Mass Choir Selector -->
+<div class="space-y-1.5">
+<label class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Target Gathering</label>
+<select class="w-full bg-surface rounded-lg border border-outline-variant py-2.5 px-3 text-sm text-on-surface font-medium focus:ring-2 focus:ring-primary focus:border-primary">
+<option selected="">Göteborgs Lovsångskonsert 2027 (500 Voices)</option>
+<option>Holy Spirit Worship 2026 (Winter Sanctuary)</option>
+<option>Gothenburg Youth Gospel Festival</option>
+</select>
+</div>
+<!-- Sectional Placement & Capacity -->
+<div class="space-y-2">
+<div class="flex items-center justify-between text-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Section Assignment</span>
+<span class="font-semibold text-primary">Tenor Section 1 (Lead Tenor)</span>
+</div>
+<!-- Capacity bar -->
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/20 space-y-1.5">
+<div class="flex justify-between text-xs font-medium text-on-surface">
+<span>Tenor Section Capacity</span>
+<span class="font-bold text-primary">65 / 75 slots filled (86%)</span>
+</div>
+<div class="w-full bg-outline-variant/30 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 86%;"></div>
+</div>
+<p class="text-[11px] text-secondary">10 slots remaining for guest soloists and youth apprentices.</p>
+</div>
+</div>
+<!-- Rehearsal Schedule Card -->
+<div class="space-y-3 pt-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Assigned Rehearsal Cadence</span>
+<!-- First Full Rehearsal Date Badge Component -->
+<div class="flex items-start gap-3 p-3 bg-surface rounded-xl border border-outline-variant/30">
+<!-- Bespoke Date Badge -->
+<div class="w-12 rounded-md overflow-hidden border border-primary/30 flex-shrink-0 text-center shadow-xs">
+<div class="bg-primary text-on-primary text-[10px] font-bold py-0.5 tracking-wider uppercase">APR</div>
+<div class="bg-surface-container-lowest text-on-surface font-headline-sm text-headline-sm font-bold py-1 leading-none">18</div>
+</div>
+<div class="text-xs space-y-0.5">
+<p class="font-bold text-on-surface">First Full Rehearsal</p>
+<p class="text-secondary">Saturday 18 April 2026 | 10:00–16:00 CET</p>
+<p class="text-primary font-medium">Smyrna Frihamnskyrkan Main Sanctuary</p>
+</div>
+</div>
+<!-- Weekly Sectionals -->
+<div class="p-3 bg-surface rounded-xl border border-outline-variant/30 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_month">calendar_month</span>
+</div>
+<div class="text-xs">
+<p class="font-bold text-on-surface">Tenor Sectionals (Weekly)</p>
+<p class="text-secondary">Rehearsal Hall 2 • Tuesdays 19:00 CET</p>
+</div>
+</div>
+</div>
+<!-- Automated Notifications Checkbox -->
+<div class="pt-2">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-primary focus:ring-primary border-outline-variant h-4 w-4" type="checkbox"/>
+<span class="text-xs text-on-surface leading-tight">
+                  Send automated confirmation &amp; rehearsal sheet music packet via Email &amp; WhatsApp
+                </span>
+</label>
+</div>
+</div>
+<!-- 2. Choral Uniform & Technical Requirements -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-6 space-y-4">
+<div class="flex items-center gap-2 border-b border-outline-variant/30 pb-3">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="checkroom">checkroom</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Uniform &amp; Technical Gear</h3>
+</div>
+<div class="space-y-3 text-xs">
+<!-- Robe Sizing -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface border border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="straighten">straighten</span>
+<div>
+<span class="text-secondary block">Choir Robe / Attire Sizing</span>
+<span class="font-bold text-on-surface">Men's Tall / Large (Nordic Slate Cassock)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-semibold text-primary">In Stock</span>
+</div>
+<!-- Acoustic IEM Gear -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface border border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="headphones">headphones</span>
+<div>
+<span class="text-secondary block">In-Ear Monitor (IEM)</span>
+<span class="font-bold text-on-surface">Shure PSM900 — Ch. 4B</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-[11px] font-semibold text-primary">Assigned</span>
+</div>
+<!-- Dietary & Fika -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface border border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="coffee">coffee</span>
+<div>
+<span class="text-secondary block">Dietary &amp; Fika Preference</span>
+<span class="font-bold text-on-surface">Gluten-free / Oat milk recorded</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+</div>
+<!-- 3. Pastoral Verification & Background Covenant -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm p-6 space-y-4">
+<div class="flex items-center gap-2 border-b border-outline-variant/30 pb-3">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="verified_user">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Pastoral Covenant &amp; Safety</h3>
+</div>
+<div class="space-y-3 text-xs">
+<!-- Letter of recommendation -->
+<div class="p-3 rounded-lg bg-surface-container-low/60 border border-outline-variant/20 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5" data-icon="mark_email_read" style="font-variation-settings: 'FILL' 1;">mark_email_read</span>
+<div>
+<p class="font-bold text-on-surface">Letter of Recommendation</p>
+<p class="text-secondary text-[11px] mt-0.5">Verified by <strong>Pastor Tomas Sjödin</strong> (Smyrna Frihamnskyrkan Elder Council).</p>
+</div>
+</div>
+<!-- Safe Sanctuary Protocol -->
+<div class="p-3 rounded-lg bg-surface-container-low/60 border border-outline-variant/20 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<div>
+<p class="font-bold text-on-surface">Safe Sanctuary Protocol</p>
+<p class="text-secondary text-[11px] mt-0.5">Göteborg Ecumenical Youth Safety clearance signed &amp; background checked (Valid through Nov 2027).</p>
+</div>
+</div>
+</div>
+<!-- Quick Approval Signature Footer inside side card -->
+<div class="pt-2">
+<button class="w-full py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="task_alt">task_alt</span>
+<span>Confirm &amp; Commit Section Slot</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Scripture Meditation Callout & Footer Banner -->
+<div class="max-w-[1400px] w-full mx-auto px-8 pb-8">
+<div class="rounded-xl bg-surface-container-low border-l-4 border-primary p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="space-y-1">
+<p class="font-scripture-quote text-scripture-quote italic text-on-surface">
+            “My heart is steadfast, O God; I will sing and make music with all my soul.”
+          </p>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-outline">
+            PSALM 108:1 — GOTHENBURG MASS CHOIR REPERTOIRE THEME
+          </p>
+</div>
+<div class="flex items-center gap-2 text-xs text-secondary whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="lock">lock</span>
+<span>Ecumenical Safe Sanctuary Verified</span>
+</div>
+</div>
+</div>
+<!-- Web Footer Component (from Shared Components JSON) -->
+<footer class="mt-auto bg-inverse-surface border-t border-outline/20 text-inverse-on-surface">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
+<!-- Col 1: Ministry Info -->
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-inverse-on-surface">GOSPELS</span>
+<span class="px-2 py-0.5 rounded bg-primary/20 text-primary-fixed text-[10px] font-bold">MINISTRY</span>
+</div>
+<p class="text-secondary-fixed-dim leading-relaxed">
+            Uniting Nordic Christian fellowships, vocal stewards, and prayer ministries throughout Gothenburg and Western Sweden.
+          </p>
+<p class="text-[11px] text-outline pt-2">
+            © 2025 GOSPELS Ministry Gothenburg. All rights reserved. Non-profit Christian fellowship.
+          </p>
+</div>
+<!-- Col 2: Navigation Links from JSON -->
+<div>
+<h4 class="font-headline-sm text-[14px] font-bold text-inverse-on-surface mb-3">Partner Choirs</h4>
+<ul class="space-y-2 text-secondary-fixed-dim">
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Partner Churches</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Holy Spirit Worship</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Göteborgs Lovsångskonsert</a></li>
+</ul>
+</div>
+<!-- Col 3: Kingdom Giving from JSON -->
+<div>
+<h4 class="font-headline-sm text-[14px] font-bold text-inverse-on-surface mb-3">Stewardship</h4>
+<ul class="space-y-2 text-secondary-fixed-dim">
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Kingdom Giving</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Swish Support: 123 456 78 90</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#">Privacy &amp; WhatsApp Care</a></li>
+</ul>
+</div>
+<!-- Col 4: Quick Swedish Ministry Contact -->
+<div>
+<h4 class="font-headline-sm text-[14px] font-bold text-inverse-on-surface mb-3">Gothenburg Hub</h4>
+<p class="text-secondary-fixed-dim mb-2 leading-relaxed">
+            Frihamnsdagarna 12, 417 55 Göteborg, Sverige. Connected with Svenska Alliansmissionen &amp; Frikyrkorna.
+          </p>
+<div class="inline-flex items-center gap-1.5 text-primary-fixed font-semibold">
+<span class="material-symbols-outlined text-[16px]" data-icon="forum">forum</span>
+<span>Direct Vocal Coordinator WhatsApp</span>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

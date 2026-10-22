@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS Design System v1.0 — Gothenburg Ministry Hub</title>
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#89f5e7",
+            "surface-dim": "#cbdbf5",
+            "on-tertiary-fixed": "#00201c",
+            "primary-fixed-dim": "#6bd8cb",
+            "inverse-on-surface": "#eaf1ff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-bright": "#f8f9ff",
+            "on-tertiary-fixed-variant": "#005048",
+            "inverse-surface": "#213145",
+            "on-secondary-fixed": "#131b2e",
+            "on-primary-fixed": "#00201d",
+            "surface-container-highest": "#d3e4fe",
+            "on-primary-container": "#f4fffc",
+            "on-secondary-container": "#5c647a",
+            "on-primary": "#ffffff",
+            "surface-container": "#e5eeff",
+            "outline": "#6d7a77",
+            "outline-variant": "#bcc9c6",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#dce9ff",
+            "surface-tint": "#006a61",
+            "on-primary-fixed-variant": "#005049",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#3d4947",
+            "inverse-primary": "#6bd8cb",
+            "error": "#ba1a1a",
+            "tertiary-container": "#008376",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-container-low": "#eff4ff",
+            "on-surface": "#0b1c30",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "on-background": "#0b1c30",
+            "surface-variant": "#d3e4fe",
+            "surface": "#f8f9ff",
+            "tertiary-fixed": "#71f8e4",
+            "secondary-container": "#dae2fd",
+            "primary-container": "#008378",
+            "primary": "#00685f",
+            "secondary-fixed": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#f4fffb",
+            "tertiary": "#00685d",
+            "on-secondary": "#ffffff",
+            "secondary": "#565e74",
+            "background": "#f8f9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "4rem",
+            "space-xl": "2.5rem",
+            "margin": "3rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .shadow-ambient-sm {
+      box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(13, 148, 136, 0.03);
+    }
+    .shadow-ambient-md {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(13, 148, 136, 0.04);
+    }
+    .shadow-ambient-lg {
+      box-shadow: 0 16px 32px -6px rgba(15, 23, 42, 0.10), 0 4px 12px -2px rgba(13, 148, 136, 0.06);
+    }
+    .shadow-ambient-xl {
+      box-shadow: 0 24px 48px -10px rgba(15, 23, 42, 0.16), 0 6px 18px -3px rgba(13, 148, 136, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-[#F9FAFB] text-on-surface antialiased min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TOP APP BAR (Shared Components JSON Anchor: TopNavBar) -->
+<header class="docked full-width top-0 sticky z-50 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+<!-- Brand Logo -->
+<div class="flex items-center gap-4">
+<a class="font-headline-md text-headline-md tracking-tight font-bold text-on-surface flex items-center gap-2.5 active:scale-95 transition-transform duration-150" href="#">
+<div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-ambient-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="music_note">music_note</span>
+</div>
+<span>GOSPELS</span>
+</a>
+<div class="hidden lg:flex items-center gap-2 pl-3 border-l border-outline-variant/40">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold tracking-wide bg-surface-container text-secondary">DS v1.0</span>
+<span class="font-label-md text-label-md text-secondary">Gothenburg Ministry Hub</span>
+</div>
+</div>
+<!-- Navigation Links (Exact from JSON) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary hover:text-on-surface font-medium transition-colors hover:text-primary active:scale-95 transition-transform duration-150" href="#">Events</a>
+<a class="text-secondary hover:text-on-surface font-medium transition-colors hover:text-primary active:scale-95 transition-transform duration-150" href="#">Watch &amp; Listen</a>
+<a class="text-secondary hover:text-on-surface font-medium transition-colors hover:text-primary active:scale-95 transition-transform duration-150" href="#">Churches</a>
+<a class="text-secondary hover:text-on-surface font-medium transition-colors hover:text-primary active:scale-95 transition-transform duration-150" href="#">Need Prayer?</a>
+<a class="text-secondary hover:text-on-surface font-medium transition-colors hover:text-primary active:scale-95 transition-transform duration-150" href="#">Support</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-3">
+<button class="bg-primary text-on-primary font-semibold text-label-md px-5 py-2.5 rounded-lg hover:bg-tertiary-container shadow-ambient-sm active:scale-95 transition-all flex items-center gap-2">
+<span>Next Event</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS (1440px Desktop Container Spec) -->
+<main class="max-w-[1440px] mx-auto px-6 md:px-12 py-12 space-y-16">
+<!-- SHEET HERO / DOCUMENT HEADER -->
+<section class="bg-surface-container-lowest rounded-xl p-8 md:p-12 border border-outline-variant/30 shadow-ambient-md relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-12 -translate-y-12 w-96 h-96 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl space-y-4">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-full text-label-sm uppercase tracking-wider bg-primary/10 text-primary font-bold">Comprehensive Specification</span>
+<span class="font-body-sm text-body-sm text-secondary">Target Resolution: 1440px Architecture</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">
+          GOSPELS Design System v1.0
+        </h1>
+<p class="font-body-lg text-body-lg text-secondary">
+          A contemporary Scandinavian worship aesthetic: warm, sacred, light-filled, and quietly architectural. Rooted in Gothenburg's gospel music community, fusing modern Nordic restraint with deep spiritual joy, warmth, and accessibility.
+        </p>
+<div class="pt-2 flex flex-wrap items-center gap-6 text-label-md text-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="palette">palette</span>
+<span>Palette: Tech Turquoise &amp; Warm Charcoal</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="text_fields">text_fields</span>
+<span>Type: Plus Jakarta Sans + EB Garamond</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="church">church</span>
+<span>Context: Gothenburg, Sweden</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 1: COLOR PALETTE -->
+<section class="space-y-6">
+<div class="flex items-end justify-between border-b border-outline-variant/30 pb-4">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary">Foundational Tokens</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Color Palette Architecture</h2>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Light Mode Contrast Ratio: WCAG 2.1 AAA Compliant</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Tech Turquoise Swatches -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-ambient-sm space-y-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded-full bg-[#14B8A6]"></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Tech Turquoise Palette</h3>
+</div>
+<span class="font-label-md text-label-md text-secondary">Sacred Energy &amp; Primary Flow</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+<!-- 50 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#F0FDFA] flex items-end p-2 border-b border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-[#0F766E] font-bold">50</span>
+</div>
+<div class="p-2.5 bg-surface-container-lowest space-y-1">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold">Tint Light</p>
+<p class="font-body-sm text-body-sm text-secondary">#F0FDFA</p>
+</div>
+</div>
+<!-- 100 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#CCFBF1] flex items-end p-2 border-b border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-[#0F766E] font-bold">100</span>
+</div>
+<div class="p-2.5 bg-surface-container-lowest space-y-1">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold">Subtle</p>
+<p class="font-body-sm text-body-sm text-secondary">#CCFBF1</p>
+</div>
+</div>
+<!-- 500 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#14B8A6] flex items-end p-2">
+<span class="font-label-sm text-label-sm text-white font-bold">500</span>
+</div>
+<div class="p-2.5 bg-surface-container-lowest space-y-1">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold">Vibrant</p>
+<p class="font-body-sm text-body-sm text-secondary">#14B8A6</p>
+</div>
+</div>
+<!-- 600 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 ring-2 ring-primary ring-offset-2 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#0D9488] flex items-end p-2">
+<span class="font-label-sm text-label-sm text-white font-bold">600 (Primary)</span>
+</div>
+<div class="p-2.5 bg-surface-container-lowest space-y-1">
+<p class="font-label-sm text-label-sm text-primary font-bold">Core Brand</p>
+<p class="font-body-sm text-body-sm text-secondary">#0D9488</p>
+</div>
+</div>
+<!-- 700 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#0F766E] flex items-end p-2">
+<span class="font-label-sm text-label-sm text-white font-bold">700</span>
+</div>
+<div class="p-2.5 bg-surface-container-lowest space-y-1">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold">Deep Hover</p>
+<p class="font-body-sm text-body-sm text-secondary">#0F766E</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Warm Charcoal & Grey Swatches -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-ambient-sm space-y-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded-full bg-[#0F172A]"></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Warm Charcoal &amp; Grey</h3>
+</div>
+<span class="font-label-md text-label-md text-secondary">Nordic Cathedral Neutrals</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-6 gap-3">
+<!-- 50 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#F9FAFB] flex items-end p-2 border-b border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">50</span>
+</div>
+<div class="p-2 bg-surface-container-lowest space-y-0.5">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Canvas</p>
+<p class="font-body-sm text-body-sm text-secondary text-[12px]">#F9FAFB</p>
+</div>
+</div>
+<!-- 100 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#F3F4F6] flex items-end p-2 border-b border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">100</span>
+</div>
+<div class="p-2 bg-surface-container-lowest space-y-0.5">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Parchment</p>
+<p class="font-body-sm text-body-sm text-secondary text-[12px]">#F3F4F6</p>
+</div>
+</div>
+<!-- 200 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#E5E7EB] flex items-end p-2">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">200</span>
+</div>
+<div class="p-2 bg-surface-container-lowest space-y-0.5">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Borders</p>
+<p class="font-body-sm text-body-sm text-secondary text-[12px]">#E5E7EB</p>
+</div>
+</div>
+<!-- 400 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#9CA3AF] flex items-end p-2">
+<span class="font-label-sm text-label-sm text-white font-bold">400</span>
+</div>
+<div class="p-2 bg-surface-container-lowest space-y-0.5">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Muted</p>
+<p class="font-body-sm text-body-sm text-secondary text-[12px]">#9CA3AF</p>
+</div>
+</div>
+<!-- 600 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#4B5563] flex items-end p-2">
+<span class="font-label-sm text-label-sm text-white font-bold">600</span>
+</div>
+<div class="p-2 bg-surface-container-lowest space-y-0.5">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Secondary</p>
+<p class="font-body-sm text-body-sm text-secondary text-[12px]">#4B5563</p>
+</div>
+</div>
+<!-- 900 -->
+<div class="group flex flex-col rounded-lg overflow-hidden border border-outline-variant/20 ring-2 ring-inverse-surface ring-offset-2 transition-all hover:scale-[1.02]">
+<div class="h-20 bg-[#0F172A] flex items-end p-2">
+<span class="font-label-sm text-label-sm text-white font-bold">900</span>
+</div>
+<div class="p-2 bg-surface-container-lowest space-y-0.5">
+<p class="font-label-sm text-label-sm text-on-surface font-bold truncate">Charcoal</p>
+<p class="font-body-sm text-body-sm text-secondary text-[12px]">#0F172A</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: TYPOGRAPHY SCALE -->
+<section class="space-y-6">
+<div class="flex items-end justify-between border-b border-outline-variant/30 pb-4">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary">Hierarchical Pacing</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Typography Scale</h2>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Plus Jakarta Sans &amp; EB Garamond</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Scale Table (8 Cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-ambient-sm divide-y divide-outline-variant/20 overflow-hidden">
+<!-- Display -->
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="w-48 shrink-0">
+<span class="font-label-md text-label-md text-primary block">Display Large</span>
+<span class="font-body-sm text-body-sm text-secondary">56px · LH 64px · -0.03em</span>
+</div>
+<div class="grow font-display-lg text-display-lg text-on-surface font-bold tracking-tight">
+              Worship Göteborg
+            </div>
+</div>
+<!-- H1 -->
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="w-48 shrink-0">
+<span class="font-label-md text-label-md text-primary block">Heading 1 (Headline-lg)</span>
+<span class="font-body-sm text-body-sm text-secondary">36px · LH 44px · -0.02em</span>
+</div>
+<div class="grow font-headline-lg text-headline-lg text-on-surface font-semibold">
+              Sacred Choral Resonances
+            </div>
+</div>
+<!-- H2 -->
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="w-48 shrink-0">
+<span class="font-label-md text-label-md text-primary block">Heading 2 (Headline-md)</span>
+<span class="font-body-sm text-body-sm text-secondary">24px · LH 32px · -0.01em</span>
+</div>
+<div class="grow font-headline-md text-headline-md text-on-surface font-semibold">
+              Gothenburg Gospel Fellowship Gathering
+            </div>
+</div>
+<!-- H3 / H4 -->
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="w-48 shrink-0">
+<span class="font-label-md text-label-md text-primary block">Heading 3 (Headline-sm)</span>
+<span class="font-body-sm text-body-sm text-secondary">20px · LH 28px · Normal</span>
+</div>
+<div class="grow font-headline-sm text-headline-sm text-on-surface font-semibold">
+              Live Recordings &amp; Acoustic Worship Sessions
+            </div>
+</div>
+<!-- Body Large -->
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="w-48 shrink-0">
+<span class="font-label-md text-label-md text-primary block">Body Large</span>
+<span class="font-body-sm text-body-sm text-secondary">18px · LH 28px · Regular</span>
+</div>
+<div class="grow font-body-lg text-body-lg text-on-surface">
+              Uniting regional choir voices across West Sweden in prayerful harmony and praise.
+            </div>
+</div>
+<!-- Body Standard -->
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="w-48 shrink-0">
+<span class="font-label-md text-label-md text-primary block">Body Medium</span>
+<span class="font-body-sm text-body-sm text-secondary">16px · LH 24px · Regular</span>
+</div>
+<div class="grow font-body-md text-body-md text-secondary">
+              High-key light-filled surfaces contrast deliberately with profound charcoal sanctuaries for focused music playback and reflective scripture intake.
+            </div>
+</div>
+<!-- Body Small -->
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="w-48 shrink-0">
+<span class="font-label-md text-label-md text-primary block">Body Small</span>
+<span class="font-body-sm text-body-sm text-secondary">14px · LH 20px · Regular</span>
+</div>
+<div class="grow font-body-sm text-body-sm text-secondary">
+              Registrations for the winter choir academy close Friday at 18:00 CET.
+            </div>
+</div>
+<!-- Overline / Label SM -->
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="w-48 shrink-0">
+<span class="font-label-md text-label-md text-primary block">Overline (Label-sm)</span>
+<span class="font-body-sm text-body-sm text-secondary">11px · LH 14px · 0.08em</span>
+</div>
+<div class="grow font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">
+              UPCOMING REHEARSAL &amp; CONCERT CYCLE
+            </div>
+</div>
+</div>
+<!-- Scripture Accent Feature Card (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col justify-between bg-surface-container-low p-8 rounded-xl border border-outline-variant/30 shadow-ambient-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 text-primary-fixed-dim/20 pointer-events-none">
+<span class="material-symbols-outlined text-[160px]" data-icon="format_quote">format_quote</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-primary font-bold font-label-sm text-label-sm tracking-widest uppercase">
+<span class="material-symbols-outlined text-[16px]" data-icon="menu_book">menu_book</span>
+<span>Scripture Accent Type</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+              Set in the sacred serifs of <span class="font-semibold text-on-surface">EB Garamond</span>, providing reflective contemplation against the modern geometric rhythm of Plus Jakarta Sans.
+            </p>
+</div>
+<!-- Scripture Meditation Block (Style Guidance Rule) -->
+<div class="my-6 border-l-[3px] border-primary bg-surface-container-lowest p-6 rounded-r-lg shadow-ambient-sm space-y-3">
+<p class="font-scripture-quote text-scripture-quote italic text-[#111827] leading-relaxed">
+              "The Lord is near to all who call on him — Psalm 145:18"
+            </p>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-[#64748B]">PSALM 145:18 (ESV)</span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="folded_hands">folded_hands</span>
+</div>
+</div>
+<div class="space-y-2 pt-2">
+<span class="font-label-sm text-label-sm text-secondary block uppercase">Design Rule:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Exclusively dedicated to biblical scriptures, reflective devotionals, and pastoral blessings. Always paired with clean uppercase citation metadata.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: SPACING, RADIUS & ELEVATION MATRIX -->
+<section class="space-y-6">
+<div class="flex items-end justify-between border-b border-outline-variant/30 pb-4">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary">Spatial Grammar</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Spacing, Radius &amp; Elevation</h2>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Physical Presence &amp; Depth</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Spacing Scale -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-ambient-sm space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Spacing Scale</h3>
+<span class="font-label-sm text-label-sm text-primary font-bold">8-POINT GRID</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Visual dimension indicators calibrated to Scandinavian air and breathability.
+          </p>
+<div class="space-y-3 pt-2">
+<!-- 4px -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary w-12 shrink-0">4px</span>
+<div class="h-4 bg-[#14B8A6] rounded" style="width: 4px;"></div>
+<span class="font-body-sm text-body-sm text-outline-variant text-[12px]">space-xs</span>
+</div>
+<!-- 8px -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary w-12 shrink-0">8px</span>
+<div class="h-4 bg-[#14B8A6] rounded" style="width: 8px;"></div>
+<span class="font-body-sm text-body-sm text-outline-variant text-[12px]">space-sm</span>
+</div>
+<!-- 16px -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary w-12 shrink-0">16px</span>
+<div class="h-4 bg-[#14B8A6] rounded" style="width: 16px;"></div>
+<span class="font-body-sm text-body-sm text-outline-variant text-[12px]">space-md</span>
+</div>
+<!-- 24px -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary w-12 shrink-0">24px</span>
+<div class="h-4 bg-[#14B8A6] rounded" style="width: 24px;"></div>
+<span class="font-body-sm text-body-sm text-outline-variant text-[12px]">space-lg (Card Pad)</span>
+</div>
+<!-- 32px -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary w-12 shrink-0">32px</span>
+<div class="h-4 bg-[#14B8A6] rounded" style="width: 32px;"></div>
+<span class="font-body-sm text-body-sm text-outline-variant text-[12px]">2rem</span>
+</div>
+<!-- 48px -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary w-12 shrink-0">48px</span>
+<div class="h-4 bg-[#14B8A6] rounded" style="width: 48px;"></div>
+<span class="font-body-sm text-body-sm text-outline-variant text-[12px]">space-xl</span>
+</div>
+<!-- 64px -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary w-12 shrink-0">64px</span>
+<div class="h-4 bg-[#14B8A6] rounded" style="width: 64px;"></div>
+<span class="font-body-sm text-body-sm text-outline-variant text-[12px]">space-2xl</span>
+</div>
+<!-- 96px -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary w-12 shrink-0">96px</span>
+<div class="h-4 bg-[#14B8A6] rounded" style="width: 96px;"></div>
+<span class="font-body-sm text-body-sm text-outline-variant text-[12px]">6rem</span>
+</div>
+<!-- 128px -->
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary w-12 shrink-0">128px</span>
+<div class="h-4 bg-[#14B8A6] rounded" style="width: 128px;"></div>
+<span class="font-body-sm text-body-sm text-outline-variant text-[12px]">8rem</span>
+</div>
+</div>
+</div>
+<!-- Border Radius Scale -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-ambient-sm space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Border Radius Scale</h3>
+<span class="font-label-sm text-label-sm text-primary font-bold">4 STYLES</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Disciplined curvature preserving architectural structure.
+          </p>
+<div class="grid grid-cols-2 gap-4 pt-2">
+<!-- 6px (sm) -->
+<div class="p-4 bg-surface-container-low border border-outline-variant/30 rounded-[6px] flex flex-col justify-between h-32">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">6px (sm)</span>
+<p class="font-body-sm text-body-sm text-secondary">Date badges, badges, inner chips</p>
+</div>
+<!-- 12px (md/card default) -->
+<div class="p-4 bg-surface-container-low border border-outline-variant/30 rounded-xl flex flex-col justify-between h-32 ring-2 ring-primary">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">12px (md)</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold">Card default specification</p>
+</div>
+<!-- 20px (lg) -->
+<div class="p-4 bg-surface-container-low border border-outline-variant/30 rounded-[20px] flex flex-col justify-between h-32">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">20px (lg)</span>
+<p class="font-body-sm text-body-sm text-secondary">Hero blocks, modals, sheets</p>
+</div>
+<!-- Full Pill -->
+<div class="p-4 bg-surface-container-low border border-outline-variant/30 rounded-full flex flex-col items-center justify-center text-center h-32">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Full Pill</span>
+<p class="font-body-sm text-body-sm text-secondary">Tags &amp; Filter chips</p>
+</div>
+</div>
+</div>
+<!-- Elevation & Shadow Hierarchy -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-ambient-sm space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Shadow Hierarchy</h3>
+<span class="font-label-sm text-label-sm text-primary font-bold">COOL CYAN TINT</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Ambient tinted diffusion avoids murky black shadows.
+          </p>
+<div class="space-y-3 pt-1">
+<!-- Flat -->
+<div class="p-3.5 bg-surface-container-low border border-[#E2E8F0] rounded-xl flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Level 0: Flat</span>
+<span class="font-body-sm text-body-sm text-secondary">No shadow · 1px solid #E2E8F0</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary bg-surface-container px-2 py-1 rounded">0px</span>
+</div>
+<!-- Low -->
+<div class="p-3.5 bg-surface-container-lowest border border-outline-variant/20 rounded-xl shadow-ambient-sm flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Level 1: Low Ambient</span>
+<span class="font-body-sm text-body-sm text-secondary">0 4px 14px -2px (Slate/Cyan)</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary bg-primary-fixed/20 px-2 py-1 rounded">4px</span>
+</div>
+<!-- Medium -->
+<div class="p-3.5 bg-surface-container-lowest border border-outline-variant/20 rounded-xl shadow-ambient-md flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Level 2: Medium (Default)</span>
+<span class="font-body-sm text-body-sm text-secondary">0 8px 24px -4px (Cards)</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary bg-primary-fixed/30 px-2 py-1 rounded font-bold">8px</span>
+</div>
+<!-- High -->
+<div class="p-3.5 bg-surface-container-lowest border border-outline-variant/20 rounded-xl shadow-ambient-xl flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Level 3: High Modal</span>
+<span class="font-body-sm text-body-sm text-secondary">0 24px 48px -10px (Players)</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary bg-primary-fixed px-2 py-1 rounded font-bold text-on-primary-fixed">24px</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: COMPONENT LIBRARY SHOWCASE (BENTO COMPOSITION) -->
+<section class="space-y-6">
+<div class="flex items-end justify-between border-b border-outline-variant/30 pb-4">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary">Interactive Manifest</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Component Library Showcase</h2>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Live States &amp; Ministry Patterns</span>
+</div>
+<!-- Bento Grid of Components -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- BENTO CELL 1: BUTTON STATES & VARIANTS (8 Cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-ambient-sm space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-primary uppercase font-bold tracking-wider">Primitives</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Button Systems &amp; Action States</h3>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">600 Weight · 8px Radius</span>
+</div>
+<!-- Buttons Matrix Grid -->
+<div class="space-y-6">
+<!-- Primary Turquoise -->
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant/20 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Primary Turquoise (#14B8A6 / #0D9488)</span>
+<span class="font-label-sm text-label-sm text-secondary">Main conversions &amp; worship actions</span>
+</div>
+<div class="flex flex-wrap items-center gap-4">
+<button class="bg-[#14B8A6] text-white font-semibold text-label-md px-5 py-2.5 rounded-lg hover:bg-[#0D9488] shadow-ambient-sm active:scale-95 transition-all">
+                  Default State
+                </button>
+<button class="bg-[#0D9488] text-white font-semibold text-label-md px-5 py-2.5 rounded-lg ring-4 ring-[#14B8A6]/20 shadow-ambient-md active:scale-95 transition-all">
+                  Hover State
+                </button>
+<button class="bg-[#0F766E] text-white font-semibold text-label-md px-5 py-2.5 rounded-lg ring-2 ring-primary ring-offset-2 active:scale-95 transition-all">
+                  Focused State
+                </button>
+<button class="bg-[#14B8A6]/40 text-white/70 font-semibold text-label-md px-5 py-2.5 rounded-lg cursor-not-allowed" disabled="">
+                  Disabled
+                </button>
+</div>
+</div>
+<!-- Secondary Outline -->
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant/20 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Secondary Outline</span>
+<span class="font-label-sm text-label-sm text-secondary">#14B8A6 border with white background</span>
+</div>
+<div class="flex flex-wrap items-center gap-4">
+<button class="bg-surface-container-lowest border-[1.5px] border-[#14B8A6] text-[#0F172A] font-semibold text-label-md px-5 py-2 rounded-lg hover:bg-[#F0FDFA] shadow-ambient-sm active:scale-95 transition-all">
+                  Outline Default
+                </button>
+<button class="bg-[#F0FDFA] border-[1.5px] border-[#0D9488] text-primary font-semibold text-label-md px-5 py-2 rounded-lg ring-4 ring-[#14B8A6]/10 active:scale-95 transition-all">
+                  Outline Hover
+                </button>
+<button class="bg-white border-[1.5px] border-[#0F766E] text-[#0F172A] font-semibold text-label-md px-5 py-2 rounded-lg ring-2 ring-primary ring-offset-2 active:scale-95 transition-all">
+                  Outline Focus
+                </button>
+</div>
+</div>
+<!-- Ghost & Dark Charcoal -->
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant/20 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Ghost &amp; Deep Charcoal Sanctuaries</span>
+<span class="font-label-sm text-label-sm text-secondary">Tertiary &amp; High-contrast evening panels</span>
+</div>
+<div class="flex flex-wrap items-center gap-4">
+<button class="bg-transparent text-secondary hover:text-on-surface hover:bg-surface-container font-semibold text-label-md px-4 py-2.5 rounded-lg active:scale-95 transition-all">
+                  Ghost Action
+                </button>
+<button class="bg-[#0F172A] text-white font-semibold text-label-md px-5 py-2.5 rounded-lg hover:bg-[#1E293B] shadow-ambient-md active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="headphones">headphones</span>
+<span>Charcoal Sanctuary</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-ambient-md hover:bg-tertiary-container active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- BENTO CELL 2: BESPOKE DATE BADGE & EVENT MINI-CARD (4 Cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-ambient-sm space-y-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm text-primary uppercase font-bold tracking-wider">Sacred Component</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#CCFBF1] text-[#0F766E]">Bespoke Spec</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Bespoke Date Badge</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+              Two-tier vertical badge positioned for choir rehearsals, worship nights, and Gothenburg concerts.
+            </p>
+</div>
+<!-- Standalone Badge Demo -->
+<div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/20 flex items-center justify-around">
+<div class="text-center space-y-2">
+<!-- Bespoke Date Badge Execution -->
+<div class="w-16 rounded-[6px] overflow-hidden border border-primary/20 shadow-ambient-sm">
+<div class="bg-[#0D9488] text-white py-1 px-2 text-center font-label-sm text-label-sm uppercase font-bold tracking-wider">
+                  MAR
+                </div>
+<div class="bg-[#F8FAFC] py-2 px-2 text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-[#0F172A] leading-none block">28</span>
+<span class="font-label-sm text-[10px] text-secondary uppercase font-semibold">2026</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary block">Active Token</span>
+</div>
+<div class="text-center space-y-2">
+<div class="w-16 rounded-[6px] overflow-hidden border border-primary/20 opacity-60">
+<div class="bg-[#0F766E] text-white py-1 px-2 text-center font-label-sm text-label-sm uppercase font-bold tracking-wider">
+                  APR
+                </div>
+<div class="bg-[#F8FAFC] py-2 px-2 text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-[#0F172A] leading-none block">04</span>
+<span class="font-label-sm text-[10px] text-secondary uppercase font-semibold">2026</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary block">Subtle State</span>
+</div>
+</div>
+<!-- Live Mini Event Card Spec -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] p-5 shadow-ambient-md space-y-4 relative">
+<div class="flex items-start gap-4">
+<!-- Badge in situ -->
+<div class="w-16 shrink-0 rounded-[6px] overflow-hidden border border-primary/20 shadow-ambient-sm">
+<div class="bg-[#0D9488] text-white py-1 px-1.5 text-center font-label-sm text-label-sm uppercase font-bold tracking-wider">
+                  MAR
+                </div>
+<div class="bg-[#F8FAFC] py-1.5 px-1 text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-[#0F172A] leading-none block">28</span>
+</div>
+</div>
+<!-- Event Details -->
+<div class="space-y-1 grow">
+<span class="inline-block text-[11px] font-bold text-primary uppercase tracking-wide">Worship Night</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Göteborg Lovsångskonsert</h4>
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-body-sm pt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="pin_drop">pin_drop</span>
+<span>Smyrna Church, Frihamnen</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-secondary">19:00 CET · Free Entry</span>
+<button class="bg-[#14B8A6] text-white font-semibold text-label-sm px-4 py-1.5 rounded-lg hover:bg-[#0D9488] active:scale-95 transition-all">
+                Reserve Seat
+              </button>
+</div>
+</div>
+</div>
+<!-- BENTO CELL 3: FORM INPUT CONTROLS & TOGGLE (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-ambient-sm space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-primary uppercase font-bold tracking-wider">Interaction Primitives</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Form Inputs &amp; Ministry Controls</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">3px Ring Focus States</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Text Field -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold block">Full Name</label>
+<input class="w-full bg-white border border-[#CBD5E1] rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-3 focus:ring-[#14B8A6]/20 transition-all placeholder:text-[#94A3B8]" type="text" value="Elin Lindqvist"/>
+<p class="font-body-sm text-body-sm text-secondary text-[12px]">Worship choir registrar</p>
+</div>
+<!-- Email Field -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold block">Email Address</label>
+<input class="w-full bg-white border border-[#CBD5E1] rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-3 focus:ring-[#14B8A6]/20 transition-all placeholder:text-[#94A3B8]" placeholder="elin.lindqvist@gospel.se" type="email"/>
+<p class="font-body-sm text-body-sm text-secondary text-[12px]">For choir schedule distribution</p>
+</div>
+<!-- Select Dropdown -->
+<div class="space-y-1.5 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold block">Ministry Category / Voice Section</label>
+<div class="relative">
+<select class="w-full bg-white border border-[#CBD5E1] rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-3 focus:ring-[#14B8A6]/20 transition-all appearance-none pr-10">
+<option selected="">Soprano — West Sweden Youth Choir</option>
+<option>Alto — Holy Spirit Worship Ensemble</option>
+<option>Tenor — Gothenburg Community Gospel Choir</option>
+<option>Musician / Band — Piano &amp; Hammond</option>
+<option>Volunteer — Hospitality &amp; Technical</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-secondary pointer-events-none" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+<!-- Textarea -->
+<div class="space-y-1.5 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold block">Meditation or Prayer Intention</label>
+<textarea class="w-full bg-white border border-[#CBD5E1] rounded-lg p-3 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-3 focus:ring-[#14B8A6]/20 transition-all placeholder:text-[#94A3B8]" placeholder="Share your prayer petition or musical background..." rows="3"></textarea>
+</div>
+<!-- Custom Toggle Switch with Helper Text -->
+<div class="md:col-span-2 p-4 bg-surface-container-low rounded-lg border border-outline-variant/20 flex items-center justify-between">
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold block">WhatsApp Care Network</span>
+<p class="font-body-sm text-body-sm text-secondary">Receive weekly prayer team notifications and fellowship updates via Swish/WhatsApp.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-[#CBD5E1] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- BENTO CELL 4: PRAYER FORM CARD PREVIEW & CHIPS (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-ambient-sm space-y-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm text-primary uppercase font-bold tracking-wider">Pastoral Feature</span>
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="favorite">favorite</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Prayer Form Card Preview</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+              Dedicated spiritual portal allowing congregants and visitors to submit anonymous or team petitions.
+            </p>
+</div>
+<!-- Category Chips Filter -->
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold block">Ministry Filter Chips:</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full text-label-sm bg-[#14B8A6] text-white font-semibold cursor-pointer shadow-ambient-sm">
+                Worship Night
+              </span>
+<span class="px-3 py-1 rounded-full text-label-sm bg-[#F1F5F9] text-[#4B5563] hover:bg-[#E2E8F0] font-medium cursor-pointer transition-colors">
+                Youth Choir
+              </span>
+<span class="px-3 py-1 rounded-full text-label-sm bg-[#F1F5F9] text-[#4B5563] hover:bg-[#E2E8F0] font-medium cursor-pointer transition-colors">
+                Concert
+              </span>
+<span class="px-3 py-1 rounded-full text-label-sm bg-[#F1F5F9] text-[#4B5563] hover:bg-[#E2E8F0] font-medium cursor-pointer transition-colors">
+                Workshop
+              </span>
+</div>
+</div>
+<!-- The Compact Prayer Card Mockup -->
+<div class="bg-surface-container-low rounded-xl p-5 border border-outline-variant/20 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="folded_hands">folded_hands</span>
+</div>
+<div>
+<h5 class="font-headline-sm text-[16px] text-on-surface font-semibold leading-tight">Need Urgent Prayer?</h5>
+<span class="font-body-sm text-[12px] text-secondary">Confidential intercession by pastoral elders</span>
+</div>
+</div>
+<div class="space-y-2">
+<input class="w-full bg-white border border-[#CBD5E1] rounded-lg px-3 py-2 text-body-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Your first name (optional)" type="text"/>
+<textarea class="w-full bg-white border border-[#CBD5E1] rounded-lg p-2.5 text-body-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none" placeholder="How may our church family lift you up today?" rows="2"></textarea>
+</div>
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-secondary text-[12px]">Keep anonymous</span>
+</label>
+<button class="bg-primary text-on-primary font-semibold text-label-sm px-4 py-2 rounded-lg hover:bg-tertiary-container active:scale-95 transition-all flex items-center gap-1.5">
+<span>Submit</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="send">send</span>
+</button>
+</div>
+</div>
+<div class="text-[12px] text-secondary text-center pt-1">
+            Encrypted with Ministry Care standard SSL · Gothenburg Hub
+          </div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: DEEP CHARCOAL AUDIO SANCTUARY (Contrast Layer Spec) -->
+<section class="bg-[#0F172A] rounded-2xl p-8 md:p-12 border border-white/10 text-white relative overflow-hidden shadow-ambient-xl space-y-8">
+<div class="absolute -right-16 -top-16 w-80 h-80 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6 relative z-10">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary-fixed font-bold">Contrast Architecture</span>
+<h2 class="font-headline-lg text-headline-lg text-white">Deep Charcoal Sanctuary Layers</h2>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mt-1 max-w-2xl">
+            Within nighttime surfaces (#0F172A), elevation is achieved through tonal stacking rather than heavy shadows: inner cards use #1E293B, paired with delicate interior borders.
+          </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary-fixed">Atmospheric Live Acoustic</span>
+</div>
+</div>
+<!-- Live Player Simulation Component inside Deep Charcoal -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+<!-- Track 1 Card -->
+<div class="bg-[#1E293B] p-5 rounded-xl border border-white/10 space-y-4 hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-white/10 text-primary-fixed">Live Album</span>
+<span class="material-symbols-outlined text-white/50 text-[18px]" data-icon="graphic_eq">graphic_eq</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-white font-semibold">Stilla Natt över Skagerrak</h4>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim mt-0.5">Gothenburg Gospel Choir &amp; Symphony</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-white/10">
+<span class="font-label-sm text-label-sm text-white/60">05:42 · Recorded at Haga</span>
+<button class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Track 2 Card (Active State) -->
+<div class="bg-[#1E293B] p-5 rounded-xl border-2 border-primary space-y-4 relative shadow-ambient-lg">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-primary text-white">Now Playing</span>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" data-icon="volume_up">volume_up</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-white font-semibold">Din Trofasthet (Great Is Thy Faithfulness)</h4>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mt-0.5">Live from Smyrna Lovsångskväll</p>
+</div>
+<!-- Progress Bar -->
+<div class="space-y-1">
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 64%;"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-white/50 font-body-sm">
+<span>03:12</span>
+<span>05:04</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-white/10">
+<button class="text-white/70 hover:text-white text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="lyrics">lyrics</span>
+<span>Chords &amp; Swedish Lyrics</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-white text-[#0F172A] flex items-center justify-center hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="pause">pause</span>
+</button>
+</div>
+</div>
+<!-- Track 3 Card -->
+<div class="bg-[#1E293B] p-5 rounded-xl border border-white/10 space-y-4 hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-white/10 text-primary-fixed">Devotional</span>
+<span class="material-symbols-outlined text-white/50 text-[18px]" data-icon="podcasts">podcasts</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-white font-semibold">West Coast Ministry Ep. 14</h4>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim mt-0.5">Pastor Henrik on Gothenburg Awakening</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-white/10">
+<span class="font-label-sm text-label-sm text-white/60">24:18 · Pastoral Care</span>
+<button class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (Shared Components JSON Anchor: Footer) -->
+<footer class="docked full-width bottom bg-inverse-surface border-t border-outline/20 text-inverse-on-surface">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Brand & Mission Column -->
+<div class="space-y-4 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-inverse-on-surface flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]" data-icon="music_note">music_note</span>
+</div>
+<span>GOSPELS</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-dim">
+          A regional worship collective uniting Scandinavian voices in praise, intercession, and gospel excellence across West Sweden.
+        </p>
+<p class="font-scripture-quote text-[16px] italic text-primary-fixed leading-snug">
+          "Praise the Lord with melody and voice."
+        </p>
+</div>
+<!-- Links Column 1: Exact from JSON -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm text-inverse-on-surface font-semibold">Fellowship &amp; Ministry</h4>
+<ul class="space-y-2 font-body-sm text-body-sm">
+<li>
+<a class="text-surface-dim hover:text-inverse-on-surface hover:text-primary-fixed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-fixed" href="#">Partner Churches</a>
+</li>
+<li>
+<a class="text-surface-dim hover:text-inverse-on-surface hover:text-primary-fixed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-fixed" href="#">Holy Spirit Worship</a>
+</li>
+<li>
+<a class="text-surface-dim hover:text-inverse-on-surface hover:text-primary-fixed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-fixed" href="#">Göteborgs Lovsångskonsert</a>
+</li>
+</ul>
+</div>
+<!-- Links Column 2: Exact from JSON -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm text-inverse-on-surface font-semibold">Giving &amp; Outreach</h4>
+<ul class="space-y-2 font-body-sm text-body-sm">
+<li>
+<a class="text-surface-dim hover:text-inverse-on-surface hover:text-primary-fixed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-fixed" href="#">Kingdom Giving</a>
+</li>
+<li>
+<a class="text-surface-dim hover:text-inverse-on-surface hover:text-primary-fixed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-fixed" href="#">Swish Support: 123 456 78 90</a>
+</li>
+<li>
+<a class="text-surface-dim hover:text-inverse-on-surface hover:text-primary-fixed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-fixed" href="#">Privacy &amp; WhatsApp Care</a>
+</li>
+</ul>
+</div>
+<!-- Spec & Hub Metadata -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-headline-sm text-inverse-on-surface font-semibold">Design Hub Status</h4>
+<div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-surface-dim">Tokens Deployed</span>
+<span class="text-primary-fixed font-bold">Tailwind v3 ver.</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-surface-dim">City Focus</span>
+<span class="text-white">Gothenburg, SE</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-surface-dim">Contrast Tier</span>
+<span class="text-emerald-400 font-bold">WCAG AAA Light</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Copyright Bar -->
+<div class="border-t border-white/10 py-6">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-surface-dim">
+<p>© 2025 GOSPELS Ministry Gothenburg. All rights reserved. Non-profit Christian fellowship.</p>
+<div class="flex items-center gap-6">
+<span class="text-primary-fixed underline font-medium">Design System v1.0 Spec Sheet</span>
+<span>Smyrna Frihamnen &amp; St. Birgitta Chapel</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

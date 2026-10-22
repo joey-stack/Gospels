@@ -1,0 +1,538 @@
+<!DOCTYPE html><html class="light" lang="sv" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GOSPELS — Gothenburg Ministry Hub</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#71f8e4",
+            "surface-dim": "#cbdbf5",
+            "on-surface": "#0b1c30",
+            "tertiary": "#00685d",
+            "secondary-fixed": "#dae2fd",
+            "surface-bright": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "secondary": "#565e74",
+            "surface": "#f8f9ff",
+            "primary-fixed": "#89f5e7",
+            "on-tertiary-fixed-variant": "#005048",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "secondary-container": "#dae2fd",
+            "surface-container-highest": "#d3e4fe",
+            "surface-container-low": "#eff4ff",
+            "background": "#f8f9ff",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#eaf1ff",
+            "on-primary-fixed": "#00201d",
+            "on-error": "#ffffff",
+            "surface-variant": "#d3e4fe",
+            "tertiary-container": "#008376",
+            "surface-container-lowest": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#005049",
+            "on-background": "#0b1c30",
+            "outline": "#6d7a77",
+            "error": "#ba1a1a",
+            "inverse-primary": "#6bd8cb",
+            "secondary-fixed-dim": "#bec6e0",
+            "primary": "#00685f",
+            "primary-fixed-dim": "#6bd8cb",
+            "on-secondary-container": "#5c647a",
+            "inverse-surface": "#213145",
+            "on-surface-variant": "#3d4947",
+            "on-tertiary-container": "#f4fffb",
+            "on-secondary-fixed": "#131b2e",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-tertiary-fixed": "#00201c",
+            "outline-variant": "#bcc9c6",
+            "primary-container": "#008378",
+            "on-primary-container": "#f4fffc",
+            "surface-container-high": "#dce9ff",
+            "surface-tint": "#006a61"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1.25rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-2xl": "4rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "margin": "3rem"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom subtle Nordic glow & ambient shadow tokens */
+    .nordic-shadow {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(13, 148, 136, 0.04);
+    }
+    .nordic-card-shadow {
+      box-shadow: 0 12px 30px -8px rgba(11, 28, 48, 0.08), 0 2px 8px -2px rgba(0, 104, 95, 0.04);
+    }
+    /* Smooth iOS momentum scroll */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased font-body-md flex justify-center min-h-screen py-0 md:py-8 selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- Mobile Viewport Container (Standard 390px iPhone footprint with clean viewport bounds) -->
+<div class="relative w-full min-h-screen bg-surface-bright flex flex-col shadow-2xl overflow-x-hidden border-x border-outline-variant/30 max-w-[430px]">
+<!-- Mobile Header App Bar (Docked full-width top-0 sticky z-40) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/90 backdrop-blur-md px-5 py-3.5 flex items-center justify-between border-b border-outline-variant/20 shadow-sm transition-all duration-200">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="music_note" style="font-variation-settings: 'FILL' 1;">music_note</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-sm tracking-tight font-extrabold text-on-surface block leading-none">GOSPELS</span>
+<span class="font-label-sm text-[10px] tracking-wider text-secondary uppercase font-semibold">Göteborg</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="bg-primary-fixed/60 text-on-primary-fixed hover:bg-primary-fixed px-2.5 py-1 rounded-full text-label-sm font-label-md flex items-center gap-1 transition-colors active:scale-95">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          Next Event
+        </button>
+<!-- Drawer Trigger Hamburger Button -->
+<button aria-label="Open Navigation Drawer" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-surface-container text-on-surface transition-colors active:scale-95" id="drawerToggle">
+<span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- Interactive Navigation Drawer Overlay -->
+<div class="fixed inset-0 bg-inverse-surface/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300" id="drawerBackdrop"></div>
+<aside class="fixed top-0 right-0 h-full w-[310px] bg-surface-container-lowest shadow-2xl z-50 translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto" id="drawerPanel">
+<div>
+<!-- Drawer Header -->
+<div class="p-5 pb-4 flex items-center justify-between border-b border-outline-variant/30 bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-md bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-lg" data-icon="church">church</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-[17px] font-bold text-on-surface">GOSPELS Nav</h2>
+<p class="font-label-sm text-[10px] text-secondary">Gothenburg Ministry Hub</p>
+</div>
+</div>
+<button aria-label="Close Drawer" class="w-8 h-8 rounded-full flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" id="drawerClose">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+</button>
+</div>
+<!-- Drawer Menu Items -->
+<nav class="p-4 space-y-1">
+<a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-primary bg-secondary-container/60 font-semibold transition-colors" href="#events">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="event">event</span>
+<span class="font-label-md text-label-md">Events</span>
+</div>
+<span class="bg-primary text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-full">2 Upcoming</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" href="#watch">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="library_music">library_music</span>
+<span class="font-label-md text-label-md">Watch &amp; Listen</span>
+</div>
+<span class="text-secondary text-xs">Live HD</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" href="#churches">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Partner Churches</span>
+</div>
+<span class="bg-surface-container-high text-secondary text-[10px] font-medium px-2 py-0.5 rounded-full">4 Sanctuaries</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" href="#prayer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="folded_hands">folded_hands</span>
+<span class="font-label-md text-label-md">Need Prayer?</span>
+</div>
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-0.5 rounded-full">Urgent Care</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-3 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" href="#support">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-md text-label-md">Kingdom Giving</span>
+</div>
+<span class="text-secondary font-mono text-[11px] font-medium">Swish 123</span>
+</a>
+<div class="pt-2 border-t border-outline-variant/30 mt-2">
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors text-body-sm" href="#admin">
+<span class="material-symbols-outlined text-lg" data-icon="tune">tune</span>
+<span class="font-body-sm">Admin Hub Portal</span>
+</a>
+</div>
+</nav>
+</div>
+<!-- Drawer Bottom: Pastoral WhatsApp Emergency Banner -->
+<div class="p-4 bg-surface-container-low border-t border-outline-variant/30">
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/40 flex items-start gap-3 shadow-xs">
+<div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<p class="font-label-sm text-[11px] font-bold text-on-surface">Pastoral Prayer WhatsApp</p>
+</div>
+<p class="font-body-sm text-[12px] text-secondary mt-0.5 leading-snug">Available 24/7 for counseling &amp; intercession.</p>
+<a class="inline-flex items-center gap-1 font-label-md text-[11px] text-primary font-bold mt-2 hover:underline" href="https://wa.me/">
+              Start chat
+              <span class="material-symbols-outlined text-[12px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Mobile Content Flow -->
+<main class="flex-1 pb-24 space-y-6">
+<!-- 1. Mobile Hero Section -->
+<section class="relative px-5 pt-6 pb-2 overflow-hidden">
+<!-- Subtle Nordic Atmospheric Background Glow -->
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-28 -left-12 w-48 h-48 bg-secondary-fixed/40 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<div class="inline-flex items-center gap-1.5 bg-surface-container px-3 py-1 rounded-full text-secondary font-label-sm text-[11px] tracking-wide mb-3 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[13px] text-primary" data-icon="location_on">location_on</span>
+            Gothenburg, Sweden • Est. 2024
+          </div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mb-3 tracking-tight">
+            One Voice.<br>One Heart.<br>
+<span class="text-primary italic font-serif">All Gothenburg.</span>
+</h1>
+<p class="font-body-md text-secondary text-body-md leading-relaxed mb-5">
+            Uniting over 500 gospel voices across West Sweden in sacred fellowship and free civic adoration.
+          </p><div class="relative w-full h-48 rounded-xl overflow-hidden mb-5 nordic-shadow border border-outline-variant/30"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0L6aS_N2r1WMMeZbez-QFfP6QiFeMMDsj_2LpcXQGsNGbynorcBi1FGBoHHWe2rDfnqWMdZOsPSsksHPPKRHlWFquFQZ2z9WRxXTg8tz-yHOaVetdCwnT62-5sVy9k7u0qwbMCB0QixY7KIhvvWWudTtoaBLGji1uHALzLGrlLF8gK4vGaMRtIkR0z-oIh_AI8S_MQxZXCeBJ6GcUjhuWnN-xRt2dpocfW-LusEmVk_W9IxR7RJda4DzvxkaCXxrChg" alt="Lead worship minister singing in sacred praise" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent"></div><div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-on-primary"><span class="font-label-sm text-[11px] font-bold tracking-wide uppercase flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-fixed"></span>Gothenburg Worship Night</span><span class="font-label-sm text-[10px] bg-on-surface/40 backdrop-blur-sm px-2 py-0.5 rounded-full">Live Praise</span></div></div>
+<!-- Dual Mobile CTAs -->
+<div class="flex flex-col gap-2.5">
+<a class="w-full bg-primary hover:bg-tertiary-container text-on-primary py-3.5 px-5 rounded-lg font-label-md text-label-md text-center flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98]" href="#rsvp">
+<span class="material-symbols-outlined text-[18px]" data-icon="confirmation_number">confirmation_number</span>
+              Free RSVP: Holy Spirit 2026
+            </a>
+<a class="w-full bg-surface-container-lowest border border-outline-variant/60 hover:bg-surface-container text-on-surface py-3 px-5 rounded-lg font-label-md text-label-md text-center flex items-center justify-center gap-1.5 transition-all active:scale-[0.98]" href="#torg">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="map">map</span>
+              Explore 2027 Torg Gathering
+            </a>
+</div>
+</div>
+</section>
+<!-- 2. Floating Fast-RSVP & Pass Badge Card -->
+<section class="px-5">
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/40 nordic-card-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-primary-fixed/40"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Fast Mobile Pass</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container px-2 py-0.5 rounded-md font-medium">Saturday 28 Mar 2026</span>
+</div>
+<div class="flex items-baseline justify-between mb-1">
+<h3 class="font-headline-sm text-[18px] font-bold text-on-surface">Smyrna Frihamnskyrkan</h3>
+<span class="font-label-sm text-[11px] font-semibold text-primary">18:30 CET</span>
+</div>
+<p class="font-body-sm text-[13px] text-secondary mb-3.5">
+            Free Admission • 1,000 Seats Total <span class="font-semibold text-on-surface">(78% Reserved)</span>
+</p>
+<!-- Progress bar -->
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mb-4">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 78%"></div>
+</div>
+<!-- Quick Reserve Touch Action -->
+<div class="flex items-center gap-2.5">
+<button class="flex-1 bg-primary text-on-primary py-2.5 px-4 rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-transform shadow-xs">
+<span class="material-symbols-outlined text-base" data-icon="airplane_ticket">airplane_ticket</span>
+              Reserve 1-Tap Ticket
+            </button>
+<button aria-label="Share Event" class="w-10 h-10 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center border border-outline-variant/40 transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 3. Mobile Scripture Ribbon -->
+<section class="px-5">
+<div class="bg-surface-container-low border-l-[3px] border-primary p-4 rounded-r-xl"><p class="font-scripture-quote-mobile text-scripture-quote-mobile italic text-on-surface leading-snug break-words pr-2">“Mitt hjärta är frimodigt, o Gud, jag vill sjunga och spela, ja, min själ vill prisa dig.”</p><div class="mt-2.5 flex items-center justify-between gap-2"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">Psaltaren 108:1</span><span class="material-symbols-outlined text-primary text-base shrink-0" data-icon="format_quote">format_quote</span></div></div>
+</section>
+<!-- 4. Featured Gathering Carousel / Mobile Cards -->
+<section class="space-y-3">
+<div class="px-5 flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-[18px] font-bold text-on-surface">Gatherings &amp; Nights</h2>
+<p class="font-label-sm text-[11px] text-secondary">Free entry worship fellowship</p>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-0.5" href="#events">
+            View All
+            <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<!-- Horizontal scroll container -->
+<div class="flex gap-4 overflow-x-auto px-5 no-scrollbar pb-2 pt-1 snap-x snap-mandatory">
+<!-- Card 1: Holy Spirit Worship 2026 -->
+<article class="w-[280px] shrink-0 bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden nordic-shadow snap-start flex flex-col justify-between">
+<div class="relative h-36 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A luminous Scandinavian worship concert inside the modern architectural sanctuary of Smyrna Frihamnskyrkan in Gothenburg Sweden. A vibrant multiracial gospel choir raises hands in adoration beneath warm atmospheric ceiling acoustics and soft tech turquoise backlighting, creating a peaceful and reverent presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6kus-Nzoo-rEHZj3ew8cc02uwf-iKlrx-s2xSefF10YgUywi7bveEKKCdlgwEgTxCZCeK1SzY-LRo6J44UO8eXmEOc4o1noYzRt2Dc0gRhYLPgXyCI5WzudpL3q9r6-UJTFGQXCU4_u9EgIruk-9Z3fhrhuBkcrtZZBNmfCRplIOf5QRONBKhqXt1ncNoSyxmHGMJ7po3QRUotnSUFKETr7E8fRhWrhFFq2nHO4mbF6GFTqUQdRbKeJ3_oeEUEDdi7w">
+<!-- Bespoke Date Badge -->
+<div class="absolute top-2.5 left-2.5 rounded-[6px] overflow-hidden border border-primary/20 shadow-sm bg-surface-bright">
+<div class="bg-primary text-on-primary px-2 py-0.5 text-center font-label-sm text-[10px] uppercase font-bold tracking-wider">
+                  MAR
+                </div>
+<div class="bg-surface-bright text-on-surface px-2 py-0.5 text-center font-headline-sm text-headline-sm font-bold leading-none">
+                  28
+                </div>
+</div>
+<!-- Pill badge -->
+<span class="absolute top-2.5 right-2.5 bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[10px] font-semibold px-2 py-0.5 rounded-full border border-outline-variant/30">
+                Fika Included
+              </span>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-[10px] uppercase text-primary font-bold tracking-wider">Mass Choir &amp; Strings</span>
+<h3 class="font-headline-sm text-[17px] font-bold text-on-surface mt-0.5 mb-1.5 leading-snug">
+                  Holy Spirit Worship 2026
+                </h3>
+<p class="font-body-sm text-[12px] text-secondary line-clamp-2">
+                  Frihamnen’s grand hall reverberates with sacred harmonies led by 12 Gothenburg churches.
+                </p>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+                  18:30 CET
+                </span>
+<span class="font-label-md text-label-md text-primary font-bold">Free RSVP</span>
+</div>
+</div>
+</article>
+<!-- Card 2: Göteborgs Lovsångskonsert -->
+<article class="w-[280px] shrink-0 bg-surface-container-lowest rounded-xl border border-outline-variant/40 overflow-hidden nordic-shadow snap-start flex flex-col justify-between">
+<div class="relative h-36 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="An expansive civic gospel concert gathered outdoors at Gustav Adolfs Torg in Gothenburg Sweden during a mild Nordic twilight. A grand 500 voice open air choir stands on an architectural stage surrounded by historic Gothenburg facade architecture, singing with deep warmth and communal spiritual joy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg4Dt_YZD9h93o9lOe0KGMRZIEWXQR3ceOlqCyJWxiBDUPbqPhU0ty7yNOroFGl2QI1d_I-1JN1h3WUl-NW9C80wLsh04FdiZEPuTHaM5z1K-1x6CQMRYmpkPveVGUq92d4U1JbJx8F14KGls17Cxm2CiSTrigMzlx-rBUIJAZJIFHh46o9AwVlMcSwb35WzX_dqykz7PTzWPVzTWZWdJWaPu7CwNZC5a_BYsBby6nuM1i_NXd5V3gcuWCM0wrH1YwWg">
+<!-- Bespoke Date Badge -->
+<div class="absolute top-2.5 left-2.5 rounded-[6px] overflow-hidden border border-primary/20 shadow-sm bg-surface-bright">
+<div class="bg-primary text-on-primary px-2 py-0.5 text-center font-label-sm text-[10px] uppercase font-bold tracking-wider">
+                  JUN
+                </div>
+<div class="bg-surface-bright text-on-surface px-2 py-0.5 text-center font-headline-sm text-headline-sm font-bold leading-none">
+                  06
+                </div>
+</div>
+<!-- Pill badge -->
+<span class="absolute top-2.5 right-2.5 bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[10px] font-semibold px-2 py-0.5 rounded-full border border-outline-variant/30">
+                Civic Open-Air
+              </span>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-[10px] uppercase text-primary font-bold tracking-wider">National Day Praise</span>
+<h3 class="font-headline-sm text-[17px] font-bold text-on-surface mt-0.5 mb-1.5 leading-snug">
+                  Göteborgs Lovsångskonsert
+                </h3>
+<p class="font-body-sm text-[12px] text-secondary line-clamp-2">
+                  Gustav Adolfs Torg turns into an open cathedral as 500 voices proclaim blessing over the city.
+                </p>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="location_city">location_city</span>
+                  Gustav Adolfs Torg
+                </span>
+<span class="font-label-md text-label-md text-primary font-bold">Open Public</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 5. Quick-Action Mobile Grid (2x2) -->
+<section class="px-5 space-y-3">
+<div>
+<h2 class="font-headline-sm text-[18px] font-bold text-on-surface">Ministry Services</h2>
+<p class="font-label-sm text-[11px] text-secondary">Community links and kingdom actions</p>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Need Prayer? Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 nordic-shadow flex flex-col justify-between hover:border-primary transition-all overflow-hidden"><div class="relative h-24 w-full bg-surface-container overflow-hidden"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtqI-LpMtWd-aeivKm6FUpf-sStUPJ_eLjN9GB5PL1MNNi4j6rZ3JZO8JqPQ2xFxRg1rgNJHmEvvKgTEOdxGMc6FTiepbm-NApWdyAzeaIjzDnzGnkXBLNbLuaXuXCTsp5m8Liug1k7zTARrX87Ayq6QlxFB_o-LpTWYiUYRFiEmZwJqfToeNqhdbDnxWJh085AONSLPRmvLunq4c-b5W8fZMBHvxbUzE6cUjqwEs3dQOriDzNxa7uyumYy0zpv1E2Pg" alt="Sacred prayer and intercession" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent"></div><span class="absolute top-2 left-2 w-7 h-7 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md flex items-center justify-center text-primary shadow-xs"><span class="material-symbols-outlined text-[17px]" data-icon="folded_hands">folded_hands</span></span></div><div class="p-3 flex-1 flex flex-col justify-between"><div><h4 class="font-headline-sm text-[15px] font-bold text-on-surface leading-tight">Need Prayer?</h4><p class="font-body-sm text-[11px] text-secondary mt-0.5 mb-2 leading-tight">Direct confidential pastoral intercession.</p></div><a class="font-label-md text-[11px] text-primary font-bold flex items-center gap-1" href="#prayer-form">Submit request<span class="material-symbols-outlined text-xs" data-icon="north_east">north_east</span></a></div></div>
+<!-- Swish Offering Card -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant/40 nordic-shadow flex flex-col justify-between hover:border-primary transition-all">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed/50 flex items-center justify-center text-on-primary-fixed mb-2">
+<span class="material-symbols-outlined text-xl" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] font-bold text-on-surface leading-tight">Swish Offering</h4>
+<p class="font-body-sm text-[11px] text-secondary mt-0.5 mb-2 leading-tight">
+                Support free civic worship nights.
+              </p>
+</div>
+<a class="font-label-md text-[11px] text-primary font-bold flex items-center gap-1 font-mono" href="#swish">
+              123 456 78 90
+              <span class="material-symbols-outlined text-xs" data-icon="touch_app">touch_app</span>
+</a>
+</div>
+<!-- Watch & Listen Card -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant/40 nordic-shadow flex flex-col justify-between hover:border-primary transition-all">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-xl" data-icon="play_circle">play_circle</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] font-bold text-on-surface leading-tight">Watch &amp; Listen</h4>
+<p class="font-body-sm text-[11px] text-secondary mt-0.5 mb-2 leading-tight">
+                Multi-tracks and concert replays in HD.
+              </p>
+</div>
+<a class="font-label-md text-[11px] text-primary font-bold flex items-center gap-1" href="#listen">
+              Listen now
+              <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Choir Auditions Card -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant/40 nordic-shadow flex flex-col justify-between hover:border-primary transition-all">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-xl" data-icon="group_add">group_add</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] font-bold text-on-surface leading-tight">Choir Auditions</h4>
+<p class="font-body-sm text-[11px] text-secondary mt-0.5 mb-2 leading-tight">
+                Join Magnus K. &amp; the 500-voice mass choir.
+              </p>
+</div>
+<a class="font-label-md text-[11px] text-primary font-bold flex items-center gap-1" href="#signup">
+              Sign up
+              <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 6. Compact Partner Sanctuary Footnote -->
+<section class="px-5">
+<div class="bg-surface-container p-3.5 rounded-xl flex items-center justify-between border border-outline-variant/30"><div class="flex items-center gap-2.5 min-w-0"><span class="material-symbols-outlined text-primary text-xl shrink-0" data-icon="apartment">apartment</span><div class="min-w-0"><p class="font-label-sm text-[11px] font-bold text-on-surface">Partner Sanctuaries</p><p class="font-body-sm text-[11px] text-secondary truncate">Smyrna • Betlehemskyrkan • Saron • Korskyrkan</p></div></div><span class="material-symbols-outlined text-secondary text-base shrink-0" data-icon="verified">verified</span></div>
+</section>
+</main>
+<!-- Mobile Bottom App Navigation Bar (Docked fixed bottom, responsive mobile pivot) -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full bg-surface-container-lowest/95 backdrop-blur-md px-3 py-2 z-40 border-t border-outline-variant/20 shadow-lg flex items-center justify-around max-w-[430px]">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center flex-1 py-1 text-primary" href="#home">
+<span class="material-symbols-outlined text-2xl" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-[10px] font-bold mt-0.5 tracking-tight">Home</span>
+</a>
+<!-- Events -->
+<a class="flex flex-col items-center justify-center flex-1 py-1 text-secondary hover:text-on-surface transition-colors" href="#events">
+<span class="material-symbols-outlined text-2xl" data-icon="event">event</span>
+<span class="font-label-sm text-[10px] font-medium mt-0.5 tracking-tight">Events</span>
+</a>
+<!-- Watch -->
+<a class="flex flex-col items-center justify-center flex-1 py-1 text-secondary hover:text-on-surface transition-colors" href="#watch">
+<span class="material-symbols-outlined text-2xl" data-icon="library_music">library_music</span>
+<span class="font-label-sm text-[10px] font-medium mt-0.5 tracking-tight">Watch</span>
+</a>
+<!-- Prayer -->
+<a class="flex flex-col items-center justify-center flex-1 py-1 text-secondary hover:text-on-surface transition-colors" href="#prayer">
+<span class="material-symbols-outlined text-2xl" data-icon="folded_hands">folded_hands</span>
+<span class="font-label-sm text-[10px] font-medium mt-0.5 tracking-tight">Prayer</span>
+</a>
+<!-- Give -->
+<a class="flex flex-col items-center justify-center flex-1 py-1 text-secondary hover:text-on-surface transition-colors" href="#support">
+<span class="material-symbols-outlined text-2xl" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-sm text-[10px] font-medium mt-0.5 tracking-tight">Give</span>
+</a>
+</nav>
+</div>
+<!-- Interactive JavaScript for Mobile Navigation Drawer Toggle -->
+<script>
+    const drawerToggle = document.getElementById('drawerToggle');
+    const drawerClose = document.getElementById('drawerClose');
+    const drawerPanel = document.getElementById('drawerPanel');
+    const drawerBackdrop = document.getElementById('drawerBackdrop');
+
+    function openDrawer() {
+      drawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      drawerBackdrop.classList.add('opacity-100', 'pointer-events-auto');
+      drawerPanel.classList.remove('translate-x-full');
+      drawerPanel.classList.add('translate-x-0');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+      drawerBackdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      drawerPanel.classList.add('translate-x-full');
+      drawerPanel.classList.remove('translate-x-0');
+      document.body.style.overflow = '';
+    }
+
+    if (drawerToggle) drawerToggle.addEventListener('click', openDrawer);
+    if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+    if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+  </script>
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS Admin — Partner Churches</title>
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom theme config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#0b1c30",
+            "on-surface": "#0b1c30",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "inverse-on-surface": "#eaf1ff",
+            "tertiary-fixed": "#71f8e4",
+            "tertiary-container": "#008376",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#565e74",
+            "primary": "#00685f",
+            "outline-variant": "#bcc9c6",
+            "on-error": "#ffffff",
+            "surface-container": "#e5eeff",
+            "on-tertiary-fixed-variant": "#005048",
+            "surface-container-low": "#eff4ff",
+            "on-primary-fixed": "#00201d",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "inverse-surface": "#213145",
+            "on-primary-fixed-variant": "#005049",
+            "secondary-fixed": "#dae2fd",
+            "error": "#ba1a1a",
+            "surface-variant": "#d3e4fe",
+            "surface-container-highest": "#d3e4fe",
+            "on-secondary-container": "#5c647a",
+            "background": "#f8f9ff",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-dim": "#cbdbf5",
+            "primary-fixed-dim": "#6bd8cb",
+            "on-primary-container": "#f4fffc",
+            "on-tertiary-fixed": "#00201c",
+            "error-container": "#ffdad6",
+            "tertiary": "#00685d",
+            "primary-fixed": "#89f5e7",
+            "surface-tint": "#006a61",
+            "primary-container": "#008378",
+            "surface-container-high": "#dce9ff",
+            "outline": "#6d7a77",
+            "on-surface-variant": "#3d4947",
+            "on-tertiary-container": "#f4fffb",
+            "surface": "#f8f9ff",
+            "secondary-fixed-dim": "#bec6e0",
+            "inverse-primary": "#6bd8cb",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#dae2fd",
+            "on-secondary-fixed-variant": "#3f465c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin": "3rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #f8f9ff;
+      color: #0b1c30;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .badge-nordic {
+      border: 1px solid rgba(0, 104, 95, 0.2);
+    }
+    .nordic-shadow {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(0, 104, 95, 0.04);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Viewport Container (Screen 14 Mobile Archetype max-w-md) -->
+<div class="w-full max-w-md bg-surface flex flex-col min-h-screen pb-24 relative shadow-2xl border-x border-outline-variant/20">
+<!-- 1. Top App Header -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md px-4 py-3 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<button aria-label="Tillbaka" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">GOSPELS ADMIN</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<p class="font-label-sm text-label-sm text-secondary tracking-normal">Församlingsnätverk &amp; Ekumenik</p>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-sm hover:bg-primary-container transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span class="font-label-md text-label-md">Anslut Kyrka</span>
+</button>
+</header>
+<main class="flex-1 px-4 pt-3 space-y-4">
+<!-- 2. Scripture Ribbon / Spiritual Foundation -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low border-l-4 border-primary p-3.5 shadow-sm">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" data-icon="format_quote">format_quote</span>
+<div class="space-y-1">
+<p class="font-scripture-quote-mobile text-scripture-quote-mobile italic text-on-surface leading-snug">
+              ”Må de alla vara ett... så att världen tror.”
+            </p>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Johannes 17:21</span>
+<span class="text-outline-variant text-[10px]">•</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">GÖTEBORGS KRISTNA RÅD</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Network Overview KPI Cards (2x2 Grid) -->
+<section aria-label="Nätverksöversikt">
+<div class="flex items-center justify-between mb-2 px-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Nätverksstatus • Storgöteborg</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            Realtidsdata
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/30 nordic-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="church">church</span>
+</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-1.5 py-0.5 rounded">Aktiv Pakt</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface">24</div>
+<div class="font-label-sm text-label-sm text-secondary font-medium">Anslutna Församlingar</div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/30 nordic-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="chair">chair</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">GBG Kapacitet</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface">14,200</div>
+<div class="font-label-sm text-label-sm text-secondary font-medium">Samlad Bänkkapacitet</div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/30 nordic-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="queue_music">queue_music</span>
+</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">+18 denna mån</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface">340</div>
+<div class="font-label-sm text-label-sm text-secondary font-medium">Körsångare i Poolen</div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/30 nordic-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified">verified</span>
+</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-1.5 py-0.5 rounded font-bold">100% Juridiskt</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface">100%</div>
+<div class="font-label-sm text-label-sm text-secondary font-medium">BankID-signerade avtal</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Search & Geographic Filter Bar -->
+<section class="space-y-2.5">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[20px]" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-xl pl-10 pr-4 py-2.5 font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-sm transition-all" placeholder="Sök kyrka, pastor, stadsdel, akustik..." type="text"/>
+</div>
+<!-- Filter Chips (Horizontally Scrollable) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<button class="bg-primary text-on-primary px-3.5 py-1.5 rounded-full font-label-md text-label-md shrink-0 shadow-sm">
+            Alla (24)
+          </button>
+<button class="bg-surface-container-lowest hover:bg-surface-container text-secondary border border-outline-variant/30 px-3 py-1.5 rounded-full font-label-md text-label-md shrink-0 transition-colors">
+            Centrum
+          </button>
+<button class="bg-surface-container-lowest hover:bg-surface-container text-secondary border border-outline-variant/30 px-3 py-1.5 rounded-full font-label-md text-label-md shrink-0 transition-colors">
+            Hisingen
+          </button>
+<button class="bg-surface-container-lowest hover:bg-surface-container text-secondary border border-outline-variant/30 px-3 py-1.5 rounded-full font-label-md text-label-md shrink-0 transition-colors">
+            Majorna
+          </button>
+<button class="bg-surface-container-lowest hover:bg-surface-container text-secondary border border-outline-variant/30 px-3 py-1.5 rounded-full font-label-md text-label-md shrink-0 transition-colors">
+            Väster
+          </button>
+<button class="bg-surface-container-lowest hover:bg-surface-container text-secondary border border-outline-variant/30 px-3 py-1.5 rounded-full font-label-md text-label-md shrink-0 transition-colors">
+            Öster
+          </button>
+</div>
+</section>
+<!-- 5. Partner Church Directory Cards (Mobile Card Stack) -->
+<section aria-label="Partnerförsamlingar" class="space-y-3.5 pt-1">
+<div class="flex items-center justify-between px-1">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Församlingsregister</span>
+<span class="font-label-sm text-label-sm text-secondary">Sorterat efter pakt</span>
+</div>
+<!-- CARD 1: Smyrna Frihamnskyrkan -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-4 nordic-shadow space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Smyrna Frihamnskyrkan</h3>
+</div>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary" data-icon="location_on">location_on</span>
+                Hisingen • Frihamnen
+              </p>
+</div>
+<span class="bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 rounded-md font-label-sm text-label-sm font-bold whitespace-nowrap">
+              Aktiv Pakt 2025–2027
+            </span>
+</div>
+<!-- Metadata Grid -->
+<div class="bg-surface-container-low rounded-lg p-2.5 space-y-1.5 text-on-surface">
+<div class="flex items-center text-body-sm font-body-sm gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="person">person</span>
+<span>Pastor Tomas Sjödin</span>
+</div>
+<div class="flex items-center text-body-sm font-body-sm gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="event_seat">event_seat</span>
+<span>1,200 sittplatser</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-label-sm text-label-sm">Akustik: Dämpad pro-audio (RT60 &lt; 1.2s)</span>
+</div>
+</div>
+<!-- Pledges / Åtaganden -->
+<div class="border-t border-outline-variant/20 pt-2.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold block mb-1">Gospelallians-åtaganden</span>
+<ul class="space-y-1 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[17px] mt-0.5" data-icon="check_circle">check_circle</span>
+<span>45 körsångare till Lovsångskonserten</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[17px] mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Stora riggen &amp; L-Acoustics PA utlånad</span>
+</li>
+</ul>
+</div>
+<!-- Actions -->
+<div class="pt-1 flex items-center gap-2">
+<button class="flex-1 bg-surface border border-outline-variant/40 hover:bg-surface-container py-2 rounded-lg font-label-md text-label-md text-on-surface flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="call">call</span>
+<span>Ring Pastor</span>
+</button>
+<button class="flex-1 bg-surface border border-outline-variant/40 hover:bg-surface-container py-2 rounded-lg font-label-md text-label-md text-on-surface flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="description">description</span>
+<span>Avtal (BankID PDF)</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: Betlehemskyrkan -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-4 nordic-shadow space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Betlehemskyrkan</h3>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary" data-icon="location_on">location_on</span>
+                Centrum / Vasastan
+              </p>
+</div>
+<span class="bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 rounded-md font-label-sm text-label-sm font-bold whitespace-nowrap">
+              Aktiv Pakt
+            </span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 space-y-1.5 text-on-surface">
+<div class="flex items-center text-body-sm font-body-sm gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="person">person</span>
+<span>Pastor Maria Bergman</span>
+</div>
+<div class="flex items-center text-body-sm font-body-sm gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="piano">piano</span>
+<span>Steinway D flygel</span>
+<span class="text-outline-variant">•</span>
+<span>750 sittplatser</span>
+</div>
+<div class="text-secondary font-label-sm text-label-sm pl-6">
+              Akustik: Körklang (RT60 2.1s)
+            </div>
+</div>
+<div class="border-t border-outline-variant/20 pt-2.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold block mb-1">Gospelallians-åtaganden</span>
+<ul class="space-y-1 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[17px] mt-0.5" data-icon="check_circle">check_circle</span>
+<span>30 körsångare till gemensam repvecka</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[17px] mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Värdskap &amp; Fika för 1,500 pers</span>
+</li>
+</ul>
+</div>
+<div class="pt-1 flex items-center gap-2">
+<button class="flex-1 bg-surface border border-outline-variant/40 hover:bg-surface-container py-2 rounded-lg font-label-md text-label-md text-on-surface flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="visibility">visibility</span>
+<span>Visa Profil</span>
+</button>
+<button class="flex-1 bg-surface border border-outline-variant/40 hover:bg-surface-container py-2 rounded-lg font-label-md text-label-md text-on-surface flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="chat">chat</span>
+<span>Skicka Meddelande</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: Domkyrkan Göteborg -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-4 nordic-shadow space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Domkyrkan Göteborg</h3>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary" data-icon="location_on">location_on</span>
+                Centrum • Västra Hamngatan
+              </p>
+</div>
+<span class="bg-secondary-container text-on-secondary-fixed border border-outline-variant/40 px-2 py-0.5 rounded-md font-label-sm text-label-sm font-bold whitespace-nowrap">
+              Katedralpartner
+            </span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 space-y-1.5 text-on-surface">
+<div class="flex items-center text-body-sm font-body-sm gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="person">person</span>
+<span>Domprost Jonas Lindqvist</span>
+</div>
+<div class="flex items-center text-body-sm font-body-sm gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="event_seat">event_seat</span>
+<span>900 platser</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-label-sm text-label-sm">Akustik: Katedral eko (RT60 6.5s)</span>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 pt-2.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold block mb-1">Gospelallians-åtaganden</span>
+<ul class="space-y-1 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[17px] mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Orgel- och körpreludier i högmässor</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[17px] mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Ekumenisk bönevecka samordning</span>
+</li>
+</ul>
+</div>
+<div class="pt-1 flex items-center gap-2">
+<button class="flex-1 bg-surface border border-outline-variant/40 hover:bg-surface-container py-2 rounded-lg font-label-md text-label-md text-on-surface flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="calendar_month">calendar_month</span>
+<span>Bokningsöversikt</span>
+</button>
+<button class="flex-1 bg-surface border border-outline-variant/40 hover:bg-surface-container py-2 rounded-lg font-label-md text-label-md text-on-surface flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="contact_mail">contact_mail</span>
+<span>Kontakt</span>
+</button>
+</div>
+</article>
+<!-- CARD 4: RCCG Living Water -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-4 nordic-shadow space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">RCCG Living Water</h3>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary" data-icon="location_on">location_on</span>
+                Majorna • Karl Johansgatan
+              </p>
+</div>
+<span class="bg-surface-variant text-primary border border-primary-fixed-dim px-2 py-0.5 rounded-md font-label-sm text-label-sm font-bold whitespace-nowrap">
+              Nyansluten
+            </span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 space-y-1.5 text-on-surface">
+<div class="flex items-center text-body-sm font-body-sm gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="person">person</span>
+<span>Pastor Adeola Bello</span>
+</div>
+<div class="flex items-center text-body-sm font-body-sm gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="event_seat">event_seat</span>
+<span>400 platser</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-label-sm text-label-sm">Flerkulturell lovsång</span>
+</div>
+</div>
+<div class="pt-1">
+<button class="w-full bg-primary text-on-primary py-2.5 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm hover:bg-primary-container active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="how_to_reg">how_to_reg</span>
+<span>Godkänn Liaison</span>
+</button>
+</div>
+</article>
+</section>
+<!-- 6. Ecumenical Governance & Safe Sanctuary Callout -->
+<section class="bg-inverse-surface text-inverse-on-surface rounded-xl p-4 space-y-3 shadow-md mt-6">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest/20 flex items-center justify-center text-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="policy">policy</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-inverse-on-surface">Ekumenisk Stadga &amp; Trygga Rum</h4>
+<p class="font-body-sm text-body-sm text-surface-dim mt-1">
+              Gällande stadgar för Västra Götalands Ekumeniska Råd. Samtliga 24 församlingar förbinder sig till gemensamma riktlinjer för ledarskap, barnskydd och transparent ekonomi.
+            </p>
+</div>
+</div>
+<div class="bg-inverse-surface/60 border border-outline-variant/20 rounded-lg p-2.5 flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" data-icon="meeting_room">meeting_room</span>
+<span class="text-inverse-on-surface font-medium">Kvartalssynod: Saronkyrkan</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold">14 Maj 2025</span>
+</div>
+<button class="w-full bg-surface-container-lowest text-on-surface py-2.5 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span>Ladda ner Ekumenisk Stadga (PDF)</span>
+</button>
+</section>
+<!-- Subtext / Legal Footer -->
+<div class="text-center py-4">
+<p class="font-label-sm text-label-sm text-secondary">
+          © 2025 GOSPELS Ministry Gothenburg. All rights reserved. Non-profit Christian fellowship.
+        </p>
+</div>
+</main>
+<!-- 7. Bottom Docked Admin Navigation Shell (Exact to Archetype) -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-surface-container-lowest/95 backdrop-blur-md px-3 py-2 flex items-center justify-between shadow-lg z-50">
+<!-- Tab 1: Översikt (Admin System Status / Overview) -->
+<a class="flex flex-col items-center justify-center py-1 px-2 rounded-lg text-secondary hover:text-on-surface active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="tune">tune</span>
+<span class="font-label-sm text-label-sm mt-0.5">Översikt</span>
+</a>
+<!-- Tab 2: Evenemang (Events) -->
+<a class="flex flex-col items-center justify-center py-1 px-2 rounded-lg text-secondary hover:text-on-surface active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="event">event</span>
+<span class="font-label-sm text-label-sm mt-0.5">Evenemang</span>
+</a>
+<!-- Tab 3: Förbön (Prayer Requests) -->
+<a class="flex flex-col items-center justify-center py-1 px-2 rounded-lg text-secondary hover:text-on-surface active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="folded_hands">folded_hands</span>
+<span class="font-label-sm text-label-sm mt-0.5">Förbön</span>
+</a>
+<!-- Tab 4: Volontärer (Volunteers) -->
+<a class="flex flex-col items-center justify-center py-1 px-2 rounded-lg text-secondary hover:text-on-surface active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="groups">groups</span>
+<span class="font-label-sm text-label-sm mt-0.5">Volontärer</span>
+</a>
+<!-- Tab 5: Kyrkor/Mer (Active Destination: Churches / Partner Churches) -->
+<a class="flex flex-col items-center justify-center py-1 px-2 rounded-lg text-primary font-bold active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="church" style="font-variation-settings: 'FILL' 1;">church</span>
+<span class="font-label-sm text-label-sm mt-0.5 text-primary">Kyrkor</span>
+</a>
+</nav>
+</div>
+</body></html>

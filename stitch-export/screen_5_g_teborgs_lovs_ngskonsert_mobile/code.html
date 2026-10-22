@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Göteborgs Lovsångskonsert • GOSPELS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#00201d",
+            "surface": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-dim": "#cbdbf5",
+            "on-surface": "#0b1c30",
+            "inverse-surface": "#213145",
+            "outline-variant": "#bcc9c6",
+            "on-tertiary-fixed-variant": "#005048",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#89f5e7",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "surface-bright": "#f8f9ff",
+            "on-surface-variant": "#3d4947",
+            "on-secondary": "#ffffff",
+            "primary": "#00685f",
+            "surface-container": "#e5eeff",
+            "surface-variant": "#d3e4fe",
+            "tertiary": "#00685d",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#3f465c",
+            "primary-fixed-dim": "#6bd8cb",
+            "secondary-fixed": "#dae2fd",
+            "error-container": "#ffdad6",
+            "inverse-on-surface": "#eaf1ff",
+            "tertiary-container": "#008376",
+            "inverse-primary": "#6bd8cb",
+            "on-primary-fixed-variant": "#005049",
+            "background": "#f8f9ff",
+            "surface-container-low": "#eff4ff",
+            "surface-tint": "#006a61",
+            "primary-container": "#008378",
+            "on-background": "#0b1c30",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "tertiary-fixed": "#71f8e4",
+            "on-primary-container": "#f4fffc",
+            "outline": "#6d7a77",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed": "#00201c",
+            "on-tertiary-container": "#f4fffb",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#5c647a",
+            "surface-container-highest": "#d3e4fe",
+            "secondary": "#565e74",
+            "on-secondary-fixed": "#131b2e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "margin": "3rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .nordic-shadow {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(0, 104, 95, 0.04);
+    }
+    .nordic-glow {
+      box-shadow: 0 12px 30px -6px rgba(0, 104, 95, 0.22);
+    }
+    .thin-border {
+      border: 1px solid rgba(15, 23, 42, 0.07);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile View Container Max-W 430px (iPhone / Modern Android Canvas) -->
+<div class="w-full max-w-md bg-surface min-h-screen relative flex flex-col pb-28">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/90 backdrop-blur-md px-4 py-3.5 flex items-center justify-between shadow-sm border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<button aria-label="Go Back" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<span class="font-headline-sm text-headline-sm tracking-tight font-bold text-on-surface">GOSPELS</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Bookmark Event" class="w-9 h-9 rounded-lg flex items-center justify-center text-secondary hover:text-primary hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+<button aria-label="Share Event" class="w-9 h-9 rounded-lg flex items-center justify-center text-secondary hover:text-primary hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-4 pt-4 space-y-6">
+<!-- Hero Announcement Container -->
+<section class="space-y-3.5">
+<!-- Badge -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low border border-primary/20 text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Civic Worship Gathering • National Day 6 June 2027</span>
+</div>
+<!-- Headline & Subtitle -->
+<div class="space-y-2">
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-bold tracking-tight text-on-surface leading-tight">
+            Göteborgs Lovsångskonsert
+          </h1>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+            Transforming Gustav Adolfs Torg into an open-air sanctuary of praise with 500 voices.
+          </p>
+</div>
+<!-- Hero Civic Architectural Photo Card -->
+<div class="relative w-full h-52 rounded-xl overflow-hidden nordic-shadow thin-border">
+<img class="w-full h-full object-cover" data-alt="A grand, light-filled architectural photograph of Gustav Adolfs Torg in Gothenburg Sweden under clear Nordic summer skies. In the historic cobblestone civic square, an elegant wooden acoustic stage is surrounded by contemporary sound towers, peaceful worship musicians, and light teal and birch wood banners under soft afternoon sun. The mood is reverence and community celebration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ4hxBUn76QHnxL0WlgFohvfSd_IJLiimgvzUJqp_PBwC7sdKZlCFoGr20cyfPcKxAG0nNnE5lbF8Ixz8ZI1u-UbA4jhZUcWzEtipTfysRC7f5aAZAHKea8ib-D6T9s4ndRRJmqxaTGgIDWbZL8BwkmpfeS827iwALpfq-avZ4LpVtsPNysfU-oGnO_NQyCgM4udAgzDe2iAaUh779Txwl1pvf8XktNdlk1vcFa7Au8lYRjgCsPtOS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-4">
+<div class="flex items-center gap-2 text-inverse-on-surface">
+<span class="material-symbols-outlined text-primary-fixed text-lg">location_on</span>
+<span class="font-label-md text-label-md">Gustav Adolfs Torg, Göteborg</span>
+</div>
+</div>
+</div>
+<!-- Live Countdown & Civic Approval Alert Ribbon -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 thin-border nordic-shadow flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface tracking-wide">Civic Permits Approved • Göteborgs Stad</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">Confirmed</span>
+</div>
+<!-- Countdown Grid -->
+<div class="grid grid-cols-4 gap-2 pt-1 border-t border-outline-variant/20">
+<div class="bg-surface-container-low rounded-lg p-2 text-center">
+<span class="block font-headline-sm text-headline-sm text-primary font-bold">472</span>
+<span class="block font-label-sm text-label-sm text-secondary">DAYS</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 text-center">
+<span class="block font-headline-sm text-headline-sm text-primary font-bold">14</span>
+<span class="block font-label-sm text-label-sm text-secondary">HOURS</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 text-center">
+<span class="block font-headline-sm text-headline-sm text-primary font-bold">38</span>
+<span class="block font-label-sm text-label-sm text-secondary">MINS</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 text-center">
+<span class="block font-headline-sm text-headline-sm text-primary font-bold">500</span>
+<span class="block font-label-sm text-label-sm text-secondary">VOICES</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Scripture Callout Block -->
+<section class="bg-surface-container-lowest rounded-xl p-5 border-l-4 border-primary nordic-shadow thin-border">
+<blockquote class="font-scripture-quote-mobile text-scripture-quote-mobile italic text-on-surface mb-2 leading-relaxed">
+          ”Sjung till Herren en ny sång, sjung till Herren, hela jorden!”
+        </blockquote>
+<div class="flex items-center justify-between">
+<cite class="font-label-sm text-label-sm uppercase not-italic text-secondary tracking-wider">— Psaltaren 96:1</cite>
+<span class="material-symbols-outlined text-primary/40 text-xl">menu_book</span>
+</div>
+</section>
+<!-- Audience Engagement Mobile Cards -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Get Involved</h2>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Open Submissions</span>
+</div>
+<!-- Card 1: 500-Voice Mass Choir -->
+<article class="bg-surface-container-lowest rounded-xl p-5 thin-border nordic-shadow space-y-4">
+<div class="flex items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">groups</span>
+                Worship Repertoire
+              </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface pt-1">
+                Join the 500-Voice Mass Choir
+              </h3>
+</div>
+<div class="w-12 h-14 rounded-lg border border-primary/20 overflow-hidden flex flex-col shrink-0 text-center">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm py-0.5">MAR</span>
+<span class="bg-surface-container-lowest font-headline-sm text-headline-sm font-bold text-on-surface py-0.5">15</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Vocalist registration across sopranos, altos, and tenors from all West Sweden assemblies. Monthly masterclasses begin March 2027 at Smyrnakyrkan Gothenburg.
+          </p>
+<div class="pt-1 flex items-center justify-between gap-3">
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">music_note</span>
+              4 Part Arrangements
+            </div>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container active:scale-95 transition-all shadow-sm" type="button">
+              Audition Info
+            </button>
+</div>
+</article>
+<!-- Card 2: Civic Fika & Volunteer Crew -->
+<article class="bg-surface-container-lowest rounded-xl p-5 thin-border nordic-shadow space-y-4">
+<div class="flex items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">handshake</span>
+                Civic Hospitality
+              </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface pt-1">
+                Civic Fika &amp; Volunteer Crew
+              </h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">coffee</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Serving 10,000 complimentary cinnamon rolls, safety marshaling, staging, audio cabling, and bilingual guest greetings across the city center.
+          </p>
+<div class="pt-1 flex items-center justify-between gap-3">
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+              3 Shifts Available
+            </div>
+<button class="px-4 py-2 rounded-lg border border-outline/30 text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container active:scale-95 transition-all" type="button">
+              Volunteer Pledge
+            </button>
+</div>
+</article>
+<!-- Card 3: Free Public Admission & Torg Seating -->
+<article class="bg-surface-container-lowest rounded-xl p-5 thin-border nordic-shadow space-y-4">
+<div class="flex items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">confirmation_number</span>
+                100% Free Entry
+              </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface pt-1">
+                Free Public Admission &amp; Torg Seating
+              </h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">event_seat</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Reserve dedicated front perimeter bench spaces for elderly guests and families, or claim early access wristbands for the inner acoustics ring.
+          </p>
+<div class="pt-1 flex items-center justify-between gap-3">
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">accessible</span>
+              Full Accessibility
+            </div>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container active:scale-95 transition-all shadow-sm" type="button">
+              Join Priority Waitlist
+            </button>
+</div>
+</article>
+</section>
+<!-- Civic Map Preview Card -->
+<section class="space-y-3 pb-6">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Arrival &amp; Public Transit</h2>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden thin-border nordic-shadow">
+<!-- Stylized Mock Map Area -->
+<div class="h-44 w-full bg-surface-container relative p-3 flex flex-col justify-between" data-location="Gothenburg, Sweden" style="">
+<!-- Map Overlay graphic elements -->
+<div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#00685f_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-on-surface backdrop-blur-sm border border-outline-variant/30 flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-sm text-primary">tram</span>
+                Brunnsparken Hub
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold">2 min walk</span>
+</div>
+<!-- Central Location Pin Visual -->
+<div class="relative z-10 self-center text-center">
+<div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-on-primary shadow-lg border-2 border-surface-container-lowest animate-bounce">
+<span class="material-symbols-outlined text-2xl">church</span>
+</div>
+<div class="mt-1 px-3 py-1 rounded-md bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm shadow-md font-bold">
+                Gustav Adolfs Torg
+              </div>
+</div>
+<div class="relative z-10 flex gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/80 text-secondary font-label-sm text-label-sm">Lines 1, 4, 7, 11</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/80 text-secondary font-label-sm text-label-sm">Stora Hamnkanalen</span>
+</div>
+</div>
+<!-- Transit Info Footnote -->
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20 flex items-center justify-between">
+<div class="space-y-0.5">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Västtrafik Transit Guidance</div>
+<div class="font-body-sm text-body-sm text-secondary">Free regional tram travel supported on National Day.</div>
+</div>
+<a class="p-2 text-primary hover:bg-surface-container rounded-lg active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">directions</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Persistent Mobile Bottom Navigation (Destination Filter Rules Applied) -->
+<!-- Events is designated as active tab mapping to current page -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-50 bg-surface-container-lowest/95 backdrop-blur-lg px-2 py-2 flex items-center justify-around shadow-[0_-4px_16px_rgba(15,23,42,0.06)] border-t border-outline-variant/20">
+<!-- Home -->
+<button class="flex-1 py-1 flex flex-col items-center gap-1 text-secondary hover:text-on-surface active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-sm text-[11px] leading-tight font-medium">Home</span>
+</button>
+<!-- Events (ACTIVE) -->
+<button class="flex-1 py-1 flex flex-col items-center gap-1 text-primary active:scale-95 transition-transform" type="button">
+<div class="relative">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">event</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary absolute -top-0.5 -right-1"></span>
+</div>
+<span class="font-label-sm text-[11px] leading-tight font-bold text-primary">Events</span>
+</button>
+<!-- Watch & Listen -->
+<button class="flex-1 py-1 flex flex-col items-center gap-1 text-secondary hover:text-on-surface active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">play_circle</span>
+<span class="font-label-sm text-[11px] leading-tight font-medium">Watch</span>
+</button>
+<!-- Need Prayer? -->
+<button class="flex-1 py-1 flex flex-col items-center gap-1 text-secondary hover:text-on-surface active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">folded_hands</span>
+<span class="font-label-sm text-[11px] leading-tight font-medium">Prayer</span>
+</button>
+<!-- Support / Give -->
+<button class="flex-1 py-1 flex flex-col items-center gap-1 text-secondary hover:text-on-surface active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">volunteer_activism</span>
+<span class="font-label-sm text-[11px] leading-tight font-medium">Give</span>
+</button>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Göteborgs Lovsångskonsert 2027 | GOSPELS Ministry</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#71f8e4",
+            "background": "#f8f9ff",
+            "on-secondary-container": "#5c647a",
+            "on-tertiary-fixed": "#00201c",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "outline": "#6d7a77",
+            "inverse-on-surface": "#eaf1ff",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#f4fffc",
+            "secondary-fixed-dim": "#bec6e0",
+            "error": "#ba1a1a",
+            "tertiary": "#00685d",
+            "on-secondary-fixed": "#131b2e",
+            "surface-container-highest": "#d3e4fe",
+            "surface": "#f8f9ff",
+            "on-tertiary-container": "#f4fffb",
+            "surface-variant": "#d3e4fe",
+            "outline-variant": "#bcc9c6",
+            "on-tertiary-fixed-variant": "#005048",
+            "primary-container": "#008378",
+            "on-background": "#0b1c30",
+            "on-primary-fixed-variant": "#005049",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#006a61",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#3d4947",
+            "on-primary-fixed": "#00201d",
+            "tertiary-container": "#008376",
+            "secondary": "#565e74",
+            "primary-fixed": "#89f5e7",
+            "surface-container": "#e5eeff",
+            "surface-dim": "#cbdbf5",
+            "inverse-primary": "#6bd8cb",
+            "on-error": "#ffffff",
+            "secondary-container": "#dae2fd",
+            "on-surface": "#0b1c30",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#6bd8cb",
+            "primary": "#00685f",
+            "surface-container-low": "#eff4ff",
+            "surface-container-high": "#dce9ff",
+            "surface-bright": "#f8f9ff",
+            "secondary-fixed": "#dae2fd",
+            "inverse-surface": "#213145"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-2xl": "4rem",
+            "gutter": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter-mobile": "1rem",
+            "margin": "3rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "scripture-quote-mobile": ["19px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "display-lg-mobile": ["38px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+            "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+            "scripture-quote": ["24px", {"lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(13, 148, 136, 0.04);
+    }
+    .custom-shadow-card {
+      box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.07), 0 4px 10px -2px rgba(13, 148, 136, 0.03);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed flex flex-col min-h-screen">
+<!-- TopNavBar (Shared Component JSON Blueprint & Translation) -->
+<header class="bg-surface-container-lowest/90 dark:bg-inverse-surface/90 backdrop-blur-md docked full-width top-0 sticky z-50 shadow-sm border-b border-outline-variant/30 dark:border-outline/20">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+<!-- Brand Logo Anchor -->
+<a class="flex items-center gap-2 group" href="#">
+<span class="w-2.5 h-7 bg-primary rounded-full group-hover:scale-110 transition-transform duration-150"></span>
+<span class="font-headline-md text-headline-md tracking-tight font-bold text-on-surface dark:text-inverse-on-surface">GOSPELS</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center space-x-8">
+<!-- Active link: Events (Context matches Lovsångskonsert 2027) -->
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed font-semibold pb-1 font-label-md text-label-md" href="#events">
+          Events
+        </a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md" href="#watch">
+          Watch &amp; Listen
+        </a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md" href="#churches">
+          Churches
+        </a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md" href="#prayer">
+          Need Prayer?
+        </a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md" href="#support">
+          Support
+        </a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<a class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-lg font-semibold transition-all active:scale-95 duration-150 shadow-sm flex items-center gap-2" href="#rsvp">
+<span>Next Event</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section: Gustav Adolfs Torg Gothenburg Civic Atmosphere -->
+<section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-surface-container-low via-background to-background">
+<!-- Ambient Cathedral Light Backdrop Effect -->
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+<!-- Breadcrumb / Status Badge Row -->
+<div class="flex flex-wrap items-center gap-3 mb-6">
+<span class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container px-3.5 py-1.5 rounded-full font-label-sm text-label-sm tracking-wider uppercase font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+            Coming 2027
+          </span>
+<span class="text-secondary font-label-sm text-label-sm tracking-wide">
+            Gustav Adolfs Torg • Gothenburg, Sweden
+          </span>
+<span class="inline-flex items-center gap-1 bg-surface-container text-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px]">confirmation_number</span>
+            Free Civic Admission
+          </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Hero Text Content -->
+<div class="lg:col-span-7 space-y-6">
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight text-balance">
+              Göteborgs Lovsångskonsert 2027
+            </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl text-balance leading-relaxed">
+              Bringing sacred choral praise, resonant brass, and open-air gospel worship directly into the civic heart of Gothenburg. An unhindered celebration uniting congregations across West Sweden under the open northern sky. Free and welcoming to every passerby, family, and seeker.
+            </p>
+<!-- Key Quick Indicators -->
+<div class="grid grid-cols-3 gap-4 pt-4 border-t border-outline-variant/30 max-w-lg">
+<div>
+<span class="block font-headline-sm text-headline-sm text-primary font-bold">500+</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Choir Voices</span>
+</div>
+<div>
+<span class="block font-headline-sm text-headline-sm text-primary font-bold">0 SEK</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase">All Citizens Free</span>
+</div>
+<div>
+<span class="block font-headline-sm text-headline-sm text-primary font-bold">1 Heart</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase">West Sweden United</span>
+</div>
+</div>
+<!-- Primary Actions -->
+<div class="flex flex-wrap items-center gap-4 pt-3">
+<a class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-6 py-3.5 rounded-lg font-semibold transition-all shadow-md active:scale-95 duration-150 inline-flex items-center gap-2" href="#volunteer">
+<span class="material-symbols-outlined text-[20px]">group_add</span>
+                Join the United Choir
+              </a>
+<a class="border border-outline/30 hover:border-primary text-on-surface font-label-md text-label-md px-6 py-3.5 rounded-lg font-semibold transition-all bg-surface-container-lowest custom-shadow active:scale-95 duration-150 inline-flex items-center gap-2" href="#map-venue">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+                Explore Venue &amp; Transit
+              </a>
+</div>
+</div>
+<!-- Hero Architectural Visual Tile with Bespoke Date Badge -->
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-xl overflow-hidden custom-shadow-card border border-outline-variant/40 bg-surface-container-lowest">
+<div class="relative h-[440px] w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="A grand wide-angle daylight photograph of Gustav Adolfs Torg in Gothenburg Sweden transformed for an open-air choral gospel worship concert. Under soft Scandinavian morning light and pale Nordic skies, hundreds of diverse choir singers dressed in warm white and subtle turquoise scarves assemble on a raised wooden stage. Historical neoclassical stone civic buildings surround the cobblestone public square. The atmosphere is serene, reverent, and joyous." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYkF2rUt13H8K9hJNxetuOY8rJrNArf77R3o_tH5BbH_YvYtMW-YlkbY3WOdJa1aEQ_WnmE6KO6y6QLTxvSgHGmQ3zDBYeiYQfmT1NWghON8XRshFASOxQVn5DkkRHzvR_V6jGV3dywW6IbGBXkPX3_gq9QlPAbxl2u6uQ3Y9WBY9bX4cAgIAv-LBtj8lB_3dGWQl2stcWT6zidp9ZULRUO_rBjeWkrMSKm3zq98BHHq6dVGzzVSeh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+</div>
+<!-- Bespoke Date Badge Component (Top-Left overlay) -->
+<div class="absolute top-4 left-4 rounded-md overflow-hidden border border-primary/20 custom-shadow bg-surface-container-lowest">
+<div class="bg-primary text-on-primary px-3.5 py-1 text-center font-label-sm text-label-sm uppercase tracking-wider font-bold">
+                  AUG
+                </div>
+<div class="px-3.5 py-1.5 text-center bg-surface-container-lowest">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface block leading-tight">2027</span>
+</div>
+</div>
+<!-- Floating Card Overlay Details -->
+<div class="absolute bottom-4 left-4 right-4 p-4 rounded-lg bg-surface-container-lowest/95 backdrop-blur-md border border-outline-variant/30 flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Gustav Adolfs Torg</h2>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">directions_subway</span>
+                    Gothenburg Centrum • Brunnsparken
+                  </p>
+</div>
+<span class="bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm px-3 py-1.5 rounded-full font-semibold">
+                  Acoustic Stage A
+                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Scripture Meditation Banner -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 my-8">
+<div class="border-l-4 border-primary bg-surface-container-low py-6 px-8 rounded-r-xl custom-shadow flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-1">
+<p class="font-scripture-quote text-scripture-quote italic text-on-surface">
+            “Sing unto the Lord a new song, and his praise in the congregation of saints.”
+          </p>
+<p class="font-label-sm text-label-sm uppercase text-secondary tracking-widest font-semibold">
+            PSALM 149:1 • THE CALL FOR GÖTEBORG
+          </p>
+</div>
+<div class="flex-shrink-0 flex items-center gap-2 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined">auto_stories</span>
+<span>Scripture in the Square</span>
+</div>
+</div>
+</section>
+<!-- Two-Column Split Section: Worship Beyond Church Walls -->
+<section class="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Side: Deep Narrative -->
+<div class="lg:col-span-6 space-y-6">
+<div class="inline-flex items-center gap-2 text-primary font-label-sm text-label-sm uppercase tracking-widest font-bold">
+<span class="material-symbols-outlined text-[18px]">church</span>
+            Civic Blessing &amp; Ecumenical Harmony
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            Worship Beyond Church Walls
+          </h2>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+            For generations, Gothenburg’s vibrant gospel tradition has filled church sanctuaries and recital halls. In the late summer of 2027, GOSPELS invites every believer, choir, and seeker to step outdoors onto the historic cobblestones of Gustav Adolfs Torg.
+          </p>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+            This gathering breaks denominational divisions, welcoming traditional Lutheran parishes, Pentecostal choirs, diaspora fellowships, and indie worship teams into one united voice. Our mandate is simple: to offer a sacrificial fragrance of joy and praise to bless our city, its leaders, its transit commuters, and its youth.
+          </p>
+<!-- Core Pillars Bento Mini Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/30 custom-shadow">
+<span class="material-symbols-outlined text-primary text-[28px] mb-2">diversity_3</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold mb-1">Choir Unity</h3>
+<p class="font-body-sm text-body-sm text-secondary">Bringing together over 20 Gothenburg gospel ensembles for a unified score.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/30 custom-shadow">
+<span class="material-symbols-outlined text-primary text-[28px] mb-2">open_in_browser</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold mb-1">Open Invitation</h3>
+<p class="font-body-sm text-body-sm text-secondary">No tickets, no barriers. Complete open access for daily tram commuters and strollers.</p>
+</div>
+</div>
+</div>
+<!-- Right Side: Evocative Visual Card -->
+<div class="lg:col-span-6">
+<div class="relative rounded-xl overflow-hidden custom-shadow-card border border-outline-variant/40 bg-surface-container-lowest group">
+<div class="relative h-[480px] w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An expressive close-up and medium shot of Scandinavian gospel choir vocalists and acoustic horn brass musicians singing passionately together on an open-air wooden stage in Gothenburg. Warm evening sunlight glances across smiling faces, brass trumpets, and sheet music. In the soft-focus background, Gothenburg tram lines, neoclassical historic facade buildings, and diverse gathered crowds create a reverent, community-focused Nordic aesthetic with subtle tech-turquoise accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDog2m6YA2H3k2KPBJ9QJ5U2HmzHAMo4Aq8nT7WQIAv84m2Y2gc6QuHH_DMokA4NjdM4M-5IkdOi7vuuFe9mUEXSCsGnJTe7vr4yF9dGYpdczQTsvktwvKGp8StLT4eb04mnkbfJhXppYTuTnQ4B2trX2S4R7cPzrHwAdtGorHZuGBcQtu67Fuw0Ycwp1-ClcMQiLRRXqvGjO_d53FWmr4CBbBYtBekiIkUVUYtAdYOxhFlfrUQ2wbk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+</div>
+<div class="absolute bottom-6 left-6 right-6 p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/30">
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary block mb-1">Open-Air Acoustics</span>
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface">500 Voices • Full Brass Section • Community Band</p>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Conducted by West Sweden's leading gospel directors and worship mentors.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Three Audience Tiles (Bento 3-Column Layout) -->
+<section class="py-16 bg-surface-container-low/60 border-y border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold block mb-2">Designed for the Whole City</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Who Is This Concert For?</h2>
+<p class="font-body-md text-body-md text-secondary mt-2">The cathedral of Gothenburg is its public square. We prepare space with intentional care for three vital groups.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Tile 1: Believers -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/30 custom-shadow flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-[28px]">diversity_1</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-3">1. Believers &amp; Parishes</h3>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+                Uniting all Christian denominations—from Swedish Church parishes and Frikyrkor to immigrant congregations—in public adoration, communal intercession, and harmonious praise.
+              </p>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/20 flex items-center justify-between text-primary font-label-md text-label-md">
+<span>Denominational Unity</span>
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<!-- Tile 2: Seekers & Commuters -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-primary/30 custom-shadow-card flex flex-col justify-between relative overflow-hidden hover:-translate-y-1 transition-transform duration-200">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-bl-full pointer-events-none"></div>
+<div>
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[28px]">explore</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-3">2. Seekers &amp; Commuters</h3>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+                Encountering grace, hope, and sacred song in everyday city life. Whether walking between trams or pausing on the square, you are invited to listen without expectation or pressure.
+              </p>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/20 flex items-center justify-between text-primary font-label-md text-label-md">
+<span>Acoustic Hospitality</span>
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+</div>
+<!-- Tile 3: Families & Youth -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/30 custom-shadow flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-[28px]">family_restroom</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-3">3. Families &amp; Youth</h3>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+                Dedicated space for strollers, accessible open perimeter seating, multi-generational choir participation, and youth leadership in worship dance, tech, and audio setup.
+              </p>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/20 flex items-center justify-between text-primary font-label-md text-label-md">
+<span>Multigenerational Care</span>
+<span class="material-symbols-outlined text-[18px]">child_care</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Map & Venue Detail Card -->
+<section class="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-12" id="map-venue">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 custom-shadow-card overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12">
+<!-- Venue Specifications & Transit Details -->
+<div class="lg:col-span-5 p-8 md:p-12 space-y-8 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 text-primary font-label-sm text-label-sm uppercase tracking-wider font-bold mb-2">
+<span class="material-symbols-outlined text-[18px]">pin_drop</span>
+                Civic Location Guide
+              </div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-4">
+                Gustav Adolfs Torg
+              </h3>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+                Situated at the civic nexus of Gothenburg, directly adjacent to the City Hall (Rådhuset) and Stora Hamnkanalen.
+              </p>
+</div>
+<!-- Transit & Zone Checklist -->
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="p-2 rounded-lg bg-surface-container text-primary flex-shrink-0">
+<span class="material-symbols-outlined">tram</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-semibold">Brunnsparken Tram Hub</h4>
+<p class="font-body-sm text-body-sm text-secondary">2-minute gentle walk. Served by tram lines 1, 2, 3, 4, 5, 7, 9, 10, and 11.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-2 rounded-lg bg-surface-container text-primary flex-shrink-0">
+<span class="material-symbols-outlined">volume_up</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-semibold">Acoustic Perimeter &amp; Seating</h4>
+<p class="font-body-sm text-body-sm text-secondary">Tuned spatial array minimizing urban canal reverberation. 800 open seated folding chairs + vast standing lawn.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-2 rounded-lg bg-surface-container text-primary flex-shrink-0">
+<span class="material-symbols-outlined">local_parking</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-semibold">Parking &amp; Logistics</h4>
+<p class="font-body-sm text-body-sm text-secondary">Nordstan P-hus (4 min walk) &amp; Kungsgaraget. Dedicated choir bus drop-off zone at Norra Hamngatan.</p>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-center justify-between">
+<div>
+<span class="text-xs font-semibold text-secondary uppercase block">Venue Accessibility</span>
+<span class="text-sm font-medium text-on-surface">Step-free cobblestone ramps &amp; sign-language interpretation</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">accessible</span>
+</div>
+</div>
+<!-- Map Simulation / Visual Display with data-location -->
+<div class="lg:col-span-7 relative min-h-[380px] lg:min-h-full bg-surface-container-high overflow-hidden border-t lg:border-t-0 lg:border-l border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist high-key map rendering and elevated architectural perspective of Gustav Adolfs Torg Gothenburg Sweden. The map highlights the central square in tech-turquoise tinting, marking stage positions, acoustic sound towers, Brunnsparken transit connections, and Stora Hamnkanalen waterway in pale modern Nordic blue tones." data-location="Gothenburg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg0hab5Gid47PGYcWyMyrb5kciQZ1atIwF3JPMW3sT-LxjOkNbTAWf5bsmqD-75fErxdsyxuzD_PqvHAEHJmpZiQxe3NUtZwQc9qMcXxaPfhDv0ZGq77hq9oh8vXeGATfdKDFgoragsQUug6vESbVXJx01rSekzlXIerNqIjB3AhvtiyGdIGJ9DIy7MMnqLalXNOzLaZGufXts8uSKxO0zKoRlLy6P_oejTqfJH9odvFnqRYQvzVa-"/>
+<!-- Map Interactive Overlay Pin -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface-container-lowest/95 backdrop-blur-md p-4 rounded-xl border border-primary/30 custom-shadow text-center max-w-xs">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center mx-auto mb-2 shadow-md">
+<span class="material-symbols-outlined text-[22px]">music_note</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold block text-on-surface">Main Choir Stage</span>
+<span class="font-label-sm text-label-sm text-secondary block">Gustav Adolfs Torg 1, 411 10 Göteborg</span>
+<span class="inline-block mt-2 font-label-sm text-label-sm text-primary font-semibold">Coordinates: 57.7072° N, 11.9670° E</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Two-Card Action Cluster: Newsletter & Volunteer Form -->
+<section class="py-16 max-w-7xl mx-auto px-6 md:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Newsletter Signup Block: 'Be the First to Know' -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-8 md:p-10 border border-outline-variant/30 custom-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container text-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[28px]">mark_email_unread</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold block mb-2">Advance Announcements</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface mb-3">Be the First to Know</h3>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-6">
+              Get official notifications the moment rehearsal dates, guest directors, song repertoires, and staging schedules are unveiled.
+            </p>
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Tack! You have subscribed for updates.');">
+<div>
+<label class="font-label-md text-label-md text-on-surface font-semibold block mb-1.5" for="newsletter-email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-secondary text-[20px]">mail</span>
+<input class="w-full pl-11 pr-4 py-3 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface transition-all placeholder:text-outline-variant" id="newsletter-email" placeholder="namn@kyrka.se" required="" type="email"/>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-3.5 px-6 rounded-lg font-semibold transition-all shadow-sm active:scale-[0.99] flex items-center justify-center gap-2" type="submit">
+<span>Get Updates</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/20 flex items-center gap-2 text-xs text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">lock</span>
+<span>Non-profit ministry privacy. No marketing spam. Unsubscribe anytime.</span>
+</div>
+</div>
+<!-- Volunteer & Choir Interest Form -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-8 md:p-10 border border-outline-variant/30 custom-shadow" id="volunteer">
+<div class="flex items-center gap-2 text-primary font-label-sm text-label-sm uppercase tracking-widest font-bold mb-2">
+<span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+            Serve Gothenburg
+          </div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface mb-2">Volunteer &amp; Choir Interest</h3>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-6">
+            We are assembling vocalists for the mass choir, sound engineers, prayer stewards, and hospitality teams. Express your early interest below.
+          </p>
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Varmt tack! Your ministry interest has been received.');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="font-label-md text-label-md text-on-surface font-semibold block mb-1.5" for="volunteer-name">Full Name</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface transition-all placeholder:text-outline-variant" id="volunteer-name" placeholder="Karin Lindqvist" required="" type="text"/>
+</div>
+<div>
+<label class="font-label-md text-label-md text-on-surface font-semibold block mb-1.5" for="volunteer-email">Email Address</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface transition-all placeholder:text-outline-variant" id="volunteer-email" placeholder="karin@example.se" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="font-label-md text-label-md text-on-surface font-semibold block mb-1.5" for="volunteer-role">Primary Ministry Role</label>
+<select class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface transition-all" id="volunteer-role">
+<option value="choir">Mass Choir Singer (Soprano, Alto, Tenor, Bass)</option>
+<option value="musician">Instrumentalist / Brass / Rhythm</option>
+<option value="audio_tech">Sound &amp; Stage Production</option>
+<option value="prayer">Prayer Counselor / Steward</option>
+<option value="hospitality">Hospitality &amp; Guest Welcome</option>
+</select>
+</div>
+<div>
+<label class="font-label-md text-label-md text-on-surface font-semibold block mb-1.5" for="volunteer-church">Home Church / Choir Affiliation</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant/60 rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface transition-all placeholder:text-outline-variant" id="volunteer-church" placeholder="e.g. Smyrna Göteborg, Domkyrkan, etc." type="text"/>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full sm:w-auto bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-3.5 px-8 rounded-lg font-semibold transition-all shadow-md active:scale-95 duration-150 inline-flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+                Submit Early Registration
+              </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Pastoral Intercession Banner / Prayer CTA Banner: Deep Charcoal Sanctuary -->
+<section class="py-16 md:py-20 bg-inverse-surface text-inverse-on-surface relative overflow-hidden" id="prayer">
+<!-- Subtle Ambient Glow -->
+<div class="absolute right-0 top-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+<div class="bg-surface-container-highest/10 border border-inverse-on-surface/10 rounded-2xl p-8 md:p-14 backdrop-blur-sm flex flex-col lg:flex-row items-center justify-between gap-8">
+<div class="max-w-2xl space-y-4 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 bg-primary/20 text-primary-fixed px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[16px]">folded_hands</span>
+              Gothenburg in Prayer
+            </div>
+<h2 class="font-headline-lg text-headline-lg font-bold tracking-tight text-white">
+              Covering the Concert in Continual Intercession
+            </h2>
+<p class="font-body-md text-body-md text-surface-dim leading-relaxed">
+              Every note sung on Gustav Adolfs Torg is birthed in prayer. Join 100+ West Sweden churches who pray weekly for peace, renewal, and Christ’s presence across the Greater Gothenburg metropolitan region.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0 w-full sm:w-auto">
+<a class="w-full sm:w-auto text-center bg-primary hover:bg-primary-container text-white font-label-md text-label-md px-8 py-4 rounded-lg font-semibold transition-all shadow-lg active:scale-95 duration-150 flex items-center justify-center gap-2" href="#support">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+              Join Prayer Chain
+            </a>
+<a class="w-full sm:w-auto text-center border border-white/20 hover:border-white text-white font-label-md text-label-md px-6 py-4 rounded-lg font-semibold transition-all active:scale-95 duration-150" href="#prayer-request">
+              Submit Prayer Request
+            </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component JSON Blueprint & Translation) -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline/20 dark:border-outline-variant/30 text-inverse-on-surface dark:text-on-surface">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Col 1: Brand & Ministry Mission -->
+<div class="space-y-4 md:col-span-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-6 bg-primary rounded-full"></span>
+<span class="font-headline-md text-headline-md font-bold text-inverse-on-surface dark:text-on-surface">GOSPELS</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-dim dark:text-secondary leading-relaxed">
+          A non-profit Christian fellowship advancing worship, choral music, and ecumenical unity across Gothenburg and West Sweden.
+        </p>
+<p class="font-scripture-quote-mobile text-scripture-quote-mobile italic text-primary-fixed dark:text-primary">
+          “Gör portarna höga, gör dörrarna vida...”
+        </p>
+</div>
+<!-- Col 2: Ministry Connections -->
+<div class="space-y-3">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-inverse-on-surface dark:text-on-surface">Fellowship</h3>
+<ul class="space-y-2.5">
+<li>
+<a class="font-body-sm text-body-sm text-surface-dim dark:text-on-surface-variant hover:text-inverse-on-surface dark:hover:text-on-surface transition-colors flex items-center gap-1.5" href="#partner">
+<span class="material-symbols-outlined text-[16px]">church</span>
+              Partner Churches
+            </a>
+</li>
+<li>
+<a class="font-body-sm text-body-sm text-surface-dim dark:text-on-surface-variant hover:text-inverse-on-surface dark:hover:text-on-surface transition-colors flex items-center gap-1.5" href="#holy-spirit">
+<span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+              Holy Spirit Worship
+            </a>
+</li>
+<li>
+<!-- Active Navigation state from JSON rules -->
+<a class="font-body-sm text-body-sm text-primary-fixed dark:text-primary underline font-medium flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">celebration</span>
+              Göteborgs Lovsångskonsert
+            </a>
+</li>
+</ul>
+</div>
+<!-- Col 3: Kingdom Giving & Swish -->
+<div class="space-y-3">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-inverse-on-surface dark:text-on-surface">Support Ministry</h3>
+<ul class="space-y-2.5">
+<li>
+<a class="font-body-sm text-body-sm text-surface-dim dark:text-on-surface-variant hover:text-inverse-on-surface dark:hover:text-on-surface transition-colors flex items-center gap-1.5" href="#giving">
+<span class="material-symbols-outlined text-[16px]">volunteer_activism</span>
+              Kingdom Giving
+            </a>
+</li>
+<li>
+<div class="p-3 rounded-lg bg-surface-container-highest/10 border border-outline/20">
+<span class="text-xs text-surface-dim block font-semibold uppercase">Official Swish Support</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary-fixed dark:text-primary">123 456 78 90</span>
+<span class="text-xs text-surface-dim block mt-0.5">Non-profit org nr: 802490-1234</span>
+</div>
+</li>
+</ul>
+</div>
+<!-- Col 4: Care & Privacy -->
+<div class="space-y-3">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-inverse-on-surface dark:text-on-surface">Care &amp; Contact</h3>
+<ul class="space-y-2.5">
+<li>
+<a class="font-body-sm text-body-sm text-surface-dim dark:text-on-surface-variant hover:text-inverse-on-surface dark:hover:text-on-surface transition-colors flex items-center gap-1.5" href="#whatsapp">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+              Privacy &amp; WhatsApp Care
+            </a>
+</li>
+<li>
+<span class="font-body-sm text-body-sm text-surface-dim dark:text-secondary block">
+              Gothenburg Ministry Hub: Drottninggatan 14, 411 14 Göteborg
+            </span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Bottom Copyright Disclaimer Bar -->
+<div class="border-t border-outline/20 dark:border-outline-variant/30 py-6">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="font-body-sm text-body-sm text-surface-dim dark:text-secondary text-center md:text-left">
+          © 2025 GOSPELS Ministry Gothenburg. All rights reserved. Non-profit Christian fellowship.
+        </p>
+<div class="flex items-center gap-6">
+<a class="text-surface-dim hover:text-primary-fixed dark:hover:text-primary transition-colors text-xs font-semibold" href="#">Trosbekännelse</a>
+<a class="text-surface-dim hover:text-primary-fixed dark:hover:text-primary transition-colors text-xs font-semibold" href="#">GDPR Policy</a>
+<a class="text-surface-dim hover:text-primary-fixed dark:hover:text-primary transition-colors text-xs font-semibold" href="#">Press &amp; Media</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

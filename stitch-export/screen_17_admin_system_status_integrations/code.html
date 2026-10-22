@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>System Status &amp; Integrations - GOSPELS Gothenburg Ministry Hub</title>
+<!-- Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "on-background": "#0b1c30",
+            "on-tertiary-fixed": "#00201c",
+            "primary": "#00685f",
+            "tertiary-container": "#008376",
+            "tertiary-fixed": "#71f8e4",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-container": "#e5eeff",
+            "background": "#f8f9ff",
+            "tertiary": "#00685d",
+            "inverse-primary": "#6bd8cb",
+            "on-tertiary-container": "#f4fffb",
+            "surface": "#f8f9ff",
+            "secondary-fixed": "#dae2fd",
+            "secondary": "#565e74",
+            "on-primary-fixed-variant": "#005049",
+            "on-primary-container": "#f4fffc",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#005048",
+            "on-surface": "#0b1c30",
+            "on-secondary-fixed": "#131b2e",
+            "surface-variant": "#d3e4fe",
+            "outline-variant": "#bcc9c6",
+            "primary-container": "#008378",
+            "outline": "#6d7a77",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "primary-fixed": "#89f5e7",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#00201d",
+            "surface-container-high": "#dce9ff",
+            "primary-fixed-dim": "#6bd8cb",
+            "on-secondary-container": "#5c647a",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#eaf1ff",
+            "inverse-surface": "#213145",
+            "on-error": "#ffffff",
+            "secondary-container": "#dae2fd",
+            "surface-tint": "#006a61",
+            "surface-container-low": "#eff4ff",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-bright": "#f8f9ff",
+            "on-surface-variant": "#3d4947",
+            "surface-container-highest": "#d3e4fe",
+            "surface-dim": "#cbdbf5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1.25rem",
+            "space-2xl": "4rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f8f9ff;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #bcc9c6;
+      border-radius: 4px;
+    }
+    .ambient-card {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(13, 148, 136, 0.03);
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex selection:bg-primary selection:text-on-primary">
+<!-- ADMIN FIXED SIDE NAVIGATION BAR -->
+<aside class="fixed top-0 left-0 h-screen w-64 bg-surface-container-low border-r border-outline-variant/30 flex flex-col z-40 select-none">
+<div class="w-64 h-full p-4 flex flex-col justify-between overflow-y-auto custom-scroll">
+<!-- Upper Section: Branding & Identity -->
+<div>
+<!-- Brand Title & Gothenburg Subtext -->
+<div class="px-3 pt-2 pb-4 border-b border-outline-variant/20 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm font-headline-sm font-bold">
+<span class="material-symbols-outlined" data-icon="church">church</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight leading-tight">GOSPELS Admin</div>
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Gothenburg Ministry Hub</div>
+</div>
+</div>
+</div>
+<!-- Pastor Tomas Sjödin Ministry Avatar Card -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/30 mb-5 flex items-center gap-3 shadow-xs">
+<div class="relative">
+<img class="w-10 h-10 rounded-full object-cover border border-primary/20" data-alt="Dignified Nordic portrait of Pastor Tomas Sjödin, featuring a gentle, contemplative expression with soft natural daylight streaming through Scandinavian church glass, clean minimalist styling, muted teal and warm charcoal tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Sz7DDpmqOuwG6aY5AI-LUBnGA3GAraILFGN7h12lcMCFhw533syLAN_Q0Ddm7TKhcBlCTxp186SZzoVk2ft_eLMBLFtoVqFg_1-Ff5lemTff8U3FIHnf8LyzX7DwWF3O33KISDuf2sjOnzYdmCaOaIyO8QBVhD7odFB2R5vtAf3-O2O0jojJld4S-MERpaiBLm94xdWU1tMTOheCF1N6Xg0mXgmNCY16KU9Df5WbVxErk2_X8GEh"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="overflow-hidden">
+<h4 class="font-label-md text-label-md text-on-surface truncate">Pastor Tomas Sjödin</h4>
+<p class="font-label-sm text-label-sm text-secondary truncate">Smyrna Fellowship Overseer</p>
+</div>
+</div>
+<!-- Navigation Tabs Section -->
+<div class="space-y-1">
+<div class="px-3 py-1 font-label-sm text-label-sm text-outline font-semibold tracking-wider uppercase">Ministry Operations</div>
+<!-- Inactive Tab: Dashboard -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</div>
+</a>
+<!-- Inactive Tab: Events -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="event">event</span>
+<span class="font-label-md text-label-md">Events</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-secondary font-medium">8</span>
+</a>
+<!-- Inactive Tab: Prayer Requests (12) -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="folded_hands">folded_hands</span>
+<span class="font-label-md text-label-md">Prayer Requests</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary/10 text-primary font-bold">12</span>
+</a>
+<!-- Inactive Tab: Volunteers (38) -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Volunteers</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-secondary font-medium">38</span>
+</a>
+<!-- Inactive Tab: Partner Churches -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="domain">domain</span>
+<span class="font-label-md text-label-md">Partner Churches</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-secondary font-medium">14</span>
+</a>
+<!-- Inactive Tab: Content & Media -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="library_music">library_music</span>
+<span class="font-label-md text-label-md">Content &amp; Media</span>
+</div>
+</a>
+<!-- Inactive Tab: Giving & Stewardship -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-md text-label-md">Giving &amp; Stewardship</span>
+</div>
+</a>
+<div class="px-3 pt-3 pb-1 font-label-sm text-label-sm text-outline font-semibold tracking-wider uppercase">Infrastructure</div>
+<!-- ACTIVE TAB: System Status (with Live Green Indicator) -->
+<a class="bg-secondary-container text-primary font-semibold rounded-lg px-4 py-2.5 flex items-center justify-between transition-colors shadow-xs" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary fill-icon" data-icon="tune" style="font-variation-settings: 'FILL' 1;">tune</span>
+<span class="font-label-md text-label-md font-bold">System Status</span>
+</div>
+<span class="flex items-center gap-1.5">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+</span>
+</a>
+</div>
+</div>
+<!-- Lower Section: Action & Footer Links -->
+<div class="pt-4 border-t border-outline-variant/20 space-y-2">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-sm active:scale-[0.98]">
+<span class="material-symbols-outlined text-base" data-icon="add_circle">add_circle</span>
+<span>Create Event</span>
+</button>
+<div class="pt-2 space-y-0.5">
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2 flex items-center gap-3 transition-colors text-xs font-label-md" href="#">
+<span class="material-symbols-outlined text-base" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-secondary hover:bg-surface-container rounded-lg px-4 py-2 flex items-center gap-3 transition-colors text-xs font-label-md" href="#">
+<span class="material-symbols-outlined text-base" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- MAIN VIEWPORT CANVAS -->
+<main class="ml-64 flex-1 min-h-screen bg-surface flex flex-col">
+<!-- Top Administrative Header Bar -->
+<header class="sticky top-0 z-30 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 px-8 py-5">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Breadcrumbs & Headline Hierarchy -->
+<div>
+<nav class="flex items-center gap-2 font-label-sm text-label-sm text-secondary mb-1">
+<span>Admin</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span>Platform Infrastructure</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-semibold">System Status &amp; Integrations</span>
+</nav>
+<div class="flex items-baseline gap-3">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">System Status &amp; Ministry Integrations</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              All Nodes Synchronized
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1 max-w-3xl">
+            Real-time telemetry, bankgiro settlement endpoints, pastoral SMS/WhatsApp gateways, and EU GDPR compliance status across West Sweden.
+          </p>
+</div>
+<!-- Top Action Trigger Cluster -->
+<div class="flex items-center gap-2.5 shrink-0">
+<button class="inline-flex items-center gap-2 px-3.5 py-2.5 bg-surface-container-lowest border border-outline-variant/40 hover:border-outline text-on-surface rounded-lg font-label-md text-label-md transition-all shadow-xs active:scale-95">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="refresh">refresh</span>
+<span>Run Diagnostic Check</span>
+</button>
+<button class="inline-flex items-center gap-2 px-3.5 py-2.5 bg-surface-container-lowest border border-outline-variant/40 hover:border-outline text-on-surface rounded-lg font-label-md text-label-md transition-all shadow-xs active:scale-95">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="download">download</span>
+<span>Download Audit Log (SOC2/GDPR)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md font-semibold transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="key">key</span>
+<span>Configure API Keys</span>
+</button>
+</div>
+</div>
+</header>
+<!-- CONTENT BODY CONTAINER -->
+<div class="p-8 max-w-7xl mx-auto w-full space-y-6">
+<!-- SYSTEM HEALTH BANNER -->
+<div class="p-4 bg-surface-container-lowest border border-outline-variant/30 rounded-xl ambient-card flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-3.5">
+<div class="relative flex h-3.5 w-3.5 shrink-0 ml-1">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-primary"></span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-2 flex-wrap">
+<span>All Ministry Services Operational</span>
+<span class="text-outline-variant">•</span>
+<span class="text-primary font-semibold">99.98% Uptime (Last 90 Days)</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-normal">Stockholm AWS Datacenter (eu-north-1)</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="verified">verified</span>
+<span>Nordic Bankgiro clearing operational. Next settlement cycle: Tomorrow 06:00 CET</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 text-right pr-2">
+<div class="hidden sm:block">
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Telemetry Frequency</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Every 15 Seconds</div>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 bg-surface-container-low rounded-lg text-primary font-label-md font-semibold text-xs border border-primary/20">
+<span class="material-symbols-outlined text-sm" data-icon="cloud_sync">cloud_sync</span>
+            Live Polling
+          </span>
+</div>
+</div>
+<!-- KEY INFRASTRUCTURE STATUS GRID (4 Pillars) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Card 1: SEB Bankgiro API -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-5 ambient-card hover:border-primary/40 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Settled &amp; Verified
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">SEB Bankgiro API</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Uptime: 99.99% • Protocol: Finansiell ID-Teknik / ISO 20022 XML</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1.5">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-secondary">Bankgiro Account</span>
+<span class="font-mono text-on-surface font-semibold">5542-8891</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-secondary">Last Heartbeat</span>
+<span class="text-on-surface">2 mins ago</span>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/70 rounded-lg px-2.5 py-1.5">
+<div class="font-label-sm text-label-sm font-bold text-primary">142 transactions processed today</div>
+<div class="font-body-sm text-body-sm text-on-surface font-semibold">184,520 SEK Tithes &amp; Gifts</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Swish eCommerce & Trade Hub -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-5 ambient-card hover:border-primary/40 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="phone_android">phone_android</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Active &amp; Instant
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">Swish eCommerce Hub</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Uptime: 99.95% • BankID Business SSL Valid (Exp Oct 2027)</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1.5">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-secondary">Swish Number</span>
+<span class="font-mono text-on-surface font-semibold">123 456 78 90</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-secondary">Mean Latency</span>
+<span class="text-primary font-semibold">140ms</span>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/70 rounded-lg px-2.5 py-1.5">
+<div class="font-label-sm text-label-sm font-bold text-primary">Hourly intake rate</div>
+<div class="font-body-sm text-body-sm text-on-surface font-semibold">24 gifts/hour continuous</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Twilio WhatsApp Pastoral Gateway -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-5 ambient-card hover:border-primary/40 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Encrypted Relay Online
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">WhatsApp Pastoral Relay</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Uptime: 99.98% • Dedicated Number: +46 70 123 45 67</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1.5">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-secondary">24h Covenant SLA</span>
+<span class="text-on-surface font-semibold">100% delivered to elders</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-secondary">Encryption</span>
+<span class="text-primary font-semibold">E2EE Active</span>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/70 rounded-lg px-2.5 py-1.5">
+<div class="font-label-sm text-label-sm font-bold text-primary">GDPR Art. 9 Compliant</div>
+<div class="font-body-sm text-body-sm text-on-surface font-semibold">Spiritual confessions protected</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Gothenburg Multi-Parish Dante Network -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-5 ambient-card hover:border-primary/40 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="speaker">speaker</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Sync Locked
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">Multi-Parish Dante Hub</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Uptime: 100% • 4 Sanctuaries via Tele2 Gigabit Fiber</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 space-y-1.5">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-secondary">Clock Master</span>
+<span class="text-on-surface font-semibold">Smyrna CL5 (PTP v2)</span>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-secondary">Fiber Network</span>
+<span class="text-primary font-semibold">&lt; 0.8ms jitter</span>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low/70 rounded-lg px-2.5 py-1.5">
+<div class="font-label-sm text-label-sm font-bold text-primary">Parish Audio Link</div>
+<div class="font-body-sm text-body-sm text-on-surface font-semibold">Frihamnen • Centrum • Majorna</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MAIN SECTION: TWO-COLUMN ARCHITECTURE (60% / 40%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN: 60% Width (7 of 12 cols) -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Card 1: Integration Endpoints & API Health -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 ambient-card">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="hub">hub</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Integration Endpoints &amp; API Health</h2>
+<p class="font-body-sm text-body-sm text-secondary">Active telemetry monitoring for West Sweden ministerial services</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container text-secondary font-semibold px-2.5 py-1 rounded-md">
+                5 Monitored
+              </span>
+</div>
+<!-- Endpoint Rows List -->
+<div class="divide-y divide-outline-variant/20">
+<!-- Microservice 1 -->
+<div class="py-4 flex items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">SEB Bankgiro Autogiro Mandate Sync</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-secondary font-mono">BGC-XML</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-outline" data-icon="schedule">schedule</span>
+<span>Daily Batch 04:00 CET</span>
+<span>•</span>
+<span class="font-mono text-xs">se.seb.api/bgc/v2/mandates</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Success
+                  </span>
+<div class="font-label-sm text-label-sm font-mono text-outline mt-1">200 OK (312ms)</div>
+</div>
+</div>
+<!-- Microservice 2 -->
+<div class="py-4 flex items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Swish Webhook Handler</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary/10 text-primary font-mono">LIVE FEED</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-outline" data-icon="bolt">bolt</span>
+<span>Real-time event streaming</span>
+<span>•</span>
+<span class="font-mono text-xs">swish.gospels.se/callback</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Healthy
+                  </span>
+<div class="font-label-sm text-label-sm font-mono text-outline mt-1">Avg response: 64ms</div>
+</div>
+</div>
+<!-- Microservice 3 -->
+<div class="py-4 flex items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Confidential Prayer Intercession Dispatcher</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-secondary font-mono">PUBSUB</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-outline" data-icon="lock">lock</span>
+<span>Immediate push to Pastor mobile app</span>
+<span>•</span>
+<span class="font-mono text-xs">pri.gospels.se/dispatch</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Active
+                  </span>
+<div class="font-label-sm text-label-sm font-mono text-outline mt-1">P99: 18ms</div>
+</div>
+</div>
+<!-- Microservice 4 -->
+<div class="py-4 flex items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">AWS S3 Stockholm Sanctuary Vault</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-secondary font-mono">OBJECT-STORE</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-outline" data-icon="cloud">cloud</span>
+<span>Video/Audio multitrack storage</span>
+<span>•</span>
+<span class="font-mono text-xs">s3://gospels-worship-archive-eu-n1</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    99.999%
+                  </span>
+<div class="font-label-sm text-label-sm font-mono text-outline mt-1">14.8 TB Total Stored</div>
+</div>
+</div>
+<!-- Microservice 5 -->
+<div class="py-4 flex items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Eventbrite &amp; Swedish Civic Permit Sync</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-secondary font-mono">REST API</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-outline" data-icon="gavel">gavel</span>
+<span>Gustav Adolfs Torg assembly permits</span>
+<span>•</span>
+<span class="font-mono text-xs">goteborg.se/polis-tillstand</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Synced
+                  </span>
+<div class="font-label-sm text-label-sm font-mono text-outline mt-1">200 OK (Valid Till 2026)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Real-time System Latency & Error Rate -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 ambient-card">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-outline-variant/20 gap-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="monitoring">monitoring</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Real-time System Latency &amp; Error Rate</h2>
+<p class="font-body-sm text-body-sm text-secondary">Continuous P95 response telemetry over the last 24 hours</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container-low text-secondary font-medium">Mean: 48ms</span>
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-primary/10 text-primary font-bold">0.00% Error Rate</span>
+</div>
+</div>
+<!-- Custom Data Visualization: Latency Sparkline Grid -->
+<div class="mt-5 space-y-4">
+<div class="h-36 w-full flex items-end gap-1.5 pt-4 pb-2 px-2 bg-surface-container-low/50 rounded-lg border border-outline-variant/20">
+<!-- Bar clusters simulating 24 hourly periods of consistent 40-60ms response -->
+<div class="flex-1 bg-primary/30 hover:bg-primary h-[42%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">42ms</span>
+</div>
+<div class="flex-1 bg-primary/40 hover:bg-primary h-[45%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">45ms</span>
+</div>
+<div class="flex-1 bg-primary/30 hover:bg-primary h-[39%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">39ms</span>
+</div>
+<div class="flex-1 bg-primary/40 hover:bg-primary h-[48%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">48ms</span>
+</div>
+<div class="flex-1 bg-primary/50 hover:bg-primary h-[54%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">54ms</span>
+</div>
+<div class="flex-1 bg-primary/40 hover:bg-primary h-[46%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">46ms</span>
+</div>
+<div class="flex-1 bg-primary/60 hover:bg-primary h-[58%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">58ms</span>
+</div>
+<div class="flex-1 bg-primary/50 hover:bg-primary h-[50%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">50ms</span>
+</div>
+<div class="flex-1 bg-primary/40 hover:bg-primary h-[44%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">44ms</span>
+</div>
+<div class="flex-1 bg-primary/30 hover:bg-primary h-[41%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">41ms</span>
+</div>
+<div class="flex-1 bg-primary/50 hover:bg-primary h-[52%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">52ms</span>
+</div>
+<div class="flex-1 bg-primary/60 hover:bg-primary h-[57%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">57ms</span>
+</div>
+<div class="flex-1 bg-primary/50 hover:bg-primary h-[49%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">49ms</span>
+</div>
+<div class="flex-1 bg-primary/40 hover:bg-primary h-[43%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">43ms</span>
+</div>
+<div class="flex-1 bg-primary/50 hover:bg-primary h-[51%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">51ms</span>
+</div>
+<div class="flex-1 bg-primary/70 hover:bg-primary h-[60%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">60ms</span>
+</div>
+<div class="flex-1 bg-primary/40 hover:bg-primary h-[47%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">47ms</span>
+</div>
+<div class="flex-1 bg-primary/30 hover:bg-primary h-[40%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">40ms</span>
+</div>
+<div class="flex-1 bg-primary/40 hover:bg-primary h-[45%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">45ms</span>
+</div>
+<div class="flex-1 bg-primary/50 hover:bg-primary h-[53%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">53ms</span>
+</div>
+<div class="flex-1 bg-primary/40 hover:bg-primary h-[46%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">46ms</span>
+</div>
+<div class="flex-1 bg-primary/30 hover:bg-primary h-[38%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">38ms</span>
+</div>
+<div class="flex-1 bg-primary/50 hover:bg-primary h-[48%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">48ms</span>
+</div>
+<div class="flex-1 bg-primary hover:bg-primary-container h-[46%] rounded-t transition-all group relative">
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-sm text-[10px] px-1.5 py-0.5 rounded font-bold shadow pointer-events-none">Now: 46ms</span>
+</div>
+</div>
+<!-- Time axis labels -->
+<div class="flex justify-between font-label-sm text-label-sm text-outline px-1">
+<span>24h ago (14:00)</span>
+<span>18:00</span>
+<span>00:00 Night</span>
+<span>06:00 Morning Settlement</span>
+<span>Current Time</span>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-4 font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="text-secondary">Zero error spikes recorded across all Swedish banking hooks</span>
+</div>
+<span class="font-mono text-outline text-xs">SLO Compliance: 100.0%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: 40% Width (5 of 12 cols) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Card 1: GDPR & Sacred Confessional Data Governance -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 ambient-card">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="policy">policy</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Data Governance &amp; GDPR</h2>
+<p class="font-body-sm text-body-sm text-secondary">Sacred confessional privacy standards</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+</div>
+<!-- Compliance Checklist & Rules -->
+<div class="mt-4 space-y-3.5">
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/20 space-y-1">
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Data Compliance Officer</div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Rev. Jonas Lindqvist</div>
+<div class="font-body-sm text-body-sm text-secondary">Gothenburg Fellowship Trust • Legal Oversight</div>
+</div>
+<div class="space-y-2.5 pt-1">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-base mt-0.5" data-icon="cloud_done">cloud_done</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Storage Region:</span>
+<span class="font-body-sm text-body-sm text-secondary ml-1">AWS Europe (Stockholm) — eu-north-1 strictly within Sweden.</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-base mt-0.5" data-icon="hourglass_top">hourglass_top</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Prayer Petition Purge:</span>
+<span class="font-body-sm text-body-sm text-secondary ml-1">Auto-anonymized after 30 days unless consented for pastoral intercession.</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-base mt-0.5" data-icon="person_remove">person_remove</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Right-to-be-Forgotten:</span>
+<span class="font-body-sm text-body-sm text-secondary ml-1">Automated self-service portal active for parish members.</span>
+</div>
+</div>
+</div>
+<!-- Official Nordic Ministry Compliance Badge -->
+<div class="mt-4 p-3.5 bg-primary/5 rounded-xl border border-primary/20 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="shield">shield</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-primary">
+                    Svensk Kyrklig Dataskyddsförordning (SKDF) Compliant
+                  </div>
+<div class="font-label-sm text-label-sm text-secondary">
+                    Audited by Swedish Church Law Forum 2025
+                  </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Recent System & Security Audit Events -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 ambient-card flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="history_toggle_off">history_toggle_off</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Recent System &amp; Audit Events</h2>
+<p class="font-body-sm text-body-sm text-secondary">Immutable timestamped system ledger</p>
+</div>
+</div>
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+</div>
+<!-- Timeline of Events -->
+<div class="mt-4 space-y-4 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant/30">
+<!-- Event 1 -->
+<div class="flex items-start gap-3.5 pl-1 relative">
+<span class="w-4 h-4 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center shrink-0 mt-0.5 z-10"></span>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-mono text-xs font-bold text-primary">11:42 CET</span>
+<span class="font-label-sm text-label-sm text-outline">Today</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+                      SEB Bankgiro daily reconciliation file auto-archived into encrypted S3 Stockholm vault.
+                    </p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex items-start gap-3.5 pl-1 relative">
+<span class="w-4 h-4 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center shrink-0 mt-0.5 z-10"></span>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-mono text-xs font-bold text-primary">10:15 CET</span>
+<span class="font-label-sm text-label-sm text-outline">Today</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+                      Swish TLS 1.3 certificate rotation verified with BankID Business Root CA.
+                    </p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex items-start gap-3.5 pl-1 relative">
+<span class="w-4 h-4 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center shrink-0 mt-0.5 z-10"></span>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-mono text-xs font-bold text-primary">08:30 CET</span>
+<span class="font-label-sm text-label-sm text-outline">Today</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+                      Pastoral encrypted WhatsApp session authenticated by Pastor Tomas Sjödin.
+                    </p>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="flex items-start gap-3.5 pl-1 relative">
+<span class="w-4 h-4 rounded-full bg-surface-container-lowest border-2 border-outline flex items-center justify-center shrink-0 mt-0.5 z-10"></span>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-mono text-xs font-bold text-outline">06:00 CET</span>
+<span class="font-label-sm text-label-sm text-outline">Today</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+                      Automated database backup snapshot created (AES-256 encrypted, 4 replicas).
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Deep Link -->
+<div class="mt-6 pt-4 border-t border-outline-variant/20">
+<a class="inline-flex items-center gap-1.5 text-primary hover:text-primary-container font-label-md text-label-md font-semibold transition-colors group" href="#">
+<span>View Full 90-Day Audit Log (1,420 events)</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- SCRIPTURE MEDITATION CALLOUT (Nordic Worship Touchstone) -->
+<div class="p-6 bg-surface-container-lowest border-l-4 border-primary rounded-r-xl border-t border-r border-b border-outline-variant/20 ambient-card mt-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="max-w-3xl">
+<p class="font-scripture-quote text-scripture-quote text-on-surface italic leading-relaxed">
+              “For God is not a God of disorder but of peace—as in all the congregations of the Lord’s people.”
+            </p>
+<div class="font-label-sm text-label-sm text-secondary mt-2 tracking-wider uppercase font-semibold">
+              1 Corinthians 14:33 • Foundational Principle of Gothenburg Ministry Administration
+            </div>
+</div>
+<div class="shrink-0 flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-xl" data-icon="sanitizer">sanitizer</span>
+<span class="font-label-sm text-label-sm">System Integrity Validated</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ADMIN FOOTER BAR -->
+<footer class="mt-auto border-t border-outline-variant/30 bg-surface-container-lowest/80 px-8 py-4">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-body-sm text-secondary">
+<div>
+          © 2025 GOSPELS Ministry Gothenburg. All rights reserved. Non-profit Christian fellowship.
+        </div>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5 text-primary font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+            Stockholm Node (eu-north-1)
+          </span>
+<span class="text-outline-variant">•</span>
+<span>Build: v4.12.0-rc3</span>
+<span class="text-outline-variant">•</span>
+<a class="hover:text-primary transition-colors" href="#">Emergency Protocol</a>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

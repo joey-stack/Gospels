@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS - Mobilt BankID Signering</title>
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#565e74",
+            "primary-fixed": "#89f5e7",
+            "on-secondary-container": "#5c647a",
+            "on-surface": "#0b1c30",
+            "secondary-fixed-dim": "#bec6e0",
+            "tertiary": "#00685d",
+            "on-error": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "background": "#f8f9ff",
+            "on-tertiary-fixed-variant": "#005048",
+            "surface-tint": "#006a61",
+            "surface-variant": "#d3e4fe",
+            "inverse-on-surface": "#eaf1ff",
+            "secondary-container": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#6d7a77",
+            "on-background": "#0b1c30",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#71f8e4",
+            "on-error-container": "#93000a",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-container-high": "#dce9ff",
+            "on-tertiary-fixed": "#00201c",
+            "on-surface-variant": "#3d4947",
+            "on-tertiary-container": "#f4fffb",
+            "on-primary-fixed-variant": "#005049",
+            "on-primary-fixed": "#00201d",
+            "inverse-surface": "#213145",
+            "surface-bright": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "error": "#ba1a1a",
+            "primary": "#00685f",
+            "surface-container-low": "#eff4ff",
+            "on-primary-container": "#f4fffc",
+            "secondary-fixed": "#dae2fd",
+            "inverse-primary": "#6bd8cb",
+            "primary-fixed-dim": "#6bd8cb",
+            "surface": "#f8f9ff",
+            "primary-container": "#008378",
+            "tertiary-container": "#008376",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "outline-variant": "#bcc9c6",
+            "surface-dim": "#cbdbf5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin-mobile": "1.25rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "margin": "3rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 0.2; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    .animate-pulse-ring {
+      animation: pulse-ring 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes subtle-float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+    .animate-float {
+      animation: subtle-float 4s ease-in-out infinite;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen relative flex items-center justify-center p-0 sm:p-4 selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Background App Screen Preview (Contextual Gothenburg Ministry Giving Screen) -->
+<div class="fixed inset-0 overflow-y-auto pointer-events-none filter blur-sm opacity-60 max-w-lg mx-auto bg-surface-container-lowest">
+<!-- Top Bar Simulation -->
+<div class="px-6 py-4 border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-lowest">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">GOSPELS</span>
+<span class="material-symbols-outlined text-secondary" data-icon="menu">menu</span>
+</div>
+<div class="p-6 space-y-6">
+<div class="h-44 rounded-xl overflow-hidden relative shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="An atmospheric Nordic gospel concert in Gothenburg Sweden featuring an energetic worship choir on stage with warm wooden auditorium flooring, soft celestial stage lighting, and tech turquoise accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBho0FgeN76QO9inU0ZzL3xLulbgejZpBNdBz0goNGvin2L5uUJJjRZk41MF35z1y6I2GSLFOJjt8VbmqkEScXQGeLoDGo5II8CBhnFf9A0GAhAXbCxwSn_d19ZW4SLFPyHr2U8cgR8__a3YzrPryi8Mwz08MlQ9Z6-j7lRDC33sx4fdpLjC9rglJ5Lds9oRILu7vO_41R382JDW6-LpymwZTSSGWpah2k7u7pPL5aoYJsY3sk8ZJBl"/>
+</div>
+<div class="space-y-3">
+<div class="h-6 w-3/4 bg-surface-container rounded-lg"></div>
+<div class="h-4 w-full bg-surface-container-low rounded"></div>
+<div class="h-4 w-2/3 bg-surface-container-low rounded"></div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<div class="h-10 bg-primary/20 rounded-lg"></div>
+</div>
+</div>
+</div>
+<!-- Modal Backdrop Overlay -->
+<div class="fixed inset-0 bg-on-surface/55 backdrop-blur-md transition-opacity duration-300 z-50 flex flex-col justify-end sm:justify-center items-center" id="modalBackdrop">
+<!-- Modal Card (Mobile Sheet Anchor) -->
+<div class="w-full sm:max-w-md bg-surface-container-lowest rounded-t-[28px] sm:rounded-3xl shadow-2xl border border-outline-variant/30 overflow-hidden transform transition-all duration-300 flex flex-col max-h-[830px]">
+<!-- Drag Handle Indicator for Mobile Gestures -->
+<div class="pt-3 pb-1 flex justify-center items-center cursor-grab active:cursor-grabbing sm:hidden">
+<div class="w-12 h-1.5 rounded-full bg-outline-variant/60"></div>
+</div>
+<!-- Header Section -->
+<div class="px-6 pt-3 pb-4 flex items-start justify-between border-b border-outline-variant/20 bg-surface-bright">
+<div class="flex items-center gap-3">
+<!-- BankID Shield Logo Badge -->
+<div class="w-10 h-10 rounded-xl bg-inverse-surface flex items-center justify-center shadow-sm text-surface-container-lowest flex-shrink-0">
+<!-- Official BankID geometric representation -->
+<svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L4 5V11.09C4 16.14 7.41 20.85 12 22C16.59 20.85 20 16.14 20 11.09V5L12 2Z" fill="#235971" stroke="#89F5E7" stroke-width="1.2"></path>
+<path d="M9 11.5L11 13.5L15.5 9" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">Mobilt BankID</h2>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-container/15 text-primary tracking-wide">LEGITIMERING</span>
+</div>
+<p class="font-label-md text-label-md text-secondary">GOSPELS Gothenburg Ministry • Säker signering</p>
+</div>
+</div>
+<!-- Close Button -->
+<button aria-label="Stäng dialog" class="w-8 h-8 rounded-full flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</div>
+<!-- Scrollable Modal Body -->
+<div class="px-6 py-5 overflow-y-auto space-y-5">
+<!-- Trust & Security Receipt Block -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 space-y-3">
+<div class="flex items-start justify-between pb-3 border-b border-outline-variant/20">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Mottagare</p>
+<p class="font-body-md text-body-md font-semibold text-on-surface">GOSPELS Ideell Förening</p>
+<p class="font-body-sm text-body-sm text-secondary font-mono">Org.nr 802540-1234 • Göteborg</p>
+</div>
+<div class="flex items-center gap-1 text-primary bg-surface-container-lowest px-2.5 py-1 rounded-full border border-primary/20 shadow-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm font-bold">Verifierad</span>
+</div>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ärende</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface text-right">Signering av gåva: Kollekten</span>
+</div>
+<div class="flex justify-between items-baseline bg-surface-container-lowest/80 p-2.5 rounded-lg border border-outline-variant/20">
+<span class="font-label-md text-label-md text-secondary">Belopp</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">300,00 SEK</span>
+</div>
+<div class="flex items-center justify-between pt-1 text-[11px] text-secondary font-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+              Ref: GP-2026-9812
+            </span>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+              256-bit TLS Skyddad
+            </span>
+</div>
+</div>
+<!-- Primary Interaction Center: Pulse Indicator & Call to Action -->
+<div class="py-2 text-center flex flex-col items-center justify-center">
+<!-- Animated BankID Pulse Container -->
+<div class="relative w-24 h-24 flex items-center justify-center mb-4">
+<div class="absolute inset-0 rounded-full bg-primary/10 animate-pulse-ring"></div>
+<div class="absolute inset-2 rounded-full bg-primary/20 animate-pulse"></div>
+<div class="relative w-16 h-16 rounded-2xl bg-inverse-surface flex items-center justify-center shadow-lg border border-white/20 transform hover:scale-105 transition-transform duration-200">
+<!-- BankID Official Signature Mark -->
+<svg class="w-10 h-10 text-white" fill="none" viewbox="0 0 32 32">
+<rect fill="#235971" height="32" rx="8" width="32"></rect>
+<path d="M8 8H14.5C18.0899 8 21 10.9101 21 14.5C21 18.0899 18.0899 21 14.5 21H8V8Z" stroke="#89F5E7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<path d="M14 14.5L16.5 17L23.5 10" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path>
+</svg>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Väntar på Mobilt BankID...</h3>
+<p class="font-body-sm text-body-sm text-secondary max-w-xs mb-5">
+            Öppna din säkerhetsapp och bekräfta med säkerhetskod eller biometri.
+          </p>
+<!-- Action Buttons Group -->
+<div class="w-full space-y-2.5">
+<!-- Launch App on This Device Button -->
+<a class="w-full py-3.5 px-4 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-2.5 shadow-md shadow-primary/20 transition-all active:scale-[0.98] focus:ring-4 focus:ring-primary/20" href="bankid:///">
+<span class="material-symbols-outlined text-[20px]" data-icon="smartphone">smartphone</span>
+<span>Starta BankID på denna enhet</span>
+</a>
+<!-- Alternative QR Code on Another Device -->
+<button class="w-full py-3 px-4 bg-surface-container-lowest text-on-surface border border-outline-variant hover:bg-surface-container-low rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-colors active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span>Signera på en annan enhet (Skanna QR)</span>
+</button>
+</div>
+</div>
+<!-- Help and Anti-Fraud Security Warning Note -->
+<div class="p-3.5 rounded-xl bg-surface-container border-l-4 border-primary flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<div class="space-y-0.5">
+<p class="font-label-sm text-label-sm font-bold text-on-surface">Viktig säkerhetsinformation</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Vi ringer eller skickar aldrig SMS om inloggning med BankID. Kontrollera alltid att <strong class="text-on-surface">GOSPELS Ideell Förening</strong> står som mottagare.
+            </p>
+</div>
+</div>
+</div>
+<!-- Footer Cancellation & Assistance Action -->
+<div class="px-6 py-4 bg-surface-bright border-t border-outline-variant/20 flex items-center justify-between">
+<button class="font-label-md text-label-md font-semibold text-secondary hover:text-error transition-colors flex items-center gap-1.5 py-1" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="cancel">cancel</span>
+<span>Avbryt signering</span>
+</button>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="#hjalp">
+<span class="material-symbols-outlined text-[16px]" data-icon="help">help</span>
+<span>Behöver du hjälp?</span>
+</a>
+</div>
+</div>
+</div>
+</body></html>

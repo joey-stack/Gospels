@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS — Volontärpass &amp; Behörighet</title>
+<!-- Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#6d7a77",
+            "surface": "#f8f9ff",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#3d4947",
+            "tertiary-fixed": "#71f8e4",
+            "on-tertiary-fixed": "#00201c",
+            "on-primary-container": "#f4fffc",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "secondary-container": "#dae2fd",
+            "secondary-fixed-dim": "#bec6e0",
+            "primary": "#00685f",
+            "on-primary-fixed-variant": "#005049",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-container-low": "#eff4ff",
+            "on-error-container": "#93000a",
+            "primary-container": "#008378",
+            "secondary-fixed": "#dae2fd",
+            "on-error": "#ffffff",
+            "outline-variant": "#bcc9c6",
+            "surface-bright": "#f8f9ff",
+            "tertiary-container": "#008376",
+            "surface-variant": "#d3e4fe",
+            "background": "#f8f9ff",
+            "inverse-primary": "#6bd8cb",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary": "#00685d",
+            "on-secondary-container": "#5c647a",
+            "inverse-surface": "#213145",
+            "surface-tint": "#006a61",
+            "surface-dim": "#cbdbf5",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#6bd8cb",
+            "surface-container": "#e5eeff",
+            "on-background": "#0b1c30",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#565e74",
+            "on-primary-fixed": "#00201d",
+            "on-tertiary-fixed-variant": "#005048",
+            "primary-fixed": "#89f5e7",
+            "on-tertiary-container": "#f4fffb",
+            "on-surface": "#0b1c30",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-container-high": "#dce9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "margin": "3rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-2xl": "4rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "scripture-quote": ["EB Garamond"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Nordic holographic subtle shimmer effect */
+    @keyframes nordic-hologram {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hologram-border {
+      background: linear-gradient(135deg, rgba(13,148,136,0.5), rgba(218,226,253,0.7), rgba(0,104,95,0.4), rgba(113,248,228,0.6));
+      background-size: 300% 300%;
+      animation: nordic-hologram 7s ease infinite;
+    }
+    @keyframes pulse-nfc {
+      0% { transform: scale(0.96); opacity: 0.7; }
+      50% { transform: scale(1.08); opacity: 1; }
+      100% { transform: scale(0.96); opacity: 0.7; }
+    }
+    .nfc-ring {
+      animation: pulse-nfc 2.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-32 font-body-md text-body-md flex justify-center">
+<!-- Mobile Frame Container (Max-width 440px for precise mobile ergonomics) -->
+<main class="w-full max-w-md bg-surface-bright min-h-screen flex flex-col shadow-2xl relative overflow-x-hidden">
+<!-- Top Status Indicator & Header -->
+<header class="sticky top-0 z-30 bg-surface-container-lowest/95 backdrop-blur-md px-5 pt-3 pb-3.5 shadow-sm border-b border-outline-variant/30">
+<div class="flex items-center justify-between">
+<!-- Logo and Ministry branding -->
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[18px]">church</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-extrabold tracking-tight text-on-surface">GOSPELS</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</div>
+<p class="font-label-sm text-label-sm text-secondary font-medium">Volontärpass &amp; Behörighet</p>
+</div>
+</div>
+<!-- Active Status Chip -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed/30 border border-primary/20">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm font-bold text-primary tracking-wide">Aktiv Volontär 2026</span>
+</div>
+</div>
+</header>
+<!-- Scrollable Main Content -->
+<div class="px-5 py-5 space-y-6">
+<!-- ============================================================ -->
+<!-- CENTERPIECE DIGITAL BACKSTAGE PASS (Credit Card / Badge Format) -->
+<!-- ============================================================ -->
+<section aria-label="Digitalt Volontärpass" class="relative">
+<!-- Ambient tinted glow behind pass -->
+<div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/15 via-tertiary-fixed-dim/20 to-secondary-container/30 blur-lg -z-10"></div>
+<!-- Outer Holographic Nordic Border container -->
+<div class="p-[2.5px] rounded-2xl hologram-border shadow-xl">
+<div class="bg-surface-container-lowest rounded-[14px] p-5 relative overflow-hidden">
+<!-- Watermark / Background architectural cross subtle geometry -->
+<div class="absolute -right-12 -top-12 opacity-5 pointer-events-none text-on-surface">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">local_activity</span>
+</div>
+<!-- Pass Top Tier: GOSPELS Crest & NFC Pulse -->
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-inverse-surface flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[15px]">token</span>
+</div>
+<div>
+<h1 class="font-label-sm text-label-sm font-bold tracking-widest text-on-surface uppercase">GÖTEBORG MINISTRY HUB</h1>
+<p class="text-[9px] font-label-sm text-secondary tracking-normal">OFFICIELLT BACKSTAGE-PASS</p>
+</div>
+</div>
+<!-- NFC live touch indicator -->
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container border border-outline-variant/40">
+<span class="material-symbols-outlined text-[14px] text-primary nfc-ring">contactless</span>
+<span class="font-label-sm text-[10px] text-primary font-bold">NFC REDO</span>
+</div>
+</div>
+<!-- Volunteer Profile & Photo Area -->
+<div class="mt-4 flex gap-4 items-center">
+<!-- Photo with Verified badge -->
+<div class="relative shrink-0">
+<div class="w-20 h-20 rounded-xl overflow-hidden ring-2 ring-primary/30 shadow-md bg-surface-container">
+<img alt="Elin Lindqvist" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ0EgpO_-f5cr-ufrYt6SPsfF2fQn7cjUmv4DA8xhRQmMR2StG39wxrxu8mc1V7kv5KYQm2YesyhT_eo1JjxdtW-h6AbVS3SYS_CNjXt-NjBWuIf_Si_hQgz67aNzUyGShq-n4g2ZFSlOAWmpDqigDxmjBcrzkEGJUocAjq9VBo-UzrgfDi69Y-MAATIVTHoQXBGjj95OYaMslFPBKs_JTvu5V2ioD9PwgM-pJDQlaFvKRHV02VlrSPK6d8pcJLiHVMQ"/>
+</div>
+<div class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<!-- Identity Details -->
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">SOPRAN / ALT SEKTION</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface truncate leading-tight">Elin Lindqvist</h2>
+<p class="font-body-sm text-body-sm text-secondary font-medium mt-0.5">Alt II • Sångare &amp; Förbönsledare</p>
+<div class="mt-2 flex items-center gap-1.5 text-[11px] font-label-sm text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded border border-outline-variant/30 w-fit">
+<span class="material-symbols-outlined text-[12px] text-primary">pin</span>
+<span>Loge B (Artistfoajé)</span>
+</div>
+</div>
+</div>
+<!-- Access Zones Badges Grid -->
+<div class="mt-4 pt-3.5 border-t border-outline-variant/30 space-y-2">
+<span class="font-label-sm text-[10px] uppercase font-bold text-secondary tracking-wider block">Tillträdeszoner (Access Zones)</span>
+<div class="grid grid-cols-1 gap-1.5">
+<!-- Zone 1 -->
+<div class="flex items-center justify-between bg-primary/10 border border-primary/25 px-2.5 py-1.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">stadium</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Frihamnen Arena</span>
+</div>
+<span class="font-label-sm text-[10px] bg-primary text-on-primary font-bold px-2 py-0.5 rounded uppercase tracking-wider">ALL ACCESS</span>
+</div>
+<!-- Zone 2 -->
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant/40 px-2.5 py-1.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">door_sliding</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Smyrnakyrkan</span>
+</div>
+<span class="font-label-sm text-[10px] bg-surface-container-high text-on-secondary-container font-semibold px-2 py-0.5 rounded uppercase">BACKSTAGE / SAL A</span>
+</div>
+<!-- Zone 3 -->
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant/40 px-2.5 py-1.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">graphic_eq</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Ljud &amp; Scen</span>
+</div>
+<span class="font-label-sm text-[10px] bg-tertiary-fixed/60 text-on-tertiary-fixed font-bold px-2 py-0.5 rounded uppercase">BEHÖRIG</span>
+</div>
+</div>
+</div>
+<!-- Dynamic Scannable QR & Rolling Security Token -->
+<div class="mt-4 pt-3.5 border-t border-outline-variant/30 flex items-center gap-3.5 bg-surface-container-low/70 p-3 rounded-xl border border-outline-variant/30">
+<!-- Visual Simulated QR Code pattern -->
+<div class="w-16 h-16 shrink-0 bg-inverse-surface p-1.5 rounded-lg shadow-sm flex flex-col justify-between">
+<div class="grid grid-cols-4 gap-0.5 h-full w-full">
+<div class="bg-surface-bright rounded-[1px]"></div>
+<div class="bg-surface-bright rounded-[1px]"></div>
+<div class="bg-surface-bright rounded-[1px]"></div>
+<div class="bg-transparent"></div>
+<div class="bg-surface-bright rounded-[1px]"></div>
+<div class="bg-transparent"></div>
+<div class="bg-primary-fixed rounded-[1px]"></div>
+<div class="bg-surface-bright rounded-[1px]"></div>
+<div class="bg-transparent"></div>
+<div class="bg-primary-fixed rounded-[1px]"></div>
+<div class="bg-transparent"></div>
+<div class="bg-surface-bright rounded-[1px]"></div>
+<div class="bg-surface-bright rounded-[1px]"></div>
+<div class="bg-surface-bright rounded-[1px]"></div>
+<div class="bg-transparent"></div>
+<div class="bg-surface-bright rounded-[1px]"></div>
+</div>
+</div>
+<!-- Scanning CTA & Timer -->
+<div class="flex-1">
+<div class="flex items-center gap-1.5 text-primary font-bold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span>Håll mot läsare vid entré</span>
+</div>
+<p class="font-body-sm text-[12px] text-secondary mt-0.5 leading-snug">Rikta mot skanner vid Artist/Volontärentré</p>
+<div class="flex items-center gap-2 mt-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></div>
+<span class="font-label-sm text-[10px] text-on-surface-variant font-mono uppercase" id="token-timer">Token: #G9F2 • Giltig 24s</span>
+</div>
+</div>
+</div>
+<!-- Pass Card Footer metadata -->
+<div class="mt-3.5 pt-2 flex items-center justify-between text-[10px] font-label-sm text-secondary font-mono">
+<span>ID: GP-VOL-2026-4891</span>
+<span>GOSPELS Ideell Förening</span>
+</div>
+</div>
+</div>
+<!-- Add to Wallet Integration (Swedish Styling) -->
+<div class="mt-3 flex gap-2.5">
+<button class="flex-1 bg-inverse-surface hover:bg-on-background active:scale-[0.98] transition-all text-inverse-on-surface py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span class="font-label-md text-label-md font-semibold">Lägg till i Apple Wallet</span>
+</button>
+<button class="px-3.5 py-2.5 bg-surface-container-lowest border border-outline-variant/60 hover:bg-surface-container rounded-lg active:scale-95 transition-all text-on-surface flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- DAGENS UPPDRAG & SCHEMA (Today's Rehearsal & Tour Schedule) -->
+<!-- ============================================================ -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_today</span>
+<h3 class="font-headline-sm text-[18px] font-bold text-on-surface">Dagens Uppdrag &amp; Schema</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold bg-primary/10 px-2 py-0.5 rounded">Fredag 27 Mars</span>
+</div>
+<!-- Schedule Timeline Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/30 shadow-sm space-y-4">
+<!-- Event 1 -->
+<div class="flex gap-3.5 relative">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold font-label-sm text-[11px]">
+                17:30
+              </div>
+<div class="w-0.5 h-full bg-outline-variant/30 my-1"></div>
+</div>
+<div class="flex-1 pb-3">
+<div class="flex items-center justify-between">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Samling &amp; Gemensam Fika</h4>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container px-1.5 py-0.5 rounded">Loge B</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Kaffe, mackor och utdelning av scenkläder och in-ear monitors.</p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex gap-3.5 relative">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold font-label-sm text-[11px] shadow-sm">
+                18:00
+              </div>
+<div class="w-0.5 h-full bg-outline-variant/30 my-1"></div>
+</div>
+<div class="flex-1 pb-3">
+<div class="flex items-center justify-between">
+<h4 class="font-label-md text-label-md font-bold text-primary">Uppvärmning &amp; Bön</h4>
+<span class="font-label-sm text-[10px] bg-primary-fixed/40 text-on-primary-fixed font-bold px-1.5 py-0.5 rounded">Stora Scen</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Vokal uppsjungning och förbön ledd av Blessing O.</p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex gap-3.5">
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface-container text-secondary flex items-center justify-center font-bold font-label-sm text-[11px]">
+                18:30
+              </div>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Generalrepetition på scen</h4>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container px-1.5 py-0.5 rounded">18:30 – 21:30</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Genomgång av repertoaren: "Holy Ground", "Göteborgs Lovsång" och finalkör.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- VIKTIGA KONTAKTER VID ENTRÉ (Stage & Security Contacts) -->
+<!-- ============================================================ -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">contacts</span>
+<h3 class="font-headline-sm text-[18px] font-bold text-on-surface">Viktiga Kontakter vid Entré</h3>
+</div>
+<span class="font-label-sm text-[11px] text-secondary">Jourhavande</span>
+</div>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Contact 1: Marcus V. -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 border border-outline-variant/30 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold font-headline-sm text-[14px]">
+                MV
+              </div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Marcus V.</h4>
+<p class="font-body-sm text-[12px] text-secondary">Scenkoordinator &amp; Loger</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<a aria-label="Ring Marcus V." class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-colors shadow-sm" href="tel:0701234567">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<button aria-label="Skicka meddelande" class="w-9 h-9 rounded-lg bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+<!-- Contact 2: Skyddsombud & Fika -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 border border-outline-variant/30 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold font-headline-sm text-[14px]">
+                EK
+              </div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Eva-Karin &amp; Team</h4>
+<p class="font-body-sm text-[12px] text-secondary">Skyddsombud &amp; Fikaansvarig</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">sms</span>
+<span>Snabbmeddelande</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Scripture & Fellowship Callout -->
+<section class="border-l-[3px] border-primary bg-surface-container-low p-4 rounded-r-xl space-y-1">
+<p class="font-scripture-quote text-[16px] leading-relaxed italic text-on-surface">
+          "Tjäna varandra, var och en med den nådegåva han har fått, som goda förvaltare av Guds mångfaldiga nåd."
+        </p>
+<p class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider">
+          1 Petrusbrevet 4:10 • GOSPELS Ledarskap
+        </p>
+</section>
+</div>
+<!-- ============================================================ -->
+<!-- STICKY BOTTOM ASSISTANCE / EMERGENCY SOS BAR -->
+<!-- ============================================================ -->
+<div class="sticky bottom-16 z-20 px-5 pb-2 pt-1 pointer-events-auto">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-xl px-4 py-2.5 flex items-center justify-between shadow-xl border border-white/10">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px]" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
+<div>
+<span class="font-label-sm text-[11px] font-bold block leading-tight">Behöver du assistans vid dörren?</span>
+<span class="text-[10px] text-slate-300">Påkalla jourhavande entrévärd</span>
+</div>
+</div>
+<button class="bg-error hover:bg-red-700 active:scale-95 text-white font-label-sm text-[11px] font-bold px-3 py-1.5 rounded shadow transition-all" type="button">
+          PÅKALLA
+        </button>
+</div>
+</div>
+<!-- ============================================================ -->
+<!-- BOTTOM NAVIGATION BAR (Mobile Ecosystem) -->
+<!-- Strict Nordic Reverence styling: 'Pass', 'Schema', 'Uppgifter', 'Min Profil' -->
+<!-- ============================================================ -->
+<nav class="fixed bottom-0 left-0 right-0 z-40 max-w-md mx-auto bg-surface-container-lowest/95 backdrop-blur-md px-4 py-2 flex items-center justify-around shadow-[0_-4px_20px_rgba(15,23,42,0.06)]">
+<!-- Tab 1: Pass (Active) -->
+<a class="flex flex-col items-center gap-0.5 text-primary py-1 px-3" href="#pass">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">badge</span>
+<span class="font-label-sm text-[11px] font-bold tracking-tight">Pass</span>
+</a>
+<!-- Tab 2: Schema -->
+<a class="flex flex-col items-center gap-0.5 text-secondary hover:text-on-surface py-1 px-3 transition-colors" href="#schema">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+<span class="font-label-sm text-[11px] font-medium tracking-tight">Schema</span>
+</a>
+<!-- Tab 3: Uppgifter -->
+<a class="flex flex-col items-center gap-0.5 text-secondary hover:text-on-surface py-1 px-3 transition-colors relative" href="#uppgifter">
+<span class="material-symbols-outlined text-[22px]">checklist</span>
+<span class="font-label-sm text-[11px] font-medium tracking-tight">Uppgifter</span>
+<span class="absolute top-1 right-3 w-2 h-2 rounded-full bg-primary-container"></span>
+</a>
+<!-- Tab 4: Min Profil -->
+<a class="flex flex-col items-center gap-0.5 text-secondary hover:text-on-surface py-1 px-3 transition-colors" href="#profil">
+<span class="material-symbols-outlined text-[22px]">person</span>
+<span class="font-label-sm text-[11px] font-medium tracking-tight">Min Profil</span>
+</a>
+</nav>
+</main>
+<!-- Interactive Live Token Simulator -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let seconds = 30;
+      const timerElement = document.getElementById('token-timer');
+      
+      setInterval(() => {
+        seconds--;
+        if (seconds <= 0) {
+          seconds = 30;
+          const randomHex = Math.floor(1000 + Math.random() * 9000).toString(16).toUpperCase();
+          if (timerElement) {
+            timerElement.textContent = `Token: #${randomHex} • Giltig ${seconds}s`;
+          }
+        } else {
+          if (timerElement) {
+            const currentToken = timerElement.textContent.split('•')[0].trim();
+            timerElement.textContent = `${currentToken} • Giltig ${seconds}s`;
+          }
+        }
+      }, 1000);
+    });
+  </script>
+</body></html>

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS Ministry Hub - Admin Dashboard</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Plus Jakarta Sans & EB Garamond fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#006a61",
+            "on-error": "#ffffff",
+            "surface-variant": "#d3e4fe",
+            "background": "#f8f9ff",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "on-background": "#0b1c30",
+            "inverse-surface": "#213145",
+            "surface-dim": "#cbdbf5",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#6bd8cb",
+            "on-primary-fixed": "#00201d",
+            "on-primary-fixed-variant": "#005049",
+            "primary": "#00685f",
+            "surface-container-low": "#eff4ff",
+            "secondary-fixed": "#dae2fd",
+            "on-tertiary-container": "#f4fffb",
+            "tertiary": "#00685d",
+            "on-tertiary-fixed-variant": "#005048",
+            "primary-container": "#008378",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#eaf1ff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-primary-container": "#f4fffc",
+            "surface-container-highest": "#d3e4fe",
+            "surface-container-high": "#dce9ff",
+            "on-surface": "#0b1c30",
+            "secondary": "#565e74",
+            "surface": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "surface-container": "#e5eeff",
+            "on-surface-variant": "#3d4947",
+            "tertiary-fixed": "#71f8e4",
+            "surface-bright": "#f8f9ff",
+            "on-secondary-container": "#5c647a",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#6bd8cb",
+            "outline-variant": "#bcc9c6",
+            "on-secondary-fixed": "#131b2e",
+            "outline": "#6d7a77",
+            "on-tertiary-fixed": "#00201c",
+            "tertiary-container": "#008376",
+            "primary-fixed": "#89f5e7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "4rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin": "3rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #bcc9c6;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-[#F9FAFB] text-on-surface antialiased flex min-h-screen selection:bg-primary selection:text-white">
+<!-- SideNavBar Component -->
+<aside class="fixed top-0 left-0 h-screen w-64 bg-surface-container-low border-r border-outline-variant/30 flex flex-col justify-between z-40 select-none">
+<!-- Top Brand & Hierarchy -->
+<div class="p-5">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-sm ring-2 ring-primary/20">
+<span class="material-symbols-outlined text-[24px]">church</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">GOSPELS Admin</span>
+<span class="font-label-sm text-label-sm text-secondary">Gothenburg Ministry Hub</span>
+</div>
+</div>
+<!-- Quick Action / CTA -->
+<button class="w-full bg-primary hover:bg-primary-container active:scale-[0.98] transition-all duration-150 text-white font-label-md text-label-md py-2.5 px-3.5 rounded-lg flex items-center justify-center gap-2 shadow-sm mb-6">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Create Event</span>
+</button>
+<!-- Navigation Tabs -->
+<nav class="space-y-1">
+<!-- Dashboard (Active) -->
+<a class="bg-secondary-container text-primary font-semibold rounded-lg px-3.5 py-2.5 flex items-center justify-between active:scale-[0.98] transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</a>
+<!-- Events -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">event</span>
+<span class="font-label-md text-label-md">Events</span>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-2 py-0.5 rounded-full">2 Live</span>
+</a>
+<!-- Prayer Requests -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">folded_hands</span>
+<span class="font-label-md text-label-md">Prayer Requests</span>
+</div>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container font-bold px-2 py-0.5 rounded-full">14 New</span>
+</a>
+<!-- Volunteers -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">groups</span>
+<span class="font-label-md text-label-md">Volunteers</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-high text-secondary px-2 py-0.5 rounded-full">38 Active</span>
+</a>
+<!-- Partner Churches -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center justify-between transition-colors active:scale-[0.98]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">temple_buddhist</span>
+<span class="font-label-md text-label-md">Partner Churches</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">4 Parishes</span>
+</a>
+<!-- Content & Recordings -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-secondary">library_music</span>
+<span class="font-label-md text-label-md">Content &amp; Recordings</span>
+</a>
+<!-- Giving & Stewardship -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-secondary">payments</span>
+<span class="font-label-md text-label-md">Giving &amp; Stewardship</span>
+</a>
+<!-- Settings & Roles -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-secondary">settings</span>
+<span class="font-label-md text-label-md">Settings &amp; Roles</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer / Pastoral Profile -->
+<div class="p-4 border-t border-outline-variant/30 bg-surface-container-lowest/60">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="w-10 h-10 rounded-full border border-primary/20 bg-surface-container flex items-center justify-center shrink-0 text-primary font-bold overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A dignified and warm Nordic pastor in his late fifties with neat greying hair, dressed in a minimal dark Scandinavian wool collar, photographed against a calm, soft daylight church interior in Gothenburg." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj7IzJIfEh-cww55dSHm99694aX0sPAqt3Z48SQbJzC8B8geV-IweKzlmLPCESb8vvZlqkIY-qYi4ie4uXlzRHu7EMAXfLfgatmUFupf0dri5zcWbZH0m_QbxVeNrOnT7PfRwYWGH9xdpSgFuqE18xs3XJ2lDjWsltnAZoQiivTQ4UEG3o9HhgX0fU5awkPwbeLpuDfLnMzC1cx6lgtow6yNbEWStKawNWpadqZiH8LTTSs0e4fIpw"/>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-label-md text-label-md text-on-surface truncate">Tomas Sjödin</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">Lead Pastoral Steward</span>
+</div>
+</div>
+<button class="text-secondary hover:text-error p-1.5 rounded-md hover:bg-error-container/20 transition-colors" title="Log Out">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Canvas Container -->
+<main class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- Top Bar in Main Content -->
+<header class="h-20 bg-surface-container-lowest/90 backdrop-blur-md sticky top-0 z-30 border-b border-outline-variant/30 px-8 flex items-center justify-between">
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-2">
+<span>God morgon, Pastor Tomas</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+<span class="font-body-md text-body-md text-secondary font-normal">Gothenburg Hub</span>
+</h1>
+<p class="font-label-sm text-label-sm text-secondary">Saturday, 28 March 2026 • Liturgical Season of Lent</p>
+</div>
+<div class="flex items-center gap-4">
+<!-- Search bar -->
+<div class="relative w-80">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface rounded-lg border border-outline-variant/50 font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-secondary/60" placeholder="Search events, petitions, volunteers, donors..." type="text"/>
+</div>
+<!-- Notification Bell -->
+<button class="relative p-2.5 rounded-lg bg-surface hover:bg-surface-container border border-outline-variant/40 text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-white"></span>
+</button>
+<!-- Quick Primary Action -->
+<button class="bg-primary hover:bg-primary-container text-white font-label-md text-label-md px-4 py-2.5 rounded-lg flex items-center gap-2 shadow-sm transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Create Event</span>
+</button>
+</div>
+</header>
+<!-- Page Content Scrollable Canvas -->
+<div class="p-8 max-w-[1240px] w-full mx-auto space-y-8">
+<!-- Scripture & Pastoral Encouragement Callout -->
+<div class="bg-[#F1F5F9] border-l-4 border-primary rounded-r-xl p-5 flex items-start justify-between shadow-sm">
+<div class="space-y-1">
+<p class="font-scripture-quote text-scripture-quote italic text-[#111827]">
+            "Lova Herren, min själ, och förgät icke vad gott han har gjort."
+          </p>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-[#64748B]">
+            Psaltaren 103:2 • Ministry Focus: Unity across Västra Götaland
+          </p>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-primary font-label-md text-label-md bg-white/80 backdrop-blur px-3 py-1.5 rounded-lg border border-primary/20 shadow-xs">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>Gothenburg Lovsång Hub Active</span>
+</div>
+</div>
+<!-- 4 Key Metric / Stat Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/40 shadow-sm flex flex-col justify-between hover:border-primary/40 transition-colors">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary">Upcoming Events</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+</div>
+<div class="my-3">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface">2 Gatherings</div>
+<p class="font-body-sm text-body-sm text-secondary truncate mt-0.5">Holy Spirit Worship &amp; Lovsångskonsert</p>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +1 scheduled
+            </span>
+<span class="text-secondary">Next in 14 days</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/40 shadow-sm flex flex-col justify-between hover:border-primary/40 transition-colors">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary">Active RSVPs This Week</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+</div>
+</div>
+<div class="my-3">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface">1,248 Attendees</div>
+<p class="font-body-sm text-body-sm text-secondary truncate mt-0.5">Free admission across 3 Gothenburg halls</p>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span> +18% from last week
+            </span>
+<span class="text-secondary">Capacity: 84%</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/40 shadow-sm flex flex-col justify-between hover:border-primary/40 transition-colors">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary">Pending Prayer Petitions</span>
+<div class="w-8 h-8 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">volunteer_activism</span>
+</div>
+</div>
+<div class="my-3">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface">14 Needs</div>
+<p class="font-body-sm text-body-sm text-secondary truncate mt-0.5">Requiring pastoral attention</p>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-error font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">priority_high</span> 4 urgent WhatsApp
+            </span>
+<span class="text-secondary">9 prayed today</span>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/40 shadow-sm flex flex-col justify-between hover:border-primary/40 transition-colors">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary">Registered Volunteers</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">diversity_1</span>
+</div>
+</div>
+<div class="my-3">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface">186 Stewards</div>
+<p class="font-body-sm text-body-sm text-secondary truncate mt-0.5">Soprano, Alto, Audio &amp; Ushers</p>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person_add</span> +12 new signups
+            </span>
+<span class="text-secondary">Auditions Mar 30</span>
+</div>
+</div>
+</section>
+<!-- Quick Action Buttons Bar -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<button class="bg-white hover:bg-surface-container-low border border-outline-variant/40 p-3.5 rounded-xl flex items-center gap-3 transition-all duration-150 shadow-xs hover:border-primary/50 group text-left">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[22px]">add_circle</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Create New Event</div>
+<div class="font-label-sm text-label-sm text-secondary">Worship night or rehearsal</div>
+</div>
+</button>
+<button class="bg-white hover:bg-surface-container-low border border-outline-variant/40 p-3.5 rounded-xl flex items-center gap-3 transition-all duration-150 shadow-xs hover:border-primary/50 group text-left">
+<div class="w-10 h-10 rounded-lg bg-error-container/40 text-error flex items-center justify-center group-hover:bg-error group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[22px]">mark_chat_unread</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span>Review Petitions</span>
+<span class="text-xs bg-error text-white font-bold px-1.5 py-0.2 rounded-full">14</span>
+</div>
+<div class="font-label-sm text-label-sm text-secondary">4 marked pastoral urgent</div>
+</div>
+</button>
+<button class="bg-white hover:bg-surface-container-low border border-outline-variant/40 p-3.5 rounded-xl flex items-center gap-3 transition-all duration-150 shadow-xs hover:border-primary/50 group text-left">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Choir &amp; Volunteer Roster</div>
+<div class="font-label-sm text-label-sm text-secondary">Sectional assignments</div>
+</div>
+</button>
+<button class="bg-white hover:bg-surface-container-low border border-outline-variant/40 p-3.5 rounded-xl flex items-center gap-3 transition-all duration-150 shadow-xs hover:border-primary/50 group text-left">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Export Swish Ledger</div>
+<div class="font-label-sm text-label-sm text-secondary">SEB bank reconciliation</div>
+</div>
+</button>
+</section>
+<!-- Two-Column Operational Split -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left / Main Column (2/3 width -> 8 cols) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Active Gatherings & Registrations Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-6 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Active Gatherings &amp; Registrations</h2>
+<p class="font-body-sm text-body-sm text-secondary">Real-time attendance capacity and volunteer choir registrations</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-semibold">2 Active in System</span>
+</div>
+</div>
+<!-- Event 1 Row -->
+<div class="bg-surface rounded-xl p-5 border border-outline-variant/30 hover:border-outline-variant/60 transition-all flex flex-col md:flex-row gap-5 items-start md:items-center">
+<!-- Bespoke Date Badge -->
+<div class="w-16 h-18 rounded-lg overflow-hidden border border-primary/20 shadow-sm shrink-0 text-center flex flex-col">
+<div class="bg-primary text-white font-label-sm text-label-sm py-1 font-bold">MAR</div>
+<div class="bg-[#F8FAFC] py-2 flex-1 flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface">28</div>
+</div>
+<!-- Content details -->
+<div class="flex-1 space-y-2 w-full">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Holy Spirit Worship 2026</h3>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Live / Booking fast
+                  </span>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">location_on</span> Smyrna Frihamnskyrkan</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">schedule</span> 18:30 CET</span>
+<span>•</span>
+<span>Free Admission</span>
+</div>
+<!-- Capacity Progress Bar -->
+<div class="space-y-1 pt-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-secondary font-medium">Reserved Tickets: <strong class="text-on-surface font-semibold">842 / 1,000 capacity</strong></span>
+<span class="text-primary font-semibold">84% Filled</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 84%"></div>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="pt-3 flex flex-wrap gap-2.5">
+<button class="bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md px-3.5 py-1.5 rounded-lg border border-primary/20 transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span> Manage Event
+                  </button>
+<button class="bg-primary hover:bg-primary-container text-white font-label-md text-label-md px-3.5 py-1.5 rounded-lg transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">group</span> View Guest List (842)
+                  </button>
+</div>
+</div>
+</div>
+<!-- Event 2 Row -->
+<div class="bg-surface rounded-xl p-5 border border-outline-variant/30 hover:border-outline-variant/60 transition-all flex flex-col md:flex-row gap-5 items-start md:items-center">
+<!-- Bespoke Date Badge -->
+<div class="w-16 h-18 rounded-lg overflow-hidden border border-primary/20 shadow-sm shrink-0 text-center flex flex-col">
+<div class="bg-primary text-white font-label-sm text-label-sm py-1 font-bold">AUG</div>
+<div class="bg-[#F8FAFC] py-2 flex-1 flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface">15</div>
+</div>
+<!-- Content details -->
+<div class="flex-1 space-y-2 w-full">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Göteborgs Lovsångskonsert 2027</h3>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-bold">
+                    Open Rehearsal Roster
+                  </span>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">location_on</span> Gustav Adolfs Torg (Open Air)</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">diversity_3</span> 500-Voice Mass Choir</span>
+</div>
+<!-- Choir Target Progress Bar -->
+<div class="space-y-1 pt-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-secondary font-medium">Choir Registration Target: <strong class="text-on-surface font-semibold">312 / 500 vocalists joined</strong></span>
+<span class="text-primary font-semibold">62.4% Auditioned</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: 62.4%"></div>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="pt-3 flex flex-wrap gap-2.5">
+<button class="bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md px-3.5 py-1.5 rounded-lg border border-primary/20 transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">tune</span> Manage Volunteer Choir
+                  </button>
+<button class="text-secondary hover:text-on-surface font-label-md text-label-md px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">download</span> Download Sheet Music PDF
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Prayer Petitions (Confidential Pastoral Feed) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-6 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Recent Prayer Petitions</h2>
+<p class="font-body-sm text-body-sm text-secondary">Confidential pastoral intake from WhatsApp &amp; web portal</p>
+</div>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="#">
+<span>View all 14</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- Petitions Feed Stack -->
+<div class="space-y-4">
+<!-- Petition 1 -->
+<div class="p-4 rounded-xl border border-outline-variant/30 hover:border-outline-variant/60 bg-surface transition-all space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Anonymous Sister</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-secondary">Centrum</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">Healing</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 12 mins ago
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic leading-relaxed">
+                  "Bed gärna för min mor som genomgår en hjärtoperation på Sahlgrenska sjukhuset på måndag morgon. Be för kirurgernas händer och för Herrens frid över vår familj."
+                </p>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-2">
+<button class="bg-primary hover:bg-primary-container text-white font-label-sm text-label-sm px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Mark Prayed
+                    </button>
+<button class="bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] font-label-sm text-label-sm px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors font-semibold">
+<span class="material-symbols-outlined text-[16px]">chat</span> Reply via WhatsApp
+                    </button>
+<button class="text-secondary hover:text-on-surface font-label-sm text-label-sm px-2 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person_add</span> Assign Elder
+                    </button>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Assigned to: Pastor Tomas</span>
+</div>
+</div>
+<!-- Petition 2 -->
+<div class="p-4 rounded-xl border border-outline-variant/30 hover:border-outline-variant/60 bg-surface transition-all space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Johan E.</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-secondary">Hisingen</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary-container text-on-secondary-fixed font-semibold">Guidance</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 1 hour ago
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic leading-relaxed">
+                  "Söker ledning kring nytt arbete och flytt från Angered. Vill fortsätta tjäna i musikministeriet under Frihamnsgudstjänsterna. Be om vishet och öppna dörrar."
+                </p>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-2">
+<button class="bg-primary hover:bg-primary-container text-white font-label-sm text-label-sm px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Mark Prayed
+                    </button>
+<button class="bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] font-label-sm text-label-sm px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors font-semibold">
+<span class="material-symbols-outlined text-[16px]">chat</span> Reply via WhatsApp
+                    </button>
+<button class="text-secondary hover:text-on-surface font-label-sm text-label-sm px-2 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person_add</span> Assign Elder
+                    </button>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Unassigned</span>
+</div>
+</div>
+<!-- Petition 3 -->
+<div class="p-4 rounded-xl border border-outline-variant/30 hover:border-outline-variant/60 bg-surface transition-all space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Elisabeth V.</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-secondary">Majorna</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-semibold">Thanksgiving</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 3 hours ago
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic leading-relaxed">
+                  "Tacksägelse! Min dotter blev antagen till Musikhögskolan och vill gå med i ungdomskören. Tack för förböner under våren!"
+                </p>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<div class="flex items-center gap-2">
+<button class="bg-primary hover:bg-primary-container text-white font-label-sm text-label-sm px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Mark Prayed
+                    </button>
+<button class="bg-surface-container-high text-secondary hover:text-on-surface font-label-sm text-label-sm px-3 py-1.5 rounded-lg transition-colors">
+                      Archive Praise
+                    </button>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Prayed by Elder Birgitta</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (1/3 width -> 4 cols) -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Recent Activity & Ministry Audit Feed -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-6 shadow-sm space-y-5">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Ministry Audit Feed</h2>
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+</div>
+<!-- Feed Items -->
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="flex items-start gap-3 text-body-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-[18px]">folded_hands</span>
+</div>
+<div>
+<p class="text-on-surface leading-snug">
+<strong class="font-semibold">Astrid L.</strong> submitted a prayer petition (Centrum).
+                  </p>
+<span class="font-label-sm text-label-sm text-secondary">12m ago • WhatsApp Intake</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-3 text-body-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+<div>
+<p class="text-on-surface leading-snug">
+                    New <strong class="font-semibold">Kingdom Partner</strong> joined at 150 kr/mo (Autogiro).
+                  </p>
+<span class="font-label-sm text-label-sm text-secondary">45m ago • Stewardship Hub</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-3 text-body-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</div>
+<div>
+<p class="text-on-surface leading-snug">
+<strong class="font-semibold">Magnus K.</strong> registered for Tenor section in Lovsångskonsert 2027.
+                  </p>
+<span class="font-label-sm text-label-sm text-secondary">2h ago • Choir Portal</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-start gap-3 text-body-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-[18px]">church</span>
+</div>
+<div>
+<p class="text-on-surface leading-snug">
+<strong class="font-semibold">RCCG Jesus Connection</strong> updated choir coordinator contact info.
+                  </p>
+<span class="font-label-sm text-label-sm text-secondary">4h ago • Partner Parishes</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="flex items-start gap-3 text-body-sm">
+<div class="w-8 h-8 rounded-full bg-[#008378]/10 flex items-center justify-center shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</div>
+<div>
+<p class="text-on-surface leading-snug">
+                    Swish donation received: <strong class="font-semibold">500 kr</strong> (Märkt: HSW2026).
+                  </p>
+<span class="font-label-sm text-label-sm text-secondary">5h ago • Bankgiro / Swish</span>
+</div>
+</div>
+</div>
+<button class="w-full text-center py-2 bg-surface hover:bg-surface-container rounded-lg font-label-md text-label-md text-secondary hover:text-on-surface border border-outline-variant/30 transition-colors">
+              View Full Audit Log
+            </button>
+</div>
+<!-- System & Ministry Status (Nordic Architecture card) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-6 shadow-sm space-y-4">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span>System &amp; Ministry Status</span>
+</h2>
+<div class="space-y-3 font-body-sm text-body-sm">
+<!-- Swish Status -->
+<div class="p-3 rounded-lg bg-surface border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Swish API Hub</div>
+<div class="font-label-sm text-label-sm text-secondary">SEB Bankgirot Integration</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary font-bold px-2 py-0.5 rounded">Active &amp; Verified</span>
+</div>
+<!-- WhatsApp Gateway -->
+<div class="p-3 rounded-lg bg-surface border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">WhatsApp &amp; SMS Care</div>
+<div class="font-label-sm text-label-sm text-secondary">Twilio Nordic Relay</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary font-bold px-2 py-0.5 rounded">99.8% Delivered</span>
+</div>
+<!-- Sound Check Schedule -->
+<div class="p-3 rounded-lg bg-surface border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Frihamnen Acoustic Tech</div>
+<div class="font-label-sm text-label-sm text-secondary">d&amp;b audiotechnik array</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-high text-secondary font-semibold px-2 py-0.5 rounded">Thu 14:00</span>
+</div>
+</div>
+<!-- Server Region notice -->
+<div class="pt-2 text-center">
+<span class="font-label-sm text-label-sm text-secondary">
+                Hosted in Stockholm (AWS eu-north-1) • ISO 27001 &amp; GDPR Compliant
+              </span>
+</div>
+</div>
+<!-- Gothenburg Church Partnership summary -->
+<div class="bg-surface rounded-xl p-5 border border-outline-variant/30 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Affiliated Fellowship Halls</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+              Frihamnskyrkan, Betlehemskyrkan, Smyrna, and Hillsong Göteborg collaborating for united gospel praise.
+            </p>
+<div class="flex items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm bg-white border border-outline-variant/40 px-2 py-1 rounded text-secondary">Smyrna 1,000 Seats</span>
+<span class="font-label-sm text-label-sm bg-white border border-outline-variant/40 px-2 py-1 rounded text-secondary">Frihamnen Open</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom System Notice & Copyright -->
+<footer class="pt-8 pb-12 border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-secondary">
+<div>
+<span>© 2026 GOSPELS Ministry Gothenburg. All rights reserved. Non-profit Christian fellowship.</span>
+</div>
+<div class="flex items-center gap-6 font-label-md text-label-md">
+<a class="hover:text-primary transition-colors" href="#">Privacy &amp; WhatsApp Care</a>
+<a class="hover:text-primary transition-colors" href="#">Kingdom Giving Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Emergency Pastoral Help</a>
+</div>
+</footer>
+</div>
+</main>
+</body></html>

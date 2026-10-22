@@ -1,0 +1,73 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum EventType {
+  WORSHIP_NIGHT
+  CHOIR_CONCERT
+  PRAYER_SUMMIT
+  WORKSHOP
+  COMMUNITY_OUTREACH
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  COMPLETED
+  CANCELLED
+}
+
+enum PrayerStatus {
+  NEW
+  INTERCESSION_ACTIVE
+  ANSWERED
+  ARCHIVED
+}
+
+model Event {
+  id          String      @id @default(cuid())
+  title       String
+  type        EventType   @default(WORSHIP_NIGHT)
+  dateTime    DateTime
+  venueName   String
+  rsvpEnabled Boolean     @default(true)
+  status      EventStatus @default(PUBLISHED)
+  rsvps       RSVP[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model RSVP {
+  id        String   @id @default(cuid())
+  eventId   String
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  name      String
+  email     String
+  createdAt DateTime @default(now())
+}
+
+model PrayerRequest {
+  id          String       @id @default(cuid())
+  name        String?
+  email       String
+  requestText String
+  status      PrayerStatus @default(NEW)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model VolunteerApplication {
+  id                   String   @id @default(cuid())
+  name                 String
+  email                String
+  phone                String
+  teamPreference       String
+  isPrayerTeam         Boolean  @default(false)
+  pastoralReferenceUrl String?
+  createdAt            DateTime @default(now())
+}

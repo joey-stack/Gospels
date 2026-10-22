@@ -1,0 +1,591 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Need Prayer? — GOSPELS (Gothenburg Gospel Music Ministry)</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#006a61",
+            "on-error": "#ffffff",
+            "surface-variant": "#d3e4fe",
+            "background": "#f8f9ff",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "on-background": "#0b1c30",
+            "inverse-surface": "#213145",
+            "surface-dim": "#cbdbf5",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#6bd8cb",
+            "on-primary-fixed": "#00201d",
+            "on-primary-fixed-variant": "#005049",
+            "primary": "#00685f",
+            "surface-container-low": "#eff4ff",
+            "secondary-fixed": "#dae2fd",
+            "on-tertiary-container": "#f4fffb",
+            "tertiary": "#00685d",
+            "on-tertiary-fixed-variant": "#005048",
+            "primary-container": "#008378",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#eaf1ff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-primary-container": "#f4fffc",
+            "surface-container-highest": "#d3e4fe",
+            "surface-container-high": "#dce9ff",
+            "on-surface": "#0b1c30",
+            "secondary": "#565e74",
+            "surface": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "surface-container": "#e5eeff",
+            "on-surface-variant": "#3d4947",
+            "tertiary-fixed": "#71f8e4",
+            "surface-bright": "#f8f9ff",
+            "on-secondary-container": "#5c647a",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#6bd8cb",
+            "outline-variant": "#bcc9c6",
+            "on-secondary-fixed": "#131b2e",
+            "outline": "#6d7a77",
+            "on-tertiary-fixed": "#00201c",
+            "tertiary-container": "#008376",
+            "primary-fixed": "#89f5e7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "4rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin": "3rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Subtle ambient Nordic cyan shadow */
+    .nordic-shadow {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(13, 148, 136, 0.04);
+    }
+    .nordic-shadow-lg {
+      box-shadow: 0 20px 32px -8px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(13, 148, 136, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen flex flex-col justify-between">
+<!-- Top Navigation Anchor (Web docked 1440px) -->
+<header class="docked full-width top-0 sticky z-50 bg-surface-container-lowest/90 dark:bg-inverse-surface/90 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/20 shadow-sm transition-all duration-200">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+<!-- Brand Logo / Identity -->
+<a class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-1" href="#">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm group-hover:scale-105 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="library_music" style="font-variation-settings: 'FILL' 1;">library_music</span>
+</div>
+<span class="font-headline-md text-headline-md tracking-tight font-bold text-on-surface dark:text-inverse-on-surface">
+          GOSPELS
+        </span>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed active:scale-95 duration-150" href="#events">
+          Events
+        </a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed active:scale-95 duration-150" href="#listen">
+          Watch &amp; Listen
+        </a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed active:scale-95 duration-150" href="#churches">
+          Churches
+        </a>
+<!-- ACTIVE LINK: Need Prayer? -->
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed font-semibold pb-1 font-label-md text-label-md flex items-center gap-1.5" href="#prayer">
+<span class="material-symbols-outlined text-[16px]" data-icon="folded_hands" style="font-variation-settings: 'FILL' 1;">folded_hands</span>
+          Need Prayer?
+        </a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed active:scale-95 duration-150" href="#support">
+          Support
+        </a>
+</nav>
+<!-- Trailing Action Button -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center gap-2 bg-primary hover:bg-primary-container text-on-primary px-5 py-2.5 rounded-lg font-headline-sm text-[14px] font-semibold tracking-wide transition-all duration-150 shadow-sm active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" href="#next-event">
+<span class="">Next Event</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero / Pastoral Sanctuary Banner -->
+<section class="bg-surface-container-low/70 border-b border-outline-variant/20 pt-16 pb-20 px-6 relative overflow-hidden">
+<!-- Ambient Cathedral Light Accent -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none -z-0"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10 space-y-6">
+<!-- Pastoral Badge -->
+<div class="inline-flex items-center gap-2.5 bg-surface-container-lowest border border-outline-variant/40 px-4 py-1.5 rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-widest text-primary uppercase">
+            PASTORAL INTERCESSION &amp; CARE • GOTHENBURG MINISTRY HUB
+          </span>
+</div>
+<!-- Headline -->
+<h1 class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">
+          How Can We Pray for You?
+        </h1>
+<!-- Subtitle -->
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto leading-relaxed">
+          No burden is too heavy to bring before the Lord. Whether you are walking through quiet trials, celebrating praise, or seeking direction, our confidential intercessory prayer network of Gothenburg pastors and believers stands ready with you.
+        </p>
+<!-- Scripture Callout Banner -->
+<div class="pt-4 max-w-2xl mx-auto">
+<div class="bg-surface-container-lowest border-l-[3px] border-primary p-6 rounded-r-xl shadow-sm text-left">
+<p class="font-scripture-quote text-scripture-quote text-on-surface italic leading-snug">
+              “The Lord is near to all who call on him, to all who call on him in truth.”
+            </p>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">
+                Psalm 145:18 (Heliga Skriften)
+              </span>
+<span class="material-symbols-outlined text-primary-container text-lg" data-icon="auto_stories">auto_stories</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Interactive Section: Form & Channels Bento -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Center-Left Prayer Petition Form Card (Span 7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-8 md:p-10 nordic-shadow-lg relative">
+<!-- Card Header with Security Lock -->
+<div class="flex items-center justify-between pb-6 border-b border-outline-variant/20 mb-8">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">
+                Submit Your Prayer Petition
+              </h2>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+                Shared only in sacred confidence with our Gothenburg pastoral council.
+              </p>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/40 text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-sm text-label-sm">Confidential &amp; Pastor-Led</span>
+</div>
+</div>
+<!-- Petition Form -->
+<form class="space-y-6" id="prayerForm" onsubmit="event.preventDefault(); document.getElementById('successToast').classList.remove('hidden');">
+<!-- Row 1: Name and Email -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="fullName">
+                  Full Name <span class="text-secondary font-normal">(optional)</span>
+</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm transition-all" id="fullName" name="fullName" placeholder="e.g., Astrid Lindgren (or leave blank)" type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="email">
+                  Email Address <span class="text-secondary font-normal">(optional, for follow-up)</span>
+</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm transition-all" id="email" name="email" placeholder="astrid@kyrka.se" type="email">
+</div>
+</div>
+<!-- Row 2: City District Parish Dropdown -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="district">
+                City District / Parish <span class="text-secondary font-normal">(optional)</span>
+</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm pr-10 transition-all cursor-pointer" id="district" name="district">
+<option disabled="" selected="" value="">Select parish area (e.g., Centrum, Majorna, Linné...)</option>
+<option value="centrum">Centrum (Domkyrkan &amp; Vasa)</option>
+<option value="majorna">Majorna / Linné</option>
+<option value="hisingen">Hisingen (Lundby &amp; Backa)</option>
+<option value="frölunda">Västra Frölunda / Askim</option>
+<option value="öster">Örgryte / Kålltorp</option>
+<option value="other">Greater Gothenburg Archipelago / Other</option>
+</select>
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Row 3: Category of Prayer (Radio Pills) -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-3">
+                Category of Prayer
+              </label>
+<div aria-label="Category of Prayer" class="flex flex-wrap gap-2.5" role="radiogroup">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="prayerCategory" type="radio" value="healing">
+<span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-body-sm bg-surface-container-low text-secondary border border-outline-variant/40 peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="favorite">favorite</span>
+                    Health &amp; Healing
+                  </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="prayerCategory" type="radio" value="family">
+<span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-body-sm bg-surface-container-low text-secondary border border-outline-variant/40 peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="home">home</span>
+                    Family &amp; Peace
+                  </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="prayerCategory" type="radio" value="renewal">
+<span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-body-sm bg-surface-container-low text-secondary border border-outline-variant/40 peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_fire_department">local_fire_department</span>
+                    Spiritual Renewal
+                  </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="prayerCategory" type="radio" value="guidance">
+<span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-body-sm bg-surface-container-low text-secondary border border-outline-variant/40 peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="explore">explore</span>
+                    Work &amp; Guidance
+                  </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="prayerCategory" type="radio" value="thanksgiving">
+<span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-body-sm bg-surface-container-low text-secondary border border-outline-variant/40 peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="celebration">celebration</span>
+                    Praise &amp; Thanksgiving
+                  </span>
+</label>
+</div>
+</div>
+<!-- Row 4: Prayer Request Textarea -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-md text-label-md text-on-surface" for="requestBody">
+                  Your Prayer Request <span class="text-error">*</span>
+</label>
+<span class="text-secondary font-label-sm text-label-sm">Treated as Holy &amp; Sacred</span>
+</div>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg p-4 text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm transition-all" id="requestBody" name="requestBody" placeholder="Share what is on your heart. Every detail is kept strictly within our pastoral team..." required="" rows="5"></textarea>
+</div>
+<!-- Row 5: Confidentiality & WhatsApp Checkboxes -->
+<div class="space-y-3 pt-2">
+<label class="flex items-start gap-3 cursor-pointer group">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary border-outline-variant" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface leading-snug">
+                  Keep this request strictly anonymous and confidential
+                </span>
+</label>
+<label class="flex items-start gap-3 cursor-pointer group">
+<input class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary border-outline-variant" type="checkbox">
+<span class="font-body-sm text-body-sm text-secondary group-hover:text-on-surface leading-snug transition-colors">
+                  Send me pastoral prayer confirmations via encrypted WhatsApp
+                </span>
+</label>
+</div>
+<!-- Submit Action -->
+<div class="pt-4">
+<button class="w-full py-4 px-8 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-headline-sm text-headline-sm font-semibold tracking-wide flex items-center justify-center gap-3 transition-all duration-150 shadow-md hover:shadow-lg active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="submit">
+<span class="">Send Prayer Request</span>
+<span class="material-symbols-outlined text-xl" data-icon="send">send</span>
+</button>
+</div>
+</form>
+<!-- Feedback Toast Notification (Hidden by default) -->
+<div class="hidden mt-6 bg-surface-container-high border border-primary/30 p-4 rounded-lg flex items-center gap-3 transition-all" id="successToast">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Your petition has been safely received.</p>
+<p class="font-body-sm text-body-sm text-secondary">A pastoral intercessor in Gothenburg has committed your name and request to prayer.</p>
+</div>
+</div>
+</div>
+<!-- Right Side: Pastoral Care Atmosphere & Swedish Ministry Channels (Span 5 cols) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Gothenburg Ministry Image Anchor -->
+<div class="rounded-xl overflow-hidden border border-outline-variant/30 nordic-shadow relative group">
+<div class="bg-cover bg-center w-full h-52 relative transition-transform duration-500 group-hover:scale-105" data-alt="Sister kneeling in reverent, heartfelt prayer and spiritual intercession during worship." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCtqI-LpMtWd-aeivKm6FUpf-sStUPJ_eLjN9GB5PL1MNNi4j6rZ3JZO8JqPQ2xFxRg1rgNJHmEvvKgTEOdxGMc6FTiepbm-NApWdyAzeaIjzDnzGnkXBLNbLuaXuXCTsp5m8Liug1k7zTARrX87Ayq6QlxFB_o-LpTWYiUYRFiEmZwJqfToeNqhdbDnxWJh085AONSLPRmvLunq4c-b5W8fZMBHvxbUzE6cUjqwEs3dQOriDzNxa7uyumYy0zpv1E2Pg&quot;);">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-on-background/30 to-transparent"></div>
+<div class="absolute bottom-4 left-5 right-5 text-on-primary">
+<span class="inline-block bg-primary/90 text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded mb-1.5 uppercase tracking-wider backdrop-blur-sm">
+                  Gothenburg Sanctuary
+                </span>
+<p class="font-headline-sm text-headline-sm font-semibold leading-tight text-white">
+                  A Ministry Grounded in Gospel Worship &amp; Prayer
+                </p>
+</div>
+</div>
+</div>
+<!-- Channel 1: WhatsApp Intercession Line -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 nordic-shadow hover:border-primary/40 transition-colors">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="chat" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">
+                    Direct WhatsApp Line
+                  </h3>
+<span class="font-label-sm text-label-sm bg-surface-container-high text-primary px-2 py-0.5 rounded">Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1 leading-relaxed">
+<strong class="text-on-surface font-semibold">+46 70 123 45 67</strong> — Connect directly with an on-duty Gothenburg pastoral elder. Mon–Sun 07:00–22:00.
+                </p>
+<div class="mt-4">
+<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline" href="https://wa.me/46701234567" rel="noopener noreferrer" target="_blank">
+<span class="">Open WhatsApp Chat</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Channel 2: Thursday Evening Prayer Vigils -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 nordic-shadow hover:border-primary/40 transition-colors">
+<div class="flex items-start gap-4">
+<!-- Bespoke Date/Time Badge -->
+<div class="w-12 rounded-lg overflow-hidden border border-primary/20 flex-shrink-0 text-center">
+<div class="bg-primary text-on-primary font-label-sm text-[10px] py-1 font-bold uppercase tracking-wider">
+                  THU
+                </div>
+<div class="bg-surface-container-lowest text-on-surface font-headline-sm text-sm font-bold py-1.5">
+                  19:00
+                </div>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">
+                  Gothenburg Prayer Fellowship
+                </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1 leading-relaxed">
+                  Every Thursday at 19:00, our team gathers at Drottninggatan 34 to intercede by name for every petition submitted.
+                </p>
+<p class="font-label-sm text-label-sm text-outline mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+                  Drottninggatan 34, 411 14 Göteborg
+                </p>
+</div>
+</div>
+</div>
+<!-- Channel 3: Emergency & Hospital Pastoral Care -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 nordic-shadow hover:border-primary/40 transition-colors">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="local_hospital">local_hospital</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">
+                  Pastoral Visitation
+                </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1 leading-relaxed">
+                  Need immediate physical presence or hospital anointing in Greater Gothenburg? Our ordained network can connect with you.
+                </p>
+<div class="mt-3">
+<span class="inline-flex items-center gap-1 text-outline font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]" data-icon="verified_user">verified_user</span>
+                    Coordinated with Sahlgrenska &amp; Östra Pastoral Care
+                  </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Response Promise Guarantee Banner (Deep Charcoal Sanctuary #0F172A) -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 pb-20">
+<div class="bg-inverse-surface rounded-2xl p-10 md:p-14 text-inverse-on-surface border border-outline/20 shadow-xl relative overflow-hidden">
+<!-- Ambient Decorative Halo -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-3xl space-y-4 relative z-10">
+<div class="inline-flex items-center gap-2 bg-inverse-primary/10 border border-inverse-primary/30 px-3 py-1 rounded-md text-inverse-primary">
+<span class="material-symbols-outlined text-sm" data-icon="shield_with_heart" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider uppercase">Sacred Covenant</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-white tracking-tight">
+            Our 24-Hour Prayer Promise
+          </h2>
+<p class="font-body-lg text-body-lg text-surface-dim leading-relaxed">
+            Every petition submitted is received with sacred reverence. A member of our West Sweden pastoral circle will hold your prayer in quiet adoration within 24 hours. You are never walking alone.
+          </p>
+<div class="pt-4 flex flex-wrap items-center gap-8 text-surface-dim font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="task_alt">task_alt</span>
+<span class="">Personally Prayed Over</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="lock">lock</span>
+<span class="">Strict Confessional Secrecy</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="church">church</span>
+<span class="">All Christian Denominations</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Complete GOSPELS Ministry Footer -->
+<footer class="docked full-width bottom bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline/20 dark:border-outline-variant/30 text-inverse-on-surface">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Column 1: Ministry Info & Mission -->
+<div class="space-y-4 md:col-span-1">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-lg" data-icon="library_music">library_music</span>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-white">
+            GOSPELS
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-dim leading-relaxed">
+          Nordic gospel music community uniting voices across Gothenburg in joyful worship, fellowship, and compassionate pastoral care.
+        </p>
+<p class="font-scripture-quote text-scripture-quote italic text-primary-fixed text-sm">
+          "Sing praises to God, sing praises!"
+        </p>
+</div>
+<!-- Column 2: Ministry Links -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-sm font-bold text-white tracking-wider uppercase">
+          Ministries &amp; Music
+        </h4>
+<ul class="space-y-2.5 font-body-sm text-body-sm">
+<li class="">
+<a class="text-surface-dim hover:text-white transition-colors duration-150" href="#partner-churches">
+              Partner Churches
+            </a>
+</li>
+<li class="">
+<a class="text-surface-dim hover:text-white transition-colors duration-150" href="#holy-spirit">
+              Holy Spirit Worship
+            </a>
+</li>
+<li class="">
+<a class="text-surface-dim hover:text-white transition-colors duration-150" href="#konsert">
+              Göteborgs Lovsångskonsert
+            </a>
+</li>
+<li class="">
+<a class="text-surface-dim hover:text-white transition-colors duration-150" href="#choir">
+              Youth Gospel Choir
+            </a>
+</li>
+</ul>
+</div>
+<!-- Column 3: Care & Kingdom Giving -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-sm font-bold text-white tracking-wider uppercase">
+          Care &amp; Giving
+        </h4>
+<ul class="space-y-2.5 font-body-sm text-body-sm">
+<li class="">
+<a class="text-primary-fixed underline font-medium" href="#prayer">
+              Need Prayer?
+            </a>
+</li>
+<li class="">
+<a class="text-surface-dim hover:text-white transition-colors duration-150" href="#giving">
+              Kingdom Giving
+            </a>
+</li>
+<li class="">
+<span class="text-surface-dim">
+              Swish Support: <strong class="text-white">123 456 78 90</strong>
+</span>
+</li>
+<li class="">
+<a class="text-surface-dim hover:text-white transition-colors duration-150" href="#whatsapp">
+              Privacy &amp; WhatsApp Care
+            </a>
+</li>
+</ul>
+</div>
+<!-- Column 4: Gothenburg Location & Office -->
+<div class="space-y-3">
+<h4 class="font-headline-sm text-sm font-bold text-white tracking-wider uppercase">
+          Gothenburg Hub
+        </h4>
+<p class="font-body-sm text-body-sm text-surface-dim leading-relaxed">
+          Drottninggatan 34<br>
+          411 14 Göteborg, Sweden
+        </p>
+<div class="pt-2 text-surface-dim font-body-sm text-body-sm">
+<span class="">Pastoral Care Desk:</span><br>
+<a class="text-primary-fixed hover:underline" href="mailto:pastor@gospels.se">care@gospels.se</a>
+</div>
+</div>
+</div>
+<!-- Sub-footer Copyright -->
+<div class="border-t border-outline/20 max-w-7xl mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="font-body-sm text-body-sm text-surface-dim">
+        © 2025 GOSPELS Ministry Gothenburg. All rights reserved. Non-profit Christian fellowship.
+      </p>
+<div class="flex items-center gap-6 font-body-sm text-body-sm text-surface-dim">
+<a class="hover:text-white transition-colors" href="#privacy">Swedish Privacy Act (GDPR)</a>
+<span class="">•</span>
+<a class="hover:text-white transition-colors" href="#confidentiality">Pastoral Confidentiality Policy</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>

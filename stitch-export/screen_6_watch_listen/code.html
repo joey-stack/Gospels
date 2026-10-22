@@ -1,0 +1,962 @@
+<!DOCTYPE html><html class="light" lang="sv"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Watch &amp; Listen — GOSPELS Ministry Gothenburg</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim from Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#71f8e4",
+            "background": "#f8f9ff",
+            "on-secondary-container": "#5c647a",
+            "on-tertiary-fixed": "#00201c",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "outline": "#6d7a77",
+            "inverse-on-surface": "#eaf1ff",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#f4fffc",
+            "secondary-fixed-dim": "#bec6e0",
+            "error": "#ba1a1a",
+            "tertiary": "#00685d",
+            "on-secondary-fixed": "#131b2e",
+            "surface-container-highest": "#d3e4fe",
+            "surface": "#f8f9ff",
+            "on-tertiary-container": "#f4fffb",
+            "surface-variant": "#d3e4fe",
+            "outline-variant": "#bcc9c6",
+            "on-tertiary-fixed-variant": "#005048",
+            "primary-container": "#008378",
+            "on-background": "#0b1c30",
+            "on-primary-fixed-variant": "#005049",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#006a61",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#3d4947",
+            "on-primary-fixed": "#00201d",
+            "tertiary-container": "#008376",
+            "secondary": "#565e74",
+            "primary-fixed": "#89f5e7",
+            "surface-container": "#e5eeff",
+            "surface-dim": "#cbdbf5",
+            "inverse-primary": "#6bd8cb",
+            "on-error": "#ffffff",
+            "secondary-container": "#dae2fd",
+            "on-surface": "#0b1c30",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#6bd8cb",
+            "primary": "#00685f",
+            "surface-container-low": "#eff4ff",
+            "surface-container-high": "#dce9ff",
+            "surface-bright": "#f8f9ff",
+            "secondary-fixed": "#dae2fd",
+            "inverse-surface": "#213145"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-2xl": "4rem",
+            "gutter": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter-mobile": "1rem",
+            "margin": "3rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "body-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "scripture-quote-mobile": [
+              "EB Garamond"
+            ],
+            "display-lg-mobile": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-md": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "label-md": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg-mobile": [
+              "Plus Jakarta Sans"
+            ],
+            "label-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "scripture-quote": [
+              "EB Garamond"
+            ],
+            "body-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "body-md": [
+              "Plus Jakarta Sans"
+            ],
+            "display-lg": [
+              "Plus Jakarta Sans"
+            ]
+          },
+          "fontSize": {
+            "body-lg": [
+              "18px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "400"
+              }
+            ],
+            "scripture-quote-mobile": [
+              "19px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ],
+            "display-lg-mobile": [
+              "38px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-md": [
+              "24px",
+              {
+                "lineHeight": "32px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-sm": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg": [
+              "36px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-md": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg-mobile": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.08em",
+                "fontWeight": "700"
+              }
+            ],
+            "scripture-quote": [
+              "24px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ],
+            "body-sm": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "400"
+              }
+            ],
+            "body-md": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "display-lg": [
+              "56px",
+              {
+                "lineHeight": "64px",
+                "letterSpacing": "-0.03em",
+                "fontWeight": "700"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Custom subtle ambient glow & bespoke card framing */
+    .nordic-shadow {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(13, 148, 136, 0.04);
+    }
+    .nordic-player-glow {
+      box-shadow: 0 20px 32px -8px rgba(15, 23, 42, 0.28), 0 0 24px 0 rgba(13, 148, 136, 0.35);
+    }
+    .audio-bar-pulse {
+      animation: pulseWave 1.4s ease-in-out infinite alternate;
+    }
+    @keyframes pulseWave {
+      0% { height: 20%; }
+      100% { height: 95%; }
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- =========================================================================
+       TOP NAVIGATION BAR (Shared Component JSON)
+       Active intent: 'Watch & Listen' highlighted per prompt & hierarchy
+  ========================================================================== -->
+<header class="bg-surface-container-lowest/90 dark:bg-inverse-surface/90 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline/20 shadow-sm">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+<!-- Brand Logo Anchor -->
+<a class="flex items-center gap-3 active:scale-95 transition-transform duration-150" href="#">
+<div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">church</span>
+</div>
+<span class="font-headline-md text-headline-md tracking-tight font-bold text-on-surface dark:text-inverse-on-surface">GOSPELS</span>
+</a>
+<!-- Desktop Navigation Links (Watch & Listen set to style_active_navigation) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md active:scale-95" href="#">Events</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed font-semibold pb-1 font-label-md text-label-md active:scale-95" href="#">Watch &amp; Listen</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md active:scale-95" href="#">Churches</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md active:scale-95" href="#">Need Prayer?</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-on-surface dark:hover:text-inverse-on-surface font-medium transition-colors font-label-md text-label-md active:scale-95" href="#">Support</a>
+</nav>
+<!-- Trailing Action Button -->
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-lg active:scale-95 transition-all duration-150 flex items-center gap-2 shadow-sm">
+<span class="">Next Event</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+</header>
+<!-- =========================================================================
+       DARK HERO SANCTUARY SECTION
+       Deep Charcoal Sanctuary (#0F172A) with architectural spiritual reverence
+  ========================================================================== -->
+<section class="bg-[#0F172A] text-inverse-on-surface pt-16 pb-24 border-b border-white/10 relative overflow-hidden">
+<!-- Atmospheric Ambient Tint Glow -->
+<div class="absolute -top-40 right-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-10 w-96 h-96 bg-tertiary-fixed/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+<!-- Breadcrumb & Ministry Pill -->
+<div class="flex items-center gap-3 mb-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-primary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-pulse"></span>
+          GOTHENBURG SOUND ARCHIVE
+        </span>
+<span class="text-secondary-fixed-dim font-body-sm text-body-sm">· Cathedral &amp; Acoustic Sessions</span>
+</div>
+<!-- Main Headline & Subtitle -->
+<div class="max-w-3xl mb-12">
+<h1 class="font-display-lg text-display-lg font-bold tracking-tight text-white mb-4">
+          Watch &amp; Listen
+        </h1>
+<p class="font-body-lg text-body-lg text-secondary-fixed-dim font-light leading-relaxed">
+          Sacred acoustic sessions, open-air praises, and testimonies recorded live across Gothenburg's cathedrals and waterfront spaces.
+        </p>
+</div>
+<!-- FEATURED VIDEO SHOWCASE: Large Cinematic Preview Card -->
+<div class="relative rounded-xl overflow-hidden bg-[#1E293B] border border-white/10 shadow-2xl group">
+<div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+<!-- Video Visual Canvas -->
+<div class="lg:col-span-8 relative aspect-video md:aspect-[16/9] w-full overflow-hidden bg-slate-900">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-90" data-alt="A grand cathedral interior in Gothenburg Sweden filled with warm atmospheric golden light and cool cyan accents as a gospel choir in contemporary Scandinavian attire performs with uplifted hands. The architecture features soaring stone arches and Nordic minimalism, while focused stage lighting creates a reverent and emotionally transcendent sacred concert atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0L6aS_N2r1WMMeZbez-QFfP6QiFeMMDsj_2LpcXQGsNGbynorcBi1FGBoHHWe2rDfnqWMdZOsPSsksHPPKRHlWFquFQZ2z9WRxXTg8tz-yHOaVetdCwnT62-5sVy9k7u0qwbMCB0QixY7KIhvvWWudTtoaBLGji1uHALzLGrlLF8gK4vGaMRtIkR0z-oIh_AI8S_MQxZXCeBJ6GcUjhuWnN-xRt2dpocfW-LusEmVk_W9IxR7RJda4DzvxkaCXxrChg">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-black/30"></div>
+<!-- Live Duration & High-Definition Pill -->
+<div class="absolute top-5 left-5 flex items-center gap-2 z-20">
+<span class="px-2.5 py-1 rounded-md bg-[#0F172A]/80 backdrop-blur-md text-white font-label-sm text-label-sm border border-white/10 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary-fixed" style="font-variation-settings: 'FILL' 1;">timer</span>
+                42:18
+              </span>
+<span class="px-2.5 py-1 rounded-md bg-primary text-on-primary font-label-sm text-label-sm font-semibold tracking-wider">
+                4K HDR LIVE
+              </span>
+</div>
+<!-- Big Centered Play Trigger Button -->
+<div class="absolute inset-0 flex items-center justify-center z-20">
+<button class="w-20 h-20 rounded-full bg-primary text-on-primary flex items-center justify-center nordic-player-glow group-hover:scale-110 active:scale-95 transition-all duration-300">
+<span class="material-symbols-outlined text-4xl ml-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Gothenburg Location Badge (Bottom Left Overlay) -->
+<div class="absolute bottom-5 left-5 z-20 flex items-center gap-2 text-white/90 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary-fixed text-lg">location_on</span>
+<span class="">Frihamnskyrkan, Frihamnen, Göteborg</span>
+</div>
+</div>
+<!-- Video Editorial & Choir Credits Panel -->
+<div class="lg:col-span-4 p-8 flex flex-col justify-between bg-[#1E293B]">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold">Featured Recording</span>
+<span class="text-xs text-secondary-fixed-dim">Recorded Oct 2024</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-semibold text-white mb-3">
+                Live at Frihamnskyrkan: Holy Spirit Worship Highlights
+              </h2>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim mb-6 leading-relaxed">
+                An uninterrupted forty-minute journey of spontaneous Scandinavian gospel harmonies, cathedral acoustics, and heartfelt prayers with hundreds of believers gathered by the harbor.
+              </p>
+<!-- Choir Credits Block -->
+<div class="p-4 rounded-lg bg-[#0F172A]/70 border border-white/5 mb-6 space-y-2">
+<div class="text-xs font-semibold text-white/80 uppercase tracking-wider">Musicians &amp; Ministry</div>
+<div class="text-sm text-slate-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary-fixed">groups</span>
+<span class="">Gothenburg Community Mass Choir (65 voices)</span>
+</div>
+<div class="text-sm text-slate-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary-fixed">piano</span>
+<span class="">Arranged by Samuel Ek &amp; Worship Team</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-white/10 flex items-center justify-between">
+<div class="flex items-center gap-4 text-xs text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> 18.4K views</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">favorite</span> 1.2K likes</span>
+</div>
+<button class="text-primary-fixed hover:text-white font-label-md text-label-md flex items-center gap-1 transition-colors">
+<span class="">View Full Setlist</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       CATEGORY FILTER BAR (Light Surface)
+       Horizontally scrollable minimalist pills
+  ========================================================================== -->
+<nav class="bg-surface-container-lowest border-b border-outline-variant/30 sticky top-20 z-30 py-4 shadow-sm">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between overflow-x-auto no-scrollbar gap-4">
+<!-- Category Tabs per Prompt -->
+<div class="flex items-center gap-2 shrink-0">
+<!-- Active Pill: [Videos] -->
+<button class="bg-primary text-on-primary font-label-md text-label-md px-5 py-2 rounded-full shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span class="">Videos</span>
+<span class="bg-white/20 text-xs px-2 py-0.5 rounded-full font-bold ml-1">28</span>
+</button>
+<button class="bg-[#F1F5F9] text-secondary hover:text-on-surface font-label-md text-label-md px-5 py-2 rounded-full transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-base">graphic_eq</span>
+<span class="">Music &amp; Audio</span>
+</button>
+<button class="bg-[#F1F5F9] text-secondary hover:text-on-surface font-label-md text-label-md px-5 py-2 rounded-full transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-base">forum</span>
+<span class="">Testimonies</span>
+</button>
+<button class="bg-[#F1F5F9] text-secondary hover:text-on-surface font-label-md text-label-md px-5 py-2 rounded-full transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-base">mic_external_on</span>
+<span class="">Acoustic Sessions</span>
+</button>
+</div>
+<!-- Quick Search / Filter Input -->
+<div class="hidden sm:flex items-center gap-3">
+<div class="relative">
+<input class="pl-9 pr-4 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-56 text-on-surface" placeholder="Search hymns, churches, artists..." type="text">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-slate-400 text-sm">search</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- =========================================================================
+       MAIN CONTENT CONTAINER
+  ========================================================================== -->
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-16 space-y-24">
+<!-- =======================================================================
+         SECTION 1: VIDEO ARCHIVE GRID (Curated YouTube/Embeds)
+    ======================================================================== -->
+<section>
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Sanctuary Broadcasts</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mt-1">Live Worship Recordings</h2>
+<p class="font-body-md text-body-md text-secondary mt-1">Full-length live concert cuts and spontaneous worship captures in Gothenburg.</p>
+</div>
+<a class="inline-flex items-center gap-2 text-primary hover:text-tertiary font-label-md text-label-md font-semibold transition-colors" href="#">
+<span class="">Explore All 28 Videos</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- 3 Video Grid Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Video Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] nordic-shadow overflow-hidden group hover:border-primary/40 transition-all duration-300 flex flex-col">
+<div class="relative aspect-video overflow-hidden bg-slate-900">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern church sanctuary in Gothenburg named Smyrna with a large choir singing under warm timber wood acoustics and soft diffused morning light. The setting is intimate and deeply worshipful, featuring acoustic grand piano and string players in minimalist Scandinavian style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6kus-Nzoo-rEHZj3ew8cc02uwf-iKlrx-s2xSefF10YgUywi7bveEKKCdlgwEgTxCZCeK1SzY-LRo6J44UO8eXmEOc4o1noYzRt2Dc0gRhYLPgXyCI5WzudpL3q9r6-UJTFGQXCU4_u9EgIruk-9Z3fhrhuBkcrtZZBNmfCRplIOf5QRONBKhqXt1ncNoSyxmHGMJ7po3QRUotnSUFKETr7E8fRhWrhFFq2nHO4mbF6GFTqUQdRbKeJ3_oeEUEDdi7w">
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<!-- Bespoke Date Badge from System -->
+<div class="absolute top-3 left-3 flex flex-col items-center rounded-[6px] overflow-hidden border border-primary/30 shadow-md">
+<div class="bg-primary text-white font-label-sm text-[10px] px-2 py-0.5 tracking-wider font-bold uppercase">NOV</div>
+<div class="bg-[#F8FAFC] text-on-surface font-headline-sm text-sm font-bold px-2 py-0.5 w-full text-center">14</div>
+</div>
+<!-- Duration Badge -->
+<span class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 backdrop-blur text-white text-xs font-semibold rounded">
+              08:42
+            </span>
+<!-- Play trigger -->
+<div class="absolute inset-0 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
+<div class="w-12 h-12 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl ml-0.5" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-xs font-semibold text-primary uppercase tracking-wide">Smyrna Sanctuary</span>
+<span class="text-xs text-slate-400">· Gothenburg</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">
+                Halleluja Till Vår Kung - Smyrna Sanctuary
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-2">
+                A majestic rendition of the Swedish classic worship anthem performed during the autumn unity conference.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-secondary">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">visibility</span> 9.3K views</span>
+<span class="flex items-center gap-1 font-medium text-primary"><span class="material-symbols-outlined text-sm">church</span> Smyrna Kyrkan</span>
+</div>
+</div>
+</article>
+<!-- Video Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] nordic-shadow overflow-hidden group hover:border-primary/40 transition-all duration-300 flex flex-col">
+<div class="relative aspect-video overflow-hidden bg-slate-900">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An energetic and joyful gospel choir worship team performing at a community worship center in central Gothenburg Sweden. The lighting features warm amber glows with vibrant turquoise rim light reflecting off contemporary brass instruments and smiling choir vocalists." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg4Dt_YZD9h93o9lOe0KGMRZIEWXQR3ceOlqCyJWxiBDUPbqPhU0ty7yNOroFGl2QI1d_I-1JN1h3WUl-NW9C80wLsh04FdiZEPuTHaM5z1K-1x6CQMRYmpkPveVGUq92d4U1JbJx8F14KGls17Cxm2CiSTrigMzlx-rBUIJAZJIFHh46o9AwVlMcSwb35WzX_dqykz7PTzWPVzTWZWdJWaPu7CwNZC5a_BYsBby6nuM1i_NXd5V3gcuWCM0wrH1YwWg">
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<!-- Bespoke Date Badge -->
+<div class="absolute top-3 left-3 flex flex-col items-center rounded-[6px] overflow-hidden border border-primary/30 shadow-md">
+<div class="bg-primary text-white font-label-sm text-[10px] px-2 py-0.5 tracking-wider font-bold uppercase">OCT</div>
+<div class="bg-[#F8FAFC] text-on-surface font-headline-sm text-sm font-bold px-2 py-0.5 w-full text-center">27</div>
+</div>
+<span class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 backdrop-blur text-white text-xs font-semibold rounded">
+              06:15
+            </span>
+<div class="absolute inset-0 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
+<div class="w-12 h-12 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl ml-0.5" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-xs font-semibold text-primary uppercase tracking-wide">RCCG Choir Gothenburg</span>
+<span class="text-xs text-slate-400">· Live Session</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">
+                Gud Vår Beskyddare - RCCG Choir
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-2">
+                Dynamic polyrhythmic praise recorded during the Gothenburg Intercultural Fellowship Night.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-secondary">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">visibility</span> 14.1K views</span>
+<span class="flex items-center gap-1 font-medium text-primary"><span class="material-symbols-outlined text-sm">music_note</span> Intercultural Praise</span>
+</div>
+</div>
+</article>
+<!-- Video Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] nordic-shadow overflow-hidden group hover:border-primary/40 transition-all duration-300 flex flex-col">
+<div class="relative aspect-video overflow-hidden bg-slate-900">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An open-air evening gospel worship concert at Jubileumsparken by Gothenburg harbor waterfront. Swedish summer dusk sky in deep twilight blue and amber reflections on the river water, with an outdoor timber stage filled with gospel vocalists and an attentive seated Nordic audience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsuuJAi0GUA7Am_rYDcPZ17wkzJ0FQ4-4khaIX9_S8G191ir0byxJCCDugKlPcDDl53fZW6zQT8Zf_Z5NQqW7Tlv4kitS6BoYdw4jobClFkvW8sLRgDdW_19dR1IyVzDeK7ri49QVIT5jvdARmAGF11MamX7xtMTwghJKurqCPeNUTKdu3cI3rgUxCqZ1ijc43DDPL1ALW4S9RBEDHbGYoFLRRVsWI4m0YEfshUhqOP1bK5o9Kc4SW">
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<!-- Bespoke Date Badge -->
+<div class="absolute top-3 left-3 flex flex-col items-center rounded-[6px] overflow-hidden border border-primary/30 shadow-md">
+<div class="bg-primary text-white font-label-sm text-[10px] px-2 py-0.5 tracking-wider font-bold uppercase">AUG</div>
+<div class="bg-[#F8FAFC] text-on-surface font-headline-sm text-sm font-bold px-2 py-0.5 w-full text-center">19</div>
+</div>
+<span class="absolute bottom-3 right-3 px-2 py-1 bg-black/70 backdrop-blur text-white text-xs font-semibold rounded">
+              14:50
+            </span>
+<div class="absolute inset-0 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
+<div class="w-12 h-12 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl ml-0.5" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-xs font-semibold text-primary uppercase tracking-wide">Outdoor Harbor Praises</span>
+<span class="text-xs text-slate-400">· Jubileumsparken</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">
+                Waterfront Praise 2025 at Jubileumsparken
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-2">
+                Acoustic guitars, cajón, and three-part harmony echoing along the Göta älv harbor under the Nordic summer twilight.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-secondary">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">visibility</span> 22.8K views</span>
+<span class="flex items-center gap-1 font-medium text-primary"><span class="material-symbols-outlined text-sm">water</span> Open Air Praise</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- =======================================================================
+         SECTION 2: SCRIPTURE & MEDITATION BLOCK (Design System Anchor)
+    ======================================================================== -->
+<div class="bg-[#F1F5F9] p-8 md:p-10 rounded-xl border-l-4 border-primary nordic-shadow">
+<div class="max-w-3xl">
+<span class="text-xs uppercase font-semibold text-primary tracking-widest block mb-2 font-label-sm">Dagens Skriftord · Scripture Meditation</span>
+<blockquote class="font-scripture-quote text-scripture-quote italic text-[#111827] leading-relaxed mb-3">
+          "Lova Herren med psaltare, sjung hans lov till tiosträngad harpa. Sjung till honom en ny sång, spela skönt med jubelrop."
+        </blockquote>
+<p class="font-label-sm text-label-sm text-[#64748B] uppercase tracking-wider font-semibold">
+          — Psaltaren 33:2–3 · Gothenburg Ministry Fellowship
+        </p>
+</div>
+</div>
+<!-- =======================================================================
+         SECTION 3: MUSIC & WORSHIP ALBUMS ROW (Audio Wave Visualizers)
+    ======================================================================== -->
+<section>
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Studio &amp; Live Masters</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mt-1">Music &amp; Worship Albums</h2>
+<p class="font-body-md text-body-md text-secondary mt-1">Mastered stereo audio recordings available across streaming services and Swedish Christian radio.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs text-secondary font-medium">Available on:</span>
+<span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-semibold text-slate-700 flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-[#1DB954]"></span> Spotify
+          </span>
+<span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-semibold text-slate-700 flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-[#FC3C44]"></span> Apple Music
+          </span>
+</div>
+</div>
+<!-- 3 Album/Track Cards with Waveform Previews -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Album Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-[#E2E8F0] nordic-shadow flex flex-col justify-between hover:border-primary/30 transition-all">
+<div>
+<div class="relative aspect-square rounded-lg overflow-hidden mb-5 bg-slate-100">
+<img class="w-full h-full object-cover" data-alt="Minimalist album cover art with Scandinavian typography reading Lovsång över Älven set against a serene photographic backdrop of Gothenburg harbor in mist with subtle turquoise and pale stone tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPX--3LvZ8m-_UFke2bfdSKRRHNUECHNmeNZhiLIoJehQUtt4zQVAWVSHtj5wT1skSCuapYk1za5wf2Un8rFdMuhWhhp2nxmK1zwBXWP8cE7f-nFtshwJ8wn2rHaC9-0mz3L6aU5trtSGYQEbHgRtHWJAlb8qApQY7NaXx9T3Zkc-AU4LZbed_5vNcc11MqY7gLFhHmhbdMF78g_1bWkVbACEUYBcWVGHMqoZrWccFlGkYiGD2_Ap1">
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-[#0F172A]/80 backdrop-blur text-white text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-[#1DB954]" style="font-variation-settings: 'FILL' 1;">headphones</span>
+                EP · 5 Tracks
+              </div>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold text-primary uppercase">GOSPELS Session #01</span>
+<span class="text-xs text-slate-400 font-mono">2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-1">
+              Lovsång över Älven
+            </h3>
+<p class="font-body-sm text-body-sm text-secondary mb-4">
+              Recorded inside Oscar Fredriks Kyrka with acoustic brass and string quartet.
+            </p>
+<!-- Audio Wave Visualization Preview -->
+<div class="bg-[#F8FAFC] border border-slate-200 rounded-lg p-3.5 mb-6">
+<div class="flex items-center justify-between text-xs text-slate-500 mb-2">
+<span class="font-semibold text-slate-700">Track 02: Nåd Som Bär Mig</span>
+<span class="font-mono">04:12</span>
+</div>
+<div class="flex items-end gap-1 h-8 px-1">
+<div class="w-1 bg-primary/40 rounded-full h-3"></div>
+<div class="w-1 bg-primary/60 rounded-full h-5"></div>
+<div class="w-1 bg-primary rounded-full h-7"></div>
+<div class="w-1 bg-primary rounded-full h-4"></div>
+<div class="w-1 bg-primary/80 rounded-full h-6"></div>
+<div class="w-1 bg-primary rounded-full h-8 audio-bar-pulse"></div>
+<div class="w-1 bg-primary rounded-full h-5 audio-bar-pulse"></div>
+<div class="w-1 bg-primary/70 rounded-full h-6"></div>
+<div class="w-1 bg-primary/90 rounded-full h-7"></div>
+<div class="w-1 bg-primary/40 rounded-full h-3"></div>
+<div class="w-1 bg-slate-300 rounded-full h-4"></div>
+<div class="w-1 bg-slate-300 rounded-full h-5"></div>
+<div class="w-1 bg-slate-300 rounded-full h-6"></div>
+<div class="w-1 bg-slate-300 rounded-full h-3"></div>
+<div class="w-1 bg-slate-300 rounded-full h-2"></div>
+</div>
+</div>
+</div>
+<a class="w-full py-2.5 px-4 rounded-lg bg-[#0F172A] hover:bg-slate-800 text-white font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-sm text-[#1DB954]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="">Listen on Spotify</span>
+</a>
+</div>
+<!-- Album Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-[#E2E8F0] nordic-shadow flex flex-col justify-between hover:border-primary/30 transition-all">
+<div>
+<div class="relative aspect-square rounded-lg overflow-hidden mb-5 bg-slate-100">
+<img class="w-full h-full object-cover" data-alt="Modern gospel album cover showing close-up hands lifted in adoration with soft architectural glass and steel reflections of Gothenburg Lindholmen church in pale warm morning hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC8Xc3Kx4hg6dMLx2Ebhh8m0ov9tv53_ZmmUjjsVr5_befvsxEMpg5piXPzrJVXbR7v_cfFGn66MZGESh0qh_cUMTOspAzZQxbqc0OltltEE12DZqehUNn2jRJOgexOMsC9mv16OyIeqDM24fRCQ8FygzLvRiN9ybuBJOaYDVtXOjiS20VBmhOhUJaA2Fbx2-ZnVujOHV6V3eBAGoc08abZCbs1yX58VsN9alNEtcivcGt_n9-BSV2">
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-[#0F172A]/80 backdrop-blur text-white text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-[#1DB954]" style="font-variation-settings: 'FILL' 1;">headphones</span>
+                Album · 8 Tracks
+              </div>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold text-primary uppercase">GOSPELS Live</span>
+<span class="text-xs text-slate-400 font-mono">2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-1">
+              Hopp För Vår Stad (Gothenburg)
+            </h3>
+<p class="font-body-sm text-body-sm text-secondary mb-4">
+              A prophetic album composed by five partner churches for urban Gothenburg mission.
+            </p>
+<!-- Audio Wave Visualization Preview -->
+<div class="bg-[#F8FAFC] border border-slate-200 rounded-lg p-3.5 mb-6">
+<div class="flex items-center justify-between text-xs text-slate-500 mb-2">
+<span class="font-semibold text-slate-700">Track 01: Frihetens Ljud</span>
+<span class="font-mono">05:34</span>
+</div>
+<div class="flex items-end gap-1 h-8 px-1">
+<div class="w-1 bg-primary/40 rounded-full h-4"></div>
+<div class="w-1 bg-primary/80 rounded-full h-7"></div>
+<div class="w-1 bg-primary rounded-full h-8"></div>
+<div class="w-1 bg-primary rounded-full h-6"></div>
+<div class="w-1 bg-primary/60 rounded-full h-4"></div>
+<div class="w-1 bg-primary rounded-full h-8 audio-bar-pulse"></div>
+<div class="w-1 bg-primary rounded-full h-7 audio-bar-pulse"></div>
+<div class="w-1 bg-primary/90 rounded-full h-6"></div>
+<div class="w-1 bg-primary/50 rounded-full h-4"></div>
+<div class="w-1 bg-slate-300 rounded-full h-5"></div>
+<div class="w-1 bg-slate-300 rounded-full h-3"></div>
+<div class="w-1 bg-slate-300 rounded-full h-2"></div>
+<div class="w-1 bg-slate-300 rounded-full h-4"></div>
+<div class="w-1 bg-slate-300 rounded-full h-5"></div>
+<div class="w-1 bg-slate-300 rounded-full h-2"></div>
+</div>
+</div>
+</div>
+<a class="w-full py-2.5 px-4 rounded-lg bg-[#0F172A] hover:bg-slate-800 text-white font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-sm text-[#1DB954]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="">Listen on Spotify</span>
+</a>
+</div>
+<!-- Album Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-[#E2E8F0] nordic-shadow flex flex-col justify-between hover:border-primary/30 transition-all">
+<div>
+<div class="relative aspect-square rounded-lg overflow-hidden mb-5 bg-slate-100">
+<img class="w-full h-full object-cover" data-alt="Album artwork featuring Scandinavian watercolor washes in turquoise and slate grey with clean architectural typography titled Skymning &amp; Nåd recorded in Hagakyrkan Gothenburg." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEYM3hUuaI3hccBi67FzUgxDtBAaCtQN640eR_fktBymOlpfz7u9eZ4rOdWsyXC9hHoSr4lXSa1jjAyU0Yy2VJQMp7Bwl0_EpsxOfSvjofePu9JkNw4_jjf4h-KtcLog76DJngycQ2OJR52ljNbH-ydj-5ATS-f5bfbRlXGuAnF3XcbJze02D0zSHs9R0br-34vpHMDYY9LcwwmCJGOYUns02B-2JT2rCUn8y8lZdz4Tw5qZua9E5f">
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-[#0F172A]/80 backdrop-blur text-white text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-[#1DB954]" style="font-variation-settings: 'FILL' 1;">headphones</span>
+                Single &amp; Hymn
+              </div>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold text-primary uppercase">Acoustic Series</span>
+<span class="text-xs text-slate-400 font-mono">2025</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-1">
+              Skymning &amp; Nåd (Haga Chapel)
+            </h3>
+<p class="font-body-sm text-body-sm text-secondary mb-4">
+              Intimate devotional piano hymns recorded during Friday twilight evening prayers.
+            </p>
+<!-- Audio Wave Visualization Preview -->
+<div class="bg-[#F8FAFC] border border-slate-200 rounded-lg p-3.5 mb-6">
+<div class="flex items-center justify-between text-xs text-slate-500 mb-2">
+<span class="font-semibold text-slate-700">Track 01: Blott En Dag</span>
+<span class="font-mono">03:48</span>
+</div>
+<div class="flex items-end gap-1 h-8 px-1">
+<div class="w-1 bg-primary/40 rounded-full h-2"></div>
+<div class="w-1 bg-primary/70 rounded-full h-4"></div>
+<div class="w-1 bg-primary rounded-full h-6"></div>
+<div class="w-1 bg-primary rounded-full h-5"></div>
+<div class="w-1 bg-primary/90 rounded-full h-8 audio-bar-pulse"></div>
+<div class="w-1 bg-primary rounded-full h-6 audio-bar-pulse"></div>
+<div class="w-1 bg-primary/70 rounded-full h-4"></div>
+<div class="w-1 bg-primary/60 rounded-full h-5"></div>
+<div class="w-1 bg-slate-300 rounded-full h-3"></div>
+<div class="w-1 bg-slate-300 rounded-full h-4"></div>
+<div class="w-1 bg-slate-300 rounded-full h-2"></div>
+<div class="w-1 bg-slate-300 rounded-full h-5"></div>
+<div class="w-1 bg-slate-300 rounded-full h-3"></div>
+<div class="w-1 bg-slate-300 rounded-full h-2"></div>
+<div class="w-1 bg-slate-300 rounded-full h-1"></div>
+</div>
+</div>
+</div>
+<a class="w-full py-2.5 px-4 rounded-lg bg-[#0F172A] hover:bg-slate-800 text-white font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-sm text-[#1DB954]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="">Listen on Spotify</span>
+</a>
+</div>
+</div>
+</section>
+<!-- =======================================================================
+         SECTION 4: TESTIMONIAL CARDS ROW (Reflective Community Voices)
+    ======================================================================== -->
+<section>
+<div class="mb-10 text-center max-w-2xl mx-auto">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Communal Renewal</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mt-1">Voices From Our City</h2>
+<p class="font-body-md text-body-md text-secondary mt-1">Reflections from choir leaders, worship leaders, and seekers across Gothenburg on the spiritual presence in gospel worship.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-[#E2E8F0] nordic-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-primary mb-4">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-scripture-quote text-[19px] italic text-[#111827] leading-relaxed mb-6">
+              "In twenty years directing gospel music in Sweden, I have rarely witnessed the tangible reverence present when Frihamnskyrkan was packed with people from 20 different nations praying in one accord."
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-700">
+              ME
+            </div>
+<div>
+<div class="font-semibold text-sm text-on-surface">Maria Engström</div>
+<div class="text-xs text-secondary">Choir Director, Gothenburg Gospel Guild</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-[#E2E8F0] nordic-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-primary mb-4">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-scripture-quote text-[19px] italic text-[#111827] leading-relaxed mb-6">
+              "I stepped into the Waterfront Praise at Jubileumsparken simply while cycling home from work. The warmth of the choir and the acoustic simplicity made me stay until the final benediction."
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-700">
+              JL
+            </div>
+<div>
+<div class="font-semibold text-sm text-on-surface">Johan Lindqvist</div>
+<div class="text-xs text-secondary">Architect &amp; Gothenburg Resident</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-[#E2E8F0] nordic-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-primary mb-4">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-scripture-quote text-[19px] italic text-[#111827] leading-relaxed mb-6">
+              "The recordings preserve not just musical precision, but the heartbeat of a revival among young adults seeking authentic Christian community in our city."
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+<div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-700">
+              PA
+            </div>
+<div>
+<div class="font-semibold text-sm text-on-surface">Pastor Adeola Bello</div>
+<div class="text-xs text-secondary">RCCG Living Word Gothenburg</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =======================================================================
+         SECTION 5: SUBSCRIBE CTA BANNER (Deep Charcoal Sanctuary Card)
+    ======================================================================== -->
+<div class="rounded-2xl bg-[#0F172A] p-8 md:p-14 text-white relative overflow-hidden border border-white/10 shadow-2xl">
+<!-- Glow ambient corner accent -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/20 rounded-full blur-[90px] pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8">
+<span class="px-3 py-1 rounded-full bg-primary/20 text-primary-fixed border border-primary/30 font-label-sm text-label-sm uppercase tracking-wider inline-block mb-4">
+            STREAM ANYWHERE · YOUTUBE &amp; SPOTIFY
+          </span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-white mb-3">
+            Fill Your Week With Sacred Nordic Harmony
+          </h2>
+<p class="font-body-md text-body-md text-secondary-fixed-dim max-w-xl">
+            Subscribe to our YouTube broadcast channel for live 4K cathedral streams, or follow our official Spotify playlist refreshed every Friday with acoustic rehearsal tracks.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
+<!-- Button 1: YouTube -->
+<a class="px-6 py-3.5 rounded-lg bg-[#BA1A1A] hover:bg-red-700 text-white font-label-md text-label-md font-semibold flex items-center justify-center gap-2 active:scale-95 transition-all shadow-md" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">smart_display</span>
+<span class="">Subscribe on YouTube</span>
+</a>
+<!-- Button 2: Spotify -->
+<a class="px-6 py-3.5 rounded-lg bg-[#1DB954] hover:bg-emerald-600 text-slate-950 font-label-md text-label-md font-semibold flex items-center justify-center gap-2 active:scale-95 transition-all shadow-md" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">headphones</span>
+<span class="">Follow on Spotify</span>
+</a>
+</div>
+</div>
+</div>
+<!-- =======================================================================
+         SECTION 6: NEWSLETTER SIGNUP CARD (Never Miss a Sacred Moment)
+    ======================================================================== -->
+<div class="bg-surface-container-lowest rounded-xl p-8 md:p-12 border border-[#CBD5E1] nordic-shadow">
+<div class="max-w-2xl mx-auto text-center">
+<div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-2xl">mark_email_unread</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface mb-2">
+          Never Miss a Sacred Moment
+        </h2>
+<p class="font-body-md text-body-md text-secondary mb-8">
+          Receive quiet notifications when new live concert recordings, lyric charts, or rehearsal chord sheets drop for your local ministry team.
+        </p>
+<form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault();">
+<input class="flex-1 px-4 py-3 rounded-lg border border-[#CBD5E1] focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface font-body-sm text-body-sm placeholder:text-slate-400 bg-white" placeholder="namn@kyrka.se or your email" required="" type="email">
+<button class="bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg font-semibold active:scale-95 transition-all shrink-0 shadow-sm" type="submit">
+            Get Drop Alerts
+          </button>
+</form>
+<p class="text-[12px] text-slate-400 mt-4 flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-primary">verified_user</span>
+          Non-profit ministry mailing list. Strictly zero spam. Unsubscribe anytime.
+        </p>
+</div>
+</div>
+</main>
+<!-- =========================================================================
+       STANDARD GOSPELS MINISTRY FOOTER (Shared Components JSON)
+       Labels, links, layout, copyright, and typography mapped exactly
+  ========================================================================== -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest text-inverse-on-surface dark:text-on-surface docked full-width bottom border-t border-outline/20 dark:border-outline-variant/30 flat no-shadows">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Brand & Mission Column -->
+<div class="md:col-span-1 space-y-4">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center text-sm font-bold">G</span>
+<span class="font-headline-md text-headline-md font-bold text-inverse-on-surface dark:text-on-surface">GOSPELS</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-dim dark:text-on-surface-variant leading-relaxed">
+          Uniting Gothenburg’s diverse churches through the power, beauty, and authentic praise of Scandinavian and international gospel music.
+        </p>
+<div class="pt-2">
+<span class="text-xs font-semibold text-primary-fixed uppercase tracking-wider block mb-1">Gothenburg Office</span>
+<p class="font-body-sm text-body-sm text-surface-dim dark:text-on-surface-variant">Frihamnen 16, 417 55 Göteborg</p>
+</div>
+</div>
+<!-- Navigation Links from JSON: Partner Churches, Holy Spirit Worship, Göteborgs Lovsångskonsert -->
+<div class="space-y-3">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-white mb-4">Ministry Pillars</h3>
+<ul class="space-y-2.5 font-body-sm text-body-sm">
+<li class="">
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-inverse-on-surface dark:hover:text-on-surface transition-colors" href="#">
+              Partner Churches
+            </a>
+</li>
+<li class="">
+<a class="text-primary-fixed dark:text-primary underline font-medium" href="#">
+              Holy Spirit Worship
+            </a>
+</li>
+<li class="">
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-inverse-on-surface dark:hover:text-on-surface transition-colors" href="#">
+              Göteborgs Lovsångskonsert
+            </a>
+</li>
+</ul>
+</div>
+<!-- Financial & Fellowship Links from JSON: Kingdom Giving, Swish Support, Privacy & WhatsApp Care -->
+<div class="space-y-3">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-white mb-4">Giving &amp; Care</h3>
+<ul class="space-y-2.5 font-body-sm text-body-sm">
+<li class="">
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-inverse-on-surface dark:hover:text-on-surface transition-colors" href="#">
+              Kingdom Giving
+            </a>
+</li>
+<li class="">
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-inverse-on-surface dark:hover:text-on-surface transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-xs text-primary-fixed">payments</span>
+<span class="">Swish Support: 123 456 78 90</span>
+</a>
+</li>
+<li class="">
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-inverse-on-surface dark:hover:text-on-surface transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-xs text-primary-fixed">chat</span>
+<span class="">Privacy &amp; WhatsApp Care</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Scripture Quote & Legal Attribution -->
+<div class="space-y-4">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-white mb-2">Nordic Reverence</h3>
+<blockquote class="font-scripture-quote text-scripture-quote italic text-surface-dim dark:text-on-surface-variant text-sm leading-relaxed border-l-2 border-primary-fixed pl-3">
+          "Låt Kristi ord rikligt bo hos er med all sin vishet."
+        </blockquote>
+<p class="font-body-sm text-body-sm text-surface-dim dark:text-on-surface-variant pt-2">
+          © 2025 GOSPELS Ministry Gothenburg. All rights reserved. Non-profit Christian fellowship.
+        </p>
+</div>
+</div>
+</footer>
+
+
+</body></html>

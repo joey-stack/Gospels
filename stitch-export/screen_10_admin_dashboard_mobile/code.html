@@ -1,0 +1,444 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GOSPELS Ministry Admin Hub | Mobile</title>
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#f4fffb",
+            "error": "#ba1a1a",
+            "on-primary-container": "#f4fffc",
+            "outline": "#6d7a77",
+            "tertiary-fixed": "#71f8e4",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-container-low": "#eff4ff",
+            "on-primary-fixed-variant": "#005049",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#00201d",
+            "inverse-on-surface": "#eaf1ff",
+            "on-error-container": "#93000a",
+            "secondary-container": "#dae2fd",
+            "surface-container-high": "#dce9ff",
+            "surface-tint": "#006a61",
+            "surface-variant": "#d3e4fe",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#3d4947",
+            "surface-dim": "#cbdbf5",
+            "primary-fixed": "#89f5e7",
+            "surface-container-highest": "#d3e4fe",
+            "on-tertiary": "#ffffff",
+            "surface": "#f8f9ff",
+            "on-surface": "#0b1c30",
+            "secondary": "#565e74",
+            "primary-fixed-dim": "#6bd8cb",
+            "background": "#f8f9ff",
+            "primary-container": "#008378",
+            "tertiary": "#00685d",
+            "inverse-surface": "#213145",
+            "surface-bright": "#f8f9ff",
+            "tertiary-container": "#008376",
+            "outline-variant": "#bcc9c6",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#5c647a",
+            "primary": "#00685f",
+            "on-secondary-fixed": "#131b2e",
+            "inverse-primary": "#6bd8cb",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#dae2fd",
+            "on-tertiary-fixed": "#00201c",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "on-background": "#0b1c30",
+            "on-tertiary-fixed-variant": "#005048",
+            "on-primary": "#ffffff",
+            "surface-container": "#e5eeff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.5rem",
+            "margin": "3rem",
+            "gutter-mobile": "1rem",
+            "space-md": "1rem",
+            "space-2xl": "4rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "scripture-quote": ["EB Garamond"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "display-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased selection:bg-primary selection:text-on-primary min-h-screen flex justify-center">
+<!-- Mobile Screen Container (Emulating pristine iOS/Android viewport with max-w-md constraint) -->
+<div class="w-full max-w-md bg-surface flex flex-col min-h-screen pb-24 relative shadow-2xl border-x border-outline-variant/30">
+<!-- Top Mobile Admin App Bar -->
+<header class="sticky top-0 z-50 bg-surface-container-lowest/90 backdrop-blur-md px-4 py-3 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2.5">
+<!-- Gothenburg Ministry Cross Emblem -->
+<div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="church">church</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface leading-none">GOSPELS</span>
+<span class="font-label-sm text-label-sm font-bold text-primary bg-primary-fixed/30 px-1.5 py-0.5 rounded text-[10px]">ADMIN</span>
+</div>
+<p class="font-label-sm text-label-sm text-secondary font-medium">Gothenburg Ministry Hub</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<!-- Notification Bell with Badge -->
+<button aria-label="Notifications" class="relative p-2 rounded-full hover:bg-surface-container text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-4 h-4 bg-error text-on-error rounded-full font-label-sm text-[10px] flex items-center justify-center font-bold ring-2 ring-surface-container-lowest">3</span>
+</button>
+<!-- Admin Profile Avatar -->
+<button class="w-8 h-8 rounded-full overflow-hidden ring-1.5 ring-primary/30 focus:outline-none focus:ring-2 focus:ring-primary flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up professional portrait of a Swedish ministry coordinator with a warm, serene demeanor in a light-filled Scandinavian church office. Soft natural window light casts gentle highlights, conveying reverence, peaceful authority, and authentic Nordic warmth in harmony with the ministry aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0kdNqQ2-0qTg7Mu-IEZj6K9InJ4iWs7AeJbH-x6MOlZIL9W4en590WYbXV-PLmOX1WT7PXIbWx8QpwV0duOfUMbQQSNmazLM5NSkgEEvHrIujQezy1X3hTUc3mmfWVohi9AOdO7RvuKHOzbPiDPE5UPHwCa9ANx2V2t6u-t8RkoVZzLdJ-J0DkpblvbpNUNY8e7yZdBwcIv4ENFUifn_Pmm3ihQrx10yxX7gfMAsN_L8KldLHgPIT">
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-4 pt-4 space-y-6">
+<!-- Admin Status Greeting & Scripture Micro-Anchor -->
+<section class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary-fixed/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="">PASTORAL OVERSIGHT</span>
+<span class="">•</span>
+<span class="">WEEK 13</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface mt-1">Välkommen, Pastor Karl</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Frihamnskyrkan &amp; Masthugget fellowship sync</p>
+</div>
+<span class="material-symbols-outlined text-primary/40 text-2xl" data-icon="shield_with_heart">shield_with_heart</span>
+</div>
+</section>
+<!-- Quick Metrics Overview Grid (Bento Pattern) -->
+<section>
+<div class="flex items-center justify-between mb-3 px-1">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Overview Metrics</h2>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Live Feed</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Metric 1: Total RSVPs -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant/30 flex flex-col justify-between hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-base" data-icon="confirmation_number">confirmation_number</span>
+</span>
+<span class="font-label-sm text-label-sm text-primary font-bold bg-primary-fixed/30 px-1.5 py-0.5 rounded">+18%</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">1,840</div>
+<div class="font-label-sm text-label-sm text-secondary font-medium mt-0.5">Total RSVPs (this week)</div>
+</div>
+</div>
+<!-- Metric 2: Unassigned Prayers -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-error/20 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-1.5 h-full bg-error"></div>
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-lg bg-error-container/60 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-base" data-icon="folded_hands">folded_hands</span>
+</span>
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">14</div>
+<div class="font-label-sm text-label-sm text-error font-medium mt-0.5">Unassigned Prayers</div>
+</div>
+</div>
+<!-- Metric 3: Active Volunteers -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant/30 flex flex-col justify-between hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-base" data-icon="groups">groups</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Choir &amp; AV</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">182</div>
+<div class="font-label-sm text-label-sm text-secondary font-medium mt-0.5">Active Volunteers</div>
+</div>
+</div>
+<!-- Metric 4: Stewardship / Swish -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant/30 flex flex-col justify-between hover:border-primary/40 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-lg bg-tertiary-fixed/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-base" data-icon="payments">payments</span>
+</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Swish Live</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">142,500 <span class="text-xs font-normal">SEK</span></div>
+<div class="font-label-sm text-label-sm text-secondary font-medium mt-0.5">Stewardship this month</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Immediate Pastoral & Event Actions -->
+<section class="space-y-4">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Immediate Actions</h2>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Priority 1</span>
+</div>
+<!-- Quick CTA Buttons Slider/Stack -->
+<div class="grid grid-cols-3 gap-2">
+<!-- + New Event Button -->
+<button class="bg-primary text-on-primary py-2.5 px-2 rounded-lg font-label-md text-label-md font-semibold flex flex-col items-center justify-center gap-1 shadow-sm active:scale-95 transition-all text-center">
+<span class="material-symbols-outlined text-xl" data-icon="add_circle">add_circle</span>
+<span class="leading-tight">+ New Event</span>
+</button>
+<!-- Review Auditions -->
+<button class="bg-surface-container-lowest border border-outline-variant/40 py-2.5 px-2 rounded-lg font-label-md text-label-md font-semibold text-on-surface flex flex-col items-center justify-center gap-1 shadow-sm active:scale-95 transition-all text-center">
+<div class="relative">
+<span class="material-symbols-outlined text-xl text-primary" data-icon="mic">mic</span>
+<span class="absolute -top-1 -right-2 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">8</span>
+</div>
+<span class="leading-tight">Auditions (8)</span>
+</button>
+<!-- Intercession Queue -->
+<button class="bg-surface-container-lowest border border-outline-variant/40 py-2.5 px-2 rounded-lg font-label-md text-label-md font-semibold text-on-surface flex flex-col items-center justify-center gap-1 shadow-sm active:scale-95 transition-all text-center">
+<div class="relative">
+<span class="material-symbols-outlined text-xl text-error" data-icon="folded_hands">folded_hands</span>
+<span class="absolute -top-1 -right-2 bg-error text-on-error text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">14</span>
+</div>
+<span class="leading-tight">Queue (14)</span>
+</button>
+</div>
+<!-- Upcoming Event Spotlight Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm">
+<!-- Event Header with Image Ambient Backdrop -->
+<div class="relative h-32 w-full bg-inverse-surface">
+<img class="w-full h-full object-cover opacity-60" data-alt="Lead worship minister singing during Holy Spirit Worship praise service" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0L6aS_N2r1WMMeZbez-QFfP6QiFeMMDsj_2LpcXQGsNGbynorcBi1FGBoHHWe2rDfnqWMdZOsPSsksHPPKRHlWFquFQZ2z9WRxXTg8tz-yHOaVetdCwnT62-5sVy9k7u0qwbMCB0QixY7KIhvvWWudTtoaBLGji1uHALzLGrlLF8gK4vGaMRtIkR0z-oIh_AI8S_MQxZXCeBJ6GcUjhuWnN-xRt2dpocfW-LusEmVk_W9IxR7RJda4DzvxkaCXxrChg">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/40 to-transparent"></div>
+<!-- Bespoke Date Badge -->
+<div class="absolute top-3 left-3 w-12 rounded-lg overflow-hidden border border-primary/30 shadow-md">
+<div class="bg-primary text-on-primary text-center py-0.5 font-label-sm text-[10px] font-bold tracking-wider">MAR</div>
+<div class="bg-surface-container-lowest text-on-surface text-center py-1 font-headline-sm text-headline-sm font-bold leading-none">28</div>
+</div>
+<div class="absolute top-3 right-3">
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                MAJOR EVENT
+              </span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3">
+<h3 class="font-headline-sm text-headline-sm font-bold text-inverse-on-surface leading-tight">Holy Spirit Worship 2026</h3>
+<p class="font-body-sm text-body-sm text-surface-dim flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                Smyrna Frihamnskyrkan, Göteborg
+              </p>
+</div>
+</div>
+<!-- Capacity Bar & Details -->
+<div class="p-4 space-y-3">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Booked Capacity: 78%</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">780 / 1000 seats</span>
+</div>
+<!-- Progress Track -->
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 78%"></div>
+</div>
+</div>
+<!-- Rapid Action Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="border border-outline-variant/60 hover:bg-surface-container text-on-surface py-2 px-3 rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-base text-primary" data-icon="chair">chair</span>
+                Manage Seating
+              </button>
+<button class="bg-surface-container hover:bg-surface-variant text-on-surface py-2 px-3 rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-base text-primary" data-icon="send">send</span>
+                Send Push/SMS
+              </button>
+</div>
+</div>
+</div>
+<!-- Recent Inbound Prayer Requests Mini List -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-4 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Inbound Prayers</h3>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline" href="#">View All (14)</a>
+</div>
+<div class="space-y-2.5 divide-y divide-outline-variant/20">
+<!-- Request 1: Hospital Patient (Urgent) -->
+<div class="pt-2 first:pt-0 flex items-start justify-between gap-3">
+<div class="flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-bold">URGENT</span>
+<span class="font-label-sm text-label-sm text-secondary">Sahlgrenska Hosp. • 12m ago</span>
+</div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface mt-1">Healing for hospital patient</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 italic">"Please hold Maria in prayer before her emergency heart surgery tomorrow..."</p>
+</div>
+<button class="bg-primary/10 hover:bg-primary text-primary hover:text-on-primary p-2 rounded-lg font-label-sm text-label-sm font-semibold flex flex-col items-center justify-center gap-0.5 transition-colors flex-shrink-0 active:scale-95">
+<span class="material-symbols-outlined text-base" data-icon="person_add">person_add</span>
+<span class="text-[10px]">Assign Elder</span>
+</button>
+</div>
+<!-- Request 2: Family Comfort -->
+<div class="pt-2 flex items-start justify-between gap-3">
+<div class="flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-secondary font-bold">PASTORAL</span>
+<span class="font-label-sm text-label-sm text-secondary">Majorna • 42m ago</span>
+</div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface mt-1">Family comfort &amp; peace</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 italic">"Grieving loss of grandfather, asking prayer support for Sunday service..."</p>
+</div>
+<button class="bg-primary/10 hover:bg-primary text-primary hover:text-on-primary p-2 rounded-lg font-label-sm text-label-sm font-semibold flex flex-col items-center justify-center gap-0.5 transition-colors flex-shrink-0 active:scale-95">
+<span class="material-symbols-outlined text-base" data-icon="person_add">person_add</span>
+<span class="text-[10px]">Assign Elder</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Scripture Callout & Reflection Micro-block -->
+<div class="border-l-[3px] border-primary bg-surface-container-low p-3.5 rounded-r-xl">
+<p class="font-scripture-quote-mobile text-scripture-quote-mobile text-on-surface italic">
+            "Bär varandras bördor, så uppfyller ni Kristi lag."
+          </p>
+<p class="font-label-sm text-label-sm text-secondary mt-1 font-semibold uppercase tracking-wider">
+            Galaterbrevet 6:2 • Göteborgs Förbönsteam
+          </p>
+</div>
+<!-- Ministry Health & System Status Snippet -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-3.5 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-primary" data-icon="hub">hub</span>
+              System Infrastructure
+            </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+              All Systems Operational
+            </span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="bg-surface-container-low p-2 rounded-lg flex items-center justify-between border border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Swish Webhook</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">99.9%</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg flex items-center justify-between border border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="verified_user">verified_user</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">BankID API</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">Active</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Docked Mobile Admin Navigation Bar (Shared Components Strict Semantic Shell) -->
+<!-- Prohibiting top/bottom borders as per design tokens mandate; using subtle elevation & tonal shift -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(15,23,42,0.06)] z-50 px-2 py-2 flex items-center justify-around">
+<!-- Tab 1: Overview (ACTIVE) -->
+<a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 px-3 py-1 rounded-lg text-primary font-semibold active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="tune" style="font-variation-settings: 'FILL' 1;">tune</span>
+<span class="font-label-sm text-[11px] leading-tight">Overview</span>
+</a>
+<!-- Tab 2: Events -->
+<a class="flex flex-col items-center justify-center gap-0.5 px-3 py-1 rounded-lg text-secondary hover:text-on-surface font-medium active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="event">event</span>
+<span class="font-label-sm text-[11px] leading-tight">Events</span>
+</a>
+<!-- Tab 3: Prayers -->
+<a class="flex flex-col items-center justify-center gap-0.5 px-3 py-1 rounded-lg text-secondary hover:text-on-surface font-medium active:scale-95 transition-transform relative" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-xl" data-icon="folded_hands">folded_hands</span>
+<span class="absolute -top-1 -right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</div>
+<span class="font-label-sm text-[11px] leading-tight">Prayers</span>
+</a>
+<!-- Tab 4: Volunteers -->
+<a class="flex flex-col items-center justify-center gap-0.5 px-3 py-1 rounded-lg text-secondary hover:text-on-surface font-medium active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="groups">groups</span>
+<span class="font-label-sm text-[11px] leading-tight">Volunteers</span>
+</a>
+<!-- Tab 5: More / Settings -->
+<a class="flex flex-col items-center justify-center gap-0.5 px-3 py-1 rounded-lg text-secondary hover:text-on-surface font-medium active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+<span class="font-label-sm text-[11px] leading-tight">More</span>
+</a>
+</nav>
+</div>
+
+
+</body></html>

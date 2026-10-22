@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS Admin — Prayer Requests &amp; Pastoral Care</title>
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "primary-container": "#008378",
+            "inverse-surface": "#213145",
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-variant": "#d3e4fe",
+            "error-container": "#ffdad6",
+            "secondary": "#565e74",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#6bd8cb",
+            "surface-bright": "#f8f9ff",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "on-tertiary-fixed-variant": "#005048",
+            "on-secondary-container": "#5c647a",
+            "surface": "#f8f9ff",
+            "primary-fixed-dim": "#6bd8cb",
+            "primary": "#00685f",
+            "tertiary-container": "#008376",
+            "on-primary-container": "#f4fffc",
+            "outline-variant": "#bcc9c6",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#006a61",
+            "background": "#f8f9ff",
+            "tertiary-fixed": "#71f8e4",
+            "primary-fixed": "#89f5e7",
+            "surface-container": "#e5eeff",
+            "on-tertiary-fixed": "#00201c",
+            "on-primary-fixed": "#00201d",
+            "on-background": "#0b1c30",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#005049",
+            "on-secondary-fixed": "#131b2e",
+            "on-tertiary-container": "#f4fffb",
+            "inverse-on-surface": "#eaf1ff",
+            "on-error-container": "#93000a",
+            "on-surface": "#0b1c30",
+            "outline": "#6d7a77",
+            "tertiary": "#00685d",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#3d4947",
+            "secondary-container": "#dae2fd",
+            "secondary-fixed": "#dae2fd",
+            "surface-dim": "#cbdbf5",
+            "surface-container-high": "#dce9ff",
+            "surface-container-highest": "#d3e4fe"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "4rem",
+            "space-md": "1rem",
+            "margin": "3rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "scripture-quote": ["EB Garamond"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(226, 232, 240, 0.4);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(100, 116, 139, 0.3);
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(100, 116, 139, 0.5);
+    }
+  </style>
+</head>
+<body class="h-full bg-surface text-on-surface flex overflow-hidden font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- ========================================================================= -->
+<!-- LEFT FIXED SIDEBAR: SHARED COMPONENT "SideNavBar" (TYPE: ADMIN)           -->
+<!-- ========================================================================= -->
+<aside class="fixed top-0 left-0 h-screen w-64 flex flex-col z-40 bg-surface-container-low border-r border-outline-variant/30 select-none">
+<!-- Header / Brand Hub -->
+<div class="p-5 border-b border-outline-variant/30 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm ring-2 ring-primary/20">
+<span class="material-symbols-outlined text-2xl" data-icon="folded_hands" style="font-variation-settings: 'FILL' 1;">folded_hands</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight truncate leading-tight">GOSPELS Admin</span>
+<span class="font-label-sm text-label-sm text-secondary truncate tracking-wider uppercase">Gothenburg Ministry Hub</span>
+</div>
+</div>
+<!-- Quick Action CTA -->
+<div class="px-4 pt-4 pb-2">
+<button class="w-full bg-primary hover:bg-primary-container active:scale-[0.98] text-on-primary font-label-md text-label-md py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-sm transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>Create Event</span>
+</button>
+</div>
+<!-- Navigation Scrollable Area -->
+<nav class="flex-1 px-3 py-2 space-y-1 overflow-y-auto custom-scrollbar">
+<!-- Dashboard -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<!-- Events -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="event">event</span>
+<span class="font-label-md text-label-md">Events</span>
+</a>
+<!-- Active: Prayer Requests (JSON Match: "Prayer Requests", active styling strictly applied) -->
+<a class="bg-secondary-container text-primary font-semibold rounded-lg px-3.5 py-2.5 flex items-center justify-between shadow-xs transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl" data-icon="folded_hands" style="font-variation-settings: 'FILL' 1;">folded_hands</span>
+<span class="font-label-md text-label-md">Prayer Requests</span>
+</div>
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold shadow-xs animate-pulse">14 New</span>
+</a>
+<!-- Volunteers -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Volunteers</span>
+</a>
+<!-- Partner Churches -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="church">church</span>
+<span class="font-label-md text-label-md">Partner Churches</span>
+</a>
+<!-- Content -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="library_music">library_music</span>
+<span class="font-label-md text-label-md">Content</span>
+</a>
+<!-- Giving & Stewardship -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-md text-label-md">Giving &amp; Stewardship</span>
+</a>
+<!-- System Status -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="tune">tune</span>
+<span class="font-label-md text-label-md">System Status</span>
+</a>
+</nav>
+<!-- SideNavBar Footer: Lead Pastoral Steward Card & System Links -->
+<div class="p-3 border-t border-outline-variant/30 space-y-2">
+<!-- Lead Pastoral Steward Profile Badge -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-2.5 flex items-center gap-3 shadow-xs">
+<div class="relative">
+<img class="w-10 h-10 rounded-full object-cover border border-primary/30" data-alt="Warm, serene photographic portrait of Pastor Tomas Sjödin, a compassionate Swedish church leader with gentle smile and silver-grey hair, natural Scandinavian morning sunlight, soft muted palette, shallow depth of field, high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQu0pqGWcp8HR_qcF0aPTxZpzLq5NuU9xvd8P1htz4y7q64Bopdr6v-UVwtw0kdSnwGgFJzUQKeiMo7QNTyFEw9EqAnWsqFakBhXu7DNFy7DDh_H8kZFXXMKsBk2-gNQzpefWS0s1TRWHNYONkN8wiA6mhYiQy1gBS6UfJd4HHzXvkkE1CvdtDyKJ3d8KRBnhxPgfXzH-r5jU8AQd2P-Phyhj6-PUDDg3uthcQBvT7hkSc0u4J_YjL"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary-fixed-dim border-2 border-surface-container-lowest rounded-full" title="On Active Vigil"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Tomas Sjödin</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">Lead Pastoral Steward</span>
+</div>
+</div>
+<!-- Settings & Sign Out from JSON -->
+<div class="grid grid-cols-2 gap-1 text-secondary pt-1">
+<a class="flex items-center gap-1.5 px-2 py-1.5 rounded-lg hover:bg-surface-container font-label-sm text-label-sm transition-colors justify-center" href="#">
+<span class="material-symbols-outlined text-base" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-1.5 px-2 py-1.5 rounded-lg hover:bg-error-container hover:text-error font-label-sm text-label-sm transition-colors justify-center" href="#">
+<span class="material-symbols-outlined text-base" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE CONTAINER (ADAPTIVE 12-COL LAYOUT WITH RIGHT DRAWER)       -->
+<!-- ========================================================================= -->
+<div class="ml-64 flex-1 flex flex-col h-screen overflow-hidden bg-surface">
+<!-- Top Sticky Header Area: Breadcrumbs + Title + Primary Action -->
+<header class="bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/30 px-8 py-5 z-20 flex-shrink-0">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<!-- Breadcrumbs & Headlines -->
+<div>
+<nav class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary mb-1">
+<span class="hover:text-primary cursor-pointer transition-colors">Admin</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Pastoral Care</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-semibold">Prayer Petitions</span>
+</nav>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">
+              Prayer Requests &amp; Pastoral Care
+            </h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-tertiary-fixed text-on-tertiary-fixed border border-tertiary-fixed-dim/40">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+              Live Intake Active
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+            Confidential intake from web portal, WhatsApp hotline (<span class="font-mono text-on-surface font-medium">+46 70 123 45 67</span>), and Sunday vigils across Gothenburg.
+          </p>
+</div>
+<!-- Export & Action Toolbar -->
+<div class="flex items-center gap-3 flex-shrink-0">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-outline-variant/50 hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-[0.98] shadow-xs" type="button">
+<span class="material-symbols-outlined text-base" data-icon="sync">sync</span>
+<span>Refresh Feed</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all active:scale-[0.98] shadow-sm" type="button">
+<span class="material-symbols-outlined text-base" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span>Export Prayer List (Confidential PDF)</span>
+</button>
+</div>
+</div>
+<!-- Filter Pills & Search Control Strip -->
+<div class="mt-5 pt-4 border-t border-outline-variant/20 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+<!-- Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 xl:pb-0 custom-scrollbar">
+<!-- Active Pill: All Petitions -->
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary text-on-primary flex items-center gap-1.5 shadow-xs transition-colors flex-shrink-0" type="button">
+<span>All Petitions</span>
+<span class="bg-on-primary/20 px-1.5 py-0.2 rounded-full text-[10px]">14</span>
+</button>
+<!-- Urgent WhatsApp Pill -->
+<button class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-error-container text-error hover:bg-error hover:text-on-error flex items-center gap-1.5 transition-colors flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+<span>Urgent WhatsApp</span>
+<span class="bg-error/20 px-1.5 py-0.2 rounded-full text-[10px] font-bold">4</span>
+</button>
+<!-- Health & Healing -->
+<button class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-surface-container hover:bg-surface-container-high text-secondary flex items-center gap-1.5 transition-colors flex-shrink-0" type="button">
+<span>Health &amp; Healing</span>
+<span class="text-secondary/70 text-[10px]">5</span>
+</button>
+<!-- Family & Peace -->
+<button class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-surface-container hover:bg-surface-container-high text-secondary flex items-center gap-1.5 transition-colors flex-shrink-0" type="button">
+<span>Family &amp; Peace</span>
+<span class="text-secondary/70 text-[10px]">3</span>
+</button>
+<!-- Spiritual Renewal -->
+<button class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-surface-container hover:bg-surface-container-high text-secondary flex items-center gap-1.5 transition-colors flex-shrink-0" type="button">
+<span>Spiritual Renewal</span>
+<span class="text-secondary/70 text-[10px]">2</span>
+</button>
+<!-- Archived / Answered -->
+<button class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-surface-container hover:bg-surface-container-high text-secondary flex items-center gap-1.5 transition-colors flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span>Archived / Answered</span>
+<span class="text-secondary/70 text-[10px]">38</span>
+</button>
+</div>
+<!-- Search Input -->
+<div class="relative min-w-[320px] max-w-md w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg pl-9 pr-4 py-1.5 font-body-sm text-body-sm placeholder:text-outline text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search by keyword, district, or petitioner..." type="text"/>
+</div>
+</div>
+</header>
+<!-- Main Body Area with Feed (Left 8 cols) & Monitor Drawer (Right 4 cols) -->
+<div class="flex-1 flex overflow-hidden">
+<!-- ========================================================================= -->
+<!-- PRAYER PETITIONS FEED CANVAS (LEFT SCROLLABLE AREA)                       -->
+<!-- ========================================================================= -->
+<main class="flex-1 overflow-y-auto p-8 space-y-6 custom-scrollbar">
+<!-- Urgent WhatsApp Alert Banner -->
+<div class="rounded-xl border border-primary/30 bg-gradient-to-r from-surface-container-lowest via-surface-container-low to-secondary-container/40 p-4 shadow-sm flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-2xl" data-icon="priority_high">priority_high</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">4 Urgent Petitions Awaiting Pastoral Response</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-primary-container text-on-primary-container">24h Covenant Commitment</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              Received via WhatsApp hotline between 02:14 and 08:30 today from Haga, Sahlgrenska hospital ward, and Frihamnen. Our pastoral covenant vows that no soul cries out in Gothenburg without a shepherd's prayer within 24 hours.
+            </p>
+</div>
+<button class="self-center px-3.5 py-2 bg-on-surface text-surface-container-lowest font-label-md text-label-md rounded-lg hover:bg-on-surface-variant transition-colors flex items-center gap-1.5 flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-base" data-icon="bolt">bolt</span>
+<span>Prioritize Urgent</span>
+</button>
+</div>
+<!-- Petition Cards Feed -->
+<div class="space-y-4">
+<!-- PETITION 1: Anonymous Sister (Health & Healing) - Urgent WhatsApp -->
+<article class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-6 shadow-sm hover:border-primary/40 transition-all duration-150">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-secondary-container text-primary flex items-center justify-center font-bold font-headline-sm">
+                  AS
+                </div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Anonymous Sister</h2>
+<span class="inline-flex items-center gap-1 text-xs text-secondary font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                      Centrum / Haga
+                    </span>
+<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-container text-primary border border-outline-variant/30">
+                      Health &amp; Healing
+                    </span>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-error-container text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="bolt">bolt</span>
+                      Urgent WhatsApp
+                    </span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5 block">
+                    Received today at 06:42 via WhatsApp Hotline • Status: <strong class="text-primary font-semibold">Assigned to Pastor Tomas</strong>
+</span>
+</div>
+</div>
+<!-- Time Counter Pill -->
+<span class="font-mono text-xs font-medium px-2.5 py-1 rounded bg-surface-container-low text-secondary border border-outline-variant/20 flex items-center gap-1 flex-shrink-0">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+                18h remaining
+              </span>
+</div>
+<!-- Petition Scripture Quote Container -->
+<div class="mt-4 pl-4 border-l-4 border-primary bg-surface-container-low/60 rounded-r-lg p-3.5">
+<p class="font-scripture-quote text-scripture-quote italic text-on-surface leading-relaxed">
+                “Bed gärna för min mor som genomgår en hjärtoperation på Sahlgrenska sjukhuset på måndag morgon. Be för kirurgernas händer och för Herrens frid över vår familj.”
+              </p>
+<div class="mt-2 flex items-center gap-2 text-xs text-secondary font-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="verified_user">verified_user</span>
+<span>Intercession Circle: Gothenburg Hospital Pastoral Vigil</span>
+</div>
+</div>
+<!-- Actions Toolbar -->
+<div class="mt-5 pt-4 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-base" data-icon="folded_hands" style="font-variation-settings: 'FILL' 1;">folded_hands</span>
+<span>Mark Prayed</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-outline-variant/50 hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-base text-primary" data-icon="chat">chat</span>
+<span>Encrypted WhatsApp Reply</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-outline-variant/50 hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="person_add">person_add</span>
+<span>Assign Elder</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-outline-variant/50 hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="note_add">note_add</span>
+<span>Add Pastoral Note</span>
+</button>
+</div>
+<!-- Confidential Flag -->
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="lock">lock</span>
+                Clergy-Penitent Privilege Encrypted
+              </span>
+</div>
+</article>
+<!-- PETITION 2: Johan E. (Work & Guidance) - Unassigned -->
+<article class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-6 shadow-sm hover:border-primary/40 transition-all duration-150">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold font-headline-sm">
+                  JE
+                </div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Johan E.</h2>
+<span class="inline-flex items-center gap-1 text-xs text-secondary font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                      Hisingen / Frihamnen
+                    </span>
+<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-container text-secondary border border-outline-variant/30">
+                      Work &amp; Guidance
+                    </span>
+<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-variant text-on-surface-variant">
+                      Web Portal Submission
+                    </span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5 block">
+                    Received yesterday at 21:15 • Status: <strong class="text-error font-semibold">Unassigned</strong>
+</span>
+</div>
+</div>
+<span class="font-mono text-xs font-medium px-2.5 py-1 rounded bg-surface-container-low text-secondary border border-outline-variant/20 flex items-center gap-1 flex-shrink-0">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+                11h remaining
+              </span>
+</div>
+<!-- Content Quote -->
+<div class="mt-4 pl-4 border-l-4 border-secondary bg-surface-container-low/60 rounded-r-lg p-3.5">
+<p class="font-scripture-quote text-scripture-quote italic text-on-surface leading-relaxed">
+                “Söker ledning kring nytt arbete och flytt från Angered. Vill fortsätta tjäna i musikministeriet under Frihamnsgudstjänsterna. Be om vishet och öppna dörrar.”
+              </p>
+<div class="mt-2 flex items-center gap-2 text-xs text-secondary font-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="music_note">music_note</span>
+<span>Ministry Link: Frihamnen Gospel Choir Section</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-5 pt-4 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-base" data-icon="folded_hands">folded_hands</span>
+<span>Mark Prayed</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-all active:scale-[0.98] border border-outline-variant/30" type="button">
+<span class="material-symbols-outlined text-base text-primary" data-icon="assignment_ind">assignment_ind</span>
+<span>Assign to Elder Birgitta</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-outline-variant/50 hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="mail">mail</span>
+<span>Reply</span>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">
+                Submitted with phone &amp; email contact verification
+              </span>
+</div>
+</article>
+<!-- PETITION 3: Karin & Markus L. (Family & Peace) - In Intercession -->
+<article class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-6 shadow-sm hover:border-primary/40 transition-all duration-150">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold font-headline-sm">
+                  KM
+                </div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Karin &amp; Markus L.</h2>
+<span class="inline-flex items-center gap-1 text-xs text-secondary font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                      Majorna
+                    </span>
+<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-container text-primary border border-outline-variant/30">
+                      Family &amp; Peace
+                    </span>
+<span class="px-2 py-0.5 rounded-full text-xs font-medium bg-tertiary-fixed text-on-tertiary-fixed">
+                      Sunday Vigil Card
+                    </span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5 block">
+                    Received Sunday 18:30 • Status: <strong class="text-tertiary font-semibold">In Intercession</strong> (Elder Birgitta)
+                  </span>
+</div>
+</div>
+<span class="font-mono text-xs font-medium px-2.5 py-1 rounded bg-tertiary-container/10 text-tertiary border border-tertiary/20 flex items-center gap-1 flex-shrink-0">
+<span class="material-symbols-outlined text-xs" data-icon="favorite">favorite</span>
+                Prayer Candle Lit
+              </span>
+</div>
+<!-- Content Quote -->
+<div class="mt-4 pl-4 border-l-4 border-tertiary bg-surface-container-low/60 rounded-r-lg p-3.5">
+<p class="font-scripture-quote text-scripture-quote italic text-on-surface leading-relaxed">
+                “Tacksägelse och förbön för vårt nyfödda barn Lukas, samt vishet i föräldraskapet under en intensiv period.”
+              </p>
+<div class="mt-2 flex items-center gap-2 text-xs text-secondary font-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="child_friendly">child_friendly</span>
+<span>Blessing: Infant Dedication booked for Majorna Church May 2025</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-5 pt-4 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-base" data-icon="folded_hands">folded_hands</span>
+<span>Mark Prayed</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-outline-variant/50 hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-base text-primary" data-icon="volunteer_activism">volunteer_activism</span>
+<span>Send Blessing</span>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">
+                2 Intercessors praying today
+              </span>
+</div>
+</article>
+<!-- PETITION 4: Anonymous Brother (Spiritual Renewal) - Adeola Bello -->
+<article class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-6 shadow-sm hover:border-primary/40 transition-all duration-150">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-surface-container text-on-surface font-bold font-headline-sm flex items-center justify-center">
+                  AB
+                </div>
+<div>
+<div class="flex items-center gap-2.5 flex-wrap">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Anonymous Brother</h2>
+<span class="inline-flex items-center gap-1 text-xs text-secondary font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                      Västra Frölunda
+                    </span>
+<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-container text-secondary border border-outline-variant/30">
+                      Spiritual Renewal
+                    </span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5 block">
+                    Received yesterday at 14:20 • Status: <strong class="text-primary font-semibold">Assigned to Pastor Adeola Bello</strong>
+</span>
+</div>
+</div>
+<span class="font-mono text-xs font-medium px-2.5 py-1 rounded bg-surface-container-low text-secondary border border-outline-variant/20 flex items-center gap-1 flex-shrink-0">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+                4h remaining
+              </span>
+</div>
+<!-- Content Quote -->
+<div class="mt-4 pl-4 border-l-4 border-primary bg-surface-container-low/60 rounded-r-lg p-3.5">
+<p class="font-scripture-quote text-scripture-quote italic text-on-surface leading-relaxed">
+                “Längtar efter förnyelse och ett djupare böneliv inför Lovsångskonserten 2027. Be för frimodighet i tron.”
+              </p>
+<div class="mt-2 flex items-center gap-2 text-xs text-secondary font-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="local_fire_department">local_fire_department</span>
+<span>Focus: Spiritual Awakening &amp; Frimodighet</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-5 pt-4 border-t border-outline-variant/20 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-base" data-icon="folded_hands">folded_hands</span>
+<span>Mark Prayed</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-outline-variant/50 hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-base text-primary" data-icon="forward_to_inbox">forward_to_inbox</span>
+<span>Follow Up</span>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">
+                Follow-up pastoral dialogue scheduled for Thursday
+              </span>
+</div>
+</article>
+</div>
+</main>
+<!-- ========================================================================= -->
+<!-- RIGHT SIDEBAR DRAWER: '24-HOUR PASTORAL COVENANT MONITOR'                 -->
+<!-- ========================================================================= -->
+<aside class="w-96 border-l border-outline-variant/30 bg-surface-container-low/60 p-6 flex flex-col gap-6 overflow-y-auto custom-scrollbar flex-shrink-0">
+<!-- Monitor Header -->
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-primary font-bold font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<h2>Pastoral Covenant Monitor</h2>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Gothenburg Ministry SLA guaranteeing personal pastoral prayer within 24 hours of intake.
+          </p>
+</div>
+<!-- Metric Card: 100% SLA Adherence -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wider">24h Response Rate</span>
+<span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed">Active SLA</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-4xl font-extrabold text-primary">100%</span>
+<span class="font-label-sm text-label-sm text-secondary">met this month (142 petitions)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full w-full"></div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-center pt-1 font-body-sm text-xs">
+<div class="p-2 bg-surface-container-low rounded-lg">
+<span class="text-secondary block">Avg First Touch</span>
+<strong class="text-on-surface font-semibold text-sm">3h 12m</strong>
+</div>
+<div class="p-2 bg-surface-container-low rounded-lg">
+<span class="text-secondary block">Current Open</span>
+<strong class="text-primary font-semibold text-sm">14 Requests</strong>
+</div>
+</div>
+</div>
+<!-- Active Intercessory Prayer Circle: Elders Currently On Call -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wider">Elders On Vigil Call</span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim animate-ping"></span>
+</div>
+<ul class="space-y-3">
+<!-- Pastor Tomas -->
+<li class="flex items-center justify-between gap-3 p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover border border-primary/20" data-alt="Close-up pastoral portrait of Pastor Tomas Sjödin with serene presence, natural light, warm Scandinavian ministry setting, cinematic soft background, professional clergy photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpu5Pkq3KitxWrXmd6mhY0deXvDPHkXDCDoxjV4G8c0m1nEVIk8NphGuF2wJ_r74k-Lqs3SP6evYXd9gGN1qJzw3euPwd8fZqX7UVYa4B2bpCR0huM9HY0bY93U4zSeU81PbQ3g6AmSoL0KSCl3RF0h6XOki9BsitllTu20LJag34wGbh6KJ9ewlZhFEaECw-Co3-SVFw8zCGAyFf28rdqHd2pzQvHqQqybKb1oeuWL7HOTcShv46A"/>
+<span class="absolute bottom-0 right-0 w-2 h-2 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Pastor Tomas Sjödin</h4>
+<span class="font-label-sm text-label-sm text-secondary">Lead Pastor • 6 assigned</span>
+</div>
+</div>
+<span class="font-mono text-xs font-semibold text-primary px-2 py-0.5 bg-primary/10 rounded">Active</span>
+</li>
+<!-- Elder Birgitta -->
+<li class="flex items-center justify-between gap-3 p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover border border-outline-variant/30" data-alt="Portrait of Swedish elder Birgitta Lindqvist, dignified older woman with silver braided hair, soft woolen navy scarf, warm pastoral expression, Nordic natural light portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-A-G7ddCc141jPP2VC8rUuJJciQHGKjz2IktailM1lwG5X3l0tCaTSB2q6RHgXbFK2Q1OBGAQIfqMASezC0CG1Ptlh41IsRSq1FLzWqWXgz9eh5ouXStQmtBv76qUCMJKvuWhncQvx7OxTmF7uf_sEfFRm65-o7uhvu37lUju0105fY-Q6_n_sHHM_daociHR1t3zRsSrcFtwZhq5ovLbWH3u0-1j_44NiV_aA4nZLQ-pbskTA79L"/>
+<span class="absolute bottom-0 right-0 w-2 h-2 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Elder Birgitta</h4>
+<span class="font-label-sm text-label-sm text-secondary">Prayer Mother • 5 assigned</span>
+</div>
+</div>
+<span class="font-mono text-xs font-semibold text-primary px-2 py-0.5 bg-primary/10 rounded">Active</span>
+</li>
+<!-- Pastor Adeola -->
+<li class="flex items-center justify-between gap-3 p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover border border-outline-variant/30" data-alt="Portrait of Nigerian-Swedish Pastor Adeola Bello, smiling warmly in modern Gothenburg sanctuary, deep rich tones, soft ambient studio lighting, friendly confident leadership expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw-M8znI2HOmjiizOeK7UoQGblEmY4Sqy9ahV3UMNtN_v1JRpyzdeBBIa8lCvLX4L2j0518NbGNSkZGtSqyy79pGsLqqJo-qmVngxrgG4qvaTBKvG0KAcyaN5ve9tDIrSXRvUvfGBakbGCMKg_ngLG6yw5AQhy8Y-GiEVQzB6b9DAzhpUGN1AFtGJftdS53owi8W9zViy-y38juCDMPgaDERKKDTMUVZiBTseMTMwaK2oXrJDvhdI_"/>
+<span class="absolute bottom-0 right-0 w-2 h-2 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Pastor Adeola Bello</h4>
+<span class="font-label-sm text-label-sm text-secondary">Youth &amp; Worship • 3 assigned</span>
+</div>
+</div>
+<span class="font-mono text-xs font-semibold text-primary px-2 py-0.5 bg-primary/10 rounded">Active</span>
+</li>
+</ul>
+<button class="w-full py-2 text-center text-primary font-label-md text-label-md hover:bg-surface-container-low rounded-lg transition-colors border border-outline-variant/30 flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="group_add">group_add</span>
+<span>Summon Roving Intercessor</span>
+</button>
+</div>
+<!-- Scripture Reflection Card (Psalm 145:18) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-5 shadow-sm space-y-3 relative overflow-hidden">
+<div class="flex items-center gap-2 text-primary font-semibold font-label-sm text-label-sm tracking-widest uppercase">
+<span class="material-symbols-outlined text-base" data-icon="menu_book">menu_book</span>
+<span>Vigil Scripture Focus</span>
+</div>
+<blockquote class="font-scripture-quote text-scripture-quote italic text-on-surface leading-relaxed">
+            “Herren är nära alla som åkallar honom, alla som åkallar honom i sanning.”
+          </blockquote>
+<div class="flex items-center justify-between text-xs text-secondary pt-1 border-t border-outline-variant/20">
+<span class="font-label-sm uppercase font-bold text-outline">Psaltaren 145:18</span>
+<span class="font-label-sm text-primary">Bibel 2000</span>
+</div>
+</div>
+<!-- Pastoral Security Seal -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 text-center space-y-1">
+<div class="flex justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="lock_clock">lock_clock</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface block">GDPR &amp; Tystnadsplikt</span>
+<p class="font-body-sm text-xs text-secondary leading-snug">
+            All records fall under the Church of Sweden &amp; Gothenburg Free Church alliance confidentiality covenant. No petitioner data is indexed or transferred without explicit pastoral mandate.
+          </p>
+</div>
+</aside>
+</div>
+</div>
+</body></html>

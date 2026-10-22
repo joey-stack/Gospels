@@ -1,0 +1,393 @@
+<!DOCTYPE html><html class="light" lang="sv"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GOSPELS - Pastoral Prayer &amp; Intercession</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts for Design System -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Verbatim Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#00201d",
+            "outline": "#6d7a77",
+            "surface-container": "#e5eeff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "surface": "#f8f9ff",
+            "outline-variant": "#bcc9c6",
+            "background": "#f8f9ff",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "on-error": "#ffffff",
+            "primary-fixed": "#89f5e7",
+            "inverse-surface": "#213145",
+            "on-primary-fixed-variant": "#005049",
+            "on-primary-container": "#f4fffc",
+            "tertiary-container": "#008376",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-variant": "#d3e4fe",
+            "secondary-fixed": "#dae2fd",
+            "secondary-container": "#dae2fd",
+            "on-surface-variant": "#3d4947",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#5c647a",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-secondary": "#ffffff",
+            "on-surface": "#0b1c30",
+            "secondary-fixed-dim": "#bec6e0",
+            "error-container": "#ffdad6",
+            "tertiary": "#00685d",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#6bd8cb",
+            "surface-container-high": "#dce9ff",
+            "secondary": "#565e74",
+            "tertiary-fixed": "#71f8e4",
+            "on-tertiary-fixed": "#00201c",
+            "on-tertiary-fixed-variant": "#005048",
+            "surface-bright": "#f8f9ff",
+            "surface-tint": "#006a61",
+            "primary": "#00685f",
+            "surface-dim": "#cbdbf5",
+            "on-background": "#0b1c30",
+            "primary-container": "#008378",
+            "inverse-primary": "#6bd8cb",
+            "on-tertiary-container": "#f4fffb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-2xl": "4rem",
+            "space-md": "1rem",
+            "margin-mobile": "1.25rem",
+            "margin": "3rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom Scandinavian Architectural Shadows */
+    .nordic-shadow {
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(13, 148, 136, 0.04);
+    }
+    .nordic-card-border {
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+    .active-chip {
+      background-color: #00685f !important;
+      color: #ffffff !important;
+      border-color: #00685f !important;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-28 selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Top Header Bar (Encrypted Pastoral Care Channel) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md px-4 py-3 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="p-2 -ml-2 rounded-lg text-secondary hover:text-on-surface active:scale-95 transition-transform flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<div>
+<span class="font-headline-sm text-headline-sm tracking-tight font-extrabold text-on-surface block leading-none">GOSPELS</span>
+<span class="font-label-sm text-label-sm text-secondary tracking-wider block mt-0.5">GÖTEBORG MINISTRY</span>
+</div>
+</div>
+<!-- Encrypted Connection Pill Indicator -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container border border-outline-variant/40 text-primary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-normal text-on-surface-variant">256-Bit SSL</span>
+</div>
+</header>
+<!-- Main Scrollable Content Container (Mobile Frame Constraint) -->
+<main class="max-w-md mx-auto px-4 pt-5 space-y-6">
+<!-- Hero Banner: Pastoral Prayer & Intercession -->
+<section class="space-y-2">
+<div class="inline-flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">folded_hands</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-bold">Pastoral Care Portal</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-on-surface">
+        Pastoral Prayer &amp; Intercession
+      </h1>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+        You are never alone. Gothenburg ministry elders and intercessors lift every petition before the Lord.
+      </p>
+</section>
+<!-- Scripture Quote Ribbon (Meditation Callout Block) -->
+<div class="rounded-xl bg-surface-container-low p-4 pl-5 border-l-4 border-primary nordic-shadow">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5 opacity-80">format_quote</span>
+<div>
+<blockquote class="font-scripture-quote-mobile text-scripture-quote-mobile text-on-surface italic leading-snug">
+            "Herren är nära alla som ropar till honom, alla som ropar till honom i sanning."
+          </blockquote>
+<p class="font-label-sm text-label-sm text-secondary uppercase font-semibold mt-2 tracking-wider">
+            Psaltaren 145:18
+          </p>
+</div>
+</div>
+</div>
+<!-- Interactive Petition Form Card -->
+<section class="bg-surface-container-lowest rounded-xl p-5 nordic-card-border nordic-shadow space-y-5">
+<div class="border-b border-outline-variant/30 pb-3">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">edit_note</span>
+          Submit Prayer Petition
+        </h2>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+          Elders intercede with deep reverence and pastoral confidentiality.
+        </p>
+</div>
+<form class="space-y-4" id="petitionForm" onsubmit="event.preventDefault(); showConfirmation();">
+<!-- Field 1: Name or Initials -->
+<div>
+<div class="flex justify-between items-baseline mb-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="fullName">
+              Full Name or Initials
+            </label>
+<span class="font-label-sm text-label-sm text-secondary">Optional for anonymity</span>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-outline">person</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg pl-9 pr-3 py-2.5 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" id="fullName" placeholder="e.g., Sofia L. or remain anonymous" type="text">
+</div>
+</div>
+<!-- Field 2: Contact Info -->
+<div>
+<div class="flex justify-between items-baseline mb-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="contactInfo">
+              Email or Swedish Mobile (+46)
+            </label>
+<span class="font-label-sm text-label-sm text-primary font-medium">For WhatsApp follow-up</span>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-outline">phone_iphone</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg pl-9 pr-3 py-2.5 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" id="contactInfo" placeholder="+46 70 123 45 67 or email" type="text">
+</div>
+</div>
+<!-- Field 3: Intercession Focus Area Chips -->
+<div>
+<label class="font-label-md text-label-md text-on-surface font-semibold block mb-2">
+            Intercession Focus Area
+          </label>
+<div class="flex flex-wrap gap-2" id="chipContainer">
+<button class="focus-chip active-chip px-3 py-1.5 rounded-full border border-outline-variant/50 font-label-md text-label-md transition-all active:scale-95" onclick="selectChip(this)" type="button">
+              Divine Healing &amp; Health
+            </button>
+<button class="focus-chip bg-surface-container-low text-secondary border border-outline-variant/40 hover:bg-surface-container px-3 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95" onclick="selectChip(this)" type="button">
+              Family &amp; Relationships
+            </button>
+<button class="focus-chip bg-surface-container-low text-secondary border border-outline-variant/40 hover:bg-surface-container px-3 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95" onclick="selectChip(this)" type="button">
+              Spiritual Renewal &amp; Salvation
+            </button>
+<button class="focus-chip bg-surface-container-low text-secondary border border-outline-variant/40 hover:bg-surface-container px-3 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95" onclick="selectChip(this)" type="button">
+              Peace &amp; Mental Comfort
+            </button>
+<button class="focus-chip bg-surface-container-low text-secondary border border-outline-variant/40 hover:bg-surface-container px-3 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95" onclick="selectChip(this)" type="button">
+              Praise &amp; Thanksgiving
+            </button>
+</div>
+</div>
+<!-- Field 4: Prayer Request Textarea -->
+<div>
+<label class="font-label-md text-label-md text-on-surface font-semibold block mb-1.5" for="prayerRequest">
+            Your Prayer Request
+          </label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg p-3 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none" id="prayerRequest" placeholder="Share as much or as little as your heart desires. Our pastors gather each Tuesday and Thursday at Domkyrkan Göteborg to pray." required="" rows="4"></textarea>
+</div>
+<!-- Field 5: Confidentiality Pledge Checkbox -->
+<div class="flex items-start gap-3 pt-1">
+<input checked="" class="mt-1 h-4 w-4 rounded border-outline-variant text-primary focus:ring-primary focus:ring-offset-0" id="gdprPledge" required="" type="checkbox">
+<label class="font-body-sm text-body-sm text-secondary leading-tight cursor-pointer" for="gdprPledge">
+            I understand this petition is protected under Swedish pastoral secrecy (<span class="text-on-surface font-medium">Svensk Kyrklig Dataskyddsförordning / GDPR</span>).
+          </label>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full mt-2 bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-body-md font-semibold py-3.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all" type="submit">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="">Submit Confidential Petition to Elders</span>
+</button>
+<!-- Feedback message container -->
+<div class="hidden rounded-lg bg-surface-container p-3 text-center border border-primary/30" id="submitConfirmation">
+<span class="font-label-md text-label-md font-bold text-primary block">Tack. Din bön har mottagits i förtroende.</span>
+<span class="font-body-sm text-body-sm text-secondary">Our pastors will hold your petition before God in Göteborg.</span>
+</div>
+</form>
+</section>
+<!-- Emergency & Real-Time Pastoral Support Card -->
+<section class="bg-surface-container-lowest rounded-xl p-5 nordic-card-border nordic-shadow space-y-4">
+<div class="flex items-center gap-2.5">
+<div class="h-9 w-9 rounded-full bg-error-container/60 text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">e911_emergency</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">
+            In Immediate Need of Pastoral Support?
+          </h2>
+<p class="font-body-sm text-body-sm text-secondary">
+            Reach an on-call Gothenburg minister immediately.
+          </p>
+</div>
+</div>
+<div class="space-y-2.5 pt-1">
+<!-- Direct WhatsApp Care Link Button -->
+<a class="w-full bg-[#25D366]/10 hover:bg-[#25D366]/15 border border-[#25D366]/30 text-on-surface rounded-lg p-3 flex items-center justify-between transition-colors group" href="https://wa.me/46317711200" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#25D366] text-[24px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+<div class="text-left">
+<span class="font-headline-sm text-body-md font-semibold block leading-tight text-on-surface">WhatsApp Pastoral Care</span>
+<span class="font-label-sm text-label-sm text-[#00685f] font-medium">+46 31 771 12 00 · 24h response guarantee</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-0.5 transition-transform text-[20px]">chevron_right</span>
+</a>
+<!-- Gothenburg Crisis Helpline Quick Phone Link -->
+<a class="w-full bg-surface-container-low hover:bg-surface-container border border-outline-variant/30 text-on-surface rounded-lg p-3 flex items-center justify-between transition-colors group" href="tel:+46317112400">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">call</span>
+<div class="text-left">
+<span class="font-headline-sm text-body-md font-semibold block leading-tight">Gothenburg Crisis Helpline</span>
+<span class="font-label-sm text-label-sm text-secondary">Kyrkans SOS &amp; Diaconal Hotline (Svenska &amp; Eng)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-0.5 transition-transform text-[20px]">call_made</span>
+</a>
+</div>
+</section>
+<!-- Pastoral Covenant Card (Unity in Gothenburg) -->
+<section class="bg-inverse-surface text-inverse-on-surface rounded-xl p-5 shadow-sm space-y-3">
+<div class="flex items-center gap-2 text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">church</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Pastoral Covenant of Gothenburg</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-dim leading-relaxed">
+        Pastoral intercessors across <span class="text-inverse-on-surface font-semibold">Smyrna Göteborg</span>, <span class="text-inverse-on-surface font-semibold">Domkyrkan</span>, and <span class="text-inverse-on-surface font-semibold">Betlehemskyrkan</span> pray in weekly unity. Regardless of church background, your soul and circumstances are held before God with Christlike honor and complete discretion.
+      </p><div class="relative w-full h-52 rounded-lg overflow-hidden my-3"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzUjDpzbZG5stfKx9UlburbIJe43-mhIPPSOn_yjQ8Qv0FC3SbbKxb3nfb108I9UKEruq4Q6fcMx-GX3NTmiZiScpMSDhV5OivOES2p3Rk58jOUcgziGNIlNnAgLwHB3Q_yvfDImukm3nls-cDD6Xn9xsqwD8rJ8lAJVT_-h3UI1X59TZAPsULKepB8Wbo-5CnOPzfRo2olN2vMggzeMZ0dosHAwpB9fS_Q-tohR35_UqwBysn76wh2UPkc5jWs7GOlw" alt="Sister kneeling in reverent intercession and prayer" class="w-full h-full object-cover object-top"><div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent pointer-events-none"></div><span class="absolute bottom-2 left-2.5 font-label-sm text-label-sm text-inverse-on-surface/90 bg-inverse-surface/70 px-2 py-0.5 rounded backdrop-blur-sm">Intercessory Prayer Watch · Göteborg</span></div>
+<div class="pt-1 flex items-center gap-4 text-surface-dim font-label-sm text-label-sm border-t border-outline/20">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">verified</span>
+<span class="">Ordained Pastors</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">shield</span>
+<span class="">Absolute Secrecy</span>
+</div>
+</div>
+</section>
+<!-- Spiritual Fellowship Note -->
+<div class="text-center py-2">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">
+        GOSPELS Ministry Gothenburg · Västra Götaland
+      </p>
+</div>
+</main>
+<!-- Docked Persistent 5-Tab Mobile Bottom Navigation Bar -->
+<!-- Navigation shell separation uses background tonal shift and ambient elevation; borders strictly banned -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-lg shadow-[0_-4px_20px_rgba(15,23,42,0.06)] px-2 py-2">
+<div class="max-w-md mx-auto grid grid-cols-5 items-center">
+<!-- Tab 1: Home -->
+<a class="flex flex-col items-center justify-center py-1 text-secondary hover:text-on-surface transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-sm text-label-sm font-medium mt-0.5">Home</span>
+</a>
+<!-- Tab 2: Events -->
+<a class="flex flex-col items-center justify-center py-1 text-secondary hover:text-on-surface transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">event</span>
+<span class="font-label-sm text-label-sm font-medium mt-0.5">Events</span>
+</a>
+<!-- Tab 3: Watch -->
+<a class="flex flex-col items-center justify-center py-1 text-secondary hover:text-on-surface transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">play_circle</span>
+<span class="font-label-sm text-label-sm font-medium mt-0.5">Watch</span>
+</a>
+<!-- Tab 4: Need Prayer? (ACTIVE SCREEN MAPPING) -->
+<a aria-current="page" class="flex flex-col items-center justify-center py-1 text-primary active:scale-95" href="#">
+<div class="w-10 h-7 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">folded_hands</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary mt-0.5">Prayer</span>
+</a>
+<!-- Tab 5: Give -->
+<a class="flex flex-col items-center justify-center py-1 text-secondary hover:text-on-surface transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">volunteer_activism</span>
+<span class="font-label-sm text-label-sm font-medium mt-0.5">Give</span>
+</a>
+</div>
+</nav>
+<!-- Interactive JavaScript for micro-interactions -->
+<script>
+    function selectChip(element) {
+      const container = document.getElementById('chipContainer');
+      const chips = container.querySelectorAll('.focus-chip');
+      
+      chips.forEach(chip => {
+        chip.classList.remove('active-chip');
+        chip.classList.add('bg-surface-container-low', 'text-secondary', 'border-outline-variant/40');
+      });
+
+      element.classList.remove('bg-surface-container-low', 'text-secondary', 'border-outline-variant/40');
+      element.classList.add('active-chip');
+    }
+
+    function showConfirmation() {
+      const feedback = document.getElementById('submitConfirmation');
+      feedback.classList.remove('hidden');
+      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+
+
+</body></html>

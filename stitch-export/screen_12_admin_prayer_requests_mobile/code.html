@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS Admin - Böneärenden &amp; Förbön</title>
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#93000a",
+            "primary-container": "#008378",
+            "on-surface-variant": "#3d4947",
+            "on-tertiary-container": "#f4fffb",
+            "surface": "#f8f9ff",
+            "inverse-primary": "#6bd8cb",
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#6d7a77",
+            "surface-tint": "#006a61",
+            "background": "#f8f9ff",
+            "on-secondary-fixed": "#131b2e",
+            "surface-container": "#e5eeff",
+            "inverse-on-surface": "#eaf1ff",
+            "secondary-container": "#dae2fd",
+            "on-tertiary-fixed": "#00201c",
+            "primary": "#00685f",
+            "surface-bright": "#f8f9ff",
+            "tertiary-container": "#008376",
+            "secondary-fixed": "#dae2fd",
+            "surface-container-high": "#dce9ff",
+            "on-primary-fixed": "#00201d",
+            "surface-dim": "#cbdbf5",
+            "outline-variant": "#bcc9c6",
+            "surface-container-highest": "#d3e4fe",
+            "on-secondary": "#ffffff",
+            "on-background": "#0b1c30",
+            "tertiary": "#00685d",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#eff4ff",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "primary-fixed-dim": "#6bd8cb",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-variant": "#d3e4fe",
+            "tertiary-fixed": "#71f8e4",
+            "on-surface": "#0b1c30",
+            "on-secondary-container": "#5c647a",
+            "on-primary-fixed-variant": "#005049",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#f4fffc",
+            "secondary": "#565e74",
+            "inverse-surface": "#213145",
+            "primary-fixed": "#89f5e7",
+            "on-tertiary-fixed-variant": "#005048"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "4rem",
+            "margin": "3rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll-hidden::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll-hidden {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md min-h-screen pb-28 selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- ================= TOP APP BAR (MOBILE ADMIN) ================= -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-sm">
+<div class="px-4 py-3 flex items-center justify-between">
+<!-- Back and Ministry Anchor -->
+<div class="flex items-center gap-3">
+<button aria-label="Tillbaka till huvudsida" class="w-10 h-10 rounded-lg flex items-center justify-center text-secondary hover:text-on-surface hover:bg-surface-container transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">GOSPELS</span>
+<span class="text-[10px] tracking-widest uppercase font-bold text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded">Admin</span>
+</div>
+<p class="font-body-sm text-[12px] text-secondary leading-tight">Gothenburg Ministry Hub</p>
+</div>
+</div>
+<!-- Action Cluster: Triage count & Filter toggle -->
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+          14 Nya / Väntande
+        </span>
+<button aria-label="Filtrera ärenden" class="w-10 h-10 rounded-lg border border-outline-variant/40 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+</div>
+</div>
+<!-- Title Sub-Row -->
+<div class="px-4 pb-3 flex items-center justify-between border-b border-outline-variant/20">
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface">Böneärenden &amp; Förbön</h1>
+<p class="font-body-sm text-body-sm text-secondary">Pastoral förbönskö och intercessionsöversikt</p>
+</div>
+<button class="text-primary hover:text-primary-container p-1 rounded-full flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="sync">sync</span>
+</button>
+</div>
+</header>
+<!-- ================= MAIN CONTENT WRAPPER ================= -->
+<main class="max-w-md mx-auto px-4 pt-4 space-y-4">
+<!-- SCRIPTURE MEDITATION BLOCK -->
+<section aria-label="Dagens bibelord" class="bg-surface-container-low rounded-xl p-4 border-l-4 border-primary shadow-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[24px] mt-0.5" data-icon="auto_stories">auto_stories</span>
+<div class="space-y-1">
+<blockquote class="font-scripture-quote-mobile text-scripture-quote-mobile text-on-surface italic leading-snug">
+            ”Bär varandras bördor, så uppfyller ni Kristi lag.”
+          </blockquote>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">
+            Galaterbrevet 6:2 • Göteborgs Kristna Råd
+          </p>
+</div>
+</div>
+</section>
+<!-- CONFIDENTIALITY & GDPR BADGE -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-3 flex items-center gap-2.5 text-secondary">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0" data-icon="verified_user">verified_user</span>
+<p class="font-body-sm text-[12px] leading-relaxed text-on-surface-variant">
+<strong class="font-semibold text-on-surface">Strikt själavårdssekretess:</strong> Reglerad under Svenska kyrkans och frikyrkornas tystnadsplikt samt GDPR skyddsklass 3.
+      </p>
+</div>
+<!-- TRIAGE SUMMARY METRICS (HORIZONTAL COMPACT SCROLLER) -->
+<section aria-label="Triage Sammanfattning" class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider font-semibold">Statusindikatorer</span>
+<span class="font-body-sm text-[12px] text-primary flex items-center gap-1 font-medium">Realtidssynk</span>
+</div>
+<div class="grid grid-cols-3 gap-2.5">
+<!-- Metric 1: Urgent -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-3 flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between mb-1">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="material-symbols-outlined text-error text-[18px]" data-icon="notifications_active">notifications_active</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">14</div>
+<div class="font-body-sm text-[11px] leading-tight text-secondary mt-1">Brådskande / Ej tilldelade</div>
+</div>
+<!-- Metric 2: Under Förbön -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-3 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="folded_hands">folded_hands</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">38</div>
+<div class="font-body-sm text-[11px] leading-tight text-secondary mt-1">Under aktiv förbön</div>
+</div>
+<!-- Metric 3: Arkiverade / Bedda -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-3 flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="check_circle">check_circle</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">112</div>
+<div class="font-body-sm text-[11px] leading-tight text-secondary mt-1">Bedda &amp; Arkiv denna mån</div>
+</div>
+</div>
+</section>
+<!-- SEARCH BAR -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-xl pl-10 pr-10 py-2.5 text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-sm transition" placeholder="Sök i förböner eller avsändare..." type="search"/>
+<button aria-label="Rensa eller röstsökning" class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="mic">mic</span>
+</button>
+</div>
+<!-- QUICK FILTER PILLS (HORIZONTAL SCROLL) -->
+<div aria-label="Filterkategorier" class="flex gap-2 overflow-x-auto pb-1 custom-scroll-hidden" role="tablist">
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold transition active:scale-95 shadow-sm" type="button">
+        Alla (52)
+      </button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface font-label-md text-label-md hover:bg-surface-container transition active:scale-95" type="button">
+        Akut / Sjukhus (6)
+      </button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface font-label-md text-label-md hover:bg-surface-container transition active:scale-95" type="button">
+        Familj &amp; Tröst (18)
+      </button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface font-label-md text-label-md hover:bg-surface-container transition active:scale-95" type="button">
+        Frälsning (12)
+      </button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface font-label-md text-label-md hover:bg-surface-container transition active:scale-95" type="button">
+        Lovprisning (16)
+      </button>
+</div>
+<!-- ================= LIST OF PRAYER CARDS ================= -->
+<section aria-label="Inkomna böneärenden" class="space-y-3.5 pt-1">
+<!-- CARD 1: URGENT / AKUT -->
+<article class="bg-surface-container-lowest rounded-xl border border-error/30 p-4 shadow-sm relative space-y-3 overflow-hidden">
+<!-- Accent stripe on edge -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<!-- Badges & Timestamp Header -->
+<div class="flex items-start justify-between gap-2 pl-1">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-error/10 text-error font-label-sm text-[10px] font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+              Akut Förbön
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-secondary font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="local_hospital">local_hospital</span>
+              Sahlgrenska Universitetssjukhuset
+            </span>
+</div>
+<span class="font-body-sm text-[12px] text-secondary whitespace-nowrap shrink-0 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+            14 min sedan
+          </span>
+</div>
+<!-- Subject & Body Snippet -->
+<div class="pl-1 space-y-1">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">
+            Förbön för Maria i intensivvård efter operation
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            ”Vi ber om Herrens helande beröring och styrka för familjen i detta svåra ögonblick. Läkarna gör allt de kan, men vi söker den Högstes beskydd över natten...”
+          </p>
+</div>
+<!-- Sender / Contact Info & Status -->
+<div class="pl-1 bg-surface-container-low/70 rounded-lg p-2.5 flex items-center justify-between text-body-sm text-[13px]">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xs">
+              SL
+            </div>
+<div>
+<div class="font-semibold text-on-surface">Sofia Lind <span class="font-normal text-secondary">(Dotter)</span></div>
+<div class="text-[12px] text-secondary flex items-center gap-1">
+<span>+46 70 812 34 56</span>
+<span class="inline-block px-1 rounded bg-tertiary-container/20 text-tertiary text-[10px] font-medium">WhatsApp tillåten</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-error-container text-on-error-container font-label-sm text-[11px] font-bold shrink-0">
+            Ej tilldelad
+          </span>
+</div>
+<!-- Action Buttons -->
+<div class="pl-1 pt-1 flex items-center gap-2">
+<button class="flex-1 bg-primary hover:bg-primary-container text-on-primary py-2 px-3 rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="person_add">person_add</span>
+            Tilldela Förbedjare
+          </button>
+<button class="px-3.5 py-2 rounded-lg border border-outline-variant/60 bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium flex items-center justify-center gap-1 active:scale-[0.98] transition" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+            Öppna Ärende
+          </button>
+</div>
+</article>
+<!-- CARD 2: PASTORAL / HERDABREV -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-4 shadow-sm relative space-y-3">
+<!-- Badges & Timestamp -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-fixed font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="favorite">favorite</span>
+              Familj &amp; Äktenskap
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-secondary font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+              Majorna
+            </span>
+</div>
+<span class="font-body-sm text-[12px] text-secondary whitespace-nowrap shrink-0 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+            48 min sedan
+          </span>
+</div>
+<!-- Subject & Body -->
+<div class="space-y-1">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">
+            Tröst och frid i sorgearbete efter bortgång
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            ”Min far gick hem till Herren förra veckan. Be för vår församling och barnbarnen som saknar sin trygga pelare. Må Guds frid som övergår allt förstånd omsluta hemmet...”
+          </p>
+</div>
+<!-- Contact & Assigned Elder -->
+<div class="bg-surface-container-low/70 rounded-lg p-2.5 space-y-2">
+<div class="flex items-center justify-between text-body-sm text-[12px]">
+<span class="text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility_off">visibility_off</span>
+              Avsändare: <strong class="font-semibold text-on-surface">Anonym / ”Bror i Herren”</strong>
+</span>
+<span class="text-primary font-medium text-[11px] bg-primary/10 px-2 py-0.5 rounded">Pastoral kontakt</span>
+</div>
+<div class="pt-1.5 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center">
+                TS
+              </div>
+<div class="font-body-sm text-[12px]">
+<span class="text-secondary">Tilldelad förbedjare:</span>
+<span class="font-semibold text-on-surface ml-1">Pastor Tomas Sjödin (Smyrna)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="verified">verified</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="pt-1 flex items-center gap-2">
+<button class="flex-1 border border-primary text-primary hover:bg-primary hover:text-on-primary py-2 px-3 rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+            Skicka Pastoralt Meddelande
+          </button>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-semibold flex items-center justify-center gap-1 active:scale-[0.98] transition" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="check_circle">check_circle</span>
+            Markera Bedd
+          </button>
+</div>
+</article>
+<!-- CARD 3: PRAISE REPORT / LOVPRISNING -->
+<article class="bg-surface-container-lowest rounded-xl border border-tertiary/30 p-4 shadow-sm relative space-y-3">
+<!-- Accent indicator -->
+<div class="absolute right-3 top-3">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-tertiary-fixed/30 text-tertiary">
+<span class="material-symbols-outlined text-[20px]" data-icon="celebration">celebration</span>
+</span>
+</div>
+<!-- Badges & Timestamp -->
+<div class="flex items-start gap-2 pr-10">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-tertiary-container/15 text-tertiary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="volunteer_activism">volunteer_activism</span>
+              Tacksägelse &amp; Vittnesbörd
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-secondary font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+              Linné
+            </span>
+</div>
+</div>
+<div class="text-[12px] text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+          2 tim sedan • Inkommet via GOSPELS Mobilportal
+        </div>
+<!-- Subject & Body -->
+<div class="space-y-1">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">
+            Tack för förbön - sonen fick friskförklarande besked!
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            ”Efter 6 månaders kamp kom läkarens samtal idag. Alla prover rena! Vi gråter av tacksamhet och vill tacka hela förbönsnätverket som bar oss i bön varje onsdag...”
+          </p>
+</div>
+<!-- Status & Approval -->
+<div class="bg-surface-container-low/70 rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="record_voice_over">record_voice_over</span>
+<span class="font-body-sm text-[12px] font-medium text-on-surface">Klar för vittnesbördsdelning</span>
+</div>
+<span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-primary-fixed/40 text-on-primary-fixed">
+            Godkänd
+          </span>
+</div>
+<!-- Actions -->
+<div class="pt-1 flex items-center gap-2">
+<button class="flex-1 bg-surface-container text-on-surface hover:bg-surface-container-high py-2 px-3 rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
+            Dela i Lovsångsbrev
+          </button>
+<button class="px-3.5 py-2 rounded-lg border border-outline-variant/60 text-secondary hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 active:scale-[0.98] transition" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="archive">archive</span>
+            Arkivera
+          </button>
+</div>
+</article>
+</section>
+<!-- NETWORK TRIAGE SUMMARY BANNER -->
+<div class="my-6 p-4 rounded-xl border border-dashed border-outline-variant/60 bg-surface-container-low text-center space-y-2">
+<div class="w-10 h-10 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="group">group</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-bold text-on-surface">42 Aktiva Förbedjare Anslutna</h3>
+<p class="font-body-sm text-[12px] text-secondary max-w-xs mx-auto">
+        Kopplade till Smyrnaförsamlingen, S:t Johanneskyrkan, Fiskebäck &amp; GOSPELS volontärteam i Göteborg.
+      </p>
+<div class="pt-1">
+<button class="inline-flex items-center gap-1.5 text-primary font-label-md text-label-md font-bold hover:underline" type="button">
+<span>Hantera böneteam &amp; skift</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- ================= FLOATING ACTION BAR (TRIAGE SHORTCUT) ================= -->
+<div class="fixed bottom-20 inset-x-0 z-30 px-4 pointer-events-none">
+<div class="max-w-md mx-auto flex items-center justify-between gap-3 pointer-events-auto">
+<!-- Mass triage button -->
+<button class="bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-lg border border-white/10 font-label-md text-label-md font-semibold flex items-center gap-2 hover:bg-slate-800 active:scale-95 transition" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed" data-icon="hub">hub</span>
+        Mass-tilldela Förbönsnätverk
+      </button>
+<!-- Add Manual Prayer FAB -->
+<button aria-label="Skapa ny förbön manuellt" class="w-14 h-14 rounded-full bg-primary hover:bg-primary-container text-on-primary shadow-xl flex items-center justify-center active:scale-90 transition shadow-primary/25" type="button">
+<span class="material-symbols-outlined text-[28px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- ================= MOBILE BOTTOM ADMIN NAVIGATION ================= -->
+<!-- Strict compliance with Shared Components & Semantic Lock: 
+       Current context is 'Böneärenden & Förbön' -> Active tab is Förbön (index 2) -->
+<nav aria-label="Mobil Admin Navigation" class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(15,23,42,0.06)]">
+<div class="max-w-md mx-auto grid grid-cols-5 h-16 px-1">
+<!-- Tab 1: Översikt (Overview) -->
+<button class="flex flex-col items-center justify-center gap-1 text-secondary hover:text-on-surface active:scale-95 transition" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-[11px] font-medium leading-none">Översikt</span>
+</button>
+<!-- Tab 2: Evenemang (Events) -->
+<button class="flex flex-col items-center justify-center gap-1 text-secondary hover:text-on-surface active:scale-95 transition" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="event">event</span>
+<span class="font-label-sm text-[11px] font-medium leading-none">Evenemang</span>
+</button>
+<!-- Tab 3: Förbön (ACTIVE DESTINATION with notification indicator) -->
+<button aria-current="page" class="flex flex-col items-center justify-center gap-1 text-primary relative active:scale-95 transition" type="button">
+<div class="relative">
+<span class="material-symbols-outlined text-[24px]" data-icon="folded_hands" style="font-variation-settings: 'FILL' 1;">folded_hands</span>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<span class="font-label-sm text-[11px] font-bold leading-none text-primary">Förbön</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Tab 4: Volontärer (Volunteers) -->
+<button class="flex flex-col items-center justify-center gap-1 text-secondary hover:text-on-surface active:scale-95 transition" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="groups">groups</span>
+<span class="font-label-sm text-[11px] font-medium leading-none">Volontärer</span>
+</button>
+<!-- Tab 5: Inställningar (Settings) -->
+<button class="flex flex-col items-center justify-center gap-1 text-secondary hover:text-on-surface active:scale-95 transition" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="settings">settings</span>
+<span class="font-label-sm text-[11px] font-medium leading-none">Inställningar</span>
+</button>
+</div>
+</nav>
+</body></html>

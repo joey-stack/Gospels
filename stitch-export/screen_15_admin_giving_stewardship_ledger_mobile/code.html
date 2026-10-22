@@ -1,0 +1,493 @@
+<!DOCTYPE html><html class="light" lang="sv"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GOSPELS Admin - Ekonomi &amp; Gåvoredovisning</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#0b1c30",
+            "on-surface": "#0b1c30",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "inverse-on-surface": "#eaf1ff",
+            "tertiary-fixed": "#71f8e4",
+            "tertiary-container": "#008376",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#565e74",
+            "primary": "#00685f",
+            "outline-variant": "#bcc9c6",
+            "on-error": "#ffffff",
+            "surface-container": "#e5eeff",
+            "on-tertiary-fixed-variant": "#005048",
+            "surface-container-low": "#eff4ff",
+            "on-primary-fixed": "#00201d",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "inverse-surface": "#213145",
+            "on-primary-fixed-variant": "#005049",
+            "secondary-fixed": "#dae2fd",
+            "error": "#ba1a1a",
+            "surface-variant": "#d3e4fe",
+            "surface-container-highest": "#d3e4fe",
+            "on-secondary-container": "#5c647a",
+            "background": "#f8f9ff",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-dim": "#cbdbf5",
+            "primary-fixed-dim": "#6bd8cb",
+            "on-primary-container": "#f4fffc",
+            "on-tertiary-fixed": "#00201c",
+            "error-container": "#ffdad6",
+            "tertiary": "#00685d",
+            "primary-fixed": "#89f5e7",
+            "surface-tint": "#006a61",
+            "primary-container": "#008378",
+            "surface-container-high": "#dce9ff",
+            "outline": "#6d7a77",
+            "on-surface-variant": "#3d4947",
+            "on-tertiary-container": "#f4fffb",
+            "surface": "#f8f9ff",
+            "secondary-fixed-dim": "#bec6e0",
+            "inverse-primary": "#6bd8cb",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#dae2fd",
+            "on-secondary-fixed-variant": "#3f465c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin": "3rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-28 font-body-md text-body-md select-none">
+<!-- Main Mobile App Container (390px-430px optimal viewport centered) -->
+<div class="max-w-md mx-auto min-h-screen bg-background relative flex flex-col shadow-xl">
+<!-- Top App Header -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/90 backdrop-blur-md px-4 py-3 shadow-sm">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<button aria-label="Tillbaka" class="w-9 h-9 rounded-lg flex items-center justify-center bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">GOSPELS ADMIN</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-primary-fixed text-on-primary-fixed">HUB</span>
+</div>
+<p class="font-label-sm text-label-sm text-secondary font-medium tracking-normal">Ekonomi &amp; Gåvoredovisning</p>
+</div>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-primary text-label-sm font-label-md hover:bg-surface-container active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span class="">Exportera SIE</span>
+</button>
+</div>
+<!-- Compliance & Verification Pill -->
+<div class="mt-2.5 pt-2 flex items-center justify-between bg-surface-container-low/70 px-3 py-1.5 rounded-lg">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[17px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">90-Konto Godkänd</span>
+<span class="text-secondary text-xs">•</span>
+<span class="text-[11px] text-secondary">Svensk Insamlingskontroll</span>
+</div>
+<span class="text-[10px] font-mono text-outline font-medium">BG 900-2415</span>
+</div>
+</header>
+<!-- Content Body -->
+<main class="flex-1 px-4 pt-4 space-y-5">
+<!-- Scripture Ribbon (Nordic Reverence Guidance) -->
+<section class="border-l-[3px] border-primary bg-surface-container-lowest p-3.5 rounded-r-xl shadow-sm">
+<p class="font-scripture-quote-mobile text-scripture-quote-mobile text-on-surface italic leading-snug">
+          "Gud förmår göra all nåd överflödande hos er, så att ni alltid har nog av allt."
+        </p>
+<div class="mt-1.5 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">2 Korintierbrevet 9:8</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-[10px] text-primary font-bold">
+<span class="material-symbols-outlined text-[13px]">church</span>
+            RIKSFÖRBUNDET
+          </span>
+</div>
+</section>
+<!-- Date Period & Filter Ribbon -->
+<section class="space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-lg flex items-center justify-center bg-surface-container-lowest text-secondary shadow-sm hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<div class="flex items-center gap-1.5 font-headline-sm text-headline-sm text-on-surface font-bold">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_month</span>
+<span class="">Mars 2026</span>
+</div>
+<button class="w-7 h-7 rounded-lg flex items-center justify-center bg-surface-container-lowest text-secondary shadow-sm hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<span class="text-label-sm text-secondary font-medium">Bokfört t.o.m. Idag</span>
+</div>
+<!-- Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 text-label-sm scrollbar-none">
+<button class="px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-md whitespace-nowrap shadow-sm">
+            Denna Månad
+          </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-secondary font-label-md hover:text-on-surface whitespace-nowrap">
+            Kvartal 1
+          </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-secondary font-label-md hover:text-on-surface whitespace-nowrap">
+            Helår 2026
+          </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-secondary font-label-md hover:text-on-surface whitespace-nowrap flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            Projekt GL2027
+          </button>
+</div>
+</section>
+<!-- Financial Highlights (2x2 Touch Metric Cards) -->
+<section class="grid grid-cols-2 gap-3">
+<!-- Card 1: Swish -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">smartphone</span>
+</div>
+<span class="text-[10px] font-bold text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded">
+              +24%
+            </span>
+</div>
+<div>
+<div class="font-headline-md text-[22px] font-bold text-on-surface tracking-tight leading-none">
+              142,500 <span class="text-xs font-semibold text-secondary">SEK</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-semibold mt-1">Swish Insamlat</div>
+<div class="text-[11px] text-secondary mt-0.5">Denna månad (+24% m/m)</div>
+</div>
+</div>
+<!-- Card 2: Autogiro -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">published_with_changes</span>
+</div>
+<span class="text-[10px] font-bold text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">
+              392 st
+            </span>
+</div>
+<div>
+<div class="font-headline-md text-[22px] font-bold text-on-surface tracking-tight leading-none">
+              84,200 <span class="text-xs font-semibold text-secondary">SEK</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-semibold mt-1">Autogiro Pelare</div>
+<div class="text-[11px] text-secondary mt-0.5">Fasta månadsgivare</div>
+</div>
+</div>
+<!-- Card 3: Målbudget -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+</div>
+<span class="text-[10px] font-bold text-primary bg-surface-container px-1.5 py-0.5 rounded">
+              68%
+            </span>
+</div>
+<div>
+<div class="font-headline-md text-[22px] font-bold text-on-surface tracking-tight leading-none">
+              520,000 <span class="text-xs font-semibold text-secondary">SEK</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-semibold mt-1">Målbudget 2026</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 4: Ändamålsandel -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between border-t-2 border-primary">
+<div class="flex items-center justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed/50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<span class="text-[10px] font-bold text-primary bg-surface-container-low px-1.5 py-0.5 rounded">
+              Auditerad
+            </span>
+</div>
+<div>
+<div class="font-headline-md text-[22px] font-bold text-primary tracking-tight leading-none">
+              92.4%
+            </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-semibold mt-1">Ändamålsandel</div>
+<div class="text-[11px] text-secondary mt-0.5">Endast 7.6% adm.</div>
+</div>
+</div>
+</section>
+<!-- Stewardship Allocation Visual Bar (Segmented Progress Bar) -->
+<section class="bg-surface-container-lowest p-4 rounded-xl shadow-sm space-y-3">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px]">pie_chart</span>
+<span class="font-headline-sm text-[16px] font-bold text-on-surface truncate">Ändamålsfördelning</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-outline font-semibold text-[10px] tracking-wider whitespace-nowrap flex-shrink-0">REVISORSKONTROLLERAD</span>
+</div>
+<!-- Segmented Bar -->
+<div class="w-full h-3 rounded-full flex overflow-hidden bg-surface-container">
+<div class="bg-primary h-full" style="width: 60%;" title="Offentliga Möten: 60%"></div>
+<div class="bg-primary-container h-full" style="width: 20%;" title="Ungdomsstipendier: 20%"></div>
+<div class="bg-tertiary-fixed-dim h-full" style="width: 15%;" title="Ljudteknik: 15%"></div>
+<div class="bg-secondary h-full" style="width: 5%;" title="Diakoni: 5%"></div>
+</div>
+<!-- Legend Details -->
+<div class="grid grid-cols-2 gap-x-3 gap-y-2 pt-1 text-xs">
+<div class="flex items-start gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary mt-0.5 flex-shrink-0"></span>
+<div>
+<span class="font-bold text-on-surface">60%</span>
+<p class="text-[11px] text-secondary leading-tight">Offentliga Möten &amp; Arena</p>
+</div>
+</div>
+<div class="flex items-start gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-container mt-0.5 flex-shrink-0"></span>
+<div>
+<span class="font-bold text-on-surface">20%</span>
+<p class="text-[11px] text-secondary leading-tight">Ungdoms- &amp; Körstipendier</p>
+</div>
+</div>
+<div class="flex items-start gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-tertiary-fixed-dim mt-0.5 flex-shrink-0"></span>
+<div>
+<span class="font-bold text-on-surface">15%</span>
+<p class="text-[11px] text-secondary leading-tight">Ljudteknik &amp; Arrangemang</p>
+</div>
+</div>
+<div class="flex items-start gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-secondary mt-0.5 flex-shrink-0"></span>
+<div>
+<span class="font-bold text-on-surface">5%</span>
+<p class="text-[11px] text-secondary leading-tight">Diakoni &amp; WhatsApp Vård</p>
+</div>
+</div>
+</div>
+</section>
+<!-- BankID Settlement & Audit Verification Module -->
+<section class="bg-inverse-surface text-inverse-on-surface p-4 rounded-xl shadow-md space-y-3 relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-inverse-on-surface">BankID Revisorverifiering</div>
+<p class="text-[11px] text-surface-dim">KPMG Göteborg • Auktoriserad Revisor</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary-fixed text-[22px]">verified_user</span>
+</div>
+<div class="bg-inverse-surface/80 rounded-lg p-2.5 border border-surface-container-lowest/10 flex justify-between items-center text-xs">
+<div>
+<span class="text-surface-dim text-[11px]">Nästa automatiska utbetalning</span>
+<div class="font-semibold text-inverse-on-surface">27 Mars 2026 • 09:00</div>
+</div>
+<div class="text-right">
+<span class="text-surface-dim text-[11px]">Mottagarkonto</span>
+<div class="font-mono text-primary-fixed text-[11px]">BG 541-2345 (Gbg)</div>
+</div>
+</div>
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">sms</span>
+<span class="">Skicka Givarkvitto &amp; Tack-SMS</span>
+</button>
+</section>
+<!-- Recent Transactions Ledger (Mobile Transaction Feed) -->
+<section class="space-y-3 pt-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">receipt_long</span>
+<h2 class="font-headline-sm text-[18px] font-bold text-on-surface">Gåvoflöde Realtid</h2>
+</div>
+<span class="text-label-sm font-label-md text-primary hover:underline cursor-pointer">Visa Alla (284)</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm divide-y divide-surface-container-high/50">
+<!-- Item 1: Swish Gåva -->
+<div class="p-3.5 flex items-center justify-between gap-3 hover:bg-surface-container-low/40 transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed/40 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[19px]">payments</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="font-headline-sm text-sm font-bold text-on-surface truncate">Swish Gåva #89211</p>
+<span class="font-headline-sm text-sm font-bold text-primary">+500 kr</span>
+</div>
+<div class="flex items-center justify-between mt-0.5 text-xs text-secondary">
+<span class="truncate">Anon Givare • Märkning: HSW2026-GIFT</span>
+<span class="font-mono text-[11px] text-outline flex-shrink-0 ml-2">Idag 14:22</span>
+</div>
+</div>
+</div>
+<!-- Item 2: Autogiro Pelarpartner -->
+<div class="p-3.5 flex items-center justify-between gap-3 hover:bg-surface-container-low/40 transition-colors">
+<div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[19px]">sync</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="font-headline-sm text-sm font-bold text-on-surface truncate">Autogiro Pelarpartner</p>
+<span class="font-headline-sm text-sm font-bold text-primary">+215 kr</span>
+</div>
+<div class="flex items-center justify-between mt-0.5 text-xs text-secondary">
+<span class="truncate">Linnea K. • Månadsgåva Mars</span>
+<span class="font-mono text-[11px] text-outline flex-shrink-0 ml-2">Idag 06:00</span>
+</div>
+</div>
+</div>
+<!-- Item 3: Församlingskollekt -->
+<div class="p-3.5 flex items-center justify-between gap-3 hover:bg-surface-container-low/40 transition-colors">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[19px]">account_balance</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="font-headline-sm text-sm font-bold text-on-surface truncate">Församlingskollekt</p>
+<span class="font-headline-sm text-sm font-bold text-primary">+12,450 kr</span>
+</div>
+<div class="flex items-center justify-between mt-0.5 text-xs text-secondary">
+<span class="truncate">Smyrnakyrkan Frihamnen • Bankgiro</span>
+<span class="font-mono text-[11px] text-outline flex-shrink-0 ml-2">Igår</span>
+</div>
+</div>
+</div>
+<!-- Item 4: Ungdomsstipendium -->
+<div class="p-3.5 flex items-center justify-between gap-3 hover:bg-surface-container-low/40 transition-colors">
+<div class="w-9 h-9 rounded-lg bg-tertiary-container/20 flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[19px]">school</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="font-headline-sm text-sm font-bold text-on-surface truncate">Ungdomsstipendium</p>
+<span class="font-headline-sm text-sm font-bold text-primary">+2,500 kr</span>
+</div>
+<div class="flex items-center justify-between mt-0.5 text-xs text-secondary">
+<span class="truncate">Betlehemskyrkan körfond • Swish</span>
+<span class="font-mono text-[11px] text-outline flex-shrink-0 ml-2">24 Mar</span>
+</div>
+</div>
+</div>
+<!-- Item 5: Swish Kollekt -->
+<div class="p-3.5 flex items-center justify-between gap-3 hover:bg-surface-container-low/40 transition-colors">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[19px]">volunteer_activism</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="font-headline-sm text-sm font-bold text-on-surface truncate">Swish Kollekt</p>
+<span class="font-headline-sm text-sm font-bold text-primary">+100 kr</span>
+</div>
+<div class="flex items-center justify-between mt-0.5 text-xs text-secondary">
+<span class="truncate">Anon • Märkning: FIKA-STÖD</span>
+<span class="font-mono text-[11px] text-outline flex-shrink-0 ml-2">24 Mar</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ministry Transparency Statement Footer Note -->
+<section class="py-2 text-center text-xs text-secondary">
+<p class="leading-relaxed">
+          GOSPELS Göteborgs lovsångskonsert är godkänd av 
+          <span class="font-semibold text-on-surface">Svensk Insamlingskontroll</span>. 
+          Gåvor hanteras enligt gällande stiftelselagar.
+        </p>
+</section>
+</main>
+<!-- Bottom Docked Admin Navigation (Mobile 5-Tab Bar) -->
+<nav aria-label="Mobil Admin Navigation" class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-surface-container-lowest/95 backdrop-blur-md px-3 py-2 z-50 shadow-[0_-4px_16px_rgba(15,23,42,0.06)]">
+<div class="grid grid-cols-5 items-center">
+<!-- Tab 1: Översikt / Events -->
+<a class="flex flex-col items-center justify-center py-1 text-secondary hover:text-on-surface transition-colors active:scale-95" href="#events">
+<span class="material-symbols-outlined text-[22px]">event</span>
+<span class="font-label-sm text-[10px] mt-0.5">Evenemang</span>
+</a>
+<!-- Tab 2: Förbön / Prayer Requests -->
+<a class="flex flex-col items-center justify-center py-1 text-secondary hover:text-on-surface transition-colors active:scale-95" href="#prayer">
+<span class="material-symbols-outlined text-[22px]">folded_hands</span>
+<span class="font-label-sm text-[10px] mt-0.5">Förbön</span>
+</a>
+<!-- Tab 3: Volontärer / Volunteers -->
+<a class="flex flex-col items-center justify-center py-1 text-secondary hover:text-on-surface transition-colors active:scale-95" href="#volunteers">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+<span class="font-label-sm text-[10px] mt-0.5">Volontärer</span>
+</a>
+<!-- Tab 4: Ekonomi / Ledger (ACTIVE STATE for this Ledger Screen) -->
+<a class="flex flex-col items-center justify-center py-1 text-primary font-semibold transition-colors active:scale-95" href="#ekonomi">
+<div class="w-10 h-7 rounded-full bg-secondary-container flex items-center justify-center mb-0.5">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<span class="font-label-sm text-[10px] text-primary">Ekonomi</span>
+</a>
+<!-- Tab 5: Mer / System Status -->
+<a class="flex flex-col items-center justify-center py-1 text-secondary hover:text-on-surface transition-colors active:scale-95" href="#status">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+<span class="font-label-sm text-[10px] mt-0.5">Status</span>
+</a>
+</div>
+</nav>
+</div>
+
+
+</body></html>

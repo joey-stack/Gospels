@@ -1,0 +1,576 @@
+<!DOCTYPE html><html class="dark" lang="sv"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Watch &amp; Listen | GOSPELS Göteborg</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#00201d",
+            "surface": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-dim": "#cbdbf5",
+            "on-surface": "#0b1c30",
+            "inverse-surface": "#213145",
+            "outline-variant": "#bcc9c6",
+            "on-tertiary-fixed-variant": "#005048",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#89f5e7",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "surface-bright": "#f8f9ff",
+            "on-surface-variant": "#3d4947",
+            "on-secondary": "#ffffff",
+            "primary": "#00685f",
+            "surface-container": "#e5eeff",
+            "surface-variant": "#d3e4fe",
+            "tertiary": "#00685d",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#3f465c",
+            "primary-fixed-dim": "#6bd8cb",
+            "secondary-fixed": "#dae2fd",
+            "error-container": "#ffdad6",
+            "inverse-on-surface": "#eaf1ff",
+            "tertiary-container": "#008376",
+            "inverse-primary": "#6bd8cb",
+            "on-primary-fixed-variant": "#005049",
+            "background": "#f8f9ff",
+            "surface-container-low": "#eff4ff",
+            "surface-tint": "#006a61",
+            "primary-container": "#008378",
+            "on-background": "#0b1c30",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "tertiary-fixed": "#71f8e4",
+            "on-primary-container": "#f4fffc",
+            "outline": "#6d7a77",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed": "#00201c",
+            "on-tertiary-container": "#f4fffb",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#5c647a",
+            "surface-container-highest": "#d3e4fe",
+            "secondary": "#565e74",
+            "on-secondary-fixed": "#131b2e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "margin": "3rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom subtle scrollbar hiding for native mobile flick feeling */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#0b1320] text-inverse-on-surface antialiased min-h-screen pb-28 selection:bg-primary-container selection:text-on-primary-container">
+<!-- Mobile Top Navigation Bar -->
+<header class="sticky top-0 z-40 bg-[#0b1320]/90 backdrop-blur-xl border-b border-outline/20">
+<div class="px-4 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button aria-label="Go Back" class="w-10 h-10 rounded-full flex items-center justify-center bg-inverse-surface/60 text-inverse-on-surface border border-outline/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider block">Gothenburg Sanctuary</span>
+<h1 class="font-headline-sm text-headline-sm text-inverse-on-surface leading-tight tracking-tight">Watch &amp; Listen</h1>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Search Media" class="w-10 h-10 rounded-full flex items-center justify-center bg-inverse-surface/60 text-inverse-on-surface border border-outline/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<button aria-label="Filter Media" class="w-10 h-10 rounded-full flex items-center justify-center bg-inverse-surface/60 text-inverse-on-surface border border-outline/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+</div>
+</div>
+<!-- Switch Pill: Video Replays vs Multitracks & Stems -->
+<div class="px-4 pb-3">
+<div class="bg-inverse-surface/80 p-1 rounded-xl flex items-center border border-outline/20">
+<button class="flex-1 py-2 px-3 rounded-lg text-center font-label-md text-label-md bg-primary-container text-on-primary-container shadow-sm transition-all flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="play_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+          Video Replays
+        </button>
+<button class="flex-1 py-2 px-3 rounded-lg text-center font-label-md text-label-md text-secondary-fixed-dim hover:text-inverse-on-surface transition-all flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="graphic_eq">graphic_eq</span>
+          Multitracks &amp; Stems
+        </button>
+</div>
+</div>
+</header>
+<main class="space-y-6 pt-4">
+<!-- Category Chips / Ministry Filter Bar -->
+<section class="px-4">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform">
+          All Replays
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-inverse-surface/70 text-secondary-fixed-dim border border-outline/20 font-label-md text-label-md whitespace-nowrap hover:text-inverse-on-surface active:scale-95 transition-transform">
+          Lovsångskonsert
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-inverse-surface/70 text-secondary-fixed-dim border border-outline/20 font-label-md text-label-md whitespace-nowrap hover:text-inverse-on-surface active:scale-95 transition-transform">
+          Gospel Choir
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-inverse-surface/70 text-secondary-fixed-dim border border-outline/20 font-label-md text-label-md whitespace-nowrap hover:text-inverse-on-surface active:scale-95 transition-transform">
+          Worship Nights
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-inverse-surface/70 text-secondary-fixed-dim border border-outline/20 font-label-md text-label-md whitespace-nowrap hover:text-inverse-on-surface active:scale-95 transition-transform">
+          Workshops
+        </button>
+</div>
+</section>
+<!-- Featured Hero Video Player Card -->
+<section class="px-4">
+<div class="rounded-xl overflow-hidden bg-inverse-surface border border-outline/20 shadow-xl">
+<!-- Video Preview Container with Image & Overlays -->
+<div class="relative w-full aspect-video bg-[#00201d]">
+<img class="w-full h-full object-cover opacity-85 brightness-95" data-alt="Lead female minister passionately singing praise into a microphone with church band and gospel choir backing during Holy Spirit Worship 2025 Live at Frihamnen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0L6aS_N2r1WMMeZbez-QFfP6QiFeMMDsj_2LpcXQGsNGbynorcBi1FGBoHHWe2rDfnqWMdZOsPSsksHPPKRHlWFquFQZ2z9WRxXTg8tz-yHOaVetdCwnT62-5sVy9k7u0qwbMCB0QixY7KIhvvWWudTtoaBLGji1uHALzLGrlLF8gK4vGaMRtIkR0z-oIh_AI8S_MQxZXCeBJ6GcUjhuWnN-xRt2dpocfW-LusEmVk_W9IxR7RJda4DzvxkaCXxrChg">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/40 to-transparent"></div>
+<!-- Badges & Runtime -->
+<div class="absolute top-3 left-3 flex items-center gap-2">
+<span class="bg-primary-container/90 text-on-primary-container px-2 py-0.5 rounded font-label-sm text-label-sm backdrop-blur-md font-semibold tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-pulse"></span>
+              4K HDR
+            </span>
+<span class="bg-inverse-surface/80 border border-outline/30 text-inverse-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm backdrop-blur-md">
+              Frihamnen Live
+            </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="bg-[#0b1320]/80 text-secondary-fixed-dim px-2 py-0.5 rounded font-label-sm text-label-sm font-mono tracking-wide backdrop-blur-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="schedule">schedule</span>
+              1:42:15
+            </span>
+</div>
+<!-- Central Play Button Trigger -->
+<div class="absolute inset-0 flex items-center justify-center">
+<button aria-label="Play Video Replay" class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg shadow-primary/30 active:scale-90 transition-all hover:bg-primary-container group">
+<span class="material-symbols-outlined text-[32px] translate-x-0.5 group-hover:scale-110 transition-transform" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Soundwave / Live indicator bar -->
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-secondary-fixed-dim font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-primary-fixed">
+<span class="material-symbols-outlined text-[14px]" data-icon="volume_up">volume_up</span>
+              Master Stereo 24-bit
+            </span>
+<span class="">Recorded Jan 2025</span>
+</div>
+</div>
+<!-- Video Card Details -->
+<div class="p-4 space-y-3">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-primary-fixed font-label-sm text-label-sm tracking-wider uppercase">Full Worship Service</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-secondary-fixed-dim font-label-sm text-label-sm">1.8k Views</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-inverse-on-surface font-semibold">Holy Spirit Worship 2025 Live at Frihamnen</h2>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim leading-relaxed">
+              En helkväll av profetisk lovsång, bön och tillbedjan med Göteborgs förenade gospelkör och symfoniska musiker under ledning av Samuel Ljungblahd.
+            </p>
+</div>
+<!-- Quick Action Buttons -->
+<div class="pt-2 grid grid-cols-2 gap-2">
+<button class="w-full py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="movie">movie</span>
+              Watch Liturgy
+            </button>
+<button class="w-full py-2.5 px-3 rounded-lg bg-inverse-surface border border-outline/30 text-inverse-on-surface hover:bg-surface-variant/10 font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+              Download Audio
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Scripture Ribbon Callout (Dark Sanctuary Architectural styling) -->
+<section class="px-4">
+<div class="border-l-4 border-primary bg-inverse-surface/60 rounded-r-xl p-4 border-y border-r border-outline/10 backdrop-blur-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed text-[24px] mt-0.5 shrink-0" data-icon="format_quote">format_quote</span>
+<div class="space-y-1">
+<p class="font-scripture-quote-mobile text-scripture-quote-mobile italic text-inverse-on-surface leading-snug">
+              ”Gud är ande, och de som tillber honom måste tillbe i ande och sanning.”
+            </p>
+<p class="font-label-sm text-label-sm text-primary-fixed tracking-wider uppercase font-semibold">
+              — Johannes 4:24 · Göteborgs Lovsång
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Audio Multitracks & Stems Section for Worship Leaders -->
+<section class="px-4 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-fixed"></span>
+<h3 class="font-headline-sm text-headline-sm text-inverse-on-surface">Multitracks &amp; Stems</h3>
+</div>
+<a class="font-label-sm text-label-sm text-primary-fixed flex items-center gap-0.5 hover:underline" href="#all-tracks">
+          View All 42
+          <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim -mt-1">
+        Master tracks, click tracks och sångarrangemang för församlingens lovsångsteam.
+      </p>
+<!-- Multitrack Cards Stack -->
+<div class="space-y-3 pt-1">
+<!-- Track 1: Han Är Värdig -->
+<div class="bg-inverse-surface border border-outline/20 rounded-xl p-3.5 space-y-3 hover:border-primary-fixed/40 transition-colors shadow-sm">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<button aria-label="Play Preview Han Är Värdig" class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div>
+<h4 class="font-headline-sm text-[16px] text-inverse-on-surface font-semibold leading-snug">Han Är Värdig</h4>
+<div class="flex items-center gap-2 text-secondary-fixed-dim font-label-sm text-label-sm mt-0.5">
+<span class="text-primary-fixed font-semibold">D-dur</span>
+<span class="">•</span>
+<span class="">72 BPM</span>
+<span class="">•</span>
+<span class="">4/4 Time</span>
+</div>
+</div>
+</div>
+<span class="bg-[#131b2e] border border-outline/25 text-primary-fixed-dim px-2 py-0.5 rounded text-[10px] font-bold tracking-wider font-mono">
+              CCLI #719324
+            </span>
+</div>
+<!-- Waveform Representation -->
+<div class="bg-[#0b1320] rounded-lg p-2.5 flex items-center justify-between gap-1 border border-outline/10">
+<div class="h-6 w-1 rounded bg-primary-fixed/70"></div>
+<div class="h-4 w-1 rounded bg-primary-fixed/50"></div>
+<div class="h-8 w-1 rounded bg-primary-fixed"></div>
+<div class="h-5 w-1 rounded bg-primary-fixed/60"></div>
+<div class="h-9 w-1 rounded bg-primary"></div>
+<div class="h-7 w-1 rounded bg-primary-fixed"></div>
+<div class="h-4 w-1 rounded bg-primary-fixed/40"></div>
+<div class="h-6 w-1 rounded bg-primary-fixed/80"></div>
+<div class="h-10 w-1 rounded bg-primary-fixed"></div>
+<div class="h-8 w-1 rounded bg-primary-container"></div>
+<div class="h-5 w-1 rounded bg-outline-variant/50"></div>
+<div class="h-7 w-1 rounded bg-outline-variant/40"></div>
+<div class="h-4 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-6 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-3 w-1 rounded bg-outline-variant/20"></div>
+<div class="h-8 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-5 w-1 rounded bg-outline-variant/20"></div>
+<div class="h-7 w-1 rounded bg-outline-variant/20"></div>
+<div class="h-4 w-1 rounded bg-outline-variant/10"></div>
+<div class="h-2 w-1 rounded bg-outline-variant/10"></div>
+<div class="h-5 w-1 rounded bg-outline-variant/10"></div>
+<div class="h-3 w-1 rounded bg-outline-variant/10"></div>
+</div>
+<!-- Track Stems breakdown & action -->
+<div class="flex items-center justify-between pt-1 border-t border-outline/15 text-secondary-fixed-dim font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary-fixed" data-icon="layers">layers</span>
+<span class="">12 Stems (WAV + MIDI)</span>
+<span class="mx-1">•</span>
+<span class="text-tertiary-fixed font-medium">STIM Licensierad</span>
+</div>
+<button class="text-primary-fixed hover:text-white flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]" data-icon="download">download</span>
+              Hämta Stems
+            </button>
+</div>
+</div>
+<!-- Track 2: Helig Ande Fyll Vår Stad -->
+<div class="bg-inverse-surface border border-outline/20 rounded-xl p-3.5 space-y-3 hover:border-primary-fixed/40 transition-colors shadow-sm">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<button aria-label="Play Preview Helig Ande Fyll Vår Stad" class="w-10 h-10 rounded-full bg-inverse-surface border border-outline/30 text-inverse-on-surface flex items-center justify-center shrink-0 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div>
+<h4 class="font-headline-sm text-[16px] text-inverse-on-surface font-semibold leading-snug">Helig Ande Fyll Vår Stad</h4>
+<div class="flex items-center gap-2 text-secondary-fixed-dim font-label-sm text-label-sm mt-0.5">
+<span class="text-primary-fixed font-semibold">G-dur</span>
+<span class="">•</span>
+<span class="">128 BPM</span>
+<span class="">•</span>
+<span class="">Energetic Praise</span>
+</div>
+</div>
+</div>
+<span class="bg-[#131b2e] border border-outline/25 text-primary-fixed-dim px-2 py-0.5 rounded text-[10px] font-bold tracking-wider font-mono">
+              CCLI #840211
+            </span>
+</div>
+<!-- Waveform Representation -->
+<div class="bg-[#0b1320] rounded-lg p-2.5 flex items-center justify-between gap-1 border border-outline/10">
+<div class="h-3 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-5 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-8 w-1 rounded bg-outline-variant/40"></div>
+<div class="h-6 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-10 w-1 rounded bg-outline-variant/50"></div>
+<div class="h-9 w-1 rounded bg-outline-variant/50"></div>
+<div class="h-7 w-1 rounded bg-outline-variant/40"></div>
+<div class="h-5 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-8 w-1 rounded bg-outline-variant/40"></div>
+<div class="h-10 w-1 rounded bg-outline-variant/60"></div>
+<div class="h-11 w-1 rounded bg-outline-variant/60"></div>
+<div class="h-9 w-1 rounded bg-outline-variant/40"></div>
+<div class="h-7 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-5 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-8 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-10 w-1 rounded bg-outline-variant/40"></div>
+<div class="h-6 w-1 rounded bg-outline-variant/30"></div>
+<div class="h-7 w-1 rounded bg-outline-variant/20"></div>
+<div class="h-4 w-1 rounded bg-outline-variant/20"></div>
+<div class="h-5 w-1 rounded bg-outline-variant/20"></div>
+<div class="h-3 w-1 rounded bg-outline-variant/10"></div>
+<div class="h-2 w-1 rounded bg-outline-variant/10"></div>
+</div>
+<!-- Track Stems breakdown & action -->
+<div class="flex items-center justify-between pt-1 border-t border-outline/15 text-secondary-fixed-dim font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary-fixed" data-icon="layers">layers</span>
+<span class="">16 Stems (Gospel Horns + Choir)</span>
+<span class="mx-1">•</span>
+<span class="text-tertiary-fixed font-medium">STIM Godkänd</span>
+</div>
+<button class="text-primary-fixed hover:text-white flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]" data-icon="download">download</span>
+              Hämta Stems
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Choir Member Testimonies & Audio Devotionals (Horizontal Card Slider) -->
+<section class="space-y-3 pt-2">
+<div class="px-4 flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider block">Intima reflektioner</span>
+<h3 class="font-headline-sm text-headline-sm text-inverse-on-surface">Vittnesbörd &amp; Andakter</h3>
+</div>
+<div class="flex items-center gap-1 text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]" data-icon="swipe_left">swipe_left</span>
+<span class="font-label-sm text-label-sm">Svep</span>
+</div>
+</div>
+<!-- Horizontal Cards Slider Container -->
+<div class="flex gap-4 overflow-x-auto no-scrollbar px-4 pb-2">
+<!-- Card 1: Linnea Söderberg -->
+<div class="min-w-[280px] w-[280px] bg-inverse-surface border border-outline/20 rounded-xl p-4 flex flex-col justify-between shrink-0 shadow-sm relative">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-full overflow-hidden border border-primary-fixed/40 shrink-0">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young Scandinavian female choir singer with natural warm smile, in soft stage ambient lighting in Gothenburg, wearing a subtle teal scarf, captured in high quality documentary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9iDEe-qljGcMv8JH3X644kE8Y1OVqwEZ3pXADMA2342s8R2RMuC6xcjnS7Q8rzC-LVI4UeINJcfidp5_nU_OsWktZ1XS-jzoObawl8yi8Lmzt8lLf6TnPQQ_aDTb-GpdZ2hCP1eoYCHvdy0CBRg5H64EHj0BSt1Rd5ZLwM78C06sNU4Gg_AFC-VgyaGHXNe3wzpf-6uxGPY5dTbpIJ8jPAeJbGsjy8zs5kSLKE5DI_DV8PHpQvlpR">
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] text-inverse-on-surface font-semibold leading-tight">Linnéa Söderberg</h4>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim">Altledare · Betlehemskyrkan</p>
+<span class="inline-flex items-center gap-1 text-primary-fixed font-label-sm text-[10px] mt-0.5">
+<span class="material-symbols-outlined text-[12px]" data-icon="mic">mic</span> 6 min andakt
+                </span>
+</div>
+</div>
+<p class="font-scripture-quote-mobile text-[16px] italic text-inverse-on-surface/90 leading-snug">
+              ”När hela kören sjöng i stämmor under Frihamnens konsert försvann all min oro och friden tog över.”
+            </p>
+</div>
+<div class="pt-3 mt-2 border-t border-outline/15 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim">Andakt #14: Mod i sången</span>
+<button aria-label="Spela andakt" class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Marcus Wallin -->
+<div class="min-w-[280px] w-[280px] bg-inverse-surface border border-outline/20 rounded-xl p-4 flex flex-col justify-between shrink-0 shadow-sm relative">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-full overflow-hidden border border-primary-fixed/40 shrink-0">
+<img class="w-full h-full object-cover" data-alt="A warm portrait of a Swedish male worship leader and pianist with contemplative expression in a serene cathedral practice room, illuminated by soft morning light filtering through high arched windows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHzRbapW9lRNdi6-feANfR_VLc327ldboSLD_DI45T7Ek_4LowMyaaw_gA5bByT1eS1Pup9QRUadBOzL6GvOv8dFK_U4GI5O4sIAt3-oA4KKTnEvt3vjMVWgCvk4wJltyHEvmakLRoVsPoAVMbsiXUb5DEK4syl8itDnncPuxLRSq-P3xtNgwnhQFIZNra96TfziCAH27ROregq8riVrUfvGYtMa3aGf8LAiW0LdRRwmrk7w9F12zX">
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] text-inverse-on-surface font-semibold leading-tight">Marcus Wallin</h4>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim">Flygel &amp; Körledare · Smyrnakyrkan</p>
+<span class="inline-flex items-center gap-1 text-primary-fixed font-label-sm text-[10px] mt-0.5">
+<span class="material-symbols-outlined text-[12px]" data-icon="mic">mic</span> 8 min andakt
+                </span>
+</div>
+</div>
+<p class="font-scripture-quote-mobile text-[16px] italic text-inverse-on-surface/90 leading-snug">
+              ”Lovsång är inte prestation; det är att öppna hjärtats dörr och låta Den Helige Ande tala.”
+            </p>
+</div>
+<div class="pt-3 mt-2 border-t border-outline/15 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim">Andakt #15: Hjärtats klang</span>
+<button aria-label="Spela andakt" class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Agnes Ekström -->
+<div class="min-w-[280px] w-[280px] bg-inverse-surface border border-outline/20 rounded-xl p-4 flex flex-col justify-between shrink-0 shadow-sm relative">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-full overflow-hidden border border-primary-fixed/40 shrink-0">
+<img class="w-full h-full object-cover" data-alt="A portrait of an expressive Scandinavian soprano gospel soloist holding a microphone in front of a choir backdrop, warm natural lighting, confident and peaceful demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6F4hpqwJUABMan4ZHlpYCxU5H8a88EKWJm9c4YL7xxCbK6NfmWiXdEakqL8VujYCuu95EMjD6aJFHjSQMmKt8jU5fRHs2HC5g2QH0mKs4B-fLgAuf8lqC_CGTpI5eWfWMIoHP6LrUg21_lBFepAM0Uht4T2tVx4BcDp4igQdU5kkShljQe7HHCTyaUxbDYQwDyM6kGYIyYkyQwPx8v29TcGwX6rVDi6VvTYTovMcd1MAOydGTnpOY">
+</div>
+<div>
+<h4 class="font-headline-sm text-[15px] text-inverse-on-surface font-semibold leading-tight">Agnes Ekström</h4>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim">Solist · GOSPELS Ungdom</p>
+<span class="inline-flex items-center gap-1 text-primary-fixed font-label-sm text-[10px] mt-0.5">
+<span class="material-symbols-outlined text-[12px]" data-icon="mic">mic</span> 5 min andakt
+                </span>
+</div>
+</div>
+<p class="font-scripture-quote-mobile text-[16px] italic text-inverse-on-surface/90 leading-snug">
+              ”Att få leda ungdomar i gospelmusik har visat mig att Gud möter varje generation där de är.”
+            </p>
+</div>
+<div class="pt-3 mt-2 border-t border-outline/15 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim">Andakt #16: Ny generation</span>
+<button aria-label="Spela andakt" class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Mini Floating Audio Player Preview Bar (docked above bottom nav) -->
+<section class="px-4">
+<div class="bg-[#131b2e] border border-outline/30 rounded-xl p-2.5 flex items-center justify-between shadow-2xl backdrop-blur-md">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]" data-icon="music_note">music_note</span>
+</div>
+<div class="truncate">
+<p class="font-label-md text-label-md text-inverse-on-surface font-semibold truncate">Han Är Värdig (Live Rehearsal)</p>
+<p class="font-label-sm text-[11px] text-primary-fixed truncate">Gothenburg Mass Choir · Stem Preview</p>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Previous Track" class="w-8 h-8 rounded-full flex items-center justify-center text-secondary-fixed-dim hover:text-inverse-on-surface">
+<span class="material-symbols-outlined text-[20px]" data-icon="skip_previous">skip_previous</span>
+</button>
+<button aria-label="Play or Pause" class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md active:scale-90">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button aria-label="Next Track" class="w-8 h-8 rounded-full flex items-center justify-center text-secondary-fixed-dim hover:text-inverse-on-surface">
+<span class="material-symbols-outlined text-[20px]" data-icon="skip_next">skip_next</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Swish / Kingdom Support Quick Banner for Ministry -->
+<section class="px-4 pb-2">
+<div class="bg-inverse-surface/40 border border-outline/15 rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-body-sm text-body-sm text-secondary-fixed-dim">Stöd produktionen via Swish: <strong class="text-inverse-on-surface">123 456 78 90</strong></span>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[16px]" data-icon="chevron_right">chevron_right</span>
+</div>
+</section>
+</main>
+<!-- Docked Mobile Bottom Navigation Bar (Dark Sanctuary Theme, Watch tab Active) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-[#0b1320]/95 backdrop-blur-lg border-t border-outline/20 px-3 py-2">
+<div class="max-w-md mx-auto flex items-center justify-around">
+<!-- Home Tab -->
+<a aria-label="Home" class="flex flex-col items-center gap-1 py-1 px-3 text-secondary-fixed-dim hover:text-inverse-on-surface transition-colors active:scale-95" href="#home">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="font-label-sm text-[10px] tracking-tight">Home</span>
+</a>
+<!-- Events Tab -->
+<a aria-label="Events" class="flex flex-col items-center gap-1 py-1 px-3 text-secondary-fixed-dim hover:text-inverse-on-surface transition-colors active:scale-95" href="#events">
+<span class="material-symbols-outlined text-[22px]" data-icon="event">event</span>
+<span class="font-label-sm text-[10px] tracking-tight">Events</span>
+</a>
+<!-- Watch & Listen Tab (ACTIVE) -->
+<a aria-current="page" aria-label="Watch &amp; Listen" class="flex flex-col items-center gap-1 py-1 px-3 text-primary-fixed active:scale-95 transition-transform" href="#watch">
+<div class="relative">
+<span class="material-symbols-outlined text-[22px]" data-icon="play_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-primary-fixed"></span>
+</div>
+<span class="font-label-sm text-[10px] font-bold tracking-tight text-primary-fixed">Watch</span>
+</a>
+<!-- Prayer Tab -->
+<a aria-label="Prayer" class="flex flex-col items-center gap-1 py-1 px-3 text-secondary-fixed-dim hover:text-inverse-on-surface transition-colors active:scale-95" href="#prayer">
+<span class="material-symbols-outlined text-[22px]" data-icon="folded_hands">folded_hands</span>
+<span class="font-label-sm text-[10px] tracking-tight">Prayer</span>
+</a>
+<!-- Give / Support Tab -->
+<a aria-label="Give" class="flex flex-col items-center gap-1 py-1 px-3 text-secondary-fixed-dim hover:text-inverse-on-surface transition-colors active:scale-95" href="#give">
+<span class="material-symbols-outlined text-[22px]" data-icon="favorite">favorite</span>
+<span class="font-label-sm text-[10px] tracking-tight">Give</span>
+</a>
+</div>
+</nav>
+
+
+</body></html>

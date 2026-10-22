@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS Admin — Dirigent &amp; Körledning Live Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#565e74",
+            "primary-fixed": "#89f5e7",
+            "on-secondary-container": "#5c647a",
+            "on-surface": "#0b1c30",
+            "secondary-fixed-dim": "#bec6e0",
+            "tertiary": "#00685d",
+            "on-error": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "background": "#f8f9ff",
+            "on-tertiary-fixed-variant": "#005048",
+            "surface-tint": "#006a61",
+            "surface-variant": "#d3e4fe",
+            "inverse-on-surface": "#eaf1ff",
+            "secondary-container": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#6d7a77",
+            "on-background": "#0b1c30",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#71f8e4",
+            "on-error-container": "#93000a",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-container-high": "#dce9ff",
+            "on-tertiary-fixed": "#00201c",
+            "on-surface-variant": "#3d4947",
+            "on-tertiary-container": "#f4fffb",
+            "on-primary-fixed-variant": "#005049",
+            "on-primary-fixed": "#00201d",
+            "inverse-surface": "#213145",
+            "surface-bright": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "error": "#ba1a1a",
+            "primary": "#00685f",
+            "surface-container-low": "#eff4ff",
+            "on-primary-container": "#f4fffc",
+            "secondary-fixed": "#dae2fd",
+            "inverse-primary": "#6bd8cb",
+            "primary-fixed-dim": "#6bd8cb",
+            "surface": "#f8f9ff",
+            "primary-container": "#008378",
+            "tertiary-container": "#008376",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "outline-variant": "#bcc9c6",
+            "surface-dim": "#cbdbf5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin-mobile": "1.25rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "margin": "3rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "scripture-quote": ["EB Garamond"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined[data-weight="fill"] {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #eff4ff;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #bcc9c6;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="h-full font-body-md text-on-surface bg-background flex overflow-hidden antialiased">
+<!-- SHARED COMPONENT: SideNavBar (Admin) -->
+<aside class="fixed top-0 left-0 h-screen w-64 flex flex-col z-40 bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant/30 dark:border-outline/20">
+<div class="w-64 h-full p-4 flex flex-col justify-between">
+<!-- Top Brand & Ministry Avatar -->
+<div>
+<div class="flex items-center gap-3 px-2 py-3 border-b border-outline-variant/30 dark:border-outline/20 mb-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold font-headline-sm shadow-sm">
+<span class="material-symbols-outlined text-white" data-weight="fill">church</span>
+</div>
+<div class="leading-tight">
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed block">GOSPELS Admin</span>
+<span class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim">Gothenburg Ministry Hub</span>
+</div>
+</div>
+<!-- Create Event Action -->
+<button class="w-full mb-5 bg-primary text-on-primary hover:bg-primary-container rounded-lg py-2.5 px-4 font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>Create Event</span>
+</button>
+<!-- Main Navigation Links -->
+<nav class="space-y-1.5">
+<!-- Events (Active for Rehearsal & Live Stages) -->
+<a class="bg-secondary-container dark:bg-secondary text-primary dark:text-inverse-primary font-semibold rounded-lg px-4 py-2.5 flex items-center gap-3 active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-xl" data-weight="fill">event</span>
+<span class="font-label-md text-label-md">Events</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-variant rounded-lg px-4 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">folded_hands</span>
+<span class="font-label-md text-label-md">Prayer Requests</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-variant rounded-lg px-4 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span class="font-label-md text-label-md">Volunteers</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-variant rounded-lg px-4 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">library_music</span>
+<span class="font-label-md text-label-md">Content</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-variant rounded-lg px-4 py-2.5 flex items-center gap-3 transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-xl">tune</span>
+<span class="font-label-md text-label-md">System Status</span>
+</a>
+</nav>
+</div>
+<!-- Footer SideNav Controls -->
+<div class="pt-4 border-t border-outline-variant/30 dark:border-outline/20 space-y-1">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-variant rounded-lg px-4 py-2 flex items-center gap-3 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-variant rounded-lg px-4 py-2 flex items-center gap-3 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<span class="font-label-md text-label-md">Sign Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- MAIN VIEWPORT CANVAS -->
+<div class="ml-64 flex-1 flex flex-col h-screen overflow-hidden bg-background">
+<!-- Top Director Navigation & Status Header -->
+<header class="bg-surface-container-lowest border-b border-outline-variant/30 px-8 py-3.5 z-30 shrink-0">
+<div class="flex items-center justify-between">
+<!-- Breadcrumbs & Venue Info -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 font-label-md text-label-md text-secondary">
+<span>GOSPELS Admin</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span>Körledning &amp; Dirigent</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="font-semibold text-primary">Generalrepetition Frihamnen</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-surface-container text-on-surface-variant border border-outline-variant/40">
+<span class="material-symbols-outlined text-xs mr-1 text-primary">pin_drop</span>
+            Frihamnen Arena • Sal A
+          </span>
+</div>
+<!-- Quick Conductor Actions -->
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-primary/30 text-primary hover:bg-surface-container-low transition-colors font-label-md text-label-md" id="broadcastTriggerBtn">
+<span class="material-symbols-outlined text-base">campaign</span>
+<span>Skicka snabbmeddelande till kören</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-white transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-base">stop_circle</span>
+<span>Avsluta Repetition</span>
+</button>
+</div>
+</div>
+<!-- Live Session Notification Bar -->
+<div class="mt-3.5 flex flex-wrap items-center justify-between bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-xl border border-white/10 shadow-sm">
+<div class="flex items-center gap-3.5">
+<div class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-fixed"></span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-bold">PÅGÅENDE REPETITION:</span>
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight">Generalrepetition inför Göteborgs Lovsångskonsert</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 font-mono text-sm bg-inverse-surface/80 px-3 py-1 rounded-lg border border-white/10">
+<span class="material-symbols-outlined text-sm text-primary-fixed">schedule</span>
+<span class="text-white/70">Tid förfluten:</span>
+<span class="font-bold text-primary-fixed" id="liveTimer">01:14:20</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-white/80">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span>Ljudbord anslutet • FOH Frihamnen</span>
+</div>
+</div>
+</div>
+<!-- Quick Stats Tally Row -->
+<div class="grid grid-cols-4 gap-4 mt-3.5">
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/30 flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Total Körsångare</p>
+<p class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">68 <span class="text-xs font-normal text-secondary">inskrivna</span></p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/30 flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Närvarande just nu</p>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-primary font-bold">58</span>
+<span class="inline-flex px-1.5 py-0.5 rounded text-[11px] font-bold bg-primary/10 text-primary">85% uppslutning</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">how_to_reg</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/30 flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Frånvarande / Förhinder</p>
+<p class="font-headline-md text-headline-md text-secondary font-bold mt-0.5">6 <span class="text-xs font-normal text-secondary">anmälda</span></p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">event_busy</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/30 flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Oanmälda / Invänter</p>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-error font-bold">4</span>
+<span class="text-xs text-error font-medium">Behöver uppföljning</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">person_search</span>
+</div>
+</div>
+</div>
+</header>
+<!-- CONTENT SCROLL WORKSPACE (Split Column Layout) -->
+<main class="flex-1 overflow-y-auto custom-scroll p-8">
+<div class="max-w-[1440px] mx-auto grid grid-cols-12 gap-8">
+<!-- LEFT 7 COLS: SATB Voice Section Check-In & Individual Attendance -->
+<section class="col-span-12 xl:col-span-7 space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Sektionsnärvaro &amp; Snabbavprickning</h2>
+<p class="font-body-sm text-body-sm text-secondary">Realtidshantering av SATB-stämmor under uppsjungning och scenplacering.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm">print</span>
+<span>Skriv ut notblad</span>
+</button>
+</div>
+</div>
+<!-- SATB Interactive Section Breakdown Cards -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3.5">
+<!-- Sopran -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border-2 border-primary shadow-sm relative overflow-hidden cursor-pointer hover:border-primary-container transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="inline-block px-2 py-0.5 rounded text-[11px] font-bold bg-primary text-on-primary">SOPRAN</span>
+<span class="font-bold text-xs text-primary">90%</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface font-extrabold">18<span class="text-sm font-normal text-secondary">/20</span></p>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-2.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 90%"></div>
+</div>
+<button class="w-full mt-3 py-1 text-[11px] font-semibold text-primary hover:bg-primary/5 rounded border border-primary/20 transition-colors">
+                Bocka av alla (2)
+              </button>
+</div>
+<!-- Alt -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 shadow-sm relative overflow-hidden cursor-pointer hover:border-primary transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="inline-block px-2 py-0.5 rounded text-[11px] font-bold bg-surface-container-highest text-on-surface">ALT</span>
+<span class="font-bold text-xs text-primary">89%</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface font-extrabold">16<span class="text-sm font-normal text-secondary">/18</span></p>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-2.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 89%"></div>
+</div>
+<button class="w-full mt-3 py-1 text-[11px] font-semibold text-primary hover:bg-primary/5 rounded border border-primary/20 transition-colors">
+                Bocka av alla (2)
+              </button>
+</div>
+<!-- Tenor -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 shadow-sm relative overflow-hidden cursor-pointer hover:border-primary transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="inline-block px-2 py-0.5 rounded text-[11px] font-bold bg-surface-container-highest text-on-surface">TENOR</span>
+<span class="font-bold text-xs text-primary">80%</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface font-extrabold">12<span class="text-sm font-normal text-secondary">/15</span></p>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-2.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 80%"></div>
+</div>
+<button class="w-full mt-3 py-1 text-[11px] font-semibold text-primary hover:bg-primary/5 rounded border border-primary/20 transition-colors">
+                Bocka av alla (3)
+              </button>
+</div>
+<!-- Bas -->
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 shadow-sm relative overflow-hidden cursor-pointer hover:border-primary transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="inline-block px-2 py-0.5 rounded text-[11px] font-bold bg-surface-container-highest text-on-surface">BAS</span>
+<span class="font-bold text-xs text-primary">80%</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface font-extrabold">12<span class="text-sm font-normal text-secondary">/15</span></p>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-2.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 80%"></div>
+</div>
+<button class="w-full mt-3 py-1 text-[11px] font-semibold text-primary hover:bg-primary/5 rounded border border-primary/20 transition-colors">
+                Bocka av alla (3)
+              </button>
+</div>
+</div>
+<!-- Individual Attendance Toggle List -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm overflow-hidden">
+<div class="p-4 border-b border-outline-variant/30 flex flex-wrap items-center justify-between gap-3 bg-surface-container-low/50">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold">Körsångarlista</span>
+<span class="text-xs bg-surface-container px-2 py-0.5 rounded-full font-medium text-secondary">Sorterat: Sektion &amp; Status</span>
+</div>
+<!-- Filter Search / Quick Search -->
+<div class="relative w-64">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-lg pl-9 pr-3 py-1.5 text-xs text-on-surface placeholder:text-secondary focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none" placeholder="Sök sångare eller not..." type="text"/>
+<span class="material-symbols-outlined text-sm text-secondary absolute left-2.5 top-2">search</span>
+</div>
+</div>
+<!-- List Body -->
+<div class="divide-y divide-outline-variant/20 max-h-[440px] overflow-y-auto custom-scroll">
+<!-- Row 1: Elin Lindqvist -->
+<div class="p-3.5 flex items-center justify-between hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center text-xs border border-primary/20">
+                    EL
+                  </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-on-surface">Elin Lindqvist</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-primary-fixed/40 text-on-primary-fixed-variant">Sopran 1</span>
+</div>
+<p class="text-xs text-secondary mt-0.5">Incheckad: 18:14 • Solist i vers 2</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md border border-emerald-200">
+<span class="material-symbols-outlined text-sm" data-weight="fill">check_circle</span>
+                    Närvarande
+                  </span>
+<button class="p-1.5 text-secondary hover:text-on-surface hover:bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 2: Marcus Vance (Försenad tåg) -->
+<div class="p-3.5 flex items-center justify-between bg-amber-50/40 hover:bg-amber-50/70 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-amber-100 text-amber-900 font-bold flex items-center justify-center text-xs border border-amber-300">
+                    MV
+                  </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-on-surface">Marcus Vance</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-secondary-container text-on-secondary-container">Tenor 2</span>
+</div>
+<div class="flex items-center gap-1.5 text-xs text-amber-800 font-medium mt-0.5">
+<span class="material-symbols-outlined text-xs">train</span>
+<span>Not: "Försenad 15 min - tåg från Alingsås"</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-100/60 px-2 py-1 rounded-md border border-amber-300">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                    På väg
+                  </span>
+<button class="px-2.5 py-1 text-xs font-semibold bg-white border border-outline-variant hover:border-primary text-primary rounded shadow-sm">
+                    Markera närvarande
+                  </button>
+</div>
+</div>
+<!-- Row 3: Blessing O. -->
+<div class="p-3.5 flex items-center justify-between hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center text-xs border border-primary/20">
+                    BO
+                  </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-on-surface">Blessing O.</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-surface-container-highest text-on-surface">Alt 1</span>
+</div>
+<p class="text-xs text-secondary mt-0.5">Incheckad: 18:02 • Körsektionsansvarig Alt</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md border border-emerald-200">
+<span class="material-symbols-outlined text-sm" data-weight="fill">check_circle</span>
+                    Närvarande
+                  </span>
+<button class="p-1.5 text-secondary hover:text-on-surface hover:bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 4: Samuel Bergström -->
+<div class="p-3.5 flex items-center justify-between hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container text-secondary font-bold flex items-center justify-center text-xs">
+                    SB
+                  </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-on-surface">Samuel Bergström</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-secondary-container text-on-secondary-container">Bas 2</span>
+</div>
+<p class="text-xs text-secondary mt-0.5">Incheckad: 18:25</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md border border-emerald-200">
+<span class="material-symbols-outlined text-sm" data-weight="fill">check_circle</span>
+                    Närvarande
+                  </span>
+<button class="p-1.5 text-secondary hover:text-on-surface hover:bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 5: Hanna Sundin (Oanmäld) -->
+<div class="p-3.5 flex items-center justify-between bg-error-container/20 hover:bg-error-container/30 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-error/10 text-error font-bold flex items-center justify-center text-xs border border-error/30">
+                    HS
+                  </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-on-surface">Hanna Sundin</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-primary-fixed/40 text-on-primary-fixed-variant">Sopran 2</span>
+</div>
+<p class="text-xs text-error font-medium mt-0.5">Ej anmäld • SMS påminnelse skickad 17:50</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 text-xs font-semibold bg-primary text-on-primary rounded hover:bg-primary-container shadow-sm transition-colors">
+                    Snabb-checkin
+                  </button>
+<button class="p-1.5 text-secondary hover:text-on-surface hover:bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-base">chat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer summary -->
+<div class="p-3 bg-surface-container-low border-t border-outline-variant/30 text-xs text-secondary flex items-center justify-between">
+<span>Visar 5 av 68 sångare</span>
+<button class="text-primary font-semibold hover:underline flex items-center gap-1">
+<span>Visa hela körlistan</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Scripture & Devotional Anchor for Conductor and Choir -->
+<div class="border-l-4 border-primary bg-surface-container-low p-5 rounded-r-xl space-y-2">
+<p class="font-scripture-quote text-scripture-quote italic text-on-surface">
+              "Lova Herren med basunljud, lova honom med psaltare och harpa. Lova honom med pukor och dans, lova honom med strängaspel och flöjt."
+            </p>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">
+              Psaltaren 150:3–4 • Dagens ledord för Göteborgs Lovsångskonsert
+            </p>
+</div>
+</section>
+<!-- RIGHT 5 COLS: Live Rundown, Song Flow, Metronome & Choir Broadcast -->
+<section class="col-span-12 xl:col-span-5 space-y-6">
+<!-- Metronome & Conductor Pacing Widget -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-xl p-5 border border-white/10 shadow-md">
+<div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed">file_map_stack</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Dirigent Metronom &amp; Tempo</span>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-primary-container text-white font-mono font-bold">LIVE SYNC</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="space-y-1">
+<span class="text-xs text-white/60 uppercase tracking-wider font-semibold">Nuvarande Tempo</span>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-extrabold font-mono text-primary-fixed" id="bpmValue">68</span>
+<span class="text-sm font-medium text-white/80">BPM</span>
+</div>
+<p class="text-xs text-white/60">Taktart: <strong class="text-white">4/4</strong> • Andante Reverent</p>
+</div>
+<!-- Metronome Tap & Visualizer Dots -->
+<div class="flex flex-col items-center gap-3">
+<div class="flex gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-primary-fixed animate-pulse"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-white/20"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-white/20"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-white/20"></span>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white rounded text-xs font-semibold border border-white/10 transition-colors">
+                    -2 BPM
+                  </button>
+<button class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white rounded text-xs font-semibold border border-white/10 transition-colors">
+                    +2 BPM
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Rehearsal Rundown & Song Flow Control -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm p-5 space-y-4">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Repertoar &amp; Körordning</h3>
+<p class="text-xs text-secondary">Generalrepetitionens schemalagda sångflöde</p>
+</div>
+<span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded">4 programpunkter</span>
+</div>
+<!-- Song List -->
+<div class="space-y-3">
+<!-- Item 1: Completed -->
+<div class="p-3 rounded-lg border border-outline-variant/30 bg-surface-container-low/40 flex items-start gap-3 opacity-80">
+<div class="w-6 h-6 rounded-full bg-surface-container text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm font-bold" data-weight="fill">check</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-sm text-secondary line-through">1. Uppvärmning &amp; Tonbildning</span>
+<span class="text-[11px] font-semibold text-secondary uppercase">Slutförd</span>
+</div>
+<p class="text-xs text-secondary mt-0.5">15 min röstövningar i kvinter • Avklarat 18:30</p>
+</div>
+</div>
+<!-- Item 2: ACTIVE NOW -->
+<div class="p-3.5 rounded-lg border-2 border-primary bg-primary/5 flex items-start gap-3 shadow-sm relative">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm animate-spin">sync</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-sm text-on-surface">2. Gör mig till ett redskap för din frid</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-extrabold bg-primary text-white tracking-wider animate-pulse">PÅGÅR NU</span>
+</div>
+<p class="text-xs font-semibold text-primary mt-1">Takt 32 Refräng B • Repetera stämmor Alt &amp; Tenor</p>
+<!-- Conductor quick cues -->
+<div class="flex items-center gap-2 mt-2 pt-2 border-t border-primary/20 text-xs">
+<span class="text-secondary font-medium">Solist: Elin L.</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-medium">Tonart: Eb-dur</span>
+<span class="text-outline-variant">•</span>
+<button class="ml-auto text-primary font-bold hover:underline">Öppna körpartitur</button>
+</div>
+</div>
+</div>
+<!-- Item 3: Upcoming -->
+<div class="p-3 rounded-lg border border-outline-variant/30 hover:border-primary/50 transition-colors flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-surface-container text-on-surface font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  3
+                </div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-sm text-on-surface">Total Praise (Richard Smallwood)</span>
+<span class="text-[11px] font-semibold text-secondary">Kommande</span>
+</div>
+<p class="text-xs text-secondary mt-0.5">Noter s. 14 • Full tutti-kör med modulation i coda</p>
+</div>
+</div>
+<!-- Item 4: Upcoming -->
+<div class="p-3 rounded-lg border border-outline-variant/30 hover:border-primary/50 transition-colors flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-surface-container text-on-surface font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  4
+                </div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-sm text-on-surface">O Store Gud / How Great Thou Art</span>
+<span class="text-[11px] font-semibold text-secondary">Kommande</span>
+</div>
+<p class="text-xs text-secondary mt-0.5">Gospelarrangemang Frihamnen • Blåsare ansluter kl 19:45</p>
+</div>
+</div>
+</div>
+<!-- Controller Action -->
+<div class="pt-2 flex gap-2">
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-base">skip_previous</span>
+<span>Föregående</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-lg bg-primary text-white hover:bg-primary-container font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+<span>Nästa sång: Total Praise</span>
+<span class="material-symbols-outlined text-base">skip_next</span>
+</button>
+</div>
+</div>
+<!-- Direct Choir Broadcast & SMS Notification Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-5 shadow-sm space-y-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">cell_tower</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Snabbmeddelande via WhatsApp / SMS</h4>
+<p class="text-[11px] text-secondary">Skickas direkt till alla 68 sångares telefoner</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 border border-outline-variant/30 text-xs">
+<div class="font-semibold text-on-surface mb-1 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>Färdig mall: Pausutrop</span>
+</div>
+<p class="text-secondary italic">"10 min paus - åter på podiet 19:45. Drick vatten och hämta noter för Total Praise."</p>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-2 px-3 bg-primary text-white hover:bg-primary-container rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">send</span>
+<span>Skicka Pausmeddelande</span>
+</button>
+<button class="px-3 py-2 bg-surface-container hover:bg-surface-container-high rounded-lg text-secondary font-label-md text-label-md">
+                Anpassa text
+              </button>
+</div>
+</div>
+<!-- Authentic Gothenburg Rehearsal Imagery Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm">
+<div class="grid grid-cols-2 gap-0.5 bg-outline-variant/20">
+<div class="relative h-44 overflow-hidden group">
+<img alt="Körrepetion i Frihamnen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADf9D6E9eVAnVP1pWYHfuqi2L26L0FN6cMcWp-BmCkMoGiTttTtudhniRkPn4stHDDTHiNFeLMPBOfmVOZvahkWbTkqW4Qznh_QImoanbVVEaf-phBeAGbNfvx1TGHuN9jkoPujt3oBtpYbqmwgLGlq0wnF008vgn1mMn9f52LUygAlmqWPgHMXIoS_a05Py4Cm9lFlxNdVKc9mCGjxnc-03xY2DoL39xWjQSY_2dCQHTBgZMXNnmo_aarEKTmWlDaog"/>
+<span class="absolute bottom-2 left-2 bg-inverse-surface/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">
+                  Frihamnen Körgemenskap
+                </span>
+</div>
+<div class="relative h-44 overflow-hidden group">
+<img alt="Solist och lovsångsledare" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMTToPxyaaHf7E-TVtBGi8SHRfZzfKVAdoAXhcweAmUqynqOJx0F6CxyrIXezfVHUnnJddVYRy9z2jmuYjYJW37Dvog99iyaa3tyLTF4YCHS_n6lHT7UVYIwkIE4MkvUXxRiwOWGrswm6wpeK1IOE-meSJiIhx_Y6e4IHKGF84rSAmuqgAvFHbnVem6rgitVefO-LIfXy952L1HarJgvDiBnfO0YAFsfgyT-JdsPNyJAnIrQKbfLPETduu-yCfDFe8_A"/>
+<span class="absolute bottom-2 left-2 bg-inverse-surface/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">
+                  Lovsång &amp; Förbön
+                </span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low/60 flex items-center justify-between text-xs text-secondary">
+<span class="font-medium">Worship &amp; Choir Fellowship • Frihamnen &amp; Smyrnakyrkan</span>
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-xs">photo_camera</span>
+<span>Fotoarkiv</span>
+</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Micro-interaction script for the live rehearsal timer & metronome -->
+<script>
+    // Live Rehearsal Timer Incrementor
+    let totalSeconds = 4460; // 01:14:20
+    const timerElem = document.getElementById('liveTimer');
+    
+    if (timerElem) {
+      setInterval(() => {
+        totalSeconds++;
+        const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+        const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+        const seconds = String(totalSeconds % 60).padStart(2, '0');
+        timerElem.textContent = `${hours}:${minutes}:${seconds}`;
+      }, 1000);
+    }
+
+    // Modal / Toast trigger simulation
+    const broadcastBtn = document.getElementById('broadcastTriggerBtn');
+    if (broadcastBtn) {
+      broadcastBtn.addEventListener('click', () => {
+        alert("Meddelande skickat till 68 körsångare via WhatsApp / SMS:\n'10 min paus - åter på podiet 19:45.'");
+      });
+    }
+  </script>
+</body></html>

@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOSPELS Admin — Giving &amp; Swish Stewardship Ledger</title>
+<!-- Google Fonts: Plus Jakarta Sans & EB Garamond -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom theme config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#dae2fd",
+            "on-secondary-fixed-variant": "#3f465c",
+            "inverse-on-surface": "#eaf1ff",
+            "tertiary-fixed": "#71f8e4",
+            "surface-container-high": "#dce9ff",
+            "on-tertiary-container": "#f4fffb",
+            "primary-fixed-dim": "#6bd8cb",
+            "inverse-primary": "#6bd8cb",
+            "tertiary-fixed-dim": "#4fdbc8",
+            "primary": "#00685f",
+            "secondary": "#565e74",
+            "on-surface-variant": "#3d4947",
+            "on-background": "#0b1c30",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-primary-container": "#f4fffc",
+            "on-secondary-fixed": "#131b2e",
+            "on-surface": "#0b1c30",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#dae2fd",
+            "inverse-surface": "#213145",
+            "on-error": "#ffffff",
+            "surface-tint": "#006a61",
+            "tertiary": "#00685d",
+            "primary-fixed": "#89f5e7",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#005049",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#008378",
+            "tertiary-container": "#008376",
+            "surface-container-low": "#eff4ff",
+            "outline": "#6d7a77",
+            "background": "#f8f9ff",
+            "surface-dim": "#cbdbf5",
+            "on-tertiary": "#ffffff",
+            "surface-variant": "#d3e4fe",
+            "outline-variant": "#bcc9c6",
+            "on-primary-fixed": "#00201d",
+            "error-container": "#ffdad6",
+            "surface": "#f8f9ff",
+            "surface-container-highest": "#d3e4fe",
+            "on-tertiary-fixed": "#00201c",
+            "on-secondary-container": "#5c647a",
+            "on-tertiary-fixed-variant": "#005048",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-bright": "#f8f9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "4rem",
+            "space-sm": "0.5rem",
+            "margin": "3rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "scripture-quote-mobile": ["EB Garamond"],
+            "scripture-quote": ["EB Garamond"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "scripture-quote-mobile": ["19px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "scripture-quote": ["24px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #eff4ff;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #bcc9c6;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="h-full font-body-md text-on-surface bg-background flex overflow-hidden antialiased selection:bg-primary selection:text-on-primary">
+<!-- ================= SIDE NAVIGATION BAR (Admin) ================= -->
+<!-- Conforms to SideNavBar in Shared Components JSON: width 64 (w-64), bg-surface-container-low, fixed left, tabs + badges + bottom profile -->
+<aside class="fixed top-0 left-0 h-screen w-64 bg-surface-container-low border-r border-outline-variant/30 flex flex-col justify-between z-40 p-4 select-none">
+<div class="flex flex-col gap-6">
+<!-- Brand & Hub Subtitle -->
+<div class="flex items-center gap-3 px-2 pt-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm shadow-primary/20">
+<span class="material-symbols-outlined text-2xl" data-icon="account_balance">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight leading-none">GOSPELS Admin</span>
+<span class="font-label-sm text-label-sm text-secondary tracking-normal mt-1">Gothenburg Ministry Hub</span>
+</div>
+</div>
+<!-- Quick Action CTA -->
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 shadow-sm transition-all duration-150 active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+<span>Record Gift / Event</span>
+</button>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1">
+<!-- Events -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center justify-between transition-colors group" href="#events">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors" data-icon="event">event</span>
+<span class="font-label-md text-label-md">Events</span>
+</div>
+<span class="text-[11px] font-semibold text-secondary bg-surface-container-high px-2 py-0.5 rounded-full">4</span>
+</a>
+<!-- Giving & Stewardship (ACTIVE) -->
+<a class="bg-secondary-container text-primary font-semibold rounded-lg px-3.5 py-2.5 flex items-center justify-between transition-colors shadow-xs" href="#stewardship">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-md text-label-md">Giving &amp; Stewardship</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</a>
+<!-- Prayer Requests -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center justify-between transition-colors group" href="#prayer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors" data-icon="folded_hands">folded_hands</span>
+<span class="font-label-md text-label-md">Prayer Requests</span>
+</div>
+<span class="text-[11px] font-bold text-on-tertiary bg-tertiary px-2 py-0.5 rounded-full">12</span>
+</a>
+<!-- Volunteers -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center justify-between transition-colors group" href="#volunteers">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Volunteers</span>
+</div>
+<span class="text-[11px] font-semibold text-secondary bg-surface-container-high px-2 py-0.5 rounded-full">38</span>
+</a>
+<!-- Content -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center gap-3 transition-colors group" href="#content">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors" data-icon="library_music">library_music</span>
+<span class="font-label-md text-label-md">Content &amp; Media</span>
+</a>
+<!-- System Status -->
+<a class="text-secondary hover:bg-surface-container rounded-lg px-3.5 py-2 flex items-center justify-between transition-colors group" href="#status">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors" data-icon="tune">tune</span>
+<span class="font-label-md text-label-md">System Status</span>
+</div>
+<span class="inline-flex items-center gap-1 text-[10px] text-primary font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> SEB Live
+          </span>
+</a>
+</nav>
+</div>
+<!-- Bottom Profile & Admin Footer Tab (Tomasz Sjödin docked) -->
+<div class="flex flex-col gap-2 pt-4 border-t border-outline-variant/30">
+<!-- Pastor Profile Widget -->
+<div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/30">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0 border border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A portrait photograph of a mature Scandinavian pastor and ministry director with kind thoughtful eyes, gentle expression, wearing a warm dark wool knit sweater inside a softly lit Gothenburg wooden chapel library with blurred book shelves behind him, soft natural daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1rp3OlRuBneWeRaZJA-dXzNFgixpH-cQLGLoV6cO6NSGZ7cHq1GE-evNpCFYKolg-gVhX6K48Al4o4wvsIxchLLqBERaMKC91e94eBSt1QAQXuO9xHt_ESfeBdXuXJkEBT-hs_H1IsIhX0VgD7JchTBcUEvav49nbDjfbmBhTWgyI_f3-gW09VkUQrf5F4MkWac0GtIorlLH7HW9PphavRw8eEy_EBmuvnkzMJWgGXyBCUvKAv0g7"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Tomasz Sjödin</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">Ministry Custodian &amp; Pastor</span>
+</div>
+</div>
+<!-- Settings & Sign Out -->
+<div class="grid grid-cols-2 gap-1 pt-1">
+<a class="flex items-center justify-center gap-1.5 text-secondary hover:text-on-surface hover:bg-surface-container rounded-lg py-1.5 font-label-sm text-label-sm transition-colors" href="#settings">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center justify-center gap-1.5 text-secondary hover:text-error hover:bg-surface-container rounded-lg py-1.5 font-label-sm text-label-sm transition-colors" href="#logout">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ================= MAIN CONTENT CANVAS ================= -->
+<main class="ml-64 flex-1 h-screen flex flex-col overflow-y-auto custom-scroll bg-surface">
+<!-- Top Admin Header Bar -->
+<header class="sticky top-0 z-30 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 px-8 py-4">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<!-- Breadcrumb & Title Cluster -->
+<div>
+<nav class="flex items-center gap-2 text-secondary font-label-sm text-label-sm mb-1">
+<span>Admin</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span>Stewardship &amp; Finances</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-bold">Swish &amp; Kingdom Giving Ledger</span>
+</nav>
+<div class="flex items-baseline gap-3">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Giving, Swish &amp; Stewardship Ledger</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-primary text-xs font-semibold border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Bankgiro 5542-8891 Audited
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5 max-w-3xl">
+            Real-time intake tracking, Swish bankgiro reconciliation, Autogiro recurring partner management, and 100% audited financial transparency for Gothenburg ministries.
+          </p>
+</div>
+<!-- Global Action Cluster -->
+<div class="flex items-center gap-2.5 flex-shrink-0">
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md px-3.5 py-2.5 rounded-lg border border-outline-variant/30 flex items-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="table_view">table_view</span>
+<span>Export SEB Bankgiro File</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md px-3.5 py-2.5 rounded-lg border border-outline-variant/30 flex items-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="download">download</span>
+<span>Quarterly Audit PDF</span>
+</button>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-4 py-2.5 rounded-lg shadow-sm shadow-primary/25 flex items-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>Record Offline Gift</span>
+</button>
+</div>
+</div>
+</header>
+<div class="px-8 py-6 flex flex-col gap-8 max-w-7xl">
+<!-- ================= SCRIPTURE MEDITATION BANNER ================= -->
+<div class="bg-surface-container-lowest border-l-4 border-primary rounded-r-xl p-5 border border-outline-variant/20 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined" data-icon="format_quote">format_quote</span>
+</div>
+<div>
+<blockquote class="font-scripture-quote text-scripture-quote text-on-surface italic leading-snug">
+              "Var och en skall ge vad han har beslutat i sitt hjärta, inte med olust eller av tvång, för Gud älskar en glad givare."
+            </blockquote>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mt-1.5 font-bold">
+              2 Korinthierbrevet 9:7 • Västsvensk Föreningsstadga 2026
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/30 self-start md:self-auto flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="verified_user">verified_user</span>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-on-surface font-bold leading-tight">Svensk Insamlingskontroll</p>
+<p class="text-[11px] text-secondary">90-konto integritet standard</p>
+</div>
+</div>
+</div>
+<!-- ================= KEY FINANCIAL METRICS (4 CARDS) ================= -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1: Month-to-Date Giving -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/30 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">Month-to-Date Giving</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="payments">payments</span>
+</span>
+</div>
+<div class="my-3">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">184,520</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-semibold">SEK</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="inline-flex items-center text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-xs mr-0.5" data-icon="arrow_upward">arrow_upward</span>+14%
+              </span>
+<span class="font-label-sm text-label-sm text-secondary">vs Feb 2026</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex flex-col gap-1 text-[11px] text-secondary">
+<div class="flex justify-between">
+<span>Swish:</span> <strong class="text-on-surface">112,400 SEK (61%)</strong>
+</div>
+<div class="flex justify-between">
+<span>Autogiro:</span> <strong class="text-on-surface">52,120 SEK (28%)</strong>
+</div>
+<div class="flex justify-between">
+<span>Stripe / Card:</span> <strong class="text-on-surface">20,000 SEK (11%)</strong>
+</div>
+</div>
+</div>
+<!-- Card 2: Active Kingdom Partners -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/30 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">Active Kingdom Partners</span>
+<span class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</span>
+</div>
+<div class="my-3">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">348</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-semibold">Monthly</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="inline-flex items-center text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
+                98.4%
+              </span>
+<span class="font-label-sm text-label-sm text-secondary">Partner retention rate</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex flex-col gap-1 text-[11px] text-secondary">
+<div class="flex justify-between">
+<span>Average Monthly Gift:</span> <strong class="text-on-surface">215 SEK / mo</strong>
+</div>
+<div class="flex justify-between">
+<span>New this month:</span> <strong class="text-primary font-bold">+19 Partners</strong>
+</div>
+<div class="flex justify-between">
+<span>Autogiro mandate sync:</span> <strong class="text-on-surface">Active &amp; Verified</strong>
+</div>
+</div>
+</div>
+<!-- Card 3: Transparency Allocation Tracker -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/30 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">Transparency Tracker</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="pie_chart">pie_chart</span>
+</span>
+</div>
+<div class="my-3">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">100%</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-semibold">Compliant</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="inline-flex items-center text-xs font-bold text-on-secondary bg-primary px-2 py-0.5 rounded">
+                EY Certified
+              </span>
+<span class="font-label-sm text-label-sm text-secondary">West Sweden Audited</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex flex-col gap-1 text-[11px] text-secondary">
+<div class="flex justify-between">
+<span>Direct Ministry &amp; Acoustics:</span> <strong class="text-on-surface">80%</strong>
+</div>
+<div class="flex justify-between">
+<span>Governance &amp; Legal:</span> <strong class="text-on-surface">15%</strong>
+</div>
+<div class="flex justify-between">
+<span>Pastoral Care &amp; WhatsApp:</span> <strong class="text-on-surface">5%</strong>
+</div>
+</div>
+</div>
+<!-- Card 4: SEB Bankgiro Reconciliation -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/30 shadow-xs flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">SEB Bankgiro Status</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="account_balance">account_balance</span>
+</span>
+</div>
+<div class="my-3">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Settled Today</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">Bankgiro 5542-8891</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex flex-col gap-1 text-[11px] text-secondary">
+<div class="flex justify-between">
+<span>Förenings Org.nr:</span> <strong class="text-on-surface">802490-1234</strong>
+</div>
+<div class="flex justify-between">
+<span>Next Nightly Payout:</span> <strong class="text-on-surface">06:00 CET (SEB)</strong>
+</div>
+<div class="flex justify-between">
+<span>Swish API Uptime:</span> <strong class="text-primary font-bold">99.98% Healthy</strong>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= FINANCIAL STEWARDSHIP ALLOCATION VISUALIZER ================= -->
+<section class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 shadow-xs">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="account_tree">account_tree</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Kingdom Stewardship Allocation Earmarks</h2>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+              Live algorithmic distribution of the current 184,520 SEK intake across public gospel mission tiers in Gothenburg.
+            </p>
+</div>
+<div class="flex items-center gap-2 text-xs font-semibold text-secondary">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-primary"></span> Live Auto-Partitioning Active
+          </div>
+</div>
+<!-- Segmented Progress Bar -->
+<div class="w-full h-4 rounded-full overflow-hidden flex bg-surface-container-low shadow-inner mb-4">
+<div class="bg-primary hover:opacity-90 transition-opacity relative group" style="width: 60%" title="Public Events &amp; Acoustics: 60%"></div>
+<div class="bg-primary-container hover:opacity-90 transition-opacity" style="width: 20%" title="Choir Training: 20%"></div>
+<div class="bg-secondary hover:opacity-90 transition-opacity" style="width: 15%" title="Governance &amp; Insurance: 15%"></div>
+<div class="bg-tertiary-fixed-dim hover:opacity-90 transition-opacity" style="width: 5%" title="Pastoral Care: 5%"></div>
+</div>
+<!-- Earmark Breakdown Grid (4 columns) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+<!-- 60% Events -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/20">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-bold text-primary flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary"></span> 60% Earmark
+              </span>
+<span class="text-xs font-semibold text-secondary">Events</span>
+</div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Public Events &amp; Open-Air Acoustics</h4>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">110,712 <span class="text-xs font-normal text-secondary">SEK</span></p>
+<p class="text-[11px] text-secondary mt-1">Frihamnen stage, sound rig rentals, Göteborg lovsångskonsert acoustics.</p>
+</div>
+<!-- 20% Choir -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/20">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-bold text-primary-container flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-container"></span> 20% Earmark
+              </span>
+<span class="text-xs font-semibold text-secondary">Apprenticeship</span>
+</div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Choir &amp; Musician Apprenticeships</h4>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">36,904 <span class="text-xs font-normal text-secondary">SEK</span></p>
+<p class="text-[11px] text-secondary mt-1">Vocal masterclasses, gospel score printing, youth accompanist coaching.</p>
+</div>
+<!-- 15% Governance -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/20">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-bold text-secondary flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-secondary"></span> 15% Earmark
+              </span>
+<span class="text-xs font-semibold text-secondary">Compliance</span>
+</div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Governance, Venue &amp; Audit</h4>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">27,678 <span class="text-xs font-normal text-secondary">SEK</span></p>
+<p class="text-[11px] text-secondary mt-1">Ernst &amp; Young audit certification, church liability insurance, statutory banking.</p>
+</div>
+<!-- 5% WhatsApp -->
+<div class="p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/20">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-bold text-tertiary flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-tertiary-fixed-dim"></span> 5% Earmark
+              </span>
+<span class="text-xs font-semibold text-secondary">Intercession</span>
+</div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Pastoral Care &amp; WhatsApp Intercession</h4>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">9,226 <span class="text-xs font-normal text-secondary">SEK</span></p>
+<p class="text-[11px] text-secondary mt-1">Emergency benevolence gifts, helpline phone infrastructure, coffee ministry.</p>
+</div>
+</div>
+</section>
+<!-- ================= TRANSACTION LEDGER TABLE SECTION ================= -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-xs overflow-hidden">
+<!-- Filter Tabs & Controls -->
+<div class="p-5 border-b border-outline-variant/30 flex flex-col gap-4">
+<!-- Top Row: Tab Filters -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-1.5 bg-surface-container-low p-1 rounded-xl border border-outline-variant/30">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-3.5 py-1.5 rounded-lg shadow-xs transition-all">
+                All Transactions (1,420)
+              </button>
+<button class="text-secondary hover:text-on-surface font-label-md text-label-md px-3.5 py-1.5 rounded-lg transition-colors">
+                Swish Mobile (980)
+              </button>
+<button class="text-secondary hover:text-on-surface font-label-md text-label-md px-3.5 py-1.5 rounded-lg transition-colors">
+                Autogiro Monthly (348)
+              </button>
+<button class="text-secondary hover:text-on-surface font-label-md text-label-md px-3.5 py-1.5 rounded-lg transition-colors">
+                International Card (92)
+              </button>
+</div>
+<div class="flex items-center gap-2">
+<!-- Date Range Selector -->
+<div class="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant/50 rounded-lg px-3 py-1.5 text-secondary text-xs font-medium">
+<span class="material-symbols-outlined text-base" data-icon="calendar_month">calendar_month</span>
+<span class="text-on-surface font-semibold">March 2026</span>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+<button class="p-2 border border-outline-variant/50 hover:bg-surface-container-low text-secondary rounded-lg transition-colors" title="Filter options">
+<span class="material-symbols-outlined text-base" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Bottom Row: Search Field -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-lg" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-lg pl-10 pr-4 py-2 font-body-sm text-body-sm placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="Search donor name, phone, Swish reference, or amount..." type="text"/>
+</div>
+</div>
+<!-- Meticulous Financial Ledger Table -->
+<div class="overflow-x-auto custom-scroll">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/70 border-b border-outline-variant/30 text-[11px] font-bold text-secondary uppercase tracking-wider">
+<th class="py-3.5 px-4 font-semibold">Timestamp</th>
+<th class="py-3.5 px-4 font-semibold">Donor / Partner</th>
+<th class="py-3.5 px-4 font-semibold">Method &amp; Channel</th>
+<th class="py-3.5 px-4 font-semibold">Reference / Purpose</th>
+<th class="py-3.5 px-4 font-semibold text-right">Amount (SEK)</th>
+<th class="py-3.5 px-4 font-semibold">Allocation Category</th>
+<th class="py-3.5 px-4 font-semibold">Status</th>
+<th class="py-3.5 px-4 font-semibold text-center">Receipt</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 text-body-sm font-body-sm">
+<!-- Row 1: Astrid Lindén -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-secondary font-mono">
+                  Today 10:14
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary text-xs">
+                      AL
+                    </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Astrid Lindén</p>
+<p class="text-[11px] text-secondary">Haga, Göteborg</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-container text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="phone_iphone">phone_iphone</span> Swish Instant
+                  </span>
+<p class="text-[10px] text-secondary font-mono mt-0.5">***-*** 78 90</p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-xs text-on-surface bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant/30">
+                    Märkt: GÅVA
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right font-headline-sm text-headline-sm font-bold text-on-surface">
+                  500 <span class="text-xs font-normal text-secondary">SEK</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Public Events (60%)
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Completed / Settled
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-center">
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-bold underline transition-colors">
+                    View Swish Receipt
+                  </button>
+</td>
+</tr>
+<!-- Row 2: Anonymous Supporter -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-secondary font-mono">
+                  Today 09:42
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center font-bold text-secondary text-xs">
+                      ?
+                    </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Anonymous Supporter</p>
+<p class="text-[11px] text-secondary">Frihamnen Stage QR</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-container text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="qr_code_2">qr_code_2</span> Swish QR Scan
+                  </span>
+<p class="text-[10px] text-secondary font-mono mt-0.5">Frihamnen Event Pillar</p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-xs text-on-surface bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant/30">
+                    Märkt: HSW2026
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right font-headline-sm text-headline-sm font-bold text-on-surface">
+                  150 <span class="text-xs font-normal text-secondary">SEK</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Acoustics (60%)
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Completed / Settled
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-center">
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-bold underline transition-colors">
+                    Receipt
+                  </button>
+</td>
+</tr>
+<!-- Row 3: Johan Lindqvist -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-secondary font-mono">
+                  Today 08:00
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center font-bold text-primary text-xs">
+                      JL
+                    </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Johan Lindqvist</p>
+<p class="text-[11px] text-secondary">Centrum, Göteborg</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-secondary-container text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="sync">sync</span> Autogiro (SEB Recurring)
+                  </span>
+<p class="text-[10px] text-secondary font-mono mt-0.5">Mandate #AG-99214</p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-xs text-on-surface bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant/30">
+                    Kingdom Partner (Pillar)
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right font-headline-sm text-headline-sm font-bold text-on-surface">
+                  750 <span class="text-xs font-normal text-secondary">SEK</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> General Ministry
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="done_all">done_all</span> Monthly Settled
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-center">
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-bold underline transition-colors">
+                    Receipt
+                  </button>
+</td>
+</tr>
+<!-- Row 4: RCCG Fellowship Offering -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-secondary font-mono">
+                  Yesterday 21:15
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary text-xs">
+                      RC
+                    </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">RCCG Fellowship Offering</p>
+<p class="text-[11px] text-secondary">Partner Church Direct</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-container text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="account_balance">account_balance</span> Bankgiro Direct
+                  </span>
+<p class="text-[10px] text-secondary font-mono mt-0.5">Ref: 5542-8891-229</p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-xs text-on-surface bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant/30">
+                    Lovsångskonsert 2027 Fund
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right font-headline-sm text-headline-sm font-bold text-primary">
+                  5,000 <span class="text-xs font-normal text-secondary">SEK</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Choir &amp; Music (20%)
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="verified">verified</span> Cleared SEB
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-center">
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-bold underline transition-colors">
+                    Receipt
+                  </button>
+</td>
+</tr>
+<!-- Row 5: Linnea Sundström -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-secondary font-mono">
+                  Yesterday 18:30
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary text-xs">
+                      LS
+                    </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Linnea Sundström</p>
+<p class="text-[11px] text-secondary">Majorna, Göteborg</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-container text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="phone_iphone">phone_iphone</span> Swish Instant
+                  </span>
+<p class="text-[10px] text-secondary font-mono mt-0.5">***-*** 12 44</p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-xs text-on-surface bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant/30">
+                    Märkt: Lovsång
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right font-headline-sm text-headline-sm font-bold text-on-surface">
+                  300 <span class="text-xs font-normal text-secondary">SEK</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Choir Apprenticeship
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Completed / Settled
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-center">
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-bold underline transition-colors">
+                    Receipt
+                  </button>
+</td>
+</tr>
+<!-- Row 6: Oslo Diaspora Partner -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 whitespace-nowrap text-xs text-secondary font-mono">
+                  26 Mar 2026
+                </td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-secondary text-xs">
+                      OD
+                    </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Oslo Diaspora Partner</p>
+<p class="text-[11px] text-secondary">Norway Fellowship</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-container text-secondary">
+<span class="material-symbols-outlined text-xs" data-icon="credit_card">credit_card</span> Stripe Card (NOK conv.)
+                  </span>
+<p class="text-[10px] text-secondary font-mono mt-0.5">VISA ending in 4018</p>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-mono text-xs text-on-surface bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant/30">
+                    International Friends
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right font-headline-sm text-headline-sm font-bold text-on-surface">
+                  1,200 <span class="text-xs font-normal text-secondary">SEK</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-xs text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span> Pastoral Intercession
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-xs" data-icon="done">done</span> Settled Stripe
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-center">
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-bold underline transition-colors">
+                    Receipt
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-5 py-3.5 border-t border-outline-variant/30 bg-surface-container-low/30 flex items-center justify-between text-xs text-secondary">
+<span>Showing 6 of 1,420 transactions recorded this fiscal period</span>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest border border-outline-variant/40 hover:bg-surface-container text-on-surface transition-colors" disabled="">Previous</button>
+<span class="font-bold text-on-surface">Page 1 of 237</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest border border-outline-variant/40 hover:bg-surface-container text-on-surface transition-colors">Next</button>
+</div>
+</div>
+</section>
+<!-- ================= SIDE / BOTTOM RECONCILIATION & STATUTORY PANELS ================= -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<!-- Panel 1: Swish API Live Health Status -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/30 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base" data-icon="network_check">network_check</span>
+                Swish &amp; SEB Live Health
+              </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Operational
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+              Direct webhook feed to Getswish AB and Skandinaviska Enskilda Banken clearing hub.
+            </p>
+<div class="mt-4 space-y-2 text-xs">
+<div class="flex justify-between py-1 border-b border-outline-variant/20">
+<span class="text-secondary">Uptime (Last 30 Days):</span>
+<span class="font-bold text-on-surface font-mono">99.98%</span>
+</div>
+<div class="flex justify-between py-1 border-b border-outline-variant/20">
+<span class="text-secondary">Webhook Response Latency:</span>
+<span class="font-bold text-primary font-mono">420 ms</span>
+</div>
+<div class="flex justify-between py-1">
+<span class="text-secondary">Certificate Validity:</span>
+<span class="font-bold text-on-surface">BankID TLS v1.3 Valid</span>
+</div>
+</div>
+</div>
+<button class="mt-4 w-full text-center py-2 bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-label-sm font-semibold rounded-lg border border-outline-variant/30 transition-colors">
+            Run Swish Connection Diagnostic
+          </button>
+</div>
+<!-- Panel 2: Skatteverket Tax Deduction Exemption -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/30 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base" data-icon="receipt_long">receipt_long</span>
+                Skatteverket Gåvoavdrag
+              </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary text-[10px] font-bold">
+                Form KU81
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+              Swedish tax deduction queue for approved Christian benevolent and public worship associations.
+            </p>
+<div class="mt-4 space-y-2 text-xs">
+<div class="flex justify-between py-1 border-b border-outline-variant/20">
+<span class="text-secondary">Eligible Donors (≥ 2,000 SEK):</span>
+<span class="font-bold text-primary font-mono">142 Donors</span>
+</div>
+<div class="flex justify-between py-1 border-b border-outline-variant/20">
+<span class="text-secondary">Pre-filled Swedish Tax Relief:</span>
+<span class="font-bold text-on-surface font-mono">68,400 SEK</span>
+</div>
+<div class="flex justify-between py-1">
+<span class="text-secondary">Next KU81 XML Dispatch:</span>
+<span class="font-bold text-on-surface">31 Jan 2027</span>
+</div>
+</div>
+</div>
+<button class="mt-4 w-full text-center py-2 bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-label-sm font-semibold rounded-lg border border-outline-variant/30 transition-colors">
+            Review 142 Qualified Tax Files
+          </button>
+</div>
+<!-- Panel 3: Ideell Förening Statutory Statement -->
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/30 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base" data-icon="policy">policy</span>
+                Statutory Governance &amp; Audit
+              </span>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-bold">
+                Org 802490-1234
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+              Registered Non-Profit Christian Religious Community (Ideell förening) under Swedish Jurisdiction.
+            </p>
+<div class="mt-4 p-3 rounded-lg bg-surface-container-low border border-outline-variant/20 text-xs text-secondary leading-relaxed">
+<div class="font-bold text-on-surface mb-0.5">Ernst &amp; Young West Sweden Note:</div>
+              "Ledger balances, Swish daily remittances, and restricted gift funds are reconciled weekly in accordance with standard Swedish non-profit accounting rules (K3)."
+            </div>
+</div>
+<div class="mt-4 flex items-center justify-between text-xs text-secondary">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span> 256-bit Immutable Audit
+            </span>
+<a class="text-primary font-bold hover:underline" href="#audit-cert">View Certificate</a>
+</div>
+</div>
+</section>
+<!-- Bottom System Ledger Timestamp Footer -->
+<footer class="border-t border-outline-variant/30 pt-6 pb-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-secondary">
+<p>© 2026 GOSPELS Ministry Gothenburg. All rights reserved. Non-profit Christian fellowship.</p>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Swish Org Gateway #123 456 78 90
+          </span>
+<span class="text-outline-variant">|</span>
+<span>SEB Bankgiro 5542-8891</span>
+<span class="text-outline-variant">|</span>
+<span>Privacy &amp; WhatsApp Care Policy</span>
+</div>
+</footer>
+</div>
+</main>
+</body></html>
