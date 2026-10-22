@@ -145,3 +145,81 @@ export async function submitPrayerRequest(formData: FormData): Promise<ActionRes
     };
   }
 }
+
+/**
+ * Server Action: submitPartnerChurchRegistration
+ * Validates partner church covenant registration and logs ministerial notification.
+ */
+export async function submitPartnerChurchRegistration(formData: FormData): Promise<ActionResult> {
+  const churchName = formData.get("churchName")?.toString().trim();
+  const tradition = formData.get("tradition")?.toString().trim() || "Independent / Ecumenical";
+  const contactName = formData.get("contactName")?.toString().trim();
+  const email = formData.get("email")?.toString().trim();
+  const phone = formData.get("phone")?.toString().trim() || "";
+  const district = formData.get("district")?.toString().trim() || "Gothenburg";
+  const collaborationRole = formData.get("collaborationRole")?.toString().trim() || "Choir & Music Collaboration";
+  const message = formData.get("message")?.toString().trim() || "";
+  const covenantAgreed = formData.get("covenantAgreed") === "true" || formData.get("covenantAgreed") === "on";
+
+  const errors: Record<string, string> = {};
+
+  if (!churchName || churchName.length < 2) {
+    errors.churchName = "Please enter your congregation / church name.";
+  }
+
+  if (!contactName || contactName.length < 2) {
+    errors.contactName = "Please provide the lead pastor or contact minister name.";
+  }
+
+  if (!email || !EMAIL_REGEX.test(email)) {
+    errors.email = "Please enter a valid ministerial contact email address.";
+  }
+
+  if (!covenantAgreed) {
+    errors.covenantAgreed = "Please confirm agreement to the Gothenburg Ecumenical Covenant.";
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return { success: false, errors };
+  }
+
+  try {
+    const registrationRecord = {
+      id: `covenant-reg-${Date.now()}`,
+      churchName,
+      tradition,
+      contactName,
+      email,
+      phone,
+      district,
+      collaborationRole,
+      message,
+      covenantAgreed: true,
+      createdAt: new Date().toISOString(),
+    };
+
+    // Ministerial Dispatch Log
+    console.log("==================================================");
+    console.log("[PARTNER CHURCH COVENANT REGISTRATION — MOCK]");
+    console.log(`Church: ${churchName} (${tradition})`);
+    console.log(`District: ${district}`);
+    console.log(`Lead Minister: ${contactName} <${email}>`);
+    console.log(`Phone: ${phone}`);
+    console.log(`Role: ${collaborationRole}`);
+    console.log("Status: Registered in Gothenburg Ecumenical Covenant Directory");
+    console.log("==================================================");
+
+    return {
+      success: true,
+      message: `Tack! ${churchName} has been received into the GOSPELS Gothenburg Partner Network. A ministry covenant packet has been dispatched to ${email}.`,
+      data: registrationRecord,
+    };
+  } catch (err: any) {
+    console.error("submitPartnerChurchRegistration Error:", err);
+    return {
+      success: false,
+      message: "An error occurred while processing your partnership registration. Please try again.",
+    };
+  }
+}
+

@@ -22,7 +22,7 @@ export const GlobalHeader: React.FC = () => {
   const navLinks = [
     { name: "Events", href: "/events" },
     { name: "Watch & Listen", href: "/watch" },
-    { name: "Churches", href: "/#churches" },
+    { name: "Churches", href: "/partners" },
     { name: "Need Prayer?", href: "/#prayer" },
   ];
 
@@ -47,7 +47,7 @@ export const GlobalHeader: React.FC = () => {
     },
     {
       name: "Partner Assemblies",
-      href: "/#churches",
+      href: "/partners",
       description: "Explore Gothenburg fellowship hubs",
       icon: "church",
     },

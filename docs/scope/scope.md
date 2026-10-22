@@ -17,7 +17,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | 4 | Homepage | Phase 1 Core | in-progress |
 | 5 | Events Listing | Phase 1 Core | planned |
 | 6 | Event Detail RSVP | Phase 1 Core | in-progress |
-| 7 | Partner Churches | Phase 1 Core | planned |
+| 7 | Partner Churches | Phase 1 Core | in-progress |
 | 8 | About & Heritage | Phase 1 Core | planned |
 | 9 | Admin Create Event | Phase 1 Core | planned |
 
@@ -72,12 +72,13 @@ Event showcase page for Holy Spirit Worship with overlapping details bar and cen
 - [ ] Test it: `/test event detail rsvp`
 Spec 0001 · code in `app/events/holy-spirit-worship/page.tsx`, `components/events/`
 
-### 7. Partner Churches
+### 7. Partner Churches · in-progress
 Ecumenical covenant and church directory highlighting Swedish fellowship churches.
 **Done when:** `/partners` renders partner church cards, map/location context, and covenant registration call to action.
-- [ ] Build it: `/develop partner churches`
-- [ ] Verify it: `/check verify partner churches`
+- [x] Build it: `/develop partner churches`
+- [x] Verify it: `/check verify partner churches`
 - [ ] Test it: `/test partner churches`
+Spec 0001 · code in `app/partners/page.tsx`, `components/partners/`
 
 ### 8. About & Heritage
 Story page detailing the Gothenburg Gospel movement, choir roots, and ecumenical mission.

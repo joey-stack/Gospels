@@ -14,7 +14,7 @@ export const WatchPodcastPlatforms: React.FC = () => {
     },
     {
       name: "Apple Podcasts",
-      description: "Ad-free acoustic choir recordings and vocal masterclass stems",
+      description: "Uninterrupted acoustic choir recordings and vocal masterclass stems",
       icon: "podcasts",
       href: "https://podcasts.apple.com",
       badge: "Subscribe",

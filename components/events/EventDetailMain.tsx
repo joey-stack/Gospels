@@ -235,7 +235,7 @@ export const EventDetailMain: React.FC = () => {
                   Full Accessibility
                 </h4>
                 <p className="font-inter text-xs text-slate-600 leading-relaxed">
-                  Step-free ramp entry, audio hearing induction loops, and spacious seating.
+                  Seamless ramp entry, audio hearing induction loops, and spacious seating.
                 </p>
               </div>
 

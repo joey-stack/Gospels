@@ -109,7 +109,7 @@ export const GlobalFooter: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#churches" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                  <Link href="/partners" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     Partner Churches
                   </Link>
                 </li>
