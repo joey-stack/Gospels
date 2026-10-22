@@ -43,12 +43,18 @@ model Event {
 }
 
 model RSVP {
-  id        String   @id @default(cuid())
-  eventId   String
-  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
-  name      String
-  email     String
-  createdAt DateTime @default(now())
+  id          String    @id @default(cuid())
+  ticketCode  String?   @unique
+  eventId     String?
+  event       Event?    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  eventTitle  String?   @default("Holy Spirit Worship 2026")
+  name        String
+  email       String
+  guests      Int       @default(1)
+  church      String?
+  checkedIn   Boolean   @default(false)
+  checkedInAt DateTime?
+  createdAt   DateTime  @default(now())
 }
 
 model PrayerRequest {

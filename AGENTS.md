@@ -4,7 +4,7 @@
 
 - **Language / Runtime**: TypeScript, Node.js 20+
 - **Framework**: Next.js 15 App Router
-- **Key dependencies**: Tailwind CSS, Framer Motion, Prisma, PostgreSQL
+- **Key dependencies**: Tailwind CSS, Framer Motion, Prisma, PostgreSQL, InsForge
 - **Package manager**: npm
 
 ## Build approach
@@ -44,6 +44,19 @@ Stored in `docs/specs/`. Format: `docs/specs/NNNN-title.md`.
 - Typography: font-hanken for headings, font-inter for body, font-eb for scripture and quotes
 - Layout width: Full-width edge-to-edge layout for all sections and screens (no restrictive max-w-7xl). Outer padding left and right is strictly 10px (px-2.5) on mobile and 20px (sm:px-5) on desktop, matching Morrow Church. Hero section is styled as a rounded card with 10px/20px padding around it.
 
+## Backend & Database (InsForge Cloud)
+
+- **Platform**: InsForge (Agent-Native Cloud Infrastructure)
+- **Project Name**: `gospels-ministry`
+- **Project ID**: `eb3f3e00-7d22-4793-9775-9abf7582de72`
+- **Region**: `eu-central` (Frankfurt, EU)
+- **App Key**: `tyy76ysw`
+- **Base URL**: `https://tyy76ysw.eu-central.insforge.app`
+- **Database Engine**: PostgreSQL 16 (SSL enabled)
+- **Dashboard**: `https://insforge.dev/dashboard/project/eb3f3e00-7d22-4793-9775-9abf7582de72`
+- **ORM / Migrations**: Prisma Client connected directly to InsForge PostgreSQL via `DATABASE_URL`
+- **Tables**: `Event`, `RSVP`, `PrayerRequest`, `VolunteerApplication`
+
 ## Agent skills
 
 - [architect](.agents/skills/architect/): `jsmastery-pro/skills`, technical decision making and build specs in docs/specs/
@@ -56,10 +69,8 @@ Stored in `docs/specs/`. Format: `docs/specs/NNNN-title.md`.
 - [scope](.agents/skills/scope/): `jsmastery-pro/skills`, product slice and scope planning in docs/scope/
 - [sync](.agents/skills/sync/): `jsmastery-pro/skills`, documentation reconciliation after changes
 - [test](.agents/skills/test/): `jsmastery-pro/skills`, test suite authoring and execution
-MCP servers: stitch, github (configured)
+MCP servers: insforge, stitch, github (configured)
 
 ## Context files
 
 - [stitch-export/AGENTS.md](stitch-export/AGENTS.md): Stitch export design tokens, layout hierarchy, and reference screens (linked from `C:\Users\user\Desktop\stitch_gospels_ministry_ui_design_system` as the permanent blueprint reference)
-
-_Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._

@@ -74,19 +74,31 @@ export async function submitRSVP(formData: FormData): Promise<ActionResult> {
     // 3. Generate scannable QR code data URL pointing to attendee pass verification page
     const qrCodeDataUrl = await generateTicketQRCode(ticketRecord, origin);
 
-    // 3. Optional Prisma write if DB is configured
+    // 3. Persist registration to InsForge PostgreSQL Database via Prisma
     try {
       if (prisma && process.env.DATABASE_URL) {
-        await prisma.rSVP.create({
-          data: {
-            eventId,
+        await prisma.rSVP.upsert({
+          where: { ticketCode: ticketRecord.id },
+          create: {
+            ticketCode: ticketRecord.id,
+            eventId: eventId || "holy-spirit-worship-2026",
+            eventTitle: "Holy Spirit Worship 2026",
             name: name!,
             email: email!,
+            guests,
+            church: church || null,
+            checkedIn: false,
+          },
+          update: {
+            name: name!,
+            email: email!,
+            guests,
+            church: church || null,
           },
         });
       }
-    } catch {
-      // Prisma DB might not be connected; fallback already saved in ticketStore
+    } catch (dbErr) {
+      console.warn("InsForge Prisma write notice:", dbErr);
     }
 
     // Mock Email Dispatch
