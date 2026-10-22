@@ -4,9 +4,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 // Morrow Church Inspired Hero Section (Card style with outer padding and rounded corners)
 export const HeroSection: React.FC = () => {
+  const { t, isSv, language } = useLanguage();
+
   return (
     <section className="w-full px-2.5 sm:px-5 pt-2.5 sm:pt-5 bg-[#F8F9FF]">
       {/* Hero Card with Outer Padding & Rounded Corners matching Morrow Church */}
@@ -32,55 +35,66 @@ export const HeroSection: React.FC = () => {
         <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#0D9488]/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-1/4 right-20 w-80 h-80 bg-[#14B8A6]/10 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Content Container (Card removed as requested, leaving clean spacious hero layout) */}
+        {/* Content Container */}
         <div className="relative z-10 w-full max-w-4xl flex flex-col items-start text-left">
           {/* Morrow Kicker Line */}
           <motion.div
+            key={`kicker-${language}`}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
             className="flex items-center gap-2.5 text-xs font-semibold tracking-widest uppercase text-[#2DD4BF] mb-5"
           >
             <span className="w-6 h-[2px] bg-[#2DD4BF]" />
-            <span>UNITED IN PRAISE ACROSS GOTHENBURG</span>
+            <span>
+              {isSv
+                ? "FÖRENADE I LOVSÅNG ÖVER GÖTEBORG"
+                : "UNITED IN PRAISE ACROSS GOTHENBURG"}
+            </span>
           </motion.div>
 
           {/* Headline with Italic Serif Accent Word */}
           <motion.h1
+            key={`h1-${language}`}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05 }}
             className="font-hanken text-4xl sm:text-5xl lg:text-6xl text-white font-bold tracking-tight leading-[1.1] mb-6"
           >
-            {/* Mobile layout (< sm): 3 lines */}
-            <span className="sm:hidden">
-              <span className="block">Bring worship to</span>
-              <span className="block">the streets of</span>
-              <span className="block font-eb italic font-normal text-[#2DD4BF]">
-                Gothenburg.
-              </span>
-            </span>
-
-            {/* Desktop & tablet layout (sm+): 2 lines */}
-            <span className="hidden sm:inline">
-              <span className="block">Bring worship to the</span>
-              <span className="block">
-                streets of{" "}
-                <span className="font-eb italic font-normal text-[#2DD4BF]">
-                  Gothenburg.
+            {isSv ? (
+              <>
+                <span className="block sm:inline">Bär lovsången ut på </span>
+                <span className="block sm:inline">
+                  Göteborgs{" "}
+                  <span className="font-eb italic font-normal text-[#2DD4BF]">
+                    gator.
+                  </span>
                 </span>
-              </span>
-            </span>
+              </>
+            ) : (
+              <>
+                <span className="block sm:inline">Bring worship to the </span>
+                <span className="block sm:inline">
+                  streets of{" "}
+                  <span className="font-eb italic font-normal text-[#2DD4BF]">
+                    Gothenburg.
+                  </span>
+                </span>
+              </>
+            )}
           </motion.h1>
 
           {/* Narrative Subtitle */}
           <motion.p
+            key={`p-${language}`}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-inter text-base sm:text-lg text-slate-300 max-w-2xl mb-8 leading-relaxed font-normal"
           >
-            Connecting churches, worship leaders, and seekers across Gothenburg through reverent gospel music gatherings and citywide praise. Gather with us at Smyrna Frihamnen.
+            {isSv
+              ? "Förenar kyrkor, lovsångsledare och sökare över hela Göteborg genom hängivna gospelsamlingar och stadsvid lovsång. Möt oss i Smyrna Frihamnen."
+              : "Connecting churches, worship leaders, and seekers across Gothenburg through reverent gospel music gatherings and citywide praise. Gather with us at Smyrna Frihamnen."}
           </motion.p>
 
           {/* Action Buttons: Morrow Style */}
@@ -94,7 +108,7 @@ export const HeroSection: React.FC = () => {
               href="/events/holy-spirit-worship"
               className="w-full sm:w-auto bg-[#0D9488] hover:bg-[#0F766E] text-white font-semibold text-sm px-6 py-3 rounded-md transition-all duration-150 active:scale-95 shadow-md hover:shadow-teal-500/25 flex items-center justify-center gap-2 group"
             >
-              <span>Next Gathering</span>
+              <span>{t.nav.nextEvent}</span>
               <span className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">
                 arrow_forward
               </span>
@@ -110,7 +124,7 @@ export const HeroSection: React.FC = () => {
               >
                 play_arrow
               </span>
-              <span>Watch latest message</span>
+              <span>{isSv ? "Se senaste samlingen" : "Watch latest message"}</span>
             </a>
           </motion.div>
         </div>

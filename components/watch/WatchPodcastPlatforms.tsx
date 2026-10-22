@@ -3,34 +3,46 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const WatchPodcastPlatforms: React.FC = () => {
+  const { isSv } = useLanguage();
+
   const platforms = [
     {
       name: "Spotify",
-      description: "Full audio sessions and curated Swedish gospel worship playlists",
+      description: isSv
+        ? "Hela ljudsessioner och utvalda svenska gospellovsångsspellistor"
+        : "Full audio sessions and curated Swedish gospel worship playlists",
       icon: "graphic_eq",
       href: "https://spotify.com",
-      badge: "Stream Audio",
+      badge: isSv ? "Strömma ljud" : "Stream Audio",
     },
     {
       name: "Apple Podcasts",
-      description: "Uninterrupted acoustic choir recordings and vocal masterclass stems",
+      description: isSv
+        ? "Oavbrutna akustiska körinspelningar och sångmästarklasser"
+        : "Uninterrupted acoustic choir recordings and vocal masterclass stems",
       icon: "podcasts",
       href: "https://podcasts.apple.com",
-      badge: "Subscribe",
+      badge: isSv ? "Prenumerera" : "Subscribe",
     },
     {
       name: "YouTube",
-      description: "4K multicam worship nights, rehearsal vlogs, and lyric videos",
+      description: isSv
+        ? "4K flerkamerakonserter, repetitionsvideor och sångtexter"
+        : "4K multicam worship nights, rehearsal vlogs, and lyric videos",
       icon: "smart_display",
       href: "https://youtube.com",
-      badge: "Watch Channel",
+      badge: isSv ? "Se kanalen" : "Watch Channel",
     },
     {
-      name: "Swish / Giving",
-      description: "Direct Swedish mobile support powering citywide sound production",
+      name: isSv ? "Swish / Gåva" : "Swish / Giving",
+      description: isSv
+        ? "Direkt mobilt stöd som finansierar stadsvid ljud- och körproduktion"
+        : "Direct Swedish mobile support powering citywide sound production",
       icon: "favorite",
-      href: "/#partner",
+      href: "/give",
       badge: "Swish: 123 456 78 90",
     },
   ];
@@ -42,13 +54,17 @@ export const WatchPodcastPlatforms: React.FC = () => {
         <div className="mb-8">
           <div className="flex items-center gap-2 text-[#0D9488] text-xs font-semibold tracking-widest uppercase mb-3">
             <span className="w-5 h-[2px] bg-[#0D9488]" />
-            <span>STREAMING CHANNELS</span>
+            <span>{isSv ? "STREAMINGKANALER" : "STREAMING CHANNELS"}</span>
           </div>
           <h2 className="font-hanken text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-            Gothenburg Gospel, wherever you listen.
+            {isSv
+              ? "Gospel från Göteborg, var du än lyssnar."
+              : "Gothenburg Gospel, wherever you listen."}
           </h2>
           <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-xl font-inter">
-            Stream high-fidelity choir tracks on your preferred music service or subscribe to our video broadcasts.
+            {isSv
+              ? "Strömma högkvalitativa körinspelningar på din musiktjänst eller följ våra videosändningar."
+              : "Stream high-fidelity choir tracks on your preferred music service or subscribe to our video broadcasts."}
           </p>
         </div>
 

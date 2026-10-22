@@ -16,45 +16,44 @@ interface DropdownItem {
 }
 
 export const GlobalHeader: React.FC = () => {
+  const { t, isSv, language } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const { language, toggleLanguage } = useLanguage();
-  const isAboutPage = pathname === "/about";
 
   const navLinks = [
-    { name: "About", href: "/about" },
-    { name: "Events", href: "/events" },
-    { name: "Watch & Listen", href: "/watch" },
-    { name: "Churches", href: "/partners" },
-    { name: "Contact", href: "/contact" },
+    { name: t.nav.about, href: "/about" },
+    { name: t.nav.events, href: "/events" },
+    { name: t.nav.watch, href: "/watch" },
+    { name: t.nav.churches, href: "/partners" },
+    { name: t.nav.contact, href: "/contact" },
   ];
 
   const dropdownItems: DropdownItem[] = [
     {
-      name: "Need Prayer?",
+      name: isSv ? "Behöver du bön?" : "Need Prayer?",
       href: "/prayer",
-      description: "Submit personal intercession requests",
+      description: isSv ? "Dela personliga böneämnen" : "Submit personal intercession requests",
       icon: "volunteer_activism",
     },
     {
-      name: "Kingdom Giving",
+      name: t.nav.kingdomGiving,
       href: "/give",
-      description: "Support our citywide ministry fund",
+      description: isSv ? "Stöd vårt stadsvida arbete" : "Support our citywide ministry fund",
       icon: "favorite",
     },
     {
-      name: "Worship Archives",
+      name: isSv ? "Lovsångsarkiv" : "Worship Archives",
       href: "/watch",
-      description: "Choir recordings and night sessions",
+      description: isSv ? "Körinspelningar och lovsångskvällar" : "Choir recordings and night sessions",
       icon: "library_music",
     },
     {
-      name: "Partner Assemblies",
+      name: isSv ? "Partnerförsamlingar" : "Partner Assemblies",
       href: "/partners",
-      description: "Explore Gothenburg fellowship hubs",
+      description: isSv ? "Utforska församlingsnätverket" : "Explore Gothenburg fellowship hubs",
       icon: "church",
     },
   ];
@@ -155,7 +154,7 @@ export const GlobalHeader: React.FC = () => {
                     : "text-slate-700 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white"
                 }`}
               >
-                <span>Ministries</span>
+                <span>{t.nav.ministries}</span>
                 <span
                   className={`material-symbols-outlined text-[18px] transition-transform duration-200 ${
                     dropdownOpen ? "rotate-180 text-[#0D9488]" : "text-slate-400"
@@ -206,7 +205,7 @@ export const GlobalHeader: React.FC = () => {
               href="/events/holy-spirit-worship"
               className="bg-[#0F172A] hover:bg-[#1E293B] text-white rounded-md px-4 py-2 text-sm font-semibold transition-all shadow-sm active:scale-95 flex items-center gap-1.5 whitespace-nowrap group"
             >
-              <span>Next Event</span>
+              <span>{t.nav.nextEvent}</span>
               <span className="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-0.5">
                 arrow_forward
               </span>
@@ -222,7 +221,7 @@ export const GlobalHeader: React.FC = () => {
               className="bg-white/80 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 text-[#00685f] dark:text-[#2DD4BF] text-xs font-semibold px-2.5 py-1.5 rounded-md flex items-center gap-1.5 active:scale-95 transition-all shadow-xs"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-              <span>Next Event</span>
+              <span>{t.nav.nextEvent}</span>
             </Link>
 
             <button
@@ -320,7 +319,7 @@ export const GlobalHeader: React.FC = () => {
                       onClick={() => setMobileAccordionOpen(!mobileAccordionOpen)}
                       className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-colors"
                     >
-                      <span>Ministries</span>
+                      <span>{t.nav.ministries}</span>
                       <span
                         className={`material-symbols-outlined text-[20px] transition-transform duration-200 ${
                           mobileAccordionOpen ? "rotate-180 text-[#0D9488]" : "text-slate-400"
@@ -355,7 +354,7 @@ export const GlobalHeader: React.FC = () => {
               <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800 flex flex-col gap-3">
                 <div className="flex items-center justify-between px-1">
                   <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                    Language / Språk
+                    {t.nav.languageSelect}
                   </span>
                   <LanguageToggle size="sm" />
                 </div>
@@ -365,7 +364,7 @@ export const GlobalHeader: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full text-center py-3 text-sm font-semibold text-white bg-[#0F172A] hover:bg-[#1E293B] rounded-xl shadow-sm flex items-center justify-center gap-2 active:scale-95"
                 >
-                  <span>Next Event</span>
+                  <span>{t.nav.nextEvent}</span>
                   <span className="material-symbols-outlined text-base">arrow_forward</span>
                 </Link>
               </div>

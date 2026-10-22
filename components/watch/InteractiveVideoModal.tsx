@@ -19,11 +19,14 @@ interface InteractiveVideoModalProps {
   data: VideoModalData | null;
 }
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const InteractiveVideoModal: React.FC<InteractiveVideoModalProps> = ({
   isOpen,
   onClose,
   data,
 }) => {
+  const { isSv } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
@@ -214,7 +217,7 @@ export const InteractiveVideoModal: React.FC<InteractiveVideoModalProps> = ({
               <span>·</span>
               <span>{data.duration}</span>
               <span>·</span>
-              <span>Live Multi-Track Audio Mastered</span>
+              <span>{isSv ? "Mastrat flerspårsljud live" : "Live Multi-Track Audio Mastered"}</span>
             </div>
           </div>
         </motion.div>

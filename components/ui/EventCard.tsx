@@ -1,12 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export interface EventCardProps {
   id?: string;
   title: string;
   category: string;
   categoryDotColor?: string;
+  status?: "REGISTRATION_OPEN" | "YET_TO_COME";
   dateBadge: {
     day: string;
     month: string;
@@ -23,6 +25,7 @@ export const EventCard: React.FC<EventCardProps> = ({
   title,
   category,
   categoryDotColor = "#0D9488",
+  status = "REGISTRATION_OPEN",
   dateBadge,
   timeString,
   location,
@@ -30,6 +33,7 @@ export const EventCard: React.FC<EventCardProps> = ({
   imageAlt,
   href,
 }) => {
+  const { isSv } = useLanguage();
   return (
     <Link
       href={href}
@@ -49,6 +53,19 @@ export const EventCard: React.FC<EventCardProps> = ({
         {/* Subtle bottom vignette gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
 
+        {/* Floating Status Indicator on Top-Left */}
+        {status === "YET_TO_COME" ? (
+          <div className="absolute top-3.5 left-3.5 z-10 px-3 py-1.5 rounded-md bg-amber-950/85 backdrop-blur-md text-amber-200 border border-amber-500/40 text-[11px] font-bold tracking-wide flex items-center gap-1.5 shadow-sm">
+            <span className="material-symbols-outlined text-[14px] text-amber-400">schedule</span>
+            <span>{isSv ? "KOMMANDE SAMLING" : "YET TO COME"}</span>
+          </div>
+        ) : (
+          <div className="absolute top-3.5 left-3.5 z-10 px-3 py-1.5 rounded-md bg-emerald-950/80 backdrop-blur-md text-emerald-200 border border-emerald-500/40 text-[11px] font-bold tracking-wide flex items-center gap-1.5 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>{isSv ? "ANMÄLAN ÖPPEN" : "REGISTRATION OPEN"}</span>
+          </div>
+        )}
+
         {/* Floating Date Chip in Top-Right Corner */}
         <div className="absolute top-3.5 right-3.5 z-10 min-w-[58px] px-3.5 py-2.5 rounded-md bg-[#F8F9FF]/95 dark:bg-slate-900/90 backdrop-blur-md shadow-sm border border-slate-200/60 dark:border-slate-700/60 flex flex-col items-center justify-center text-center">
           <span className="font-hanken font-bold text-xl sm:text-2xl text-slate-900 dark:text-white leading-none">
@@ -62,13 +79,21 @@ export const EventCard: React.FC<EventCardProps> = ({
 
       {/* 2. Body Block */}
       <div className="flex flex-col gap-2.5">
-        {/* Category Tag with Indicator Dot */}
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700 text-xs font-semibold w-fit">
-          <span
-            className="w-1.5 h-1.5 rounded-full shrink-0"
-            style={{ backgroundColor: categoryDotColor }}
-          />
-          <span>{category}</span>
+        {/* Category Tag with Indicator Dot + Status Pill */}
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700 text-xs font-semibold w-fit">
+            <span
+              className="w-1.5 h-1.5 rounded-full shrink-0"
+              style={{ backgroundColor: categoryDotColor }}
+            />
+            <span>{category}</span>
+          </div>
+
+          {status === "YET_TO_COME" && (
+            <span className="text-[11px] font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800/50 px-2 py-0.5 rounded-md">
+              {isSv ? "Släpps snart" : "Yet to Come"}
+            </span>
+          )}
         </div>
 
         {/* Event Title */}

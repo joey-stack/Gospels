@@ -3,6 +3,9 @@
 import React, { useState, useTransition } from "react";
 import { motion } from "framer-motion";
 import { submitRSVP } from "@/app/actions";
+import { useLanguage } from "@/context/LanguageContext";
+import { DigitalPassModal } from "@/components/events/DigitalPassModal";
+import { TicketPass } from "@/lib/rsvpStore";
 
 interface RSVPData {
   name: string;
@@ -13,10 +16,16 @@ interface RSVPData {
 }
 
 export const EventRSVPSection: React.FC = () => {
+  const { isSv } = useLanguage();
   const [isPending, startTransition] = useTransition();
   const [confirmedRSVP, setConfirmedRSVP] = useState<RSVPData | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
+
+  // Digital Pass Modal State
+  const [isPassModalOpen, setIsPassModalOpen] = useState(false);
+  const [currentTicket, setCurrentTicket] = useState<TicketPass | null>(null);
+  const [qrCodeUrl, setQrCodeUrl] = useState<string>("");
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,15 +41,18 @@ export const EventRSVPSection: React.FC = () => {
     startTransition(async () => {
       try {
         const result = await submitRSVP(formData);
-        if (result.success) {
-          const passId = `HSW-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+        if (result.success && result.data) {
+          const { ticket, qrCodeDataUrl } = result.data;
+          setCurrentTicket(ticket);
+          setQrCodeUrl(qrCodeDataUrl);
           setConfirmedRSVP({
-            name,
-            email,
-            guests,
-            church,
-            passId,
+            name: ticket.name,
+            email: ticket.email,
+            guests: String(ticket.guests),
+            church: ticket.church || "",
+            passId: ticket.id,
           });
+          setIsPassModalOpen(true);
         } else {
           setErrorMessage(
             result.errors?.name ||
@@ -113,10 +125,12 @@ export const EventRSVPSection: React.FC = () => {
 
               <div>
                 <h3 className="font-hanken text-3xl font-bold text-[#0F172A]">
-                  Tack, {confirmedRSVP.name}!
+                  {isSv ? `Tack, ${confirmedRSVP.name}!` : `Thank you, ${confirmedRSVP.name}!`}
                 </h3>
                 <p className="font-inter text-sm text-[#475569] mt-2">
-                  Your seat reservation has been recorded for Holy Spirit Worship 2026. A digital confirmation notice has been dispatched to{" "}
+                  {isSv
+                    ? "Din platsreservation har registrerats för Holy Spirit Worship 2026. En bekräftelse har skickats till "
+                    : "Your seat reservation has been recorded for Holy Spirit Worship 2026. A digital confirmation notice has been dispatched to "}
                   <strong className="text-[#0F172A]">{confirmedRSVP.email}</strong>.
                 </p>
               </div>
@@ -187,8 +201,17 @@ export const EventRSVPSection: React.FC = () => {
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   type="button"
+                  onClick={() => setIsPassModalOpen(true)}
+                  className="bg-[#0D9488] hover:bg-[#0F766E] text-white font-semibold text-xs px-5 py-2.5 rounded-lg transition-all flex items-center gap-1.5 shadow-sm active:scale-95 cursor-pointer"
+                >
+                  <span className="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+                  <span>{isSv ? "Visa / Ladda ner Biljettpass" : "View & Download Ticket Pass"}</span>
+                </button>
+
+                <button
+                  type="button"
                   onClick={downloadICS}
-                  className="bg-[#0D9488] hover:bg-[#0F766E] text-white font-semibold text-xs px-5 py-2.5 rounded-lg transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
+                  className="border border-[#CBD5E1] hover:bg-slate-50 text-[#475569] font-medium text-xs px-5 py-2.5 rounded-lg transition-colors flex items-center gap-1.5"
                 >
                   <span className="material-symbols-outlined text-[16px]">calendar_today</span>
                   <span>Save to Calendar</span>
@@ -490,6 +513,14 @@ export const EventRSVPSection: React.FC = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Scannable Gate Admission Digital Pass Modal */}
+      <DigitalPassModal
+        isOpen={isPassModalOpen}
+        onClose={() => setIsPassModalOpen(false)}
+        ticket={currentTicket}
+        qrCodeUrl={qrCodeUrl}
+      />
     </section>
   );
 };

@@ -4,6 +4,9 @@ import React, { useState, useTransition } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { submitRSVP, submitPrayerRequest } from "@/app/actions";
+import { useLanguage } from "@/context/LanguageContext";
+import { DigitalPassModal } from "@/components/events/DigitalPassModal";
+import { TicketPass } from "@/lib/rsvpStore";
 
 interface RSVPData {
   name: string;
@@ -14,9 +17,15 @@ interface RSVPData {
 }
 
 export const EventDetailMain: React.FC = () => {
+  const { isSv } = useLanguage();
   const [isPendingRSVP, startRSVPTransition] = useTransition();
   const [confirmedRSVP, setConfirmedRSVP] = useState<RSVPData | null>(null);
   const [rsvpError, setRsvpError] = useState<string | null>(null);
+
+  // Digital Pass Modal State
+  const [isPassModalOpen, setIsPassModalOpen] = useState(false);
+  const [currentTicket, setCurrentTicket] = useState<TicketPass | null>(null);
+  const [qrCodeUrl, setQrCodeUrl] = useState<string>("");
 
   // Prayer Drawer State
   const [isPrayerOpen, setIsPrayerOpen] = useState(false);
@@ -40,25 +49,34 @@ export const EventDetailMain: React.FC = () => {
     startRSVPTransition(async () => {
       try {
         const result = await submitRSVP(formData);
-        if (result.success) {
-          const passId = `HSW-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+        if (result.success && result.data) {
+          const { ticket, qrCodeDataUrl } = result.data;
+          setCurrentTicket(ticket);
+          setQrCodeUrl(qrCodeDataUrl);
           setConfirmedRSVP({
-            name,
-            email,
-            guests,
-            church,
-            passId,
+            name: ticket.name,
+            email: ticket.email,
+            guests: String(ticket.guests),
+            church: ticket.church || "",
+            passId: ticket.id,
           });
+          setIsPassModalOpen(true);
         } else {
           setRsvpError(
             result.errors?.name ||
               result.errors?.email ||
               result.message ||
-              "Please check the fields and try again."
+              (isSv
+                ? "Kontrollera fälten och försök igen."
+                : "Please check the fields and try again.")
           );
         }
       } catch {
-        setRsvpError("An unexpected network error occurred. Please try again.");
+        setRsvpError(
+          isSv
+            ? "Ett oväntat nätverksfel uppstod. Försök igen."
+            : "An unexpected network error occurred. Please try again."
+        );
       }
     });
   };
@@ -76,7 +94,9 @@ export const EventDetailMain: React.FC = () => {
         if (result.success) {
           setPrayerStatus({
             type: "success",
-            text: "Your confidential prayer request has been received by our pastoral team.",
+            text: isSv
+              ? "Ditt konfidentiella böneämne har tagits emot av vårt själavårdsteam."
+              : "Your confidential prayer request has been received by our pastoral team.",
           });
           form.reset();
         } else {
@@ -85,13 +105,17 @@ export const EventDetailMain: React.FC = () => {
             text:
               result.errors?.requestText ||
               result.message ||
-              "Unable to submit prayer request. Please try again.",
+              (isSv
+                ? "Kunde inte skicka böneämnet. Försök igen."
+                : "Unable to submit prayer request. Please try again."),
           });
         }
       } catch {
         setPrayerStatus({
           type: "error",
-          text: "An error occurred while submitting. Please try again.",
+          text: isSv
+            ? "Ett fel uppstod vid inskickandet. Försök igen."
+            : "An error occurred while submitting. Please try again.",
         });
       }
     });
@@ -138,7 +162,11 @@ export const EventDetailMain: React.FC = () => {
           <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg md:rounded-xl bg-slate-900 border border-slate-200/60 shadow-sm">
             <Image
               src="/assets/whatsapp_image_2026_10_16_at_8.26.12_am.png"
-              alt="Hands raised in reverent praise at Holy Spirit Worship gathering in Gothenburg"
+              alt={
+                isSv
+                  ? "Händer lyfta i lovsång vid Holy Spirit Worship i Göteborg"
+                  : "Hands raised in reverent praise at Holy Spirit Worship gathering in Gothenburg"
+              }
               fill
               priority
               quality={95}
@@ -150,23 +178,29 @@ export const EventDetailMain: React.FC = () => {
 
           {/* Lead Paragraph */}
           <p className="font-inter text-xl sm:text-2xl text-slate-800 font-normal leading-relaxed">
-            An evening devoted entirely to uninterrupted praise, collective prayer, and multi-church gospel choirs convening in Gothenburg.
+            {isSv
+              ? "En kväll hängiven oavbruten lovsång, gemensam förbön och förenade gospelkörer i Göteborg."
+              : "An evening devoted entirely to uninterrupted praise, collective prayer, and multi-church gospel choirs convening in Gothenburg."}
           </p>
 
           {/* Narrative Overview */}
           <div className="space-y-4 font-inter text-slate-600 text-sm sm:text-base leading-relaxed border-b border-slate-200/80 pb-10">
             <p>
-              Worship teams, choir members, and pastoral elders from across West Sweden unite in the sanctuary at Smyrna Frihamnskyrkan. We begin with 90 minutes of continuous gospel adoration, transition into confidential prayer stations, and wrap up with warm Scandinavian fika fellowship.
+              {isSv
+                ? "Lovsångsteam, körsångare och pastorer från hela Västsverige förenas i Smyrna Frihamnskyrkans kyrksal. Vi inleder med 90 minuter av sammanhängande gospel och tillbedjan, fortsätter med personliga bönestationer och avslutar med varmt kyrkfika."
+                : "Worship teams, choir members, and pastoral elders from across West Sweden unite in the sanctuary at Smyrna Frihamnskyrkan. We begin with 90 minutes of continuous gospel adoration, transition into confidential prayer stations, and wrap up with warm Scandinavian fika fellowship."}
             </p>
             <p>
-              Whether you belong to a local fellowship, are seeking community, or have never stepped into a Swedish sanctuary, you are genuinely welcome. Come as you are, bring friends, or simply come to sit in the quiet beauty of shared choral adoration.
+              {isSv
+                ? "Oavsett om du tillhör en lokal församling, söker gemenskap eller aldrig tidigare har satt din fot i en kyrka är du varmt välkommen. Kom precis som du är, ta med vänner eller bara sitt och vila i körens vackra lovsång."
+                : "Whether you belong to a local fellowship, are seeking community, or have never stepped into a Swedish sanctuary, you are genuinely welcome. Come as you are, bring friends, or simply come to sit in the quiet beauty of shared choral adoration."}
             </p>
           </div>
 
           {/* Section: What to expect */}
           <div className="space-y-6 border-b border-slate-200/80 pb-10">
             <h2 className="font-hanken text-2xl sm:text-3xl text-slate-900 font-bold tracking-tight">
-              What to expect
+              {isSv ? "Vad du kan förvänta dig" : "What to expect"}
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -175,10 +209,12 @@ export const EventDetailMain: React.FC = () => {
                   library_music
                 </span>
                 <h4 className="font-hanken text-sm font-bold text-slate-900">
-                  Continuous Praise
+                  {isSv ? "Sammanhängande Lovsång" : "Continuous Praise"}
                 </h4>
                 <p className="font-inter text-xs text-slate-600 leading-relaxed">
-                  90 minutes of uninterrupted choral and congregational worship in Swedish and English.
+                  {isSv
+                    ? "90 minuter av oavbruten kör- och församlingssång på svenska och engelska."
+                    : "90 minutes of uninterrupted choral and congregational worship in Swedish and English."}
                 </p>
               </div>
 
@@ -187,10 +223,12 @@ export const EventDetailMain: React.FC = () => {
                   volunteer_activism
                 </span>
                 <h4 className="font-hanken text-sm font-bold text-slate-900">
-                  Pastoral Prayer
+                  {isSv ? "Pastoral Förbön" : "Pastoral Prayer"}
                 </h4>
                 <p className="font-inter text-xs text-slate-600 leading-relaxed">
-                  Multilingual prayer stations offering confidential care, physical healing, and peace.
+                  {isSv
+                    ? "Flerspråkiga bönestationer med förbön, helande och frid i strikt tystnadsplikt."
+                    : "Multilingual prayer stations offering confidential care, physical healing, and peace."}
                 </p>
               </div>
 
@@ -199,19 +237,21 @@ export const EventDetailMain: React.FC = () => {
                   menu_book
                 </span>
                 <h4 className="font-hanken text-sm font-bold text-slate-900">
-                  Gospel Word
+                  {isSv ? "Gospelbudskap" : "Gospel Word"}
                 </h4>
                 <p className="font-inter text-xs text-slate-600 leading-relaxed">
-                  A Christ-centered gospel reflection on hope and spiritual renewal for Västra Götaland.
+                  {isSv
+                    ? "Ett Kristuscentrerat budskap om hopp och andlig förnyelse för Västra Götaland."
+                    : "A Christ-centered gospel reflection on hope and spiritual renewal for Västra Götaland."}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Section: Good to know (Come As You Are) */}
+          {/* Section: Good to know */}
           <div className="space-y-6 border-b border-slate-200/80 pb-10">
             <h2 className="font-hanken text-2xl sm:text-3xl text-slate-900 font-bold tracking-tight">
-              Good to know
+              {isSv ? "Bra att veta" : "Good to know"}
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -220,10 +260,12 @@ export const EventDetailMain: React.FC = () => {
                   local_cafe
                 </span>
                 <h4 className="font-hanken text-sm font-bold text-slate-900">
-                  Swedish Fika
+                  {isSv ? "Svenskt Fika" : "Swedish Fika"}
                 </h4>
                 <p className="font-inter text-xs text-slate-600 leading-relaxed">
-                  Complimentary coffee and fresh cinnamon buns served post-gathering in the foyer.
+                  {isSv
+                    ? "Varmt kaffe och nybakade kanelbullar serveras i foajén efter samlingen."
+                    : "Complimentary coffee and fresh cinnamon buns served post-gathering in the foyer."}
                 </p>
               </div>
 
@@ -232,10 +274,12 @@ export const EventDetailMain: React.FC = () => {
                   accessible
                 </span>
                 <h4 className="font-hanken text-sm font-bold text-slate-900">
-                  Full Accessibility
+                  {isSv ? "Full Tillgänglighet" : "Full Accessibility"}
                 </h4>
                 <p className="font-inter text-xs text-slate-600 leading-relaxed">
-                  Seamless ramp entry, audio hearing induction loops, and spacious seating.
+                  {isSv
+                    ? "Rampentré, hörselslinga och gott om rullstolsanpassade platser i salen."
+                    : "Seamless ramp entry, audio hearing induction loops, and spacious seating."}
                 </p>
               </div>
 
@@ -244,10 +288,12 @@ export const EventDetailMain: React.FC = () => {
                   family_restroom
                 </span>
                 <h4 className="font-hanken text-sm font-bold text-slate-900">
-                  Family Welcoming
+                  {isSv ? "Välkomnande för Familjer" : "Family Welcoming"}
                 </h4>
                 <p className="font-inter text-xs text-slate-600 leading-relaxed">
-                  Quiet family room with live audio and video feed available for parents with infants.
+                  {isSv
+                    ? "Lugnt familjerum med bild- och ljudöverföring för föräldrar med småbarn."
+                    : "Quiet family room with live audio and video feed available for parents with infants."}
                 </p>
               </div>
             </div>
@@ -256,10 +302,12 @@ export const EventDetailMain: React.FC = () => {
           {/* Scripture Callout Block (Matthew 18:20) */}
           <div className="w-full bg-[#F1F5F9]/80 border-l-4 border-[#0D9488] rounded-r-lg p-6 sm:p-8 shadow-xs">
             <blockquote className="font-eb text-xl sm:text-2xl text-slate-900 italic leading-relaxed">
-              “For where two or three gather in my name, there am I with them.”
+              {isSv
+                ? "”Ty där två eller tre är samlade i mitt namn, där är jag mitt ibland dem.”"
+                : "“For where two or three gather in my name, there am I with them.”"}
             </blockquote>
             <cite className="block mt-3 text-xs font-semibold text-slate-500 tracking-wider uppercase not-italic">
-              — Matthew 18:20 · Heliga Skriften
+              {isSv ? "— Matteus 18:20 · Svenska Folkbibeln" : "— Matthew 18:20 · Holy Scripture"}
             </cite>
           </div>
         </div>
@@ -269,27 +317,27 @@ export const EventDetailMain: React.FC = () => {
         {/* ========================================================= */}
         <aside className="w-full lg:w-[380px] xl:w-[420px] shrink-0 lg:sticky lg:top-28 space-y-6">
           <div className="bg-slate-50 rounded-lg md:rounded-xl p-6 sm:p-7 border border-slate-200/80 shadow-sm space-y-6">
-            {/* Quick Specs Rows matching Morrow Church */}
+            {/* Quick Specs Rows */}
             <div className="space-y-4">
               {/* Date */}
               <div className="flex flex-col gap-1">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                  Date
+                  {isSv ? "Datum" : "Date"}
                 </span>
                 <p className="font-hanken text-base font-semibold text-slate-900">
-                  Saturday, March 28, 2026
+                  {isSv ? "Lördag 28 mars 2026" : "Saturday, March 28, 2026"}
                 </p>
               </div>
 
               {/* Time */}
               <div className="flex flex-col gap-1">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                  Time
+                  {isSv ? "Tid" : "Time"}
                 </span>
                 <p className="font-hanken text-base font-semibold text-slate-900">
-                  18:30 to 21:30 CET{" "}
+                  {isSv ? "18:30 till 21:30 CET" : "18:30 to 21:30 CET"}{" "}
                   <span className="text-xs font-normal text-slate-500">
-                    (Doors open 17:45)
+                    {isSv ? "(Dörrarna öppnas 17:45)" : "(Doors open 17:45)"}
                   </span>
                 </p>
               </div>
@@ -297,10 +345,10 @@ export const EventDetailMain: React.FC = () => {
               {/* Where */}
               <div className="flex flex-col gap-1">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                  Where
+                  {isSv ? "Plats" : "Where"}
                 </span>
                 <p className="font-hanken text-base font-semibold text-slate-900">
-                  Smyrna Frihamnskyrkan, Gothenburg
+                  {isSv ? "Smyrna Frihamnskyrkan, Göteborg" : "Smyrna Frihamnskyrkan, Gothenburg"}
                 </p>
                 <p className="font-inter text-xs text-slate-500">
                   Frihamnsdagarna 4, 417 55 Göteborg
@@ -310,13 +358,15 @@ export const EventDetailMain: React.FC = () => {
               {/* Cost */}
               <div className="flex flex-col gap-1">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                  Cost
+                  {isSv ? "Inträde" : "Cost"}
                 </span>
                 <p className="font-hanken text-base font-semibold text-[#0D9488]">
-                  Complimentary Admission
+                  {isSv ? "Öppet inträde" : "Complimentary Admission"}
                 </p>
                 <p className="font-inter text-xs text-slate-500">
-                  Complimentary, and it helps us set enough chairs. We’ll send a reminder the day before.
+                  {isSv
+                    ? "Öppet inträde för alla, anmälan hjälper oss att ställa fram stolar och förbereda fika."
+                    : "Complimentary, and it helps us set enough chairs. We’ll send a reminder the day before."}
                 </p>
               </div>
             </div>
@@ -328,15 +378,17 @@ export const EventDetailMain: React.FC = () => {
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#CCFBF1] text-[#0D9488] font-bold text-xs uppercase tracking-wider">
                     <span className="material-symbols-outlined text-[15px]">verified</span>
-                    <span>Pass Confirmed</span>
+                    <span>{isSv ? "Plats Bekräftad" : "Pass Confirmed"}</span>
                   </div>
 
                   <div>
                     <h3 className="font-hanken text-2xl font-bold text-slate-900">
-                      Tack, {confirmedRSVP.name}!
+                      {isSv ? `Tack, ${confirmedRSVP.name}!` : `Thank you, ${confirmedRSVP.name}!`}
                     </h3>
                     <p className="font-inter text-xs text-slate-600 mt-1.5 leading-relaxed">
-                      Your seat reservation has been recorded for Holy Spirit Worship 2026. A digital confirmation notice has been dispatched to{" "}
+                      {isSv
+                        ? "Din platsreservation har registrerats för Holy Spirit Worship 2026. En bekräftelse har skickats till "
+                        : "Your seat reservation has been recorded for Holy Spirit Worship 2026. A digital confirmation notice has been dispatched to "}
                       <strong className="text-slate-900">{confirmedRSVP.email}</strong>.
                     </p>
                   </div>
@@ -345,21 +397,33 @@ export const EventDetailMain: React.FC = () => {
                     <div className="flex justify-between items-center text-xs text-slate-400">
                       <span>Pass ID</span>
                       <span className="font-mono text-[#2DD4BF] font-semibold">
-                        {confirmedRSVP.passId}
+                        #{confirmedRSVP.passId}
                       </span>
                     </div>
                     <div className="flex justify-between items-center text-xs text-slate-400">
-                      <span>Reserved</span>
+                      <span>{isSv ? "Reserverat" : "Reserved"}</span>
                       <span className="text-white font-medium">
-                        {confirmedRSVP.guests} {confirmedRSVP.guests === "1" ? "Seat" : "Seats"}
+                        {isSv
+                          ? `${confirmedRSVP.guests} ${confirmedRSVP.guests === "1" ? "Plats" : "Platser"}`
+                          : `${confirmedRSVP.guests} ${confirmedRSVP.guests === "1" ? "Seat" : "Seats"}`}
                       </span>
                     </div>
                   </div>
 
+                  {/* View / Download Ticket Pass Button */}
+                  <button
+                    type="button"
+                    onClick={() => setIsPassModalOpen(true)}
+                    className="w-full bg-[#0D9488] hover:bg-[#0F766E] text-white font-semibold text-xs py-2.5 px-3 rounded-md transition-all flex items-center justify-center gap-2 shadow-sm active:scale-95 cursor-pointer"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">qr_code_scanner</span>
+                    <span>{isSv ? "Öppna / Ladda ner Biljettpass" : "View & Download Ticket Pass"}</span>
+                  </button>
+
                   {/* Add to Calendar Sync */}
                   <div className="pt-2">
                     <span className="text-[11px] font-semibold text-slate-500 block mb-2">
-                      Add to your calendar
+                      {isSv ? "Lägg till i kalender" : "Add to your calendar"}
                     </span>
                     <div className="grid grid-cols-2 gap-2">
                       <a
@@ -374,10 +438,10 @@ export const EventDetailMain: React.FC = () => {
                       <button
                         type="button"
                         onClick={downloadICS}
-                        className="border border-slate-200 hover:bg-slate-100 text-slate-700 font-medium text-xs py-2 px-3 rounded-md transition-colors flex items-center justify-center gap-1 text-center"
+                        className="border border-slate-200 hover:bg-slate-100 text-slate-700 font-medium text-xs py-2 px-3 rounded-md transition-colors flex items-center justify-center gap-1 text-center cursor-pointer"
                       >
                         <span className="material-symbols-outlined text-sm text-[#0D9488]">download</span>
-                        <span>.ics file</span>
+                        <span>{isSv ? ".ics-fil" : ".ics file"}</span>
                       </button>
                     </div>
                   </div>
@@ -385,9 +449,9 @@ export const EventDetailMain: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setConfirmedRSVP(null)}
-                    className="w-full text-xs text-[#0D9488] hover:underline font-semibold pt-2 text-center"
+                    className="w-full text-xs text-[#0D9488] hover:underline font-semibold pt-2 text-center cursor-pointer"
                   >
-                    Register another attendee
+                    {isSv ? "Anmäl ytterligare en deltagare" : "Register another attendee"}
                   </button>
                 </div>
               ) : (
@@ -395,10 +459,12 @@ export const EventDetailMain: React.FC = () => {
                 <form onSubmit={handleRSVPSubmit} className="space-y-4">
                   <div>
                     <h3 className="font-hanken text-xl font-bold text-slate-900">
-                      Save your spot
+                      {isSv ? "Boka din plats" : "Save your spot"}
                     </h3>
                     <p className="font-inter text-xs text-slate-500 mt-1">
-                      Reserve your admission pass in 30 seconds.
+                      {isSv
+                        ? "Reservera ditt inträdespass på 30 sekunder."
+                        : "Reserve your admission pass in 30 seconds."}
                     </p>
                   </div>
 
@@ -416,14 +482,14 @@ export const EventDetailMain: React.FC = () => {
                       htmlFor="rsvp-name"
                       className="text-xs font-semibold uppercase tracking-wider text-slate-700 block"
                     >
-                      Name *
+                      {isSv ? "Namn *" : "Name *"}
                     </label>
                     <input
                       id="rsvp-name"
                       name="name"
                       type="text"
                       required
-                      placeholder="Your full name"
+                      placeholder={isSv ? "Ditt för- och efternamn" : "Your full name"}
                       className="w-full bg-white border border-slate-200 rounded-md px-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:border-[#0D9488] outline-none transition-colors"
                     />
                   </div>
@@ -434,14 +500,14 @@ export const EventDetailMain: React.FC = () => {
                       htmlFor="rsvp-email"
                       className="text-xs font-semibold uppercase tracking-wider text-slate-700 block"
                     >
-                      Email *
+                      {isSv ? "E-postadress *" : "Email *"}
                     </label>
                     <input
                       id="rsvp-email"
                       name="email"
                       type="email"
                       required
-                      placeholder="your.email@kyrkan.se"
+                      placeholder={isSv ? "din.epost@kyrkan.se" : "your.email@example.com"}
                       className="w-full bg-white border border-slate-200 rounded-md px-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:border-[#0D9488] outline-none transition-colors"
                     />
                   </div>
@@ -452,7 +518,7 @@ export const EventDetailMain: React.FC = () => {
                       htmlFor="rsvp-guests"
                       className="text-xs font-semibold uppercase tracking-wider text-slate-700 block"
                     >
-                      How many are coming?
+                      {isSv ? "Hur många kommer?" : "How many are coming?"}
                     </label>
                     <select
                       id="rsvp-guests"
@@ -460,11 +526,11 @@ export const EventDetailMain: React.FC = () => {
                       defaultValue="1"
                       className="w-full bg-white border border-slate-200 rounded-md px-3.5 py-2.5 text-xs text-slate-900 focus:border-[#0D9488] outline-none transition-colors"
                     >
-                      <option value="1">1 Person (Just me)</option>
-                      <option value="2">2 People</option>
-                      <option value="3">3 People</option>
-                      <option value="4">4 People</option>
-                      <option value="5">5+ (Fellowship group)</option>
+                      <option value="1">{isSv ? "1 Person (Bara jag)" : "1 Person (Just me)"}</option>
+                      <option value="2">{isSv ? "2 Personer" : "2 People"}</option>
+                      <option value="3">{isSv ? "3 Personer" : "3 People"}</option>
+                      <option value="4">{isSv ? "4 Personer" : "4 People"}</option>
+                      <option value="5">{isSv ? "5+ (Grupp / Gemenskap)" : "5+ (Fellowship group)"}</option>
                     </select>
                   </div>
 
@@ -472,14 +538,20 @@ export const EventDetailMain: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isPendingRSVP}
-                    className="w-full bg-[#0D9488] hover:bg-[#0F766E] disabled:opacity-50 text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-md shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2"
+                    className="w-full bg-[#0D9488] hover:bg-[#0F766E] disabled:opacity-50 text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-md shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <span>{isPendingRSVP ? "Saving Spot..." : "Save my spot"}</span>
+                    <span>
+                      {isPendingRSVP
+                        ? (isSv ? "Sparar plats..." : "Saving Spot...")
+                        : (isSv ? "Boka min plats" : "Save my spot")}
+                    </span>
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </button>
 
                   <p className="text-[11px] text-slate-400 leading-normal text-center">
-                    Complimentary admission. No commercial marketing.
+                    {isSv
+                      ? "Öppet inträde. Ingen kommersiell marknadsföring."
+                      : "Complimentary admission. No commercial marketing."}
                   </p>
                 </form>
               )}
@@ -494,20 +566,24 @@ export const EventDetailMain: React.FC = () => {
                   volunteer_activism
                 </span>
                 <h4 className="font-hanken text-sm font-bold">
-                  Need prayer before?
+                  {isSv ? "Behöver du förbön inför kvällen?" : "Need prayer before?"}
                 </h4>
               </div>
               <button
                 type="button"
                 onClick={() => setIsPrayerOpen(!isPrayerOpen)}
-                className="text-xs text-[#0D9488] hover:underline font-semibold"
+                className="text-xs text-[#0D9488] hover:underline font-semibold cursor-pointer"
               >
-                {isPrayerOpen ? "Close" : "Request"}
+                {isPrayerOpen
+                  ? (isSv ? "Stäng" : "Close")
+                  : (isSv ? "Be om bön" : "Request")}
               </button>
             </div>
 
             <p className="font-inter text-xs text-slate-500 leading-relaxed">
-              Our intercessory pastoral team confidentially prays for physical healing and peace every Thursday.
+              {isSv
+                ? "Vårt pastorala förbönsteam ber i tystnadsplikt för helande, frid och upprättelse varje vecka."
+                : "Our intercessory pastoral team confidentially prays for physical healing and peace every Thursday."}
             </p>
 
             <AnimatePresence>
@@ -532,22 +608,24 @@ export const EventDetailMain: React.FC = () => {
                       )}
                       <input
                         name="name"
-                        placeholder="Name (or anonymous)"
+                        placeholder={isSv ? "Namn (eller anonymt)" : "Name (or anonymous)"}
                         className="w-full bg-white border border-slate-200 rounded-md px-3 py-2 text-xs text-slate-900 outline-none focus:border-[#0D9488]"
                       />
                       <textarea
                         name="requestText"
                         required
                         rows={2}
-                        placeholder="Share your prayer request..."
+                        placeholder={isSv ? "Dela ditt böneämne..." : "Share your prayer request..."}
                         className="w-full bg-white border border-slate-200 rounded-md p-2.5 text-xs text-slate-900 outline-none focus:border-[#0D9488] resize-none"
                       />
                       <button
                         type="submit"
                         disabled={isPendingPrayer}
-                        className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs py-2 rounded-md transition-colors"
+                        className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs py-2 rounded-md transition-colors cursor-pointer"
                       >
-                        {isPendingPrayer ? "Sending..." : "Send Request"}
+                        {isPendingPrayer
+                          ? (isSv ? "Skickar..." : "Sending...")
+                          : (isSv ? "Skicka böneämne" : "Send Request")}
                       </button>
                     </form>
                   )}
@@ -557,6 +635,14 @@ export const EventDetailMain: React.FC = () => {
           </div>
         </aside>
       </div>
+
+      {/* Scannable Gate Admission Digital Pass Modal */}
+      <DigitalPassModal
+        isOpen={isPassModalOpen}
+        onClose={() => setIsPassModalOpen(false)}
+        ticket={currentTicket}
+        qrCodeUrl={qrCodeUrl}
+      />
     </section>
   );
 };

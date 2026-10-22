@@ -5,19 +5,25 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { InteractiveVideoModal, VideoModalData } from "./InteractiveVideoModal";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const WatchFeaturedSection: React.FC = () => {
+  const { isSv } = useLanguage();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState<VideoModalData | null>(null);
 
   const featuredSession: VideoModalData = {
-    title: "Holy Spirit Worship 2026 — Live at Smyrna Frihamnen",
-    speaker: "GOSPELS MASS CHOIR & ENSEMBLE",
-    date: "MARCH 2026",
+    title: isSv
+      ? "Holy Spirit Worship 2026 — Live i Smyrna Frihamnen"
+      : "Holy Spirit Worship 2026 — Live at Smyrna Frihamnen",
+    speaker: isSv ? "GOSPELS MASSKÖR & ENSEMBLE" : "GOSPELS MASS CHOIR & ENSEMBLE",
+    date: isSv ? "MARS 2026" : "MARCH 2026",
     duration: "58 MIN",
-    location: "Smyrna Frihamnskyrkan, Gothenburg",
+    location: isSv ? "Smyrna Frihamnskyrkan, Göteborg" : "Smyrna Frihamnskyrkan, Gothenburg",
     videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.07_AM.mp4",
-    description:
-      "Full multicam video record and live acoustic sound from our citywide gathering in Frihamnen. An evening of unhurried gospel worship, intercession, and united voices representing congregations across Gothenburg.",
+    description: isSv
+      ? "Komplett flerkamerainspelning och levande akustiskt ljud från vår stadsvida samling i Frihamnen. En kväll av oavbruten gospellovsång, förbön och enade röster från församlingar över hela Göteborg."
+      : "Full multicam video record and live acoustic sound from our citywide gathering in Frihamnen. An evening of unhurried gospel worship, intercession, and united voices representing congregations across Gothenburg.",
   };
 
   const handleOpenPlayer = () => {
@@ -32,7 +38,11 @@ export const WatchFeaturedSection: React.FC = () => {
           {/* Section Kicker */}
           <div className="flex items-center gap-2.5 text-xs font-semibold tracking-widest uppercase text-[#0D9488] mb-3">
             <span className="w-5 h-[2px] bg-[#0D9488]" />
-            <span>FEATURED RECORDING · CURRENT SEASON</span>
+            <span>
+              {isSv
+                ? "UTVALD INSPELNING · AKTUELL SÄSONG"
+                : "FEATURED RECORDING · CURRENT SEASON"}
+            </span>
           </div>
 
           <h2 className="font-hanken text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-8 sm:mb-10">
@@ -63,7 +73,7 @@ export const WatchFeaturedSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-[#0A1530]/90 via-[#0A1530]/40 to-transparent" />
             </div>
 
-            {/* Central Play Trigger - Hidden on mobile to avoid text collision, shown on sm+ */}
+            {/* Central Play Trigger */}
             <div className="hidden sm:flex absolute inset-0 z-10 items-center justify-center pointer-events-none">
               <button
                 type="button"
@@ -85,9 +95,11 @@ export const WatchFeaturedSection: React.FC = () => {
               {/* Left: Metadata & Narrative */}
               <div className="max-w-2xl space-y-3">
                 <div className="flex flex-wrap items-center gap-2.5 text-xs font-semibold tracking-wider text-slate-300 uppercase">
-                  <span className="text-[#2DD4BF] font-bold">LIVE CONCERT ARCHIVE</span>
+                  <span className="text-[#2DD4BF] font-bold">
+                    {isSv ? "LIVEKONSERTARKIV" : "LIVE CONCERT ARCHIVE"}
+                  </span>
                   <span className="text-slate-500">——</span>
-                  <span>MARCH 2026</span>
+                  <span>{isSv ? "MARS 2026" : "MARCH 2026"}</span>
                   <span className="text-slate-500">——</span>
                   <span>58 MIN</span>
                   <span className="text-slate-500">——</span>
@@ -107,10 +119,10 @@ export const WatchFeaturedSection: React.FC = () => {
                     <span className="material-symbols-outlined text-sm text-[#2DD4BF]">
                       location_on
                     </span>
-                    Smyrna Frihamnskyrkan, Frihamnen
+                    {isSv ? "Smyrna Frihamnskyrkan, Frihamnen" : "Smyrna Frihamnskyrkan, Frihamnen"}
                   </span>
                   <span className="text-slate-600">·</span>
-                  <span>150 Mass Choir Voices</span>
+                  <span>{isSv ? "150 Masskörsröster" : "150 Mass Choir Voices"}</span>
                 </div>
               </div>
 
@@ -121,7 +133,7 @@ export const WatchFeaturedSection: React.FC = () => {
                   onClick={handleOpenPlayer}
                   className="bg-white hover:bg-slate-100 text-[#0F172A] font-semibold text-xs sm:text-sm px-5 py-3 rounded-md transition-all shadow-md active:scale-95 flex items-center gap-2 group/btn cursor-pointer"
                 >
-                  <span>Watch recording</span>
+                  <span>{isSv ? "Se inspelning" : "Watch recording"}</span>
                   <span
                     className="material-symbols-outlined text-base sm:text-lg"
                     style={{ fontVariationSettings: "'FILL' 1" }}
@@ -135,7 +147,7 @@ export const WatchFeaturedSection: React.FC = () => {
                   onClick={handleOpenPlayer}
                   className="border border-white/30 hover:border-white/60 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md font-semibold text-xs sm:text-sm px-5 py-3 rounded-md transition-all active:scale-95 flex items-center gap-2 cursor-pointer shadow-sm"
                 >
-                  <span>Live audio</span>
+                  <span>{isSv ? "Liveljud" : "Live audio"}</span>
                   <span className="material-symbols-outlined text-base sm:text-lg text-[#2DD4BF]">
                     headphones
                   </span>

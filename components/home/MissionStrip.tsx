@@ -3,29 +3,35 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const MissionStrip: React.FC = () => {
+  const { isSv } = useLanguage();
+
   const missions = [
     {
       id: "worship",
       icon: "church",
-      title: "Worship Awakening",
-      description:
-        "Pure, reverent, Christ-centered gospel praise in Scandinavian soil. Rooted in deep devotion, mass choir harmonies, and choral excellence.",
+      title: isSv ? "Lovsångsuppvaknande" : "Worship Awakening",
+      description: isSv
+        ? "Ren, innerlig, Kristuscentrerad gospellovsång i skandinavisk mylla. Förankrad i djup hängivenhet, masskörsharmonier och vokal excellens."
+        : "Pure, reverent, Christ-centered gospel praise in Scandinavian soil. Rooted in deep devotion, mass choir harmonies, and choral excellence.",
     },
     {
       id: "outreach",
       icon: "campaign",
-      title: "Public Gospel Outreach",
-      description:
-        "Taking worship out into city squares, bridges, and waterfront spaces across Gothenburg to meet hearts with the gospel right where they are.",
+      title: isSv ? "Offentlig Torglovsång" : "Public Gospel Outreach",
+      description: isSv
+        ? "Bär lovsången ut till stadens torg, broar och kajer över hela Göteborg för att möta människors hjärtan med evangeliet där de är."
+        : "Taking worship out into city squares, bridges, and waterfront spaces across Gothenburg to meet hearts with the gospel right where they are.",
     },
     {
       id: "transformation",
       icon: "diversity_1",
-      title: "Citywide Transformation",
-      description:
-        "Uniting generations and diverse church traditions in collective prayer and praise, breaking cultural isolation through Kingdom fellowship.",
+      title: isSv ? "Stadsvid Förvandling" : "Citywide Transformation",
+      description: isSv
+        ? "Förenar generationer och olika kyrkotraditioner i gemensam bön och lovsång och bryter kulturell isolering i Guds rikes gemenskap."
+        : "Uniting generations and diverse church traditions in collective prayer and praise, breaking cultural isolation through Kingdom fellowship.",
     },
   ];
 
@@ -56,12 +62,14 @@ export const MissionStrip: React.FC = () => {
             {/* Morrow-Style Pill Badge Overlay at bottom */}
             <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/95 backdrop-blur-md rounded-md px-4 py-2.5 shadow-md border border-slate-200/80 flex flex-col gap-0.5">
               <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#0D9488]">
-                <span>GATHERINGS</span>
+                <span>{isSv ? "SAMLINGAR" : "GATHERINGS"}</span>
                 <span className="text-slate-400">——</span>
                 <span>FRIHAMNEN</span>
               </div>
               <span className="font-hanken text-xs sm:text-sm font-bold text-slate-900">
-                Doors open 17:45 CET · All are welcome
+                {isSv
+                  ? "Dörrarna öppnas 17:45 CET · Alla är välkomna"
+                  : "Doors open 17:45 CET · All are welcome"}
               </span>
             </div>
           </motion.div>
@@ -72,15 +80,17 @@ export const MissionStrip: React.FC = () => {
             <div>
               <div className="flex items-center gap-2 text-[#0D9488] text-xs font-semibold tracking-widest uppercase mb-2">
                 <span className="w-5 h-[2px] bg-[#0D9488]" />
-                <span>THE NORDIC MOVEMENT</span>
+                <span>{isSv ? "DEN NORDISKA RÖRELSEN" : "THE NORDIC MOVEMENT"}</span>
               </div>
 
               <h2 className="font-hanken text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
-                Our Gothenburg Calling
+                {isSv ? "Vår kallelse i Göteborg" : "Our Gothenburg Calling"}
               </h2>
 
               <p className="font-inter text-sm sm:text-base text-slate-600 mt-2 max-w-xl leading-relaxed">
-                Restoring sacred melody, outdoor public praise, and unified Christian hospitality across Västra Götaland.
+                {isSv
+                  ? "Återupprättar helig lovsång, offentlig torglovsång och förenad kristen gästfrihet över Västra Götaland."
+                  : "Restoring sacred melody, outdoor public praise, and unified Christian hospitality across Västra Götaland."}
               </p>
             </div>
 

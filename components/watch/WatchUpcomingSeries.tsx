@@ -5,7 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const WatchUpcomingSeries: React.FC = () => {
+  const { isSv } = useLanguage();
+
   return (
     <section className="w-full px-2.5 sm:px-5 py-6 sm:py-8">
       {/* Morrow Church Style Announcement Card */}
@@ -20,7 +24,11 @@ export const WatchUpcomingSeries: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/whatsapp_image_2026_10_16_at_8.28.07_am.png"
-            alt="Outdoor municipal praise at Gustav Adolfs Torg"
+            alt={
+              isSv
+                ? "Torglovsång under öppen himmel på Gustav Adolfs Torg"
+                : "Outdoor municipal praise at Gustav Adolfs Torg"
+            }
             fill
             quality={95}
             className="object-cover object-center brightness-50 contrast-105 pointer-events-none"
@@ -33,20 +41,24 @@ export const WatchUpcomingSeries: React.FC = () => {
         <div className="relative z-10 max-w-2xl space-y-4">
           <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#2DD4BF]">
             <span className="w-4 h-[2px] bg-[#2DD4BF]" />
-            <span>COMING SUMMER 2027</span>
+            <span>{isSv ? "KOMMANDE SOMMAREN 2027" : "COMING SUMMER 2027"}</span>
           </div>
 
           <h3 className="font-hanken text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight leading-snug">
-            Göteborgs Lovsångskonsert — Live from Gustav Adolfs Torg.
+            {isSv
+              ? "Göteborgs Lovsångskonsert — Live från Gustav Adolfs Torg."
+              : "Göteborgs Lovsångskonsert — Live from Gustav Adolfs Torg."}
           </h3>
 
           <p className="font-inter text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed">
-            A citywide outdoor mass choir bringing Swedish and English gospel songs straight into Gothenburg’s municipal heart. Live 4K multi-camera stream and multi-track recording will be archived here immediately following the broadcast.
+            {isSv
+              ? "En stadsvid masskör som framför svensk och engelsk gospel mitt i Göteborgs kommunala hjärta. Live 4K-sändning och flerspårs ljudinspelning arkiveras här omedelbart efter konserten."
+              : "A citywide outdoor mass choir bringing Swedish and English gospel songs straight into Gothenburg’s municipal heart. Live 4K multi-camera stream and multi-track recording will be archived here immediately following the broadcast."}
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-inter">
             <span className="px-3 py-1.5 rounded-md bg-white/10 text-white font-medium border border-white/15">
-              Saturday, June 12, 2027
+              {isSv ? "Lördag 12 juni 2027" : "Saturday, June 12, 2027"}
             </span>
             <span className="px-3 py-1.5 rounded-md bg-white/10 text-white font-medium border border-white/15">
               Gustav Adolfs Torg, Göteborg
@@ -55,7 +67,7 @@ export const WatchUpcomingSeries: React.FC = () => {
               href="/events/holy-spirit-worship"
               className="inline-flex items-center gap-1.5 text-[#2DD4BF] hover:text-white font-semibold transition-colors"
             >
-              <span>Event Details</span>
+              <span>{isSv ? "Evenemangsdetaljer" : "Event Details"}</span>
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </Link>
           </div>

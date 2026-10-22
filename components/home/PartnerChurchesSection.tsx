@@ -4,8 +4,11 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 // Relume Logo 3: Continuous Marquee of Partner Church Logos
 export const PartnerChurchesSection: React.FC = () => {
+  const { isSv } = useLanguage();
   const logos = [
     {
       name: "Smyrna Frihamnskyrkan",
@@ -67,10 +70,12 @@ export const PartnerChurchesSection: React.FC = () => {
         {/* Header Label */}
         <div className="text-center mb-8 md:mb-10">
           <span className="font-label-sm text-xs uppercase tracking-widest text-[#0D9488] font-bold block mb-1">
-            ECUMENICAL FELLOWSHIP &amp; UNITY
+            {isSv ? "EKUMENISK GEMENSKAP & ENHET" : "ECUMENICAL FELLOWSHIP & UNITY"}
           </span>
           <h3 className="font-hanken text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
-            Partner Churches &amp; Fellowships Across Gothenburg
+            {isSv
+              ? "Partnerkyrkor & Församlingar över hela Göteborg"
+              : "Partner Churches & Fellowships Across Gothenburg"}
           </h3>
         </div>
 

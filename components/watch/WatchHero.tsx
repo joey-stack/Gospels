@@ -5,7 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const WatchHero: React.FC = () => {
+  const { isSv } = useLanguage();
+
   return (
     <section className="w-full px-2.5 sm:px-5 pt-2.5 sm:pt-5 bg-[#F8F9FF]">
       {/* Morrow Church Style Elevated Header Card */}
@@ -14,7 +18,11 @@ export const WatchHero: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/whatsapp_image_2026_10_16_at_8.26.12_am.png"
-            alt="Gothenburg cathedral choir in praise and reverent worship"
+            alt={
+              isSv
+                ? "Göteborgskör i hängiven lovsång och tillbedjan"
+                : "Gothenburg cathedral choir in praise and reverent worship"
+            }
             fill
             priority
             quality={95}
@@ -42,10 +50,12 @@ export const WatchHero: React.FC = () => {
             className="flex items-center gap-2 text-xs font-inter text-slate-400 mb-6"
           >
             <Link href="/" className="hover:text-white transition-colors">
-              Home
+              {isSv ? "Hem" : "Home"}
             </Link>
             <span className="text-slate-600">/</span>
-            <span className="text-[#2DD4BF] font-medium">Watch &amp; Listen</span>
+            <span className="text-[#2DD4BF] font-medium">
+              {isSv ? "Se & Lyssna" : "Watch & Listen"}
+            </span>
           </motion.nav>
 
           {/* Eyebrow Line with Accent Bar */}
@@ -56,7 +66,11 @@ export const WatchHero: React.FC = () => {
             className="flex items-center gap-2.5 text-xs font-semibold tracking-widest uppercase text-[#2DD4BF] mb-4"
           >
             <span className="w-6 h-[2px] bg-[#2DD4BF]" />
-            <span>GOTHENBURG SOUND ARCHIVE · LIVE RECORDINGS</span>
+            <span>
+              {isSv
+                ? "GÖTEBORGS LJUDARKIV · LIVEINSPELNINGAR"
+                : "GOTHENBURG SOUND ARCHIVE · LIVE RECORDINGS"}
+            </span>
           </motion.div>
 
           {/* Main Headline matching Morrow Church typography hierarchy */}
@@ -66,10 +80,21 @@ export const WatchHero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-hanken text-4xl sm:text-5xl lg:text-6xl text-white font-bold tracking-tight leading-[1.1] mb-6"
           >
-            Every worship gathering,{" "}
-            <span className="font-eb italic font-normal text-[#2DD4BF]">
-              recorded live.
-            </span>
+            {isSv ? (
+              <>
+                Varje lovsångssamling,{" "}
+                <span className="font-eb italic font-normal text-[#2DD4BF]">
+                  inspelad live.
+                </span>
+              </>
+            ) : (
+              <>
+                Every worship gathering,{" "}
+                <span className="font-eb italic font-normal text-[#2DD4BF]">
+                  recorded live.
+                </span>
+              </>
+            )}
           </motion.h1>
 
           {/* Narrative Subtitle */}
@@ -79,7 +104,9 @@ export const WatchHero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="font-inter text-base sm:text-lg text-slate-300 max-w-2xl mb-8 leading-relaxed font-normal"
           >
-            Watch from home, listen on your commute, or study choir polyphony and vocal arrangements with worship leaders across Gothenburg.
+            {isSv
+              ? "Se hemifrån, lyssna under pendlingen eller fördjupa dig i körarrangemang och stämsång tillsammans med lovsångsledare över Göteborg."
+              : "Watch from home, listen on your commute, or study choir polyphony and vocal arrangements with worship leaders across Gothenburg."}
           </motion.p>
 
           {/* Action CTAs: Morrow Church Two-Button Architecture */}
@@ -93,7 +120,7 @@ export const WatchHero: React.FC = () => {
               href="#featured-session"
               className="w-full sm:w-auto bg-[#0D9488] hover:bg-[#0F766E] text-white font-semibold text-sm px-6 py-3 rounded-md transition-all duration-150 active:scale-95 shadow-md flex items-center justify-center gap-2 group cursor-pointer"
             >
-              <span>Watch latest gathering</span>
+              <span>{isSv ? "Se senaste samlingen" : "Watch latest gathering"}</span>
               <span className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">
                 arrow_forward
               </span>
@@ -108,7 +135,7 @@ export const WatchHero: React.FC = () => {
               <span className="material-symbols-outlined text-base text-[#2DD4BF]">
                 headphones
               </span>
-              <span>Listen on Spotify</span>
+              <span>{isSv ? "Lyssna på Spotify" : "Listen on Spotify"}</span>
             </a>
           </motion.div>
         </div>

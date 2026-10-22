@@ -5,7 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const EventsHeroArchive: React.FC = () => {
+  const { isSv } = useLanguage();
+
   return (
     <section className="w-full px-2.5 sm:px-5 pt-2.5 sm:pt-5 bg-[#F8F9FF]">
       {/* Morrow Church Style Elevated Event Header Card */}
@@ -14,7 +18,11 @@ export const EventsHeroArchive: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/whatsapp_image_2026_10_16_at_8.26.12_am_1.png"
-            alt="Congregation praising together across Gothenburg ministries"
+            alt={
+              isSv
+                ? "Församling i lovsång tillsammans över kyrkogränser i Göteborg"
+                : "Congregation praising together across Gothenburg ministries"
+            }
             fill
             priority
             quality={95}
@@ -45,10 +53,10 @@ export const EventsHeroArchive: React.FC = () => {
               href="/"
               className="hover:text-white transition-colors"
             >
-              Home
+              {isSv ? "Hem" : "Home"}
             </Link>
             <span className="text-slate-600">/</span>
-            <span className="text-[#2DD4BF] font-medium">Events</span>
+            <span className="text-[#2DD4BF] font-medium">{isSv ? "Evenemang" : "Events"}</span>
           </motion.nav>
 
           {/* Eyebrow Line with Accent Bar */}
@@ -59,7 +67,11 @@ export const EventsHeroArchive: React.FC = () => {
             className="flex items-center gap-3 text-xs font-semibold tracking-widest uppercase text-[#2DD4BF] mb-4"
           >
             <span className="w-7 h-[2px] bg-[#2DD4BF]" />
-            <span>THE GOSPELS CALENDAR · GÖTEBORG MINISTRY NETWORK</span>
+            <span>
+              {isSv
+                ? "GOSPELS KALENDER · GÖTEBORGS NÄTVERK"
+                : "THE GOSPELS CALENDAR · GÖTEBORG MINISTRY NETWORK"}
+            </span>
           </motion.div>
 
           {/* Main Title (H1) with Italic Serif Accent */}
@@ -69,10 +81,21 @@ export const EventsHeroArchive: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-hanken text-4xl sm:text-5xl lg:text-6xl text-white font-bold tracking-tight leading-[1.1] mb-6"
           >
-            The calendar beyond{" "}
-            <span className="font-eb italic font-normal text-[#2DD4BF]">
-              Sunday.
-            </span>
+            {isSv ? (
+              <>
+                Kalendern bortom{" "}
+                <span className="font-eb italic font-normal text-[#2DD4BF]">
+                  söndagen.
+                </span>
+              </>
+            ) : (
+              <>
+                The calendar beyond{" "}
+                <span className="font-eb italic font-normal text-[#2DD4BF]">
+                  Sunday.
+                </span>
+              </>
+            )}
           </motion.h1>
 
           {/* Subtitle Paragraph */}
@@ -82,7 +105,9 @@ export const EventsHeroArchive: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="font-inter text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed mb-6"
           >
-            Citywide praise nights, open-air street choir worship, vocal masterclasses, and sacred prayer vigils across Gothenburg. As a non-profit gospel music ministry organization, we unite vocalists, musicians, and partner churches across all traditions.
+            {isSv
+              ? "Stadsvida lovsångskvällar, torgkörer under öppen himmel, sångmästarklasser och bönehelger över hela Göteborg. Som ideell gospelmusikrörelse förenar vi sångare, musiker och församlingar över alla kyrkliga traditioner."
+              : "Citywide praise nights, open-air street choir worship, vocal masterclasses, and sacred prayer vigils across Gothenburg. As a non-profit gospel music ministry organization, we unite vocalists, musicians, and partner churches across all traditions."}
           </motion.p>
 
           {/* Meta Bar */}
@@ -92,13 +117,15 @@ export const EventsHeroArchive: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex items-center flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-slate-300 font-inter"
           >
-            <span className="font-medium text-white">2 Upcoming Gatherings</span>
+            <span className="font-medium text-white">
+              {isSv ? "2 Kommande samlingar" : "2 Upcoming Gatherings"}
+            </span>
             <span className="w-7 h-[1px] bg-white/25" />
-            <span>Gothenburg &amp; Västra Götaland</span>
+            <span>{isSv ? "Göteborg & Västra Götaland" : "Gothenburg & Västra Götaland"}</span>
             <span className="w-7 h-[1px] bg-white/25" />
-            <span>Non-Profit Organization</span>
+            <span>{isSv ? "Ideell Förening" : "Non-Profit Organization"}</span>
             <span className="w-7 h-[1px] bg-white/25" />
-            <span className="text-[#2DD4BF]">Complimentary Open Access</span>
+            <span className="text-[#2DD4BF]">{isSv ? "Öppet inträde" : "Complimentary Open Access"}</span>
           </motion.div>
         </div>
       </div>

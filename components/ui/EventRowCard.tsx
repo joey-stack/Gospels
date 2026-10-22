@@ -7,6 +7,7 @@ export interface EventRowCardProps {
   title: string;
   category: string;
   categoryDotColor?: string;
+  status?: "REGISTRATION_OPEN" | "YET_TO_COME";
   dateBadge: {
     day: string;
     month: string;
@@ -19,10 +20,13 @@ export interface EventRowCardProps {
   href: string;
 }
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const EventRowCard: React.FC<EventRowCardProps> = ({
   title,
   category,
   categoryDotColor = "#0D9488",
+  status = "REGISTRATION_OPEN",
   dateBadge,
   timeString,
   location,
@@ -30,6 +34,8 @@ export const EventRowCard: React.FC<EventRowCardProps> = ({
   imageAlt,
   href,
 }) => {
+  const { isSv } = useLanguage();
+
   return (
     <Link
       href={href}
@@ -62,13 +68,29 @@ export const EventRowCard: React.FC<EventRowCardProps> = ({
 
         {/* 3. Event Body: Tag + Title + Location */}
         <div className="flex flex-col gap-1.5 min-w-0 flex-1">
-          {/* Category Tag with Indicator Dot */}
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-slate-200/70 text-slate-800 border border-slate-300/50 text-[11px] font-semibold w-fit">
-            <span
-              className="w-1.5 h-1.5 rounded-full shrink-0"
-              style={{ backgroundColor: categoryDotColor }}
-            />
-            <span className="truncate">{category}</span>
+          {/* Tags Row: Category Tag + Status Badge */}
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Category Tag with Indicator Dot */}
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-slate-200/70 text-slate-800 border border-slate-300/50 text-[11px] font-semibold w-fit">
+              <span
+                className="w-1.5 h-1.5 rounded-full shrink-0"
+                style={{ backgroundColor: categoryDotColor }}
+              />
+              <span className="truncate">{category}</span>
+            </div>
+
+            {/* Event Status Indicator */}
+            {status === "YET_TO_COME" ? (
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-bold tracking-wide">
+                <span className="material-symbols-outlined text-[13px] text-amber-600">schedule</span>
+                <span>{isSv ? "Kommande · Släpps snart" : "Yet to Come · Announcement Soon"}</span>
+              </span>
+            ) : (
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold tracking-wide">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                <span>{isSv ? "Säkra din plats" : "Registration Open"}</span>
+              </span>
+            )}
           </div>
 
           {/* Event Title */}
@@ -83,10 +105,14 @@ export const EventRowCard: React.FC<EventRowCardProps> = ({
         </div>
       </div>
 
-      {/* Right Core: Trailing Details Action (Morrow Church Style) */}
+      {/* Right Core: Trailing Action (Morrow Church Style) */}
       <div className="shrink-0 self-start sm:self-end md:self-center pt-2 sm:pt-0">
         <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-slate-300/80 bg-white text-slate-800 text-xs sm:text-sm font-semibold font-inter group-hover:border-[#0D9488] group-hover:text-[#0D9488] group-hover:bg-[#F0FDFA] transition-all shadow-xs">
-          <span>Details</span>
+          <span>
+            {status === "YET_TO_COME"
+              ? (isSv ? "Kommande Samling" : "Yet to Come")
+              : (isSv ? "Boka Plats" : "Save your spot")}
+          </span>
           <span className="material-symbols-outlined text-[17px] group-hover:translate-x-1 transition-transform">
             arrow_forward
           </span>

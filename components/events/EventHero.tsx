@@ -5,7 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const EventHero: React.FC = () => {
+  const { isSv } = useLanguage();
+
   return (
     <section className="w-full px-2.5 sm:px-5 pt-2.5 sm:pt-5 bg-[#F8F9FF]">
       {/* Morrow Church Style Elevated Event Header Card */}
@@ -14,7 +18,11 @@ export const EventHero: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/whatsapp_image_2026_10_16_at_8.26.13_am.png"
-            alt="Congregation in praise at Gothenburg gospel worship gathering"
+            alt={
+              isSv
+                ? "Församling i lovsång vid gospelsamling i Göteborg"
+                : "Congregation in praise at Gothenburg gospel worship gathering"
+            }
             fill
             priority
             quality={95}
@@ -45,14 +53,14 @@ export const EventHero: React.FC = () => {
               href="/"
               className="hover:text-white transition-colors"
             >
-              Home
+              {isSv ? "Hem" : "Home"}
             </Link>
             <span className="text-slate-600">/</span>
             <Link
               href="/events"
               className="hover:text-white transition-colors"
             >
-              Events
+              {isSv ? "Evenemang" : "Events"}
             </Link>
             <span className="text-slate-600">/</span>
             <span className="text-[#2DD4BF] font-medium">Holy Spirit Worship</span>
@@ -66,7 +74,11 @@ export const EventHero: React.FC = () => {
             className="flex items-center gap-3 text-xs font-semibold tracking-widest uppercase text-[#2DD4BF] mb-4"
           >
             <span className="w-7 h-[2px] bg-[#2DD4BF]" />
-            <span>GOTHENBURG WORSHIP NIGHT · SMYRNA FRIHAMNEN</span>
+            <span>
+              {isSv
+                ? "GÖTEBORGS LOVSÅNGSKVÄLL · SMYRNA FRIHAMNEN"
+                : "GOTHENBURG WORSHIP NIGHT · SMYRNA FRIHAMNEN"}
+            </span>
           </motion.div>
 
           {/* Title (H1) with Italic Serif Accent */}
@@ -90,12 +102,16 @@ export const EventHero: React.FC = () => {
             className="flex items-center flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-slate-300 font-inter"
           >
             <time dateTime="2026-03-28" className="font-medium text-white">
-              Sat, March 28, 2026
+              {isSv ? "Lör 28 mars 2026" : "Sat, March 28, 2026"}
             </time>
             <span className="w-7 h-[1px] bg-white/25" />
             <span>18:30 – 21:30 CET</span>
             <span className="w-7 h-[1px] bg-white/25" />
-            <span>Smyrna Frihamnskyrkan, Gothenburg</span>
+            <span>
+              {isSv
+                ? "Smyrna Frihamnskyrkan, Göteborg"
+                : "Smyrna Frihamnskyrkan, Gothenburg"}
+            </span>
           </motion.div>
         </div>
       </div>

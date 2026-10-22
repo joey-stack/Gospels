@@ -1,6 +1,15 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
+import {
+  registerTicket,
+  getTicketById,
+  getAllTickets,
+  checkInTicket,
+  undoCheckInTicket,
+  TicketPass,
+} from "@/lib/rsvpStore";
+import { generateTicketQRCode } from "@/lib/qr";
 
 export interface ActionResult {
   success: boolean;
@@ -13,12 +22,15 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /**
  * Server Action: submitRSVP
- * Validates email and event registration, logs mock confirmation email.
+ * Validates email and event registration, creates digital ticket pass with QR code.
  */
 export async function submitRSVP(formData: FormData): Promise<ActionResult> {
   const name = formData.get("name")?.toString().trim();
   const email = formData.get("email")?.toString().trim();
-  const eventId = formData.get("eventId")?.toString().trim() || "holy-spirit-worship-event";
+  const eventId = formData.get("eventId")?.toString().trim() || "holy-spirit-worship-2026";
+  const rawGuests = formData.get("guests")?.toString().trim() || "1";
+  const church = formData.get("church")?.toString().trim() || "";
+  const guests = parseInt(rawGuests, 10) || 1;
 
   const errors: Record<string, string> = {};
 
@@ -35,41 +47,50 @@ export async function submitRSVP(formData: FormData): Promise<ActionResult> {
   }
 
   try {
-    let rsvpRecord;
+    // 1. Register in persistent ticket store
+    const ticketRecord = registerTicket({
+      name: name!,
+      email: email!,
+      guests,
+      church,
+      eventId,
+      eventTitle: "Holy Spirit Worship 2026",
+    });
+
+    // 2. Generate scannable QR code data URL
+    const qrCodeDataUrl = await generateTicketQRCode(ticketRecord.id);
+
+    // 3. Optional Prisma write if DB is configured
     try {
-      rsvpRecord = await prisma.rSVP.create({
+      await prisma.rSVP.create({
         data: {
           eventId,
           name: name!,
           email: email!,
         },
       });
-    } catch (dbError) {
-      console.warn("Database connection unavailable, using in-memory mock RSVP record:", dbError);
-      rsvpRecord = {
-        id: `mock-rsvp-${Date.now()}`,
-        eventId,
-        name,
-        email,
-        createdAt: new Date(),
-      };
+    } catch {
+      // Prisma DB might not be connected; fallback already saved in ticketStore
     }
 
     // Mock Email Dispatch
     console.log("==================================================");
-    console.log("[EMAIL DISPATCH — MOCK]");
+    console.log("[EMAIL DISPATCH — DIGITAL PASS]");
     console.log(`To: ${email}`);
-    console.log(`Subject: Confirmation: Gospels Gothenburg RSVP Pass`);
-    console.log(`Attendee: ${name}`);
-    console.log(`Event ID: ${eventId}`);
-    console.log(`Time: ${new Date().toISOString()}`);
-    console.log("Status: Delivered to virtual inbox.");
+    console.log(`Subject: Your Pass: Holy Spirit Worship 2026 (#${ticketRecord.id})`);
+    console.log(`Attendee: ${name} (${guests} seats)`);
+    console.log(`Ticket Pass Code: ${ticketRecord.id}`);
+    console.log(`Venue: Smyrna Frihamnskyrkan`);
+    console.log("Status: Pass delivered with scannable gate admission code.");
     console.log("==================================================");
 
     return {
       success: true,
-      message: "You're registered! Check your email for your digital access pass.",
-      data: rsvpRecord,
+      message: "You're registered! Your official pass is ready below.",
+      data: {
+        ticket: ticketRecord,
+        qrCodeDataUrl,
+      },
     };
   } catch (err: any) {
     console.error("submitRSVP Error:", err);
@@ -78,6 +99,62 @@ export async function submitRSVP(formData: FormData): Promise<ActionResult> {
       message: "Unable to process registration at this moment. Please try again.",
     };
   }
+}
+
+/**
+ * Server Action: verifyTicketAction
+ * Used by gate stewards / admin dashboard to look up a ticket by ID.
+ */
+export async function verifyTicketAction(ticketId: string): Promise<{
+  success: boolean;
+  ticket?: TicketPass;
+  message?: string;
+}> {
+  if (!ticketId) {
+    return { success: false, message: "No ticket code provided." };
+  }
+  const ticket = getTicketById(ticketId);
+  if (!ticket) {
+    return { success: false, message: `Ticket #${ticketId} not found in registered attendee roster.` };
+  }
+  return { success: true, ticket };
+}
+
+/**
+ * Server Action: checkInTicketAction
+ * Used at the entrance gate to admit an attendee and mark ticket checked in.
+ */
+export async function checkInTicketAction(ticketId: string): Promise<{
+  success: boolean;
+  status: "CHECKED_IN_NOW" | "ALREADY_CHECKED_IN" | "NOT_FOUND";
+  message: string;
+  ticket?: TicketPass;
+}> {
+  if (!ticketId) {
+    return {
+      success: false,
+      status: "NOT_FOUND",
+      message: "No ticket code provided.",
+    };
+  }
+  return checkInTicket(ticketId);
+}
+
+/**
+ * Server Action: undoCheckInTicketAction
+ */
+export async function undoCheckInTicketAction(ticketId: string): Promise<{
+  success: boolean;
+  ticket?: TicketPass;
+}> {
+  return undoCheckInTicket(ticketId);
+}
+
+/**
+ * Server Action: getAllTicketsAction
+ */
+export async function getAllTicketsAction(): Promise<TicketPass[]> {
+  return getAllTickets();
 }
 
 /**

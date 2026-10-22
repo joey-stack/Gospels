@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface MediaArchiveItem {
   id: string;
@@ -64,6 +65,7 @@ const PAST_GATHERING_ARCHIVES: MediaArchiveItem[] = [
 ];
 
 export const WatchMediaSection: React.FC = () => {
+  const { isSv } = useLanguage();
   const [activeMedia, setActiveMedia] = useState<MediaArchiveItem>(FEATURED_ARCHIVE);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -77,13 +79,17 @@ export const WatchMediaSection: React.FC = () => {
             {/* Small uppercase kicker with line */}
             <div className="flex items-center gap-2 text-[#0D9488] text-xs font-semibold tracking-widest uppercase mb-3">
               <span className="w-5 h-[2px] bg-[#0D9488]" />
-              <span>MEDIA ARCHIVE</span>
+              <span>{isSv ? "MEDIEARKIV" : "MEDIA ARCHIVE"}</span>
             </div>
             <h2 className="font-hanken text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900">
-              Video records of all gatherings & events.
+              {isSv
+                ? "Inspelade samlingar och konserter."
+                : "Video records of all gatherings & events."}
             </h2>
             <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-2xl font-inter">
-              Every citywide worship gathering, outdoor gospel concert, and vocal workshop is preserved here with live multicam video and multi-track audio.
+              {isSv
+                ? "Varje stadsvid lovsångssamling, utomhuskonsert och sångworkshop bevaras här med flerkameravideo och flerspårsljud."
+                : "Every citywide worship gathering, outdoor gospel concert, and vocal workshop is preserved here with live multicam video and multi-track audio."}
             </p>
           </div>
 
@@ -91,7 +97,7 @@ export const WatchMediaSection: React.FC = () => {
             href="/watch"
             className="mt-5 md:mt-0 inline-flex items-center gap-2 px-4 py-2 rounded-md border border-slate-300 bg-white hover:bg-slate-50 hover:border-slate-400 text-slate-700 hover:text-slate-900 text-xs font-semibold tracking-wide transition-all shadow-xs group self-start md:self-end"
           >
-            <span>All event records</span>
+            <span>{isSv ? "Alla inspelningar" : "All event records"}</span>
             <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">
               arrow_forward
             </span>
@@ -166,7 +172,15 @@ export const WatchMediaSection: React.FC = () => {
                 onClick={() => setIsPlaying(!isPlaying)}
                 className="bg-white hover:bg-slate-100 text-[#0F172A] font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-md transition-all shadow-md active:scale-95 flex items-center gap-2 group/btn cursor-pointer"
               >
-                <span>{isPlaying ? "Pause video" : "Watch recording"}</span>
+                <span>
+                  {isSv
+                    ? isPlaying
+                      ? "Pausa video"
+                      : "Se inspelning"
+                    : isPlaying
+                    ? "Pause video"
+                    : "Watch recording"}
+                </span>
                 <span
                   className="material-symbols-outlined text-base sm:text-lg"
                   style={{ fontVariationSettings: "'FILL' 1" }}
@@ -180,7 +194,15 @@ export const WatchMediaSection: React.FC = () => {
                 onClick={() => setIsAudioPlaying(!isAudioPlaying)}
                 className="border border-white/30 hover:border-white/60 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-md transition-all active:scale-95 flex items-center gap-2 cursor-pointer shadow-sm"
               >
-                <span>{isAudioPlaying ? "Pause audio" : "Live audio"}</span>
+                <span>
+                  {isSv
+                    ? isAudioPlaying
+                      ? "Pausa ljud"
+                      : "Lyssna på ljud"
+                    : isAudioPlaying
+                    ? "Pause audio"
+                    : "Live audio"}
+                </span>
                 <span className="material-symbols-outlined text-base sm:text-lg text-[#2DD4BF]">
                   {isAudioPlaying ? "volume_up" : "headphones"}
                 </span>
@@ -194,10 +216,14 @@ export const WatchMediaSection: React.FC = () => {
           {/* Section Kicker */}
           <div className="flex items-center justify-between gap-3 mb-6 pb-3 border-b border-slate-200">
             <span className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-              RECORDED GATHERINGS & SESSIONS
+              {isSv
+                ? "INSPELADE SAMLINGAR & KONSERTER"
+                : "RECORDED GATHERINGS & SESSIONS"}
             </span>
             <span className="text-xs text-slate-400 font-medium hidden sm:inline">
-              Select any gathering to load video
+              {isSv
+                ? "Välj en samling för att spela upp"
+                : "Select any gathering to load video"}
             </span>
           </div>
 

@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { InteractiveVideoModal, VideoModalData } from "./InteractiveVideoModal";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 type ArchiveCategory = "all" | "sanctuary" | "public-square" | "workshop" | "acoustic";
 
 interface ArchiveMediaItem {
@@ -21,109 +23,134 @@ interface ArchiveMediaItem {
   videoSrc?: string;
 }
 
-const ARCHIVE_ITEMS: ArchiveMediaItem[] = [
-  {
-    id: "item-1",
-    category: "sanctuary",
-    categoryLabel: "Sanctuary Worship",
-    date: "NOV 14, 2025",
-    duration: "54 MIN",
-    title: "Halleluja Till Vår Kung — Live at Smyrna Sanctuary",
-    speaker: "SMYRNA WORSHIP CHOIR & ENSEMBLE",
-    location: "Smyrna Frihamnen, Göteborg",
-    description:
-      "A majestic rendition of the Swedish classic worship anthem performed during the autumn citywide unity gathering in Frihamnen.",
-    imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png",
-    videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.07_AM.mp4",
-  },
-  {
-    id: "item-2",
-    category: "public-square",
-    categoryLabel: "Public Square Outreach",
-    date: "JUN 12, 2025",
-    duration: "46 MIN",
-    title: "Göteborgs Lovsångskonsert — Gustav Adolfs Torg",
-    speaker: "GOSPELS OUTREACH CHOIR",
-    location: "Gustav Adolfs Torg, Göteborg",
-    description:
-      "Dynamic open-air praise and brass ensemble bringing Swedish and English gospel songs straight into Gothenburg's municipal square.",
-    imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.07_am.png",
-    videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.08_AM.mp4",
-  },
-  {
-    id: "item-3",
-    category: "acoustic",
-    categoryLabel: "Acoustic Sessions",
-    date: "AUG 19, 2025",
-    duration: "52 MIN",
-    title: "Waterfront Praise 2025 at Jubileumsparken",
-    speaker: "WATERFRONT GOSPEL COLLECTIVE",
-    location: "Jubileumsparken, Frihamnen",
-    description:
-      "Acoustic guitars, grand piano, and three-part harmonies echoing along the Göta älv harbor under the Nordic summer twilight.",
-    imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.26.13_am.png",
-    videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.08_AM_(1).mp4",
-  },
-  {
-    id: "item-4",
-    category: "workshop",
-    categoryLabel: "Vocal Workshop",
-    date: "FEB 22, 2025",
-    duration: "64 MIN",
-    title: "Nordic Choral Workshop & Harmony Masterclass",
-    speaker: "SCANDINAVIAN VOCAL DIRECTORS",
-    location: "Gothenburg Music Conservatory",
-    description:
-      "Full masterclass finale with 120 workshop participants exploring black gospel cadences, vocal projection, and Nordic modal harmonies.",
-    imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.26.12_am.png",
-    videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.09_AM.mp4",
-  },
-  {
-    id: "item-5",
-    category: "sanctuary",
-    categoryLabel: "Sanctuary Worship",
-    date: "OCT 04, 2024",
-    duration: "48 MIN",
-    title: "Night of Intercession & Gospel Hymns",
-    speaker: "UNITED ECUMENICAL CHOIR",
-    location: "Smyrna Frihamnskyrkan",
-    description:
-      "Sacred acoustic evening of deep prayer and contemplative worship convening members from Pentecostal, Mission, and Catholic fellowships.",
-    imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_2.png",
-    videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.09_AM_(1).mp4",
-  },
-  {
-    id: "item-6",
-    category: "acoustic",
-    categoryLabel: "Acoustic Sessions",
-    date: "SEP 18, 2024",
-    duration: "39 MIN",
-    title: "Acoustic Cathedral Hymns & Polyphony",
-    speaker: "WEST SWEDEN VOICES",
-    location: "Haga Kyrka, Gothenburg",
-    description:
-      "Cathedral acoustics highlighting traditional gospel spirituals re-imagined with modern acoustic instrumentation.",
-    imageUrl: "/assets/WhatsApp_Image_2026-10-16_at_8.28.06_AM.jpeg",
-    videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.09_AM_(2).mp4",
-  },
-];
-
-const CATEGORY_TABS: { key: ArchiveCategory; label: string }[] = [
-  { key: "all", label: "All Sessions" },
-  { key: "sanctuary", label: "Sanctuary Worship" },
-  { key: "public-square", label: "Public Square Outreach" },
-  { key: "workshop", label: "Vocal Workshops" },
-  { key: "acoustic", label: "Acoustic Sessions" },
-];
-
 export const WatchArchiveCatalog: React.FC = () => {
+  const { isSv } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<ArchiveCategory>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const [activeItem, setActiveItem] = useState<VideoModalData | null>(null);
 
+  const categoryTabs: { key: ArchiveCategory; label: string }[] = useMemo(
+    () => [
+      { key: "all", label: isSv ? "Alla samlingar" : "All Sessions" },
+      { key: "sanctuary", label: isSv ? "Kyrksalslovsång" : "Sanctuary Worship" },
+      { key: "public-square", label: isSv ? "Torglovsång" : "Public Square Outreach" },
+      { key: "workshop", label: isSv ? "Körworkshops" : "Vocal Workshops" },
+      { key: "acoustic", label: isSv ? "Akustiska sessioner" : "Acoustic Sessions" },
+    ],
+    [isSv]
+  );
+
+  const archiveItems: ArchiveMediaItem[] = useMemo(
+    () => [
+      {
+        id: "item-1",
+        category: "sanctuary",
+        categoryLabel: isSv ? "Kyrksalslovsång" : "Sanctuary Worship",
+        date: isSv ? "14 NOV 2025" : "NOV 14, 2025",
+        duration: "54 MIN",
+        title: isSv
+          ? "Halleluja Till Vår Kung — Live i Smyrna Kyrksal"
+          : "Halleluja Till Vår Kung — Live at Smyrna Sanctuary",
+        speaker: isSv ? "SMYRNA LOVSÅNGSKÖR & ENSEMBLE" : "SMYRNA WORSHIP CHOIR & ENSEMBLE",
+        location: isSv ? "Smyrna Frihamnen, Göteborg" : "Smyrna Frihamnen, Gothenburg",
+        description: isSv
+          ? "En storslagen tolkning av den svenska lovsångsklassikern framförd under höstens ekumeniska enhetssamling i Frihamnen."
+          : "A majestic rendition of the Swedish classic worship anthem performed during the autumn citywide unity gathering in Frihamnen.",
+        imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png",
+        videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.07_AM.mp4",
+      },
+      {
+        id: "item-2",
+        category: "public-square",
+        categoryLabel: isSv ? "Torglovsång" : "Public Square Outreach",
+        date: isSv ? "12 JUN 2025" : "JUN 12, 2025",
+        duration: "46 MIN",
+        title: isSv
+          ? "Göteborgs Lovsångskonsert — Gustav Adolfs Torg"
+          : "Göteborgs Lovsångskonsert — Gustav Adolfs Torg",
+        speaker: isSv ? "GOSPELS UTÅTRIKTADE KÖR" : "GOSPELS OUTREACH CHOIR",
+        location: "Gustav Adolfs Torg, Göteborg",
+        description: isSv
+          ? "Dynamisk torglovsång och blåsarensemble som framför gospelsånger på svenska och engelska mitt i Göteborgs centrum."
+          : "Dynamic open-air praise and brass ensemble bringing Swedish and English gospel songs straight into Gothenburg's municipal square.",
+        imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.07_am.png",
+        videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.08_AM.mp4",
+      },
+      {
+        id: "item-3",
+        category: "acoustic",
+        categoryLabel: isSv ? "Akustiska sessioner" : "Acoustic Sessions",
+        date: isSv ? "19 AUG 2025" : "AUG 19, 2025",
+        duration: "52 MIN",
+        title: isSv
+          ? "Waterfront Praise 2025 vid Jubileumsparken"
+          : "Waterfront Praise 2025 at Jubileumsparken",
+        speaker: isSv ? "WATERFRONT GOSPEL COLLECTIVE" : "WATERFRONT GOSPEL COLLECTIVE",
+        location: isSv ? "Jubileumsparken, Frihamnen" : "Jubileumsparken, Frihamnen",
+        description: isSv
+          ? "Akustiska gitarrer, flygel och trestämmiga harmonier som ekar längs Göta älv i den nordiska sommarskymningen."
+          : "Acoustic guitars, grand piano, and three-part harmonies echoing along the Göta älv harbor under the Nordic summer twilight.",
+        imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.26.13_am.png",
+        videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.08_AM_(1).mp4",
+      },
+      {
+        id: "item-4",
+        category: "workshop",
+        categoryLabel: isSv ? "Körworkshop" : "Vocal Workshop",
+        date: isSv ? "22 FEB 2025" : "FEB 22, 2025",
+        duration: "64 MIN",
+        title: isSv
+          ? "Nordisk Körworkshop & Stämmästarklass"
+          : "Nordic Choral Workshop & Harmony Masterclass",
+        speaker: isSv ? "SKANDINAVISKA SÅNGLEDARE" : "SCANDINAVIAN VOCAL DIRECTORS",
+        location: isSv ? "Göteborgs Musikkonservatorium" : "Gothenburg Music Conservatory",
+        description: isSv
+          ? "Avslutningskonsert med 120 workshopdeltagare som utforskar gospelkadenser, röstprojektion och nordiska modala harmonier."
+          : "Full masterclass finale with 120 workshop participants exploring black gospel cadences, vocal projection, and Nordic modal harmonies.",
+        imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.26.12_am.png",
+        videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.09_AM.mp4",
+      },
+      {
+        id: "item-5",
+        category: "sanctuary",
+        categoryLabel: isSv ? "Kyrksalslovsång" : "Sanctuary Worship",
+        date: isSv ? "04 OKT 2024" : "OCT 04, 2024",
+        duration: "48 MIN",
+        title: isSv
+          ? "Förbönskväll & Gospelhymner"
+          : "Night of Intercession & Gospel Hymns",
+        speaker: isSv ? "FÖRENADE EKUMENISKA KÖREN" : "UNITED ECUMENICAL CHOIR",
+        location: "Smyrna Frihamnskyrkan",
+        description: isSv
+          ? "Hängiven akustisk kväll med djup bön och kontemplativ lovsång som samlar troende från pingst-, missions- och katolska gemenskaper."
+          : "Sacred acoustic evening of deep prayer and contemplative worship convening members from Pentecostal, Mission, and Catholic fellowships.",
+        imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_2.png",
+        videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.09_AM_(1).mp4",
+      },
+      {
+        id: "item-6",
+        category: "acoustic",
+        categoryLabel: isSv ? "Akustiska sessioner" : "Acoustic Sessions",
+        date: isSv ? "18 SEP 2024" : "SEP 18, 2024",
+        duration: "39 MIN",
+        title: isSv
+          ? "Akustiska Kyrkohymner & Polyfoni"
+          : "Acoustic Cathedral Hymns & Polyphony",
+        speaker: isSv ? "VÄSTSVERIGES RÖSTER" : "WEST SWEDEN VOICES",
+        location: isSv ? "Hagakyrkan, Göteborg" : "Haga Kyrka, Gothenburg",
+        description: isSv
+          ? "Kyrkorummets akustik lyfter fram traditionella gospelsånger omtolkade med modern akustisk instrumentering."
+          : "Cathedral acoustics highlighting traditional gospel spirituals re-imagined with modern acoustic instrumentation.",
+        imageUrl: "/assets/WhatsApp_Image_2026-10-16_at_8.28.06_AM.jpeg",
+        videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.09_AM_(2).mp4",
+      },
+    ],
+    [isSv]
+  );
+
   const filteredItems = useMemo(() => {
-    return ARCHIVE_ITEMS.filter((item) => {
+    return archiveItems.filter((item) => {
       const matchesCategory =
         selectedCategory === "all" || item.category === selectedCategory;
       const matchesSearch =
@@ -133,7 +160,7 @@ export const WatchArchiveCatalog: React.FC = () => {
         item.location.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [archiveItems, selectedCategory, searchQuery]);
 
   const handleCardClick = (item: ArchiveMediaItem) => {
     setActiveItem({
@@ -157,13 +184,15 @@ export const WatchArchiveCatalog: React.FC = () => {
             <div>
               <div className="flex items-center gap-2 text-[#0D9488] text-xs font-semibold tracking-widest uppercase mb-3">
                 <span className="w-5 h-[2px] bg-[#0D9488]" />
-                <span>ARCHIVE</span>
+                <span>{isSv ? "ARKIV" : "ARCHIVE"}</span>
               </div>
               <h2 className="font-hanken text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900">
-                Every gathering, by session.
+                {isSv ? "Alla samlingar, pass för pass." : "Every gathering, by session."}
               </h2>
               <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-2xl font-inter">
-                Filter by worship format or search by church, hymn, or choir leader.
+                {isSv
+                  ? "Filtrera efter lovsångsformat eller sök på kyrka, hymn eller körledare."
+                  : "Filter by worship format or search by church, hymn, or choir leader."}
               </p>
             </div>
 
@@ -173,7 +202,7 @@ export const WatchArchiveCatalog: React.FC = () => {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search recordings, hymns, choir..."
+                placeholder={isSv ? "Sök inspelningar, hymner, kör..." : "Search recordings, hymns, choir..."}
                 className="w-full pl-9 pr-4 py-2.5 text-xs font-inter rounded-md border border-slate-300 bg-white placeholder-slate-400 text-slate-800 focus:outline-none focus:border-[#0D9488] focus:ring-1 focus:ring-[#0D9488] transition-colors shadow-xs"
               />
               <span className="material-symbols-outlined absolute left-2.5 top-2.5 text-slate-400 text-base pointer-events-none">
@@ -184,7 +213,7 @@ export const WatchArchiveCatalog: React.FC = () => {
 
           {/* Filter Pills: Morrow Church Architectural Tabs */}
           <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
-            {CATEGORY_TABS.map((tab) => {
+            {categoryTabs.map((tab) => {
               const isActive = selectedCategory === tab.key;
               return (
                 <button
@@ -210,10 +239,12 @@ export const WatchArchiveCatalog: React.FC = () => {
                 search_off
               </span>
               <p className="font-hanken font-bold text-slate-800 text-lg">
-                No recorded sessions found
+                {isSv ? "Inga inspelade samlingar hittades" : "No recorded sessions found"}
               </p>
               <p className="font-inter text-xs text-slate-500 mt-1">
-                Try adjusting your search query or switching categories.
+                {isSv
+                  ? "Prova att justera din sökning eller byt kategori."
+                  : "Try adjusting your search query or switching categories."}
               </p>
             </div>
           ) : (
@@ -301,7 +332,7 @@ export const WatchArchiveCatalog: React.FC = () => {
                         {item.location}
                       </span>
                       <span className="font-semibold text-[#0D9488] group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5 shrink-0">
-                        Watch <span className="material-symbols-outlined text-sm">chevron_right</span>
+                        {isSv ? "Se video" : "Watch"} <span className="material-symbols-outlined text-sm">chevron_right</span>
                       </span>
                     </div>
                   </div>

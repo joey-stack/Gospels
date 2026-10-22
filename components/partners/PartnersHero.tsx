@@ -5,7 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export const PartnersHero: React.FC = () => {
+  const { isSv } = useLanguage();
+
   return (
     <section className="w-full px-2.5 sm:px-5 pt-2.5 sm:pt-5 bg-[#F8F9FF]">
       {/* Morrow Church Style Elevated Event Header Card */}
@@ -14,7 +18,11 @@ export const PartnersHero: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/whatsapp_image_2026_10_16_at_8.26.13_am.png"
-            alt="Christian believers and gospel choirs united across Gothenburg churches"
+            alt={
+              isSv
+                ? "Troende och gospelkörer förenade över församlingsgränser i Göteborg"
+                : "Christian believers and gospel choirs united across Gothenburg churches"
+            }
             fill
             priority
             quality={95}
@@ -42,10 +50,12 @@ export const PartnersHero: React.FC = () => {
             className="flex items-center gap-2 text-xs font-inter text-slate-400 mb-6"
           >
             <Link href="/" className="hover:text-white transition-colors">
-              Home
+              {isSv ? "Hem" : "Home"}
             </Link>
             <span className="text-slate-600">/</span>
-            <span className="text-[#2DD4BF] font-medium">Partner Churches</span>
+            <span className="text-[#2DD4BF] font-medium">
+              {isSv ? "Partnerkyrkor" : "Partner Churches"}
+            </span>
           </motion.nav>
 
           {/* Eyebrow Line with Accent Bar */}
@@ -56,7 +66,11 @@ export const PartnersHero: React.FC = () => {
             className="flex items-center gap-3 text-xs font-semibold tracking-widest uppercase text-[#2DD4BF] mb-4"
           >
             <span className="w-7 h-[2px] bg-[#2DD4BF]" />
-            <span>ECUMENICAL FELLOWSHIP · VÄSTRA GÖTALAND</span>
+            <span>
+              {isSv
+                ? "EKUMENISK GEMENSKAP · VÄSTRA GÖTALAND"
+                : "ECUMENICAL FELLOWSHIP · VÄSTRA GÖTALAND"}
+            </span>
           </motion.div>
 
           {/* Main Title (H1) with Italic Serif Accent */}
@@ -66,10 +80,21 @@ export const PartnersHero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-hanken text-4xl sm:text-5xl lg:text-6xl text-white font-bold tracking-tight leading-[1.1] mb-6"
           >
-            One body, one voice over{" "}
-            <span className="font-eb italic font-normal text-[#2DD4BF]">
-              Gothenburg.
-            </span>
+            {isSv ? (
+              <>
+                En kropp, en röst över{" "}
+                <span className="font-eb italic font-normal text-[#2DD4BF]">
+                  Göteborg.
+                </span>
+              </>
+            ) : (
+              <>
+                One body, one voice over{" "}
+                <span className="font-eb italic font-normal text-[#2DD4BF]">
+                  Gothenburg.
+                </span>
+              </>
+            )}
           </motion.h1>
 
           {/* Subtitle Paragraph */}
@@ -79,7 +104,9 @@ export const PartnersHero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="font-inter text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed mb-6"
           >
-            A unified body of believers across Lutheran, Pentecostal, Evangelical, and International congregations lifting Jesus together over Gothenburg through sacred gospel music, combined prayer vigils, and citywide worship concerts.
+            {isSv
+              ? "En förenad gemenskap av troende över lutherska, pingst-, evangeliska och internationella församlingar som lyfter Jesus tillsammans över Göteborg genom gospellovsång, bönehelger och stadsvida konserter."
+              : "A unified body of believers across Lutheran, Pentecostal, Evangelical, and International congregations lifting Jesus together over Gothenburg through sacred gospel music, combined prayer vigils, and citywide worship concerts."}
           </motion.p>
 
           {/* Meta Bar */}
@@ -89,13 +116,17 @@ export const PartnersHero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex items-center flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-slate-300 font-inter"
           >
-            <span className="font-medium text-white">24 Member Parishes</span>
+            <span className="font-medium text-white">
+              {isSv ? "24 Medlemsförsamlingar" : "24 Member Parishes"}
+            </span>
             <span className="w-7 h-[1px] bg-white/25" />
-            <span>Gothenburg &amp; Västra Götaland</span>
+            <span>{isSv ? "Göteborg & Västra Götaland" : "Gothenburg & Västra Götaland"}</span>
             <span className="w-7 h-[1px] bg-white/25" />
-            <span>4 Fellowship Hubs</span>
+            <span>{isSv ? "4 Samlingsplatser" : "4 Fellowship Hubs"}</span>
             <span className="w-7 h-[1px] bg-white/25" />
-            <span className="text-[#2DD4BF]">Zero Denominational Compromise</span>
+            <span className="text-[#2DD4BF]">
+              {isSv ? "Ekumenisk enhet i Kristus" : "Zero Denominational Compromise"}
+            </span>
           </motion.div>
         </div>
       </div>

@@ -3,8 +3,10 @@
 import React, { useState, useTransition } from "react";
 import { motion } from "framer-motion";
 import { submitPrayerRequest } from "@/app/actions";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const PrayerIntercessionSection: React.FC = () => {
+  const { isSv } = useLanguage();
   const [isPending, startTransition] = useTransition();
   const [statusMessage, setStatusMessage] = useState<{
     type: "success" | "error";
@@ -23,22 +25,24 @@ export const PrayerIntercessionSection: React.FC = () => {
         if (result.success) {
           setStatusMessage({
             type: "success",
-            text:
-              result.message ||
-              "Your prayer request has been received. Our intercession team is standing in faith with you.",
+            text: isSv
+              ? "Ditt böneämne har mottagits. Vårt förbönsteam står tillsammans med dig i tro inför Gud."
+              : (result.message || "Your prayer request has been received. Our intercession team is standing in faith with you."),
           });
         } else {
           setStatusMessage({
             type: "error",
-            text:
-              result.message ||
-              "Please check your prayer request and try submitting again.",
+            text: isSv
+              ? "Kontrollera ditt böneämne och försök igen."
+              : (result.message || "Please check your prayer request and try submitting again."),
           });
         }
       } catch (err) {
         setStatusMessage({
           type: "error",
-          text: "An error occurred while submitting your prayer request. Please try again.",
+          text: isSv
+            ? "Ett fel uppstod när böneämnet skulle skickas. Försök igen."
+            : "An error occurred while submitting your prayer request. Please try again.",
         });
       }
     });
@@ -56,18 +60,24 @@ export const PrayerIntercessionSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-5">
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">
-              PASTORAL INTERCESSION
+              {isSv ? "PASTORAL FÖRBÖN" : "PASTORAL INTERCESSION"}
             </span>
             <h2 className="font-headline-lg text-headline-lg text-[#0F172A] font-bold mt-2">
-              How Can We Pray for You?
+              {isSv ? "Hur kan vi be för dig?" : "How Can We Pray for You?"}
             </h2>
             <p className="font-body-md text-body-md text-secondary mt-3 leading-relaxed">
-              Our intercessory team from partner churches in Gothenburg meets weekly to pray over every request. You may share openly or remain anonymous.
+              {isSv
+                ? "Vårt förbönsteam från partnerkyrkor i Göteborg samlas regelbundet för att be för varje böneämne. Dela öppet eller var helt anonym."
+                : "Our intercessory team from partner churches in Gothenburg meets weekly to pray over every request. You may share openly or remain anonymous."}
             </p>
             {/* WhatsApp Privacy Indicator */}
             <div className="mt-6 inline-flex items-center gap-3 p-3.5 bg-surface-container-lowest/80 rounded-md border border-outline-variant/30 text-on-surface-variant font-body-sm text-body-sm">
               <span className="material-symbols-outlined text-[#0D9488]">verified_user</span>
-              <span>Encrypted care. Direct WhatsApp prayer line also available upon submission.</span>
+              <span>
+                {isSv
+                  ? "Konfidentiell själavård. Direkt WhatsApp-bönelinje finns tillgänglig efter anmälan."
+                  : "Encrypted care. Direct WhatsApp prayer line also available upon submission."}
+              </span>
             </div>
           </div>
 
@@ -79,7 +89,7 @@ export const PrayerIntercessionSection: React.FC = () => {
                   <span className="material-symbols-outlined text-2xl">check</span>
                 </div>
                 <h3 className="font-headline-md text-headline-md font-bold text-[#0F172A]">
-                  Request Received
+                  {isSv ? "Böneämnet Mottaget" : "Request Received"}
                 </h3>
                 <p className="font-body-sm text-body-sm text-secondary max-w-md mx-auto">
                   {statusMessage.text}
@@ -88,9 +98,9 @@ export const PrayerIntercessionSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setStatusMessage(null)}
-                    className="px-5 py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-surface-container font-label-md text-label-md font-semibold"
+                    className="px-5 py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-surface-container font-label-md text-label-md font-semibold cursor-pointer"
                   >
-                    Submit Another Request
+                    {isSv ? "Skicka ett till böneämne" : "Submit Another Request"}
                   </button>
                 </div>
               </div>
@@ -105,23 +115,23 @@ export const PrayerIntercessionSection: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block font-label-md text-label-md text-[#0F172A] mb-1.5 font-semibold">
-                      Your First Name (or Anonymous)
+                      {isSv ? "Ditt Förnamn (eller anonymt)" : "Your First Name (or Anonymous)"}
                     </label>
                     <input
                       name="name"
                       type="text"
-                      placeholder="E.g., Astrid or Leave Blank"
+                      placeholder={isSv ? "T.ex. Astrid eller lämna tomt" : "E.g., Astrid or Leave Blank"}
                       className="w-full bg-white border border-[#CBD5E1] rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-slate-400 focus:outline-none focus:border-[#0D9488] focus:ring-2 focus:ring-[#0D9488]/15 transition-all"
                     />
                   </div>
                   <div>
                     <label className="block font-label-md text-label-md text-[#0F172A] mb-1.5 font-semibold">
-                      City District
+                      {isSv ? "Stadsdel i Göteborg" : "City District"}
                     </label>
                     <input
                       name="district"
                       type="text"
-                      placeholder="E.g., Majorna, Hisingen, Centrum"
+                      placeholder={isSv ? "T.ex. Majorna, Hisingen, Centrum" : "E.g., Majorna, Hisingen, Centrum"}
                       className="w-full bg-white border border-[#CBD5E1] rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-slate-400 focus:outline-none focus:border-[#0D9488] focus:ring-2 focus:ring-[#0D9488]/15 transition-all"
                     />
                   </div>
@@ -129,13 +139,17 @@ export const PrayerIntercessionSection: React.FC = () => {
 
                 <div>
                   <label className="block font-label-md text-label-md text-[#0F172A] mb-1.5 font-semibold">
-                    Prayer Request
+                    {isSv ? "Böneämne *" : "Prayer Request *"}
                   </label>
                   <textarea
                     name="requestText"
                     rows={3}
                     required
-                    placeholder="Share what is on your heart for health, family, spiritual walk, or our city..."
+                    placeholder={
+                      isSv
+                        ? "Dela vad som ligger på ditt hjärta gällande hälsa, familj, andlig vandring eller vår stad..."
+                        : "Share what is on your heart for health, family, spiritual walk, or our city..."
+                    }
                     className="w-full bg-white border border-[#CBD5E1] rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-slate-400 focus:outline-none focus:border-[#0D9488] focus:ring-2 focus:ring-[#0D9488]/15 transition-all"
                   />
                 </div>
@@ -148,14 +162,22 @@ export const PrayerIntercessionSection: React.FC = () => {
                       defaultChecked
                       className="rounded border-slate-300 text-primary focus:ring-primary"
                     />
-                    <span>Keep this request confidential within ministry leaders</span>
+                    <span>
+                      {isSv
+                        ? "Håll detta böneämne konfidentiellt inom ledarteamet"
+                        : "Keep this request confidential within ministry leaders"}
+                    </span>
                   </label>
                   <button
                     type="submit"
                     disabled={isPending}
                     className="w-full sm:w-auto bg-[#0D9488] hover:bg-[#0F766E] text-white font-semibold font-label-md text-label-md px-6 py-3 rounded-lg transition-all active:scale-95 shadow-sm flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
                   >
-                    <span>{isPending ? "Sending..." : "Send Prayer Request"}</span>
+                    <span>
+                      {isPending
+                        ? (isSv ? "Skickar..." : "Sending...")
+                        : (isSv ? "Skicka böneämne" : "Send Prayer Request")}
+                    </span>
                     <span className="material-symbols-outlined text-sm">send</span>
                   </button>
                 </div>

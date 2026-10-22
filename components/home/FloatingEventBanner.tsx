@@ -3,8 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const FloatingEventBanner: React.FC = () => {
+  const { isSv } = useLanguage();
+
   return (
     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-[40px] -mt-12 sm:-mt-16 md:-mt-20 relative z-20 mb-12 md:mb-16">
       <motion.div
@@ -32,14 +35,16 @@ export const FloatingEventBanner: React.FC = () => {
             <div className="space-y-1 min-w-0">
               <div className="flex items-center gap-2">
                 <span className="text-[11px] text-[#0D9488] uppercase font-bold tracking-wider">
-                  Upcoming Gathering
+                  {isSv ? "Kommande samling" : "Upcoming Gathering"}
                 </span>
                 <span className="text-slate-300 text-xs hidden sm:inline">·</span>
-                <span className="text-slate-500 text-xs hidden sm:inline">Gothenburg, Sweden</span>
+                <span className="text-slate-500 text-xs hidden sm:inline">
+                  {isSv ? "Göteborg, Sverige" : "Gothenburg, Sweden"}
+                </span>
               </div>
 
               <h3 className="font-hanken text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 leading-tight">
-                Holy Spirit Worship 2026
+                {isSv ? "Lovsång i den Helige Ande 2026" : "Holy Spirit Worship 2026"}
               </h3>
 
               <p className="font-inter text-xs sm:text-sm text-slate-600 flex items-center gap-1.5 pt-0.5">
@@ -58,10 +63,10 @@ export const FloatingEventBanner: React.FC = () => {
                 <span className="material-symbols-outlined text-[16px] text-[#0D9488]">
                   schedule
                 </span>
-                18:30 CET (Doors open 17:45)
+                {isSv ? "18:30 CET (Dörrarna öppnas 17:45)" : "18:30 CET (Doors open 17:45)"}
               </span>
               <span className="text-[#0D9488] font-semibold bg-[#F0FDFA] px-2.5 py-1 rounded-md border border-[#2DD4BF]/30">
-                Complimentary entry
+                {isSv ? "Öppet inträde" : "Complimentary entry"}
               </span>
             </div>
 
@@ -70,7 +75,7 @@ export const FloatingEventBanner: React.FC = () => {
               href="/events/holy-spirit-worship"
               className="w-full sm:w-auto bg-[#0D9488] hover:bg-[#0F766E] text-white font-semibold text-sm px-6 sm:px-8 py-3 rounded-md transition-all duration-150 active:scale-95 shadow-md hover:shadow-teal-600/25 flex items-center justify-center gap-2"
             >
-              <span>Reserve Pass</span>
+              <span>{isSv ? "Boka plats" : "Reserve Pass"}</span>
               <span className="material-symbols-outlined text-base">arrow_forward</span>
             </Link>
           </div>
