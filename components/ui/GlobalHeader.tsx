@@ -263,19 +263,23 @@ export const GlobalHeader: React.FC = () => {
               <div className="space-y-6">
                 {/* Header row with logo and Close Button */}
                 <div className="flex items-center justify-between pb-3 border-b border-slate-200/80 dark:border-slate-800">
-                  <div className="flex items-center gap-2.5">
-                    <span className="w-8 h-8 rounded-xl bg-[#0D9488] flex items-center justify-center text-white shadow-sm">
-                      <span className="material-symbols-outlined text-[19px]">music_note</span>
-                    </span>
-                    <div className="flex flex-col">
-                      <span className="font-hanken font-bold text-lg text-slate-900 dark:text-white leading-none">
-                        GOSPELS
-                      </span>
-                      <span className="text-[9px] tracking-widest uppercase font-semibold text-slate-500 dark:text-slate-400 mt-0.5">
-                        GÖTEBORG
-                      </span>
+                  <Link
+                    href="/"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2 group focus:outline-none"
+                    aria-label="GOSPELS Göteborg"
+                  >
+                    <div className="relative h-8 flex items-center">
+                      <Image
+                        src="/brand/gospels-logo-color.png"
+                        alt="GOSPELS Göteborg"
+                        width={130}
+                        height={40}
+                        priority
+                        className="h-8 w-auto object-contain drop-shadow-xs"
+                      />
                     </div>
-                  </div>
+                  </Link>
 
                   <button
                     type="button"
