@@ -1,7 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import { GlobalHeader } from "@/components/ui/GlobalHeader";
-import { GlobalFooter } from "@/components/ui/GlobalFooter";
 import { WatchHero } from "@/components/watch/WatchHero";
 import { WatchFeaturedSection } from "@/components/watch/WatchFeaturedSection";
 import { WatchArchiveCatalog } from "@/components/watch/WatchArchiveCatalog";
@@ -30,9 +28,6 @@ export const metadata: Metadata = {
 export default function WatchPage() {
   return (
     <div className="min-h-screen bg-[#F8F9FF] text-slate-900 flex flex-col font-inter">
-      {/* Global Floating Header matching Morrow Church */}
-      <GlobalHeader />
-
       <main className="flex-1 w-full space-y-4 sm:space-y-6">
         {/* 1. Hero Section matching Morrow Church sermons hero */}
         <WatchHero />
@@ -49,9 +44,6 @@ export default function WatchPage() {
         {/* 5. Podcast & Audio Streaming Channels */}
         <WatchPodcastPlatforms />
       </main>
-
-      {/* Global Elevated Footer with giant GOSPELS wordmark */}
-      <GlobalFooter />
     </div>
   );
 }

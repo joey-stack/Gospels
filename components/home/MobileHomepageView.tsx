@@ -258,13 +258,13 @@ export const MobileHomepageView: React.FC = () => {
                 Direct confidential pastoral intercession.
               </p>
             </div>
-            <a
-              href="#prayer"
+            <Link
+              href="/prayer"
               className="inline-flex items-center gap-1 text-xs font-semibold text-[#00685f] dark:text-[#2DD4BF] mt-3 hover:underline"
             >
               <span>Submit request</span>
               <span className="text-xs">↗</span>
-            </a>
+            </Link>
           </div>
 
           {/* Card 2: Swish Offering */}

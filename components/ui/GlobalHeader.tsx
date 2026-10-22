@@ -24,13 +24,13 @@ export const GlobalHeader: React.FC = () => {
     { name: "Events", href: "/events" },
     { name: "Watch & Listen", href: "/watch" },
     { name: "Churches", href: "/partners" },
-    { name: "Need Prayer?", href: "/#prayer" },
+    { name: "Need Prayer?", href: "/prayer" },
   ];
 
   const dropdownItems: DropdownItem[] = [
     {
       name: "Need Prayer?",
-      href: "/#prayer",
+      href: "/prayer",
       description: "Submit personal intercession requests",
       icon: "volunteer_activism",
     },

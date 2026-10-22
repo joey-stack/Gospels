@@ -111,7 +111,7 @@ export const GlobalFooter: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#prayer" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                  <Link href="/prayer" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     Need Prayer?
                   </Link>
                 </li>

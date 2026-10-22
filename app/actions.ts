@@ -87,18 +87,33 @@ export async function submitRSVP(formData: FormData): Promise<ActionResult> {
 export async function submitPrayerRequest(formData: FormData): Promise<ActionResult> {
   const name = formData.get("name")?.toString().trim() || "Anonymous Prayer Seeker";
   const emailInput = formData.get("email")?.toString().trim();
-  const email = emailInput && EMAIL_REGEX.test(emailInput) ? emailInput : "intercession@gospelsgoteborg.se";
-  const requestText = formData.get("requestText")?.toString().trim();
+  const phone = formData.get("phone")?.toString().trim() || "";
+  const categories = formData.getAll("category").map((c) => c.toString()).filter(Boolean);
+  const isConfidential = formData.get("confidential") === "true" || formData.get("confidential") === "on";
+  const rawRequestText = formData.get("requestText")?.toString().trim() || "";
 
   const errors: Record<string, string> = {};
 
-  if (!requestText || requestText.length < 5) {
-    errors.requestText = "Please share a brief prayer request.";
+  if (!rawRequestText || rawRequestText.length < 5) {
+    errors.requestText = "Please share a brief prayer request (at least 5 characters).";
+  }
+
+  if (emailInput && !EMAIL_REGEX.test(emailInput)) {
+    errors.email = "Please enter a valid email address.";
   }
 
   if (Object.keys(errors).length > 0) {
     return { success: false, errors };
   }
+
+  const email = emailInput && EMAIL_REGEX.test(emailInput) ? emailInput : "intercession@gospelsgoteborg.se";
+
+  // Build composite payload for database record
+  const categoryHeader = categories.length > 0 ? `[Focus: ${categories.join(", ")}]` : "";
+  const phoneHeader = phone ? `[Phone: ${phone}]` : "";
+  const confidentialHeader = isConfidential ? `[Confidential: Strictly Pastoral]` : "";
+  const metaHeader = [categoryHeader, phoneHeader, confidentialHeader].filter(Boolean).join(" ");
+  const fullRequestText = metaHeader ? `${metaHeader}\n\n${rawRequestText}` : rawRequestText;
 
   try {
     let prayerRecord;
@@ -106,8 +121,8 @@ export async function submitPrayerRequest(formData: FormData): Promise<ActionRes
       prayerRecord = await prisma.prayerRequest.create({
         data: {
           name,
-          email: email!,
-          requestText: requestText!,
+          email,
+          requestText: fullRequestText,
           status: "NEW",
         },
       });
@@ -117,7 +132,10 @@ export async function submitPrayerRequest(formData: FormData): Promise<ActionRes
         id: `mock-prayer-${Date.now()}`,
         name,
         email,
-        requestText,
+        phone,
+        categories,
+        isConfidential,
+        requestText: fullRequestText,
         status: "NEW",
         createdAt: new Date(),
       };
@@ -128,7 +146,10 @@ export async function submitPrayerRequest(formData: FormData): Promise<ActionRes
     console.log("[WHATSAPP INTERCESSION ROUTING — MOCK]");
     console.log("To: +46 31 GOSPELS PRAYER TEAM (Gothenburg)");
     console.log(`From: ${name} <${email}>`);
-    console.log(`Prayer Burden: "${requestText}"`);
+    if (phone) console.log(`Phone: ${phone}`);
+    if (categories.length > 0) console.log(`Categories: ${categories.join(", ")}`);
+    console.log(`Confidential: ${isConfidential ? "YES (Pastoral Only)" : "NO (Shared with Intercessory Choir)"}`);
+    console.log(`Prayer Burden: "${rawRequestText}"`);
     console.log(`Priority: Active Intercession`);
     console.log("==================================================");
 
