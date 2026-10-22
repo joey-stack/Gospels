@@ -45,7 +45,7 @@ export const GiveFaqSection: React.FC = () => {
 
   return (
     <section className="w-full px-2.5 sm:px-5 my-12 sm:my-16 mb-20 sm:mb-24">
-      <div className="max-w-4xl mx-auto space-y-8 font-inter">
+      <div className="w-full space-y-8 font-inter">
         {/* Section Header */}
         <div className="text-center space-y-2">
           <span className="text-xs font-bold text-[#0D9488] uppercase tracking-wider block">

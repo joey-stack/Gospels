@@ -6,7 +6,7 @@ import { Quote } from "lucide-react";
 export const GiveScriptureSection: React.FC = () => {
   return (
     <section className="w-full px-2.5 sm:px-5 my-10 sm:my-14">
-      <div className="max-w-4xl mx-auto">
+      <div className="w-full">
         <div className="relative bg-[#F8FAFC] border-l-4 border-[#0D9488] rounded-md sm:rounded-lg p-6 sm:p-10 md:p-12 shadow-xs overflow-hidden">
           {/* Subtle Decorative Background Watermark */}
           <Quote className="absolute right-4 top-4 sm:right-6 sm:top-6 w-16 h-16 sm:w-20 sm:h-20 text-[#0D9488]/10 pointer-events-none select-none" />

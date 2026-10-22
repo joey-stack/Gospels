@@ -27,8 +27,8 @@ async function main() {
   console.log("Saved desktop screenshot to", desktopPath);
 
   // 2. Open Swish Giving Modal & capture dialog
-  console.log("Clicking 'Open Swish on Mobile' to capture modal...");
-  const swishBtn = page.locator("button:has-text('Open Swish on Mobile')").first();
+  console.log("Clicking 'Give once' to capture modal...");
+  const swishBtn = page.locator("button:has-text('Give once')").first();
   await swishBtn.click();
   await page.waitForTimeout(600);
 

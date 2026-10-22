@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -87,21 +88,21 @@ export const GlobalHeader: React.FC = () => {
       {/* Floating Navbar Island (Morrow Church Floating Navbar Style) */}
       <header className="fixed top-4 sm:top-7 md:top-9 inset-x-0 z-40 flex justify-center px-4 sm:px-8 md:px-12 pointer-events-none">
         <div className="w-full max-w-7xl mx-auto pointer-events-auto bg-[#EBF1F6]/90 dark:bg-[#0F172A]/90 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-lg h-14 lg:h-[64px] px-4 md:px-6 flex items-center justify-between transition-all duration-200">
-          {/* Left: Brand Logo */}
+          {/* Left: Brand Logo (Official Gospels Colored Wordmark) */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] rounded-md"
+            className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] rounded-md"
+            aria-label="GOSPELS Göteborg"
           >
-            <span className="w-8 h-8 rounded-md bg-[#0D9488] flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
-              <span className="material-symbols-outlined text-[20px]">music_note</span>
-            </span>
-            <div className="flex flex-col">
-              <span className="font-hanken font-bold text-lg md:text-xl tracking-tight text-slate-900 dark:text-white leading-none">
-                GOSPELS
-              </span>
-              <span className="text-[9px] md:text-[10px] tracking-widest uppercase font-semibold text-slate-500 dark:text-slate-400 mt-0.5">
-                GÖTEBORG
-              </span>
+            <div className="relative h-8 md:h-10 flex items-center">
+              <Image
+                src="/brand/gospels-logo-color.png"
+                alt="GOSPELS Göteborg"
+                width={140}
+                height={45}
+                priority
+                className="h-8 md:h-10 w-auto object-contain group-hover:scale-[1.02] transition-transform drop-shadow-xs"
+              />
             </div>
           </Link>
 

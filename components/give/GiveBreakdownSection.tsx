@@ -54,10 +54,10 @@ const ALLOCATIONS: AllocationItem[] = [
     share: "5 kr of every 100 kr",
     description:
       "24/7 WhatsApp intercession infrastructure, prayer volunteer support, and pastoral hospital visitation logistics.",
-    color: "#2DD4BF",
-    bgLight: "bg-teal-50",
-    textColor: "text-teal-700",
-    icon: <HeartHandshake className="w-5 h-5" />,
+    color: "#94A3B8",
+    bgLight: "bg-slate-100",
+    textColor: "text-slate-700",
+    icon: <HeartHandshake className="w-5 h-5 text-slate-600" />,
   },
 ];
 
@@ -66,7 +66,7 @@ export const GiveBreakdownSection: React.FC = () => {
 
   return (
     <section className="w-full px-2.5 sm:px-5 my-12 sm:my-16">
-      <div className="max-w-5xl mx-auto space-y-8 font-inter">
+      <div className="w-full space-y-8 font-inter">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-bold text-[#0D9488] uppercase tracking-wider block">

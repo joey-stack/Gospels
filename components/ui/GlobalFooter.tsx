@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export const GlobalFooter: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -24,18 +25,14 @@ export const GlobalFooter: React.FC = () => {
           {/* Left: Brand Identity & Monthly Note Subscription (Morrow Church Layout) */}
           <div className="lg:col-span-5 flex flex-col items-start text-left space-y-6">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <span className="w-9 h-9 rounded-md bg-[#0D9488] flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform">
-                <span className="material-symbols-outlined text-[20px]">music_note</span>
-              </span>
-              <div className="flex flex-col">
-                <span className="font-hanken font-bold text-xl tracking-tight text-white leading-none">
-                  GOSPELS
-                </span>
-                <span className="text-[9px] tracking-widest uppercase font-semibold text-slate-400 mt-0.5">
-                  GÖTEBORG
-                </span>
-              </div>
+            <Link href="/" className="flex items-center gap-2 group" aria-label="GOSPELS Göteborg">
+              <Image
+                src="/brand/gospels-logo-white.png"
+                alt="GOSPELS Göteborg"
+                width={160}
+                height={55}
+                className="h-10 sm:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity"
+              />
             </Link>
 
             <div className="space-y-2">
