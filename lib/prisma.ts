@@ -5,12 +5,25 @@ declare global {
   var prisma: PrismaClient | undefined;
 }
 
-export const prisma =
-  global.prisma ||
-  new PrismaClient({
-    log: process.env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
-  });
+function getPrismaClient(): PrismaClient | null {
+  if (!process.env.DATABASE_URL) {
+    return null;
+  }
+  try {
+    if (!global.prisma) {
+      global.prisma = new PrismaClient({
+        log: process.env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
+      });
+    }
+    return global.prisma;
+  } catch (err) {
+    console.warn("Prisma Client failed to initialize:", err);
+    return null;
+  }
+}
 
-if (process.env.NODE_ENV !== "production") {
+export const prisma = getPrismaClient();
+
+if (process.env.NODE_ENV !== "production" && prisma) {
   global.prisma = prisma;
 }

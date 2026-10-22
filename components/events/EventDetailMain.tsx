@@ -48,8 +48,19 @@ export const EventDetailMain: React.FC = () => {
 
     startRSVPTransition(async () => {
       try {
-        const result = await submitRSVP(formData);
-        if (result.success && result.data) {
+        let result: any;
+        try {
+          result = await submitRSVP(formData);
+        } catch {
+          // Fallback to API route if Server Action hit network or cache hash mismatch
+          const res = await fetch("/api/rsvp", {
+            method: "POST",
+            body: formData,
+          });
+          result = await res.json();
+        }
+
+        if (result && result.success && result.data) {
           const { ticket, qrCodeDataUrl } = result.data;
           setCurrentTicket(ticket);
           setQrCodeUrl(qrCodeDataUrl);
@@ -63,9 +74,9 @@ export const EventDetailMain: React.FC = () => {
           setIsPassModalOpen(true);
         } else {
           setRsvpError(
-            result.errors?.name ||
-              result.errors?.email ||
-              result.message ||
+            result?.errors?.name ||
+              result?.errors?.email ||
+              result?.message ||
               (isSv
                 ? "Kontrollera fälten och försök igen."
                 : "Please check the fields and try again.")

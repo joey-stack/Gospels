@@ -62,13 +62,15 @@ export async function submitRSVP(formData: FormData): Promise<ActionResult> {
 
     // 3. Optional Prisma write if DB is configured
     try {
-      await prisma.rSVP.create({
-        data: {
-          eventId,
-          name: name!,
-          email: email!,
-        },
-      });
+      if (prisma && process.env.DATABASE_URL) {
+        await prisma.rSVP.create({
+          data: {
+            eventId,
+            name: name!,
+            email: email!,
+          },
+        });
+      }
     } catch {
       // Prisma DB might not be connected; fallback already saved in ticketStore
     }
@@ -195,14 +197,18 @@ export async function submitPrayerRequest(formData: FormData): Promise<ActionRes
   try {
     let prayerRecord;
     try {
-      prayerRecord = await prisma.prayerRequest.create({
-        data: {
-          name,
-          email,
-          requestText: fullRequestText,
-          status: "NEW",
-        },
-      });
+      if (prisma && process.env.DATABASE_URL) {
+        prayerRecord = await prisma.prayerRequest.create({
+          data: {
+            name,
+            email,
+            requestText: fullRequestText,
+            status: "NEW",
+          },
+        });
+      } else {
+        throw new Error("Database not connected");
+      }
     } catch (dbError) {
       console.warn("Database connection unavailable, using in-memory mock prayer record:", dbError);
       prayerRecord = {

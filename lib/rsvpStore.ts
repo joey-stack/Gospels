@@ -111,8 +111,11 @@ const SEED_TICKETS: TicketPass[] = [
   },
 ];
 
-// Persistent file path
-const DATA_DIR = path.join(process.cwd(), "data");
+// Persistent file path (/tmp on Vercel/serverless environments, local data/ otherwise)
+const DATA_DIR =
+  process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME
+    ? "/tmp"
+    : path.join(process.cwd(), "data");
 const TICKETS_FILE = path.join(DATA_DIR, "tickets.json");
 
 // In-memory cache for fast responsive lookups
@@ -128,7 +131,6 @@ function ensureDataFile() {
       inMemoryTickets = [...SEED_TICKETS];
     }
   } catch (err) {
-    console.warn("Unable to write tickets.json to filesystem, using memory cache", err);
     if (!inMemoryTickets) {
       inMemoryTickets = [...SEED_TICKETS];
     }
@@ -136,7 +138,7 @@ function ensureDataFile() {
 }
 
 function loadTickets(): TicketPass[] {
-  if (inMemoryTickets) return inMemoryTickets;
+  if (inMemoryTickets && inMemoryTickets.length > 0) return inMemoryTickets;
   ensureDataFile();
   try {
     if (fs.existsSync(TICKETS_FILE)) {
@@ -155,8 +157,8 @@ function saveTickets(tickets: TicketPass[]) {
   ensureDataFile();
   try {
     fs.writeFileSync(TICKETS_FILE, JSON.stringify(tickets, null, 2), "utf-8");
-  } catch (err) {
-    console.warn("Failed to persist tickets to disk, saved in memory", err);
+  } catch {
+    // Memory cache persists during runtime
   }
 }
 

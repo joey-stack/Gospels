@@ -40,8 +40,18 @@ export const EventRSVPSection: React.FC = () => {
 
     startTransition(async () => {
       try {
-        const result = await submitRSVP(formData);
-        if (result.success && result.data) {
+        let result: any;
+        try {
+          result = await submitRSVP(formData);
+        } catch {
+          const res = await fetch("/api/rsvp", {
+            method: "POST",
+            body: formData,
+          });
+          result = await res.json();
+        }
+
+        if (result && result.success && result.data) {
           const { ticket, qrCodeDataUrl } = result.data;
           setCurrentTicket(ticket);
           setQrCodeUrl(qrCodeDataUrl);
@@ -55,9 +65,9 @@ export const EventRSVPSection: React.FC = () => {
           setIsPassModalOpen(true);
         } else {
           setErrorMessage(
-            result.errors?.name ||
-              result.errors?.email ||
-              result.message ||
+            result?.errors?.name ||
+              result?.errors?.email ||
+              result?.message ||
               "Please check the fields and try again."
           );
         }
