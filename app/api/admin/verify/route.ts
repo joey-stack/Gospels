@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getTicketById, checkInTicket, undoCheckInTicket } from "@/lib/rsvpStore";
+import { getTicketById, checkInTicket, undoCheckInTicket, upsertTicket } from "@/lib/rsvpStore";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -27,10 +27,15 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { ticketId, action } = body;
+    const { ticketId, action, ticket: payloadTicket } = body;
 
     if (!ticketId) {
       return NextResponse.json({ success: false, message: "Missing ticketId" }, { status: 400 });
+    }
+
+    if (action === "sync" && payloadTicket) {
+      const synced = upsertTicket(payloadTicket);
+      return NextResponse.json({ success: true, ticket: synced });
     }
 
     if (action === "undo") {
@@ -38,7 +43,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(result);
     }
 
-    const result = checkInTicket(ticketId);
+    const result = checkInTicket(ticketId, payloadTicket);
     return NextResponse.json(result);
   } catch (err: any) {
     return NextResponse.json({ success: false, message: err.message }, { status: 500 });

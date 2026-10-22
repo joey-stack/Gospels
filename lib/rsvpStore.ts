@@ -212,17 +212,43 @@ export function registerTicket(params: {
   return newTicket;
 }
 
-export function checkInTicket(id: string): {
+export function upsertTicket(ticket: TicketPass): TicketPass {
+  const tickets = loadTickets();
+  const normalizedId = ticket.id.trim().toUpperCase();
+  const index = tickets.findIndex(
+    (t) => t.id.toUpperCase() === normalizedId || t.id.replace(/-/g, "").toUpperCase() === normalizedId.replace(/-/g, "")
+  );
+
+  if (index >= 0) {
+    tickets[index] = { ...tickets[index], ...ticket };
+    saveTickets(tickets);
+    return tickets[index];
+  } else {
+    tickets.unshift(ticket);
+    saveTickets(tickets);
+    return ticket;
+  }
+}
+
+export function checkInTicket(id: string, fallbackTicket?: TicketPass): {
   success: boolean;
   status: "CHECKED_IN_NOW" | "ALREADY_CHECKED_IN" | "NOT_FOUND";
   message: string;
   ticket?: TicketPass;
 } {
-  const tickets = loadTickets();
+  let tickets = loadTickets();
   const normalizedId = id.trim().toUpperCase();
-  const index = tickets.findIndex(
+  let index = tickets.findIndex(
     (t) => t.id.toUpperCase() === normalizedId || t.id.replace(/-/g, "").toUpperCase() === normalizedId.replace(/-/g, "")
   );
+
+  if (index === -1 && fallbackTicket) {
+    upsertTicket(fallbackTicket);
+    tickets = loadTickets();
+    index = tickets.findIndex(
+      (t) => t.id.toUpperCase() === normalizedId || t.id.replace(/-/g, "").toUpperCase() === normalizedId.replace(/-/g, "")
+    );
+  }
 
   if (index === -1) {
     return {

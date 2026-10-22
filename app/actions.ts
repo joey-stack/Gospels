@@ -57,8 +57,22 @@ export async function submitRSVP(formData: FormData): Promise<ActionResult> {
       eventTitle: "Holy Spirit Worship 2026",
     });
 
-    // 2. Generate scannable QR code data URL
-    const qrCodeDataUrl = await generateTicketQRCode(ticketRecord.id);
+    // 2. Determine request origin from incoming headers
+    let origin: string | undefined;
+    try {
+      const { headers } = await import("next/headers");
+      const headersList = await headers();
+      const host = headersList.get("x-forwarded-host") || headersList.get("host");
+      const proto = headersList.get("x-forwarded-proto") || "https";
+      if (host) {
+        origin = `${proto}://${host}`;
+      }
+    } catch {
+      // fallback handled in qr.ts
+    }
+
+    // 3. Generate scannable QR code data URL pointing to attendee pass verification page
+    const qrCodeDataUrl = await generateTicketQRCode(ticketRecord, origin);
 
     // 3. Optional Prisma write if DB is configured
     try {
