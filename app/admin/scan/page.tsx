@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { TicketPass } from "@/lib/rsvpStore";
+import jsQR from "jsqr";
 
 function GateScannerContent() {
   const { isSv } = useLanguage();
@@ -36,15 +37,44 @@ function GateScannerContent() {
     };
   }, []);
 
+  const animFrameRef = useRef<number | null>(null);
+
+  const tickAdminScan = () => {
+    if (!videoRef.current || !mediaStreamRef.current) return;
+    const video = videoRef.current;
+    if (video.readyState === video.HAVE_ENOUGH_DATA) {
+      const canvas = document.createElement("canvas");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
+      if (ctx) {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const code = jsQR(imageData.data, imageData.width, imageData.height, {
+          inversionAttempts: "dontInvert",
+        });
+        if (code && code.data) {
+          handleVerify(code.data);
+          stopCamera();
+          return;
+        }
+      }
+    }
+    animFrameRef.current = requestAnimationFrame(tickAdminScan);
+  };
+
   const startCamera = async () => {
     try {
       setIsCameraActive(true);
       const stream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: "environment" },
+        video: { facingMode: "environment", width: { ideal: 1280 } },
       });
       mediaStreamRef.current = stream;
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
+        videoRef.current.setAttribute("playsinline", "true");
+        await videoRef.current.play();
+        animFrameRef.current = requestAnimationFrame(tickAdminScan);
       }
     } catch (err) {
       console.warn("Camera access denied or unavailable", err);
@@ -58,6 +88,10 @@ function GateScannerContent() {
   };
 
   const stopCamera = () => {
+    if (animFrameRef.current) {
+      cancelAnimationFrame(animFrameRef.current);
+      animFrameRef.current = null;
+    }
     if (mediaStreamRef.current) {
       mediaStreamRef.current.getTracks().forEach((track) => track.stop());
       mediaStreamRef.current = null;
