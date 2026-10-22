@@ -91,6 +91,11 @@ export const GlobalFooter: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-xs sm:text-sm">
                 <li>
+                  <Link href="/about" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                    About Gospels
+                  </Link>
+                </li>
+                <li>
                   <Link href="/events" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     Events Archive
                   </Link>
@@ -113,6 +118,11 @@ export const GlobalFooter: React.FC = () => {
                 <li>
                   <Link href="/prayer" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     Need Prayer?
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                    Contact Us
                   </Link>
                 </li>
               </ul>

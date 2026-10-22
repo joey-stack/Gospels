@@ -21,10 +21,11 @@ export const GlobalHeader: React.FC = () => {
   const pathname = usePathname();
 
   const navLinks = [
+    { name: "About", href: "/about" },
     { name: "Events", href: "/events" },
     { name: "Watch & Listen", href: "/watch" },
     { name: "Churches", href: "/partners" },
-    { name: "Need Prayer?", href: "/prayer" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const dropdownItems: DropdownItem[] = [
