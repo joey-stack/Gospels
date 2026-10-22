@@ -12,7 +12,7 @@ export const BottomMobileNav: React.FC = () => {
     { name: "Events", href: "/events/holy-spirit-worship", icon: "calendar_month", exact: false },
     { name: "Watch", href: "/#watch", icon: "library_music", exact: false },
     { name: "Prayer", href: "/#prayer", icon: "volunteer_activism", exact: false },
-    { name: "Give", href: "/#partner", icon: "favorite", exact: false },
+    { name: "Give", href: "/give", icon: "favorite", exact: false },
   ];
 
   return (

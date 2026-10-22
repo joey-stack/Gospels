@@ -143,7 +143,7 @@ export const GlobalFooter: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <Link href="/#partner" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                  <Link href="/give" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     Kingdom Giving
                   </Link>
                 </li>
@@ -166,7 +166,7 @@ export const GlobalFooter: React.FC = () => {
               Privacy
             </Link>
             <span className="text-slate-600">·</span>
-            <Link href="/#partner" className="hover:text-white transition-colors">
+            <Link href="/give" className="hover:text-white transition-colors">
               Giving Terms
             </Link>
             <span className="text-slate-600">·</span>

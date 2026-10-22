@@ -35,7 +35,7 @@ export const GlobalHeader: React.FC = () => {
     },
     {
       name: "Kingdom Giving",
-      href: "/#partner",
+      href: "/give",
       description: "Support our citywide ministry fund",
       icon: "favorite",
     },
@@ -194,7 +194,7 @@ export const GlobalHeader: React.FC = () => {
           {/* Right: Desktop Dual Actions */}
           <div className="hidden lg:flex items-center gap-3">
             <Link
-              href="/#partner"
+              href="/give"
               className="border border-slate-300/80 dark:border-slate-600 bg-white/50 hover:bg-white dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-md px-4 py-2 text-sm font-semibold transition-all shadow-xs active:scale-95 whitespace-nowrap"
             >
               Kingdom Giving
@@ -350,7 +350,7 @@ export const GlobalHeader: React.FC = () => {
               {/* Bottom Dual Action Buttons (Morrow Style) */}
               <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800 flex flex-col gap-2.5">
                 <Link
-                  href="/#partner"
+                  href="/give"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full text-center py-3 text-sm font-semibold text-slate-800 dark:text-slate-200 border border-slate-300/80 dark:border-slate-600 bg-white/80 dark:bg-slate-800/80 rounded-xl transition-colors active:scale-95 shadow-xs"
                 >

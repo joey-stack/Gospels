@@ -223,3 +223,109 @@ export async function submitPartnerChurchRegistration(formData: FormData): Promi
   }
 }
 
+/**
+ * Server Action: submitKingdomPartnerSubscription
+ * Handles monthly sustaining partner registration (150 kr, 350 kr, 750 kr, or custom).
+ */
+export async function submitKingdomPartnerSubscription(formData: FormData): Promise<ActionResult> {
+  const name = formData.get("name")?.toString().trim();
+  const email = formData.get("email")?.toString().trim();
+  const tier = formData.get("tier")?.toString().trim() || "150";
+  const tierName = formData.get("tierName")?.toString().trim() || "Supporter";
+  const paymentMethod = formData.get("paymentMethod")?.toString().trim() || "autogiro";
+  const personnummer = formData.get("personnummer")?.toString().trim() || "";
+
+  const errors: Record<string, string> = {};
+
+  if (!name || name.length < 2) {
+    errors.name = "Please provide your full name.";
+  }
+
+  if (!email || !EMAIL_REGEX.test(email)) {
+    errors.email = "Please enter a valid email address.";
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return { success: false, errors };
+  }
+
+  try {
+    const partnerSubscription = {
+      id: `partner-sub-${Date.now()}`,
+      name,
+      email,
+      tierAmount: tier,
+      tierName,
+      paymentMethod,
+      personnummer: personnummer || undefined,
+      status: "active",
+      createdAt: new Date().toISOString(),
+    };
+
+    console.log("==================================================");
+    console.log("[KINGDOM PARTNER MONTHLY SUBSCRIPTION — MOCK]");
+    console.log(`Partner: ${name} <${email}>`);
+    console.log(`Tier: ${tierName} (${tier} kr/mo)`);
+    console.log(`Payment Method: ${paymentMethod}`);
+    if (personnummer) console.log(`Tax Deduction SSN: ${personnummer}`);
+    console.log("Status: Registered. Welcome packet dispatched.");
+    console.log("==================================================");
+
+    return {
+      success: true,
+      message: `Tack så mycket, ${name}! Your monthly partnership as a ${tierName} (${tier} kr/mo) has been initialized. A confirmation and direct management link have been sent to ${email}.`,
+      data: partnerSubscription,
+    };
+  } catch (err: any) {
+    console.error("submitKingdomPartnerSubscription Error:", err);
+    return {
+      success: false,
+      message: "Unable to process monthly partnership at this time. Please try again.",
+    };
+  }
+}
+
+/**
+ * Server Action: submitDonationIntent
+ * Handles one-time or custom card / express digital donations.
+ */
+export async function submitDonationIntent(formData: FormData): Promise<ActionResult> {
+  const amount = formData.get("amount")?.toString().trim() || "250";
+  const currency = formData.get("currency")?.toString().trim() || "SEK";
+  const frequency = formData.get("frequency")?.toString().trim() || "one-time";
+  const method = formData.get("method")?.toString().trim() || "card";
+  const donorEmail = formData.get("email")?.toString().trim() || "";
+
+  const parsedAmount = parseFloat(amount);
+  if (isNaN(parsedAmount) || parsedAmount <= 0) {
+    return {
+      success: false,
+      errors: { amount: "Please provide a valid donation amount greater than 0." },
+    };
+  }
+
+  const transactionRef = `GSP-${Date.now().toString(36).toUpperCase()}-${Math.floor(Math.random() * 900 + 100)}`;
+
+  console.log("==================================================");
+  console.log("[KINGDOM GIVING TRANSACTION INTENT — MOCK]");
+  console.log(`Reference: ${transactionRef}`);
+  console.log(`Amount: ${amount} ${currency} (${frequency})`);
+  console.log(`Method: ${method}`);
+  if (donorEmail) console.log(`Receipt Email: ${donorEmail}`);
+  console.log("Status: Ready for gateway processing.");
+  console.log("==================================================");
+
+  return {
+    success: true,
+    message: `Thank you for your generous gift of ${amount} ${currency}! Reference: ${transactionRef}.`,
+    data: {
+      transactionRef,
+      amount,
+      currency,
+      frequency,
+      method,
+    },
+  };
+}
+
+
