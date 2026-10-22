@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface DropdownItem {
   name: string;
@@ -19,6 +20,8 @@ export const GlobalHeader: React.FC = () => {
   const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const { language, toggleLanguage } = useLanguage();
+  const isAboutPage = pathname === "/about";
 
   const navLinks = [
     { name: "About", href: "/about" },
@@ -195,12 +198,29 @@ export const GlobalHeader: React.FC = () => {
 
           {/* Right: Desktop Dual Actions */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link
-              href="/give"
-              className="border border-slate-300/80 dark:border-slate-600 bg-white/50 hover:bg-white dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-md px-4 py-2 text-sm font-semibold transition-all shadow-xs active:scale-95 whitespace-nowrap"
-            >
-              Kingdom Giving
-            </Link>
+            {isAboutPage ? (
+              <button
+                type="button"
+                onClick={toggleLanguage}
+                aria-label="Toggle language between English and Swedish"
+                className="flex items-center gap-2 border border-slate-300/80 dark:border-slate-600 bg-white/90 hover:bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-md px-3.5 py-1.5 text-xs sm:text-sm font-semibold transition-all shadow-xs active:scale-95 cursor-pointer"
+              >
+                <span className="text-sm">{language === "sv" ? "🇸🇪" : "🇬🇧"}</span>
+                <span className="text-xs uppercase tracking-wider font-bold text-[#0D9488]">
+                  {language === "sv" ? "Svenska" : "English"}
+                </span>
+                <span className="text-[10px] text-slate-400 font-normal">
+                  ({language === "sv" ? "Switch to EN" : "Byt till SV"})
+                </span>
+              </button>
+            ) : (
+              <Link
+                href="/give"
+                className="border border-slate-300/80 dark:border-slate-600 bg-white/50 hover:bg-white dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-md px-4 py-2 text-sm font-semibold transition-all shadow-xs active:scale-95 whitespace-nowrap"
+              >
+                Kingdom Giving
+              </Link>
+            )}
 
             <Link
               href="/events/holy-spirit-worship"
@@ -213,8 +233,19 @@ export const GlobalHeader: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Right Cluster (Next Event Pill + Rounded Hamburger Toggle) */}
-          <div className="flex items-center gap-2.5 lg:hidden">
+          {/* Mobile Right Cluster (Language toggle / Next Event Pill + Rounded Hamburger Toggle) */}
+          <div className="flex items-center gap-2 lg:hidden">
+            {isAboutPage && (
+              <button
+                type="button"
+                onClick={toggleLanguage}
+                aria-label="Toggle language between English and Swedish"
+                className="flex items-center gap-1 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-[11px] font-bold text-[#0D9488] px-2 py-1.5 rounded-md shadow-xs active:scale-95 cursor-pointer"
+              >
+                <span>{language === "sv" ? "🇸🇪 SV" : "🇬🇧 EN"}</span>
+              </button>
+            )}
+
             <Link
               href="/events/holy-spirit-worship"
               className="bg-white/80 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 text-[#00685f] dark:text-[#2DD4BF] text-xs font-semibold px-2.5 py-1.5 rounded-md flex items-center gap-1.5 active:scale-95 transition-all shadow-xs"

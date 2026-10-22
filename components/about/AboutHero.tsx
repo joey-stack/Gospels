@@ -4,9 +4,13 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronRight, Church, Music2, Sparkles, HeartHandshake } from "lucide-react";
+import { ChevronRight, Church, Music2, HeartHandshake } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const AboutHero: React.FC = () => {
+  const { language } = useLanguage();
+  const isSv = language === "sv";
+
   return (
     <section className="w-full px-2.5 sm:px-5 pt-3 sm:pt-4 pb-6">
       <div className="relative w-full rounded-lg md:rounded-xl overflow-hidden bg-[#0A1530] text-white border border-slate-700/60 shadow-xl min-h-[440px] md:min-h-[480px] flex flex-col justify-between p-6 sm:p-10 md:p-14">
@@ -29,39 +33,56 @@ export const AboutHero: React.FC = () => {
         <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-slate-300 font-inter">
             <Link href="/" className="hover:text-[#2DD4BF] transition-colors">
-              Home
+              {isSv ? "Hem" : "Home"}
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-            <span className="text-[#2DD4BF] font-medium">About Gospels</span>
+            <span className="text-[#2DD4BF] font-medium">
+              {isSv ? "Om Gospels" : "About Gospels"}
+            </span>
           </nav>
 
           {/* Morrow Church Style Upper Dash Tag */}
           <div className="text-[11px] font-semibold text-[#2DD4BF] uppercase tracking-wider font-inter">
-            — ABOUT GOSPELS GÖTEBORG
+            {isSv ? "— OM GOSPELS GÖTEBORG" : "— ABOUT GOSPELS GÖTEBORG"}
           </div>
         </div>
 
         {/* Center: Main Editorial Headline & Description (Morrow Church Typography) */}
         <div className="relative z-10 max-w-3xl my-6 md:my-8">
           <motion.h1
+            key={language}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="font-hanken text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.12]"
           >
-            A choir rehearsal that turned into a{" "}
-            <span className="font-eb italic font-normal text-[#2DD4BF]">
-              movement.
-            </span>
+            {isSv ? (
+              <>
+                Ett körrep som förvandlades till en{" "}
+                <span className="font-eb italic font-normal text-[#2DD4BF]">
+                  rörelse.
+                </span>
+              </>
+            ) : (
+              <>
+                A choir rehearsal that turned into a{" "}
+                <span className="font-eb italic font-normal text-[#2DD4BF]">
+                  movement.
+                </span>
+              </>
+            )}
           </motion.h1>
 
           <motion.p
+            key={`p-${language}`}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.4, delay: 0.08, ease: "easeOut" }}
             className="font-inter text-slate-200 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl"
           >
-            Gospels began in 2024 with twelve worship leaders and a shared acoustic guitar in Frihamnen. Two years later, over twenty-four partner churches unite to lift Jesus over Gothenburg.
+            {isSv
+              ? "Gospels började 2024 med tolv lovsångsledare och en lånad akustisk gitarr i Frihamnen. Två år senare förenas över tjugofyra partnerkyrkor för att lyfta Jesus över Göteborg."
+              : "Gospels began in 2024 with twelve worship leaders and a shared acoustic guitar in Frihamnen. Two years later, over twenty-four partner churches unite to lift Jesus over Gothenburg."}
           </motion.p>
         </div>
 
@@ -70,15 +91,15 @@ export const AboutHero: React.FC = () => {
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <div className="flex items-center gap-1.5 text-slate-200">
               <Church className="w-4 h-4 text-[#2DD4BF]" />
-              <span>24 Partner Assemblies</span>
+              <span>{isSv ? "24 Partnerförsamlingar" : "24 Partner Assemblies"}</span>
             </div>
             <div className="flex items-center gap-1.5 text-slate-200">
               <Music2 className="w-4 h-4 text-[#2DD4BF]" />
-              <span>65-Voice Mass Choir</span>
+              <span>{isSv ? "65-Rösters Masskör" : "65-Voice Mass Choir"}</span>
             </div>
             <div className="flex items-center gap-1.5 text-slate-200">
               <HeartHandshake className="w-4 h-4 text-[#2DD4BF]" />
-              <span>John 17:21 Ecumenical Covenant</span>
+              <span>{isSv ? "Johannes 17:21 Ekumeniskt Förbund" : "John 17:21 Ecumenical Covenant"}</span>
             </div>
           </div>
 
@@ -87,7 +108,7 @@ export const AboutHero: React.FC = () => {
               href="/events"
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white/10 hover:bg-white/20 text-[#2DD4BF] hover:text-white border border-[#2DD4BF]/30 transition-all text-xs font-medium"
             >
-              <span>Explore Gatherings ↗</span>
+              <span>{isSv ? "Utforska Samlingar ↗" : "Explore Gatherings ↗"}</span>
             </Link>
           </div>
         </div>

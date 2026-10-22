@@ -1,8 +1,12 @@
 "use client";
 
 import React from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const AboutStatsSection: React.FC = () => {
+  const { language } = useLanguage();
+  const isSv = language === "sv";
+
   return (
     <section className="w-full px-2.5 sm:px-5 py-6 sm:py-10">
       <div className="w-full rounded-lg md:rounded-xl overflow-hidden bg-[#0A1530] text-white p-8 sm:p-12 md:p-16 border border-slate-700/60 shadow-xl relative font-inter">
@@ -11,13 +15,15 @@ export const AboutStatsSection: React.FC = () => {
 
         <div className="relative z-10 max-w-3xl mb-12 sm:mb-16 space-y-3">
           <span className="text-xs font-semibold text-[#2DD4BF] uppercase tracking-wider block">
-            — 2025–2026 AT GOSPELS
+            {isSv ? "— 2025–2026 HOS GOSPELS" : "— 2025–2026 AT GOSPELS"}
           </span>
           <h2 className="font-hanken text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.15]">
-            A movement, counted in names.
+            {isSv ? "En rörelse, räknad i namn." : "A movement, counted in names."}
           </h2>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl">
-            Behind every number below is someone we can point to across the room at Frihamnen on a worship evening.
+            {isSv
+              ? "Bakom varje siffra nedan finns någon vi kan peka ut i Frihamnen under en lovsångskväll."
+              : "Behind every number below is someone we can point to across the room at Frihamnen on a worship evening."}
           </p>
         </div>
 
@@ -29,10 +35,12 @@ export const AboutStatsSection: React.FC = () => {
               24
             </div>
             <div className="text-base sm:text-lg font-semibold text-[#2DD4BF]">
-              Partner Churches
+              {isSv ? "Partnerkyrkor" : "Partner Churches"}
             </div>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Pentecostal, Lutheran, Mission Covenant, and International congregations across Gothenburg.
+              {isSv
+                ? "Pingst, Svenska Kyrkan, Equmeniakyrkan och internationella församlingar i Göteborg."
+                : "Pentecostal, Lutheran, Mission Covenant, and International congregations across Gothenburg."}
             </p>
           </div>
 
@@ -42,10 +50,12 @@ export const AboutStatsSection: React.FC = () => {
               65+
             </div>
             <div className="text-base sm:text-lg font-semibold text-[#2DD4BF]">
-              Mass Choir Voices
+              {isSv ? "Masskörsröster" : "Mass Choir Voices"}
             </div>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Four-part gospel harmonies convening youth, university students, and veteran singers.
+              {isSv
+                ? "Fyrstämmiga gospelarrangemang med ungdomar, studenter och erfarna sångare."
+                : "Four-part gospel harmonies convening youth, university students, and veteran singers."}
             </p>
           </div>
 
@@ -55,17 +65,21 @@ export const AboutStatsSection: React.FC = () => {
               52
             </div>
             <div className="text-base sm:text-lg font-semibold text-[#2DD4BF]">
-              Weekly Prayer Vigils
+              {isSv ? "Veckovisa Bönehelger" : "Weekly Prayer Vigils"}
             </div>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Fifty-two Tuesday prayer nights at Frihamnskyrkan, never once cancelled.
+              {isSv
+                ? "Femtiotvå tisdagsböner i Frihamnskyrkan, inte en enda inställd."
+                : "Fifty-two Tuesday prayer nights at Frihamnskyrkan, never once cancelled."}
             </p>
           </div>
         </div>
 
         {/* Micro Footer Note */}
         <div className="relative z-10 pt-8 mt-8 border-t border-slate-800 text-[11px] text-slate-400">
-          Reflecting Gothenburg ecumenical ministry records and active fellowship rosters.
+          {isSv
+            ? "Reflekterar Göteborgs ekumeniska verksamhetsrapporter och aktiva församlingsregister."
+            : "Reflecting Gothenburg ecumenical ministry records and active fellowship rosters."}
         </div>
       </div>
     </section>
