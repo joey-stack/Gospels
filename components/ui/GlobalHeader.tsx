@@ -126,6 +126,7 @@ export const GlobalHeader: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
+                  prefetch={false}
                   className={`text-sm font-medium transition-colors duration-150 py-1.5 px-1 ${
                     isActive
                       ? "text-[#0D9488] font-semibold"

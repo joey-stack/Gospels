@@ -93,37 +93,37 @@ export const GlobalFooter: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-xs sm:text-sm">
                 <li>
-                  <Link href="/about" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                  <Link prefetch={false} href="/about" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     {t.nav.about}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/events" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                  <Link prefetch={false} href="/events" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     {t.nav.events}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/events/holy-spirit-worship" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                  <Link prefetch={false} href="/events/holy-spirit-worship" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     {isSv ? "Lovsång i Anden" : "Holy Spirit Worship"}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/watch" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                  <Link prefetch={false} href="/watch" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     {t.nav.watch}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/partners" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                  <Link prefetch={false} href="/partners" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     {t.nav.churches}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/prayer" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                  <Link prefetch={false} href="/prayer" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     {isSv ? "Behöver du bön?" : "Need Prayer?"}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
+                  <Link prefetch={false} href="/contact" className="text-slate-300 hover:text-[#2DD4BF] transition-colors">
                     {t.nav.contact}
                   </Link>
                 </li>
