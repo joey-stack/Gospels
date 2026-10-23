@@ -95,10 +95,10 @@ export const GlobalHeader: React.FC = () => {
           {/* Left: Brand Logo (Stand-Out Gospels Emblem & Wordmark) */}
           <Link
             href="/"
-            className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] rounded-md transition-transform"
+            className="flex items-center gap-2 shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] rounded-md transition-transform"
             aria-label="GOSPELS Göteborg"
           >
-            <div className="relative h-10 sm:h-11 md:h-12 px-3 py-1.5 flex items-center bg-white/90 dark:bg-slate-900/90 rounded-md border border-slate-200/70 dark:border-slate-700/70 shadow-sm group-hover:shadow-md group-hover:border-[#0D9488]/40 group-hover:scale-[1.02] transition-all duration-200">
+            <div className="relative shrink-0 h-10 sm:h-11 md:h-12 px-3 py-1.5 flex items-center bg-white/90 dark:bg-slate-900/90 rounded-md border border-slate-200/70 dark:border-slate-700/70 shadow-sm group-hover:shadow-md group-hover:border-[#0D9488]/40 group-hover:scale-[1.02] transition-all duration-200">
               <Image
                 src="/brand/gospels-logo-color.png"
                 alt="GOSPELS Göteborg"
