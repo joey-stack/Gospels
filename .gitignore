@@ -48,3 +48,6 @@ next-env.d.ts
 .roo
 .trae
 .windsurf
+
+.vercel
+.env*
