@@ -22,11 +22,20 @@ export const FloatingEventBanner: React.FC = () => {
           {/* Top/Left: Calendar Box + Gathering Info */}
           <div className="flex items-start gap-4 sm:gap-5 flex-1 min-w-0">
             {/* Calendar Date Box - TBA state */}
-            <div className="w-16 sm:w-20 rounded-md overflow-hidden border border-[#0D9488]/30 shrink-0 text-center shadow-xs">
-              <div className="bg-[#0D9488] text-white text-[10px] sm:text-[11px] py-1 uppercase font-bold tracking-widest">
+            <div
+              className="w-16 sm:w-20 rounded-md overflow-hidden border border-[#0D9488]/30 shrink-0 text-center shadow-xs"
+              suppressHydrationWarning
+            >
+              <div
+                className="bg-[#0D9488] text-white text-[10px] sm:text-[11px] py-1 uppercase font-bold tracking-widest"
+                suppressHydrationWarning
+              >
                 {isSv ? "DATUM" : "DATE"}
               </div>
-              <div className="bg-slate-50 py-2 sm:py-2.5 font-hanken text-lg sm:text-xl font-bold text-slate-900 tracking-wider">
+              <div
+                className="bg-slate-50 py-2 sm:py-2.5 font-hanken text-lg sm:text-xl font-bold text-slate-900 tracking-wider"
+                suppressHydrationWarning
+              >
                 TBA
               </div>
             </div>

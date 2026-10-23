@@ -16,12 +16,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#F9FAFB] text-on-surface antialiased font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+      <body
+        className="min-h-screen flex flex-col bg-[#F9FAFB] text-on-surface antialiased font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed"
+        suppressHydrationWarning
+      >
         <LanguageProvider>
           <GlobalHeader />
           <main className="flex-1 flex flex-col">{children}</main>
