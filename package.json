@@ -9,6 +9,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "allowScripts": {
+    "@prisma/client": true,
+    "@prisma/engines": true,
+    "prisma": true
+  },
   "dependencies": {
     "@prisma/client": "^5.22.0",
     "@stripe/stripe-js": "^10.1.0",
