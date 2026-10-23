@@ -193,8 +193,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <span className="w-2 h-2 rounded-full bg-[#0D9488] animate-pulse" />
             <span className="text-xs font-semibold text-slate-700">
               {isSv
-                ? "Smyrna Frihamnskyrkan • Entré B & Huvudsalen Redo"
-                : "Smyrna Frihamnskyrkan • Entrance B & Sanctuary Ready"}
+                ? "Gothenburg Worship Center • Göteborg • Huvudsalen Redo"
+                : "Gothenburg Worship Center • Gothenburg • Sanctuary Ready"}
             </span>
           </div>
 

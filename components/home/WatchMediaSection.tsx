@@ -24,10 +24,10 @@ const FEATURED_ARCHIVE: MediaArchiveItem = {
   date: "MARCH 2026",
   speaker: "GOSPELS MASS CHOIR & ENSEMBLE",
   duration: "58 MIN",
-  title: "Holy Spirit Worship Night — Live at Smyrna Frihamnskyrkan",
+  title: "Gothenburg Worship Night — Live in Gothenburg",
   series: "LIVE CONCERT ARCHIVE",
   description:
-    "Full multicam video record and live acoustic sound from our citywide gathering in Frihamnen. An evening of unhurried gospel worship, intercession, and united voices representing congregations across Gothenburg.",
+    "Full multicam video record and live acoustic sound from our citywide gathering in Gothenburg. An evening of unhurried gospel worship, intercession, and united voices representing congregations across Gothenburg.",
   imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png",
 };
 
@@ -59,7 +59,7 @@ const PAST_GATHERING_ARCHIVES: MediaArchiveItem[] = [
     duration: "51 MIN",
     title: "Night of Intercession & Gospel Hymns",
     series: "LIVE ENCOUNTER",
-    description: "Smyrna Frihamnskyrkan · Live Session Record",
+    description: "Gothenburg Sanctuary · Live Session Record",
     imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_2.png",
   },
 ];
@@ -119,7 +119,7 @@ export const WatchMediaSection: React.FC = () => {
               alt={activeMedia.title}
               fill
               priority
-              className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 brightness-[0.72]"
+              className="object-cover object-center group-hover:scale-[1.05] transition-transform duration-700 brightness-[0.72] blur-[2.5px] scale-105"
               sizes="(max-width: 1440px) 100vw, 1440px"
             />
             {/* Dark gradient overlay for text legibility */}
@@ -252,7 +252,7 @@ export const WatchMediaSection: React.FC = () => {
                     src={media.imageUrl}
                     alt={media.title}
                     fill
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500 brightness-95 group-hover:brightness-100"
+                    className="object-cover object-center group-hover:scale-110 transition-transform duration-500 brightness-95 group-hover:brightness-100 blur-[2.5px] scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                   {/* Subtle vignette */}

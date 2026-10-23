@@ -4,13 +4,13 @@ import { EventDetailMain } from "@/components/events/EventDetailMain";
 import { EventMoreSection } from "@/components/events/EventMoreSection";
 
 export const metadata: Metadata = {
-  title: "Holy Spirit Worship 2026 | GOSPELS Gothenburg",
+  title: "Gothenburg Worship Night | GOSPELS Gothenburg",
   description:
-    "An evening devoted entirely to uninterrupted praise, collective prayer, and multi-church gospel choirs convening at Smyrna Frihamnen in Gothenburg.",
+    "An evening devoted entirely to uninterrupted praise, collective prayer, and multi-church gospel choirs convening in Gothenburg.",
   openGraph: {
-    title: "Holy Spirit Worship 2026 | GOSPELS Gothenburg",
+    title: "Gothenburg Worship Night | GOSPELS Gothenburg",
     description:
-      "Join us for an uninterrupted night of collective worship, prayer, and multi-church gospel praise at Smyrna Frihamnskyrkan in Gothenburg.",
+      "Join us for an uninterrupted night of collective worship, prayer, and multi-church gospel praise in Gothenburg.",
     locale: "sv_SE",
     type: "website",
   },

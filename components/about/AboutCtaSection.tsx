@@ -22,8 +22,8 @@ export const AboutCtaSection: React.FC = () => {
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
               {isSv
-                ? "Oavsett om du vill sjunga i masskören, besöka vår nästa lovsångskväll i Frihamnen eller skicka ett personligt böneämne, finns det en plats för dig i vår gemenskap."
-                : "Whether you want to join the 65-voice mass choir, attend our next city praise night at Frihamnen, or submit a personal intercession request, there is a place for you in the fellowship."}
+                ? "Oavsett om du vill sjunga i masskören, besöka vår nästa lovsångskväll i Göteborg eller skicka ett personligt böneämne, finns det en plats för dig i vår gemenskap."
+                : "Whether you want to join the 65-voice mass choir, attend our next city praise night in Gothenburg, or submit a personal intercession request, there is a place for you in the fellowship."}
             </p>
           </div>
 

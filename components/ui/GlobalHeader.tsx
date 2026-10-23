@@ -92,20 +92,20 @@ export const GlobalHeader: React.FC = () => {
       {/* Floating Navbar Island (Morrow Church Floating Navbar Style) */}
       <header className="fixed top-4 sm:top-7 md:top-9 inset-x-0 z-40 flex justify-center px-4 sm:px-8 md:px-12 pointer-events-none">
         <div className="w-full max-w-7xl mx-auto pointer-events-auto bg-[#EBF1F6]/90 dark:bg-[#0F172A]/90 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-lg h-16 lg:h-[70px] px-4 md:px-6 flex items-center justify-between transition-all duration-200">
-          {/* Left: Brand Logo (Official Gospels Colored Wordmark) */}
+          {/* Left: Brand Logo (Stand-Out Gospels Emblem & Wordmark) */}
           <Link
             href="/"
-            className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] rounded-md"
+            className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] rounded-md transition-transform"
             aria-label="GOSPELS Göteborg"
           >
-            <div className="relative h-8 md:h-10 flex items-center">
+            <div className="relative h-10 sm:h-11 md:h-12 px-3 py-1.5 flex items-center bg-white/90 dark:bg-slate-900/90 rounded-md border border-slate-200/70 dark:border-slate-700/70 shadow-sm group-hover:shadow-md group-hover:border-[#0D9488]/40 group-hover:scale-[1.02] transition-all duration-200">
               <Image
                 src="/brand/gospels-logo-color.png"
                 alt="GOSPELS Göteborg"
-                width={140}
-                height={45}
+                width={160}
+                height={52}
                 priority
-                className="h-8 md:h-10 w-auto object-contain group-hover:scale-[1.02] transition-transform drop-shadow-xs"
+                className="h-8 sm:h-9 md:h-10 w-auto object-contain filter contrast-[1.05] drop-shadow-sm"
               />
             </div>
           </Link>
@@ -269,14 +269,14 @@ export const GlobalHeader: React.FC = () => {
                     className="flex items-center gap-2 group focus:outline-none"
                     aria-label="GOSPELS Göteborg"
                   >
-                    <div className="relative h-8 flex items-center">
+                    <div className="relative h-10 px-3 py-1 flex items-center bg-white/95 dark:bg-slate-900/95 rounded-md border border-slate-200/80 dark:border-slate-700/80 shadow-xs">
                       <Image
                         src="/brand/gospels-logo-color.png"
                         alt="GOSPELS Göteborg"
-                        width={130}
-                        height={40}
+                        width={140}
+                        height={45}
                         priority
-                        className="h-8 w-auto object-contain drop-shadow-xs"
+                        className="h-8 w-auto object-contain filter contrast-[1.05]"
                       />
                     </div>
                   </Link>

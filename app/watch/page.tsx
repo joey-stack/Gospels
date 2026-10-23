@@ -9,11 +9,11 @@ import { WatchPodcastPlatforms } from "@/components/watch/WatchPodcastPlatforms"
 export const metadata: Metadata = {
   title: "Watch & Listen | GOSPELS Gothenburg Ministry",
   description:
-    "Watch or listen to every gospel worship gathering, acoustic session, and choral concert from GOSPELS Gothenburg. Recorded live across Frihamnen and West Sweden.",
+    "Watch or listen to every gospel worship gathering, acoustic session, and choral concert from GOSPELS Gothenburg. Recorded live across Gothenburg and West Sweden.",
   openGraph: {
     title: "Watch & Listen | GOSPELS Gothenburg",
     description:
-      "Watch or listen to every gospel worship gathering, acoustic session, and choral concert from GOSPELS Gothenburg. Recorded live across Frihamnen and West Sweden.",
+      "Watch or listen to every gospel worship gathering, acoustic session, and choral concert from GOSPELS Gothenburg. Recorded live across Gothenburg and West Sweden.",
     images: [
       {
         url: "/assets/whatsapp_image_2026_10_16_at_8.26.12_am.png",
@@ -32,7 +32,7 @@ export default function WatchPage() {
         {/* 1. Hero Section matching Morrow Church sermons hero */}
         <WatchHero />
 
-        {/* 2. Featured Recording (Current Season: Holy Spirit Worship Frihamnen) */}
+        {/* 2. Featured Recording (Current Season: Gothenburg Worship Night) */}
         <WatchFeaturedSection />
 
         {/* 3. Archive Catalog with Category Filtering & Search */}

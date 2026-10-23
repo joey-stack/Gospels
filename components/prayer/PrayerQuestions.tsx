@@ -58,7 +58,7 @@ export const PrayerQuestions: React.FC = () => {
                 Can I receive in-person prayer in Gothenburg?
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Yes. You are welcome to join our weekly prayer gatherings at Frihamnskyrkan on Tuesday evenings at 18:30 or visit partner churches across Gothenburg. Our intercessors are always available to lay hands and pray with you.
+                Yes. You are welcome to join our weekly prayer gatherings across Gothenburg on Tuesday evenings at 18:30 or visit partner churches throughout the city. Our intercessors are always available to lay hands and pray with you.
               </p>
             </div>
 

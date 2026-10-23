@@ -26,7 +26,7 @@ export const EventHero: React.FC = () => {
             fill
             priority
             quality={95}
-            className="object-cover object-center brightness-95 contrast-[1.04] pointer-events-none"
+            className="object-cover object-center brightness-95 contrast-[1.04] blur-[3px] scale-105 pointer-events-none"
             sizes="100vw"
           />
           {/* Soft translucent tint overlay allowing vivid picture clarity */}
@@ -63,7 +63,9 @@ export const EventHero: React.FC = () => {
               {isSv ? "Evenemang" : "Events"}
             </Link>
             <span className="text-slate-600">/</span>
-            <span className="text-[#2DD4BF] font-medium">Holy Spirit Worship</span>
+            <span className="text-[#2DD4BF] font-medium">
+              {isSv ? "Göteborg Worship Night" : "Gothenburg Worship Night"}
+            </span>
           </motion.nav>
 
           {/* Eyebrow Line with Accent Bar */}
@@ -76,8 +78,8 @@ export const EventHero: React.FC = () => {
             <span className="w-7 h-[2px] bg-[#2DD4BF]" />
             <span>
               {isSv
-                ? "GÖTEBORGS LOVSÅNGSKVÄLL · SMYRNA FRIHAMNEN"
-                : "GOTHENBURG WORSHIP NIGHT · SMYRNA FRIHAMNEN"}
+                ? "GÖTEBORGS LOVSÅNGSKVÄLL · GÖTEBORG"
+                : "GOTHENBURG WORSHIP NIGHT · GOTHENBURG"}
             </span>
           </motion.div>
 
@@ -88,9 +90,9 @@ export const EventHero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-hanken text-4xl sm:text-5xl lg:text-6xl text-white font-bold tracking-tight leading-[1.1] mb-6"
           >
-            Holy Spirit Worship{" "}
+            {isSv ? "Göteborg Worship " : "Gothenburg Worship "}
             <span className="font-eb italic font-normal text-[#2DD4BF]">
-              2026.
+              Night.
             </span>
           </motion.h1>
 
@@ -101,16 +103,16 @@ export const EventHero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="flex items-center flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-slate-300 font-inter"
           >
-            <time dateTime="2026-03-28" className="font-medium text-white">
-              {isSv ? "Lör 28 mars 2026" : "Sat, March 28, 2026"}
-            </time>
+            <span className="font-medium text-white">
+              {isSv ? "Datum meddelas inom kort" : "Date announced soon"}
+            </span>
             <span className="w-7 h-[1px] bg-white/25" />
-            <span>18:30 – 21:30 CET</span>
+            <span>{isSv ? "Tid meddelas" : "Time TBA"}</span>
             <span className="w-7 h-[1px] bg-white/25" />
             <span>
               {isSv
-                ? "Smyrna Frihamnskyrkan, Göteborg"
-                : "Smyrna Frihamnskyrkan, Gothenburg"}
+                ? "Göteborg · Plats meddelas inom kort"
+                : "Gothenburg · Venue to be announced"}
             </span>
           </motion.div>
         </div>

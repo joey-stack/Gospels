@@ -14,16 +14,16 @@ export const WatchFeaturedSection: React.FC = () => {
 
   const featuredSession: VideoModalData = {
     title: isSv
-      ? "Holy Spirit Worship 2026 — Live i Smyrna Frihamnen"
-      : "Holy Spirit Worship 2026 — Live at Smyrna Frihamnen",
+      ? "Göteborg Worship Night — Live i Göteborg"
+      : "Gothenburg Worship Night — Live in Gothenburg",
     speaker: isSv ? "GOSPELS MASSKÖR & ENSEMBLE" : "GOSPELS MASS CHOIR & ENSEMBLE",
     date: isSv ? "MARS 2026" : "MARCH 2026",
     duration: "58 MIN",
-    location: isSv ? "Smyrna Frihamnskyrkan, Göteborg" : "Smyrna Frihamnskyrkan, Gothenburg",
+    location: isSv ? "Göteborg, Sverige" : "Gothenburg, Sweden",
     videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.07_AM.mp4",
     description: isSv
-      ? "Komplett flerkamerainspelning och levande akustiskt ljud från vår stadsvida samling i Frihamnen. En kväll av oavbruten gospellovsång, förbön och enade röster från församlingar över hela Göteborg."
-      : "Full multicam video record and live acoustic sound from our citywide gathering in Frihamnen. An evening of unhurried gospel worship, intercession, and united voices representing congregations across Gothenburg.",
+      ? "Komplett flerkamerainspelning och levande akustiskt ljud från vår stadsvida samling i Göteborg. En kväll av oavbruten gospellovsång, förbön och enade röster från församlingar över hela Göteborg."
+      : "Full multicam video record and live acoustic sound from our citywide gathering in Gothenburg. An evening of unhurried gospel worship, intercession, and united voices representing congregations across Gothenburg.",
   };
 
   const handleOpenPlayer = () => {
@@ -61,11 +61,11 @@ export const WatchFeaturedSection: React.FC = () => {
             <div className="absolute inset-0 z-0">
               <Image
                 src="/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png"
-                alt="Holy Spirit Worship Night at Smyrna Frihamnen"
+                alt="Gothenburg Worship Night"
                 fill
                 priority
                 quality={95}
-                className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 brightness-[0.78]"
+                className="object-cover object-center group-hover:scale-[1.05] transition-transform duration-700 brightness-[0.78] blur-[2.5px] scale-105"
                 sizes="100vw"
               />
               {/* Dark subtle gradient overlay allowing clear see-through */}
@@ -119,7 +119,7 @@ export const WatchFeaturedSection: React.FC = () => {
                     <span className="material-symbols-outlined text-sm text-[#2DD4BF]">
                       location_on
                     </span>
-                    {isSv ? "Smyrna Frihamnskyrkan, Frihamnen" : "Smyrna Frihamnskyrkan, Frihamnen"}
+                    {isSv ? "Göteborg, Sverige" : "Gothenburg, Sweden"}
                   </span>
                   <span className="text-slate-600">·</span>
                   <span>{isSv ? "150 Masskörsröster" : "150 Mass Choir Voices"}</span>

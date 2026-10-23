@@ -6,7 +6,7 @@ import { PrayerQuestions } from "@/components/prayer/PrayerQuestions";
 export const metadata: Metadata = {
   title: "Contact & Prayer | GOSPELS Gothenburg Ministry",
   description:
-    "Write, call, or pray together. Connect with the GOSPELS Gothenburg ministry team, submit confidential prayer requests, or visit our Frihamnen sanctuary.",
+    "Write, call, or pray together. Connect with the GOSPELS Gothenburg ministry team, submit confidential prayer requests, or join our city prayer gatherings.",
   openGraph: {
     title: "Contact & Prayer | GOSPELS Gothenburg Ministry",
     description:

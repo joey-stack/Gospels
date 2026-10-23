@@ -8,10 +8,10 @@ export interface EventRowCardProps {
   category: string;
   categoryDotColor?: string;
   status?: "REGISTRATION_OPEN" | "YET_TO_COME";
-  dateBadge: {
-    day: string;
-    month: string;
-    weekday: string;
+  dateBadge?: {
+    day?: string;
+    month?: string;
+    weekday?: string;
   };
   timeString: string;
   location: string;
@@ -49,18 +49,22 @@ export const EventRowCard: React.FC<EventRowCardProps> = ({
             src={imageUrl}
             alt={imageAlt || title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="object-cover blur-[2.5px] scale-105 group-hover:scale-110 transition-transform duration-300"
             sizes="(max-width: 640px) 80px, 112px"
           />
         </div>
 
         {/* 2. Date Column (Morrow Church Date Block) */}
         <div className="flex flex-col shrink-0 sm:w-36 md:w-44">
-          <time className="font-hanken font-bold text-xl sm:text-2xl text-slate-900 tracking-tight leading-tight">
-            {dateBadge.month} {dateBadge.day}
+          <time className="font-hanken font-bold text-lg sm:text-xl text-slate-900 tracking-tight leading-tight">
+            {dateBadge?.day && dateBadge.day !== "TBA"
+              ? `${dateBadge.month} ${dateBadge.day}`
+              : (isSv ? "Datum meddelas" : "Date TBA")}
           </time>
           <div className="flex items-center gap-1.5 text-xs text-slate-500 font-inter mt-1">
-            <span className="font-medium text-slate-700">{dateBadge.weekday}</span>
+            <span className="font-medium text-slate-700">
+              {dateBadge?.weekday || (isSv ? "Göteborg" : "Gothenburg")}
+            </span>
             <span>·</span>
             <span className="truncate">{timeString}</span>
           </div>

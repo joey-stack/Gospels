@@ -20,7 +20,7 @@ const LEADERS_EN = [
   {
     name: "Elias Lindgren",
     role: "Intercession & Gathering Operations",
-    bio: "Leads the weekly Tuesday prayer vigils at Frihamnskyrkan, oversees intercessory teams, and ensures community care runs with excellence.",
+    bio: "Leads weekly citywide prayer vigils across Gothenburg, oversees intercessory teams, and ensures community care runs with excellence.",
     image: "/leaders/elias-lindgren.jpg",
   },
 ];
@@ -41,7 +41,7 @@ const LEADERS_SV = [
   {
     name: "Elias Lindgren",
     role: "Förbön & Samlingskoordinator",
-    bio: "Leder de veckovisa tisdagsbönerna i Frihamnskyrkan, ansvarar för böneteamen och säkerställer omsorg och gemenskap med excellens.",
+    bio: "Leder de veckovisa bönesamlingarna i Göteborg, ansvarar för böneteamen och säkerställer omsorg och gemenskap med excellens.",
     image: "/leaders/elias-lindgren.jpg",
   },
 ];

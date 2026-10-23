@@ -16,10 +16,10 @@ export const AboutStorySection: React.FC = () => {
           <div className="lg:col-span-6 relative aspect-[4/3] sm:aspect-[16/11] rounded-lg md:rounded-xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-900">
             <Image
               src="/assets/whatsapp_image_2026_10_16_at_8.28.06_am_2.png"
-              alt="Gospels Gothenburg Choir Rehearsal and Fellowship in Frihamnen"
+              alt="Gospels Gothenburg Choir Rehearsal and Fellowship in Gothenburg"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-center"
+              className="object-cover object-center blur-[2.5px] scale-105"
             />
           </div>
 
@@ -31,8 +31,8 @@ export const AboutStorySection: React.FC = () => {
 
             <h2 className="font-hanken text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15]">
               {isSv
-                ? "Från en bönesamling i Frihamnen till lovsång över hela staden."
-                : "From a prayer circle in Frihamnen to citywide praise."}
+                ? "Från en enkel bönesamling till lovsång över hela staden."
+                : "From a simple prayer circle to citywide praise."}
             </h2>
 
             <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -43,8 +43,8 @@ export const AboutStorySection: React.FC = () => {
               </p>
               <p>
                 {isSv
-                  ? "Framåt hösten hade den samlingen tänt en ekumenisk gemenskap som överbryggade språk och samfundsgränser. Idag samlas över tjugofyra partnerförsamlingar och en 65-rösters masskör i Smyrna Frihamnen, på Gustav Adolfs Torg och i kyrkor över hela Göteborg. Vårt hjärta förblir detsamma: orubblig tillbedjan av Kristus, musikalisk excellens och ständig förbön för varje invånare i Göteborg."
-                  : "By autumn, that single gathering had ignited an ecumenical fellowship bridging linguistic and denominational lines. Today, over twenty-four partner assemblies and a 65-voice mass choir gather across Smyrna Frihamnen, Gustav Adolfs Torg, and sanctuaries throughout Gothenburg. Our heartbeat remains unchanged: uncompromised adoration of Christ, choral excellence, and standing in prayer for every citizen of Gothenburg."}
+                  ? "Framåt hösten hade den samlingen tänt en ekumenisk gemenskap som överbryggade språk och samfundsgränser. Idag samlas över tjugofyra partnerförsamlingar och en 65-rösters masskör på Gustav Adolfs Torg och i kyrksalar över hela Göteborg. Vårt hjärta förblir detsamma: orubblig tillbedjan av Kristus, musikalisk excellens och ständig förbön för varje invånare i Göteborg."
+                  : "By autumn, that single gathering had ignited an ecumenical fellowship bridging linguistic and denominational lines. Today, over twenty-four partner assemblies and a 65-voice mass choir gather across Gustav Adolfs Torg and sanctuaries throughout Gothenburg. Our heartbeat remains unchanged: uncompromised adoration of Christ, choral excellence, and standing in prayer for every citizen of Gothenburg."}
               </p>
             </div>
 

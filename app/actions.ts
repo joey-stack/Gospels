@@ -105,10 +105,10 @@ export async function submitRSVP(formData: FormData): Promise<ActionResult> {
     console.log("==================================================");
     console.log("[EMAIL DISPATCH — DIGITAL PASS]");
     console.log(`To: ${email}`);
-    console.log(`Subject: Your Pass: Holy Spirit Worship 2026 (#${ticketRecord.id})`);
+    console.log(`Subject: Your Pass: Gothenburg Worship Night (#${ticketRecord.id})`);
     console.log(`Attendee: ${name} (${guests} seats)`);
     console.log(`Ticket Pass Code: ${ticketRecord.id}`);
-    console.log(`Venue: Smyrna Frihamnskyrkan`);
+    console.log(`Venue: Göteborg (Plats meddelas)`);
     console.log("Status: Pass delivered with scannable gate admission code.");
     console.log("==================================================");
 

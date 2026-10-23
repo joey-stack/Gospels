@@ -10,13 +10,7 @@ import { useLanguage } from "@/context/LanguageContext";
 export const PartnerChurchesSection: React.FC = () => {
   const { isSv } = useLanguage();
   const logos = [
-    {
-      name: "Smyrna Frihamnskyrkan",
-      src: "/logos/smyrna.png",
-      width: 140,
-      height: 48,
-      className: "h-9 w-auto object-contain",
-    },
+
     {
       name: "Svenska kyrkan",
       src: "/logos/svenska-kyrkan.svg",

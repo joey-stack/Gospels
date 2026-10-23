@@ -22,8 +22,8 @@ export const AboutStatsSection: React.FC = () => {
           </h2>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl">
             {isSv
-              ? "Bakom varje siffra nedan finns någon vi kan peka ut i Frihamnen under en lovsångskväll."
-              : "Behind every number below is someone we can point to across the room at Frihamnen on a worship evening."}
+              ? "Bakom varje siffra nedan finns någon vi kan peka ut under en lovsångskväll i Göteborg."
+              : "Behind every number below is someone we can point to across the room on a worship evening in Gothenburg."}
           </p>
         </div>
 
@@ -69,8 +69,8 @@ export const AboutStatsSection: React.FC = () => {
             </div>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
               {isSv
-                ? "Femtiotvå tisdagsböner i Frihamnskyrkan, inte en enda inställd."
-                : "Fifty-two Tuesday prayer nights at Frihamnskyrkan, never once cancelled."}
+                ? "Femtiotvå tisdagsböner i Göteborg, inte en enda inställd."
+                : "Fifty-two Tuesday prayer nights in Gothenburg, never once cancelled."}
             </p>
           </div>
         </div>

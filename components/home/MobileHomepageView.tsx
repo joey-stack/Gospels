@@ -38,7 +38,7 @@ export const MobileHomepageView: React.FC = () => {
             alt="Gothenburg Worship Night Live Praise"
             fill
             quality={95}
-            className="object-cover"
+            className="object-cover blur-[2.5px] scale-105"
             priority
           />
           {/* Bottom overlay bar */}
@@ -60,7 +60,7 @@ export const MobileHomepageView: React.FC = () => {
             className="w-full bg-[#00685f] hover:bg-[#0D9488] text-white font-semibold text-sm py-3 px-4 rounded-lg flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all"
           >
             <span className="material-symbols-outlined text-[18px]">confirmation_number</span>
-            <span>Complimentary RSVP: Holy Spirit 2026</span>
+            <span>Complimentary RSVP: Gothenburg Worship Night</span>
           </Link>
 
           <a
@@ -83,15 +83,15 @@ export const MobileHomepageView: React.FC = () => {
             <span>FAST MOBILE PASS</span>
           </div>
           <span className="px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[11px] font-medium">
-            Saturday 28 Mar 2026
+            Date TBA
           </span>
         </div>
 
         <div className="flex items-center justify-between">
           <h3 className="font-hanken font-bold text-lg text-slate-900 dark:text-white">
-            Smyrna Frihamnskyrkan
+            Gothenburg Worship Night
           </h3>
-          <span className="font-bold text-sm text-[#00685f] dark:text-[#2DD4BF]">18:30 CET</span>
+          <span className="font-bold text-sm text-[#00685f] dark:text-[#2DD4BF]">Time TBA</span>
         </div>
 
         <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -173,18 +173,18 @@ export const MobileHomepageView: React.FC = () => {
           <div className="relative aspect-[16/9] w-full overflow-hidden">
             <Image
               src="/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png"
-              alt="Holy Spirit Worship 2026"
+              alt="Gothenburg Worship Night"
               fill
               quality={95}
-              className="object-cover"
+              className="object-cover blur-[2.5px] scale-105"
             />
             {/* Date Badge */}
             <div className="absolute top-3 left-3 bg-white dark:bg-slate-900 rounded-lg shadow-md overflow-hidden text-center w-12 border border-slate-100 dark:border-slate-800">
               <div className="bg-[#00685f] text-white text-[9px] font-bold uppercase py-0.5">
-                MAR
+                DATE
               </div>
-              <div className="text-slate-900 dark:text-white font-bold text-base py-1 leading-none">
-                28
+              <div className="text-slate-900 dark:text-white font-bold text-xs py-1.5 leading-none">
+                TBA
               </div>
             </div>
             {/* Fika Badge */}
@@ -198,10 +198,10 @@ export const MobileHomepageView: React.FC = () => {
               MASS CHOIR &amp; STRINGS
             </span>
             <h3 className="font-hanken font-bold text-base text-slate-900 dark:text-white leading-tight">
-              Holy Spirit Worship 2026
+              Gothenburg Worship Night
             </h3>
             <p className="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed">
-              Frihamnen&apos;s grand hall reverberates with sacred harmonies led by 12 Gothenburg worship choirs.
+              Gothenburg reverberates with sacred harmonies led by united gospel worship choirs.
             </p>
 
             <div className="pt-2 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between text-xs">
@@ -209,7 +209,7 @@ export const MobileHomepageView: React.FC = () => {
                 <span className="material-symbols-outlined text-[16px] text-slate-400">
                   schedule
                 </span>
-                <span>18:30 CET</span>
+                <span>Time TBA</span>
               </div>
               <Link
                 href="/events/holy-spirit-worship"
@@ -343,7 +343,7 @@ export const MobileHomepageView: React.FC = () => {
               Partner Sanctuaries
             </h4>
             <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5">
-              Smyrna • Betlehemskyrkan • Saron • Korskyrkan
+              Betlehemskyrkan • Saron • Korskyrkan • Vasakyrkan
             </p>
           </div>
         </div>

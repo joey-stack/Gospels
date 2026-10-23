@@ -21,7 +21,7 @@ export const AtmosphereGallery: React.FC = () => {
             alt="Fellowship choir and vibrant worship team leading praise in Gothenburg"
             fill
             quality={95}
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover blur-[2.5px] scale-105 group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/30 to-transparent pointer-events-none" />
           <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white">
@@ -52,7 +52,7 @@ export const AtmosphereGallery: React.FC = () => {
             alt="Congregation members united in prayer and worship across Gothenburg"
             fill
             quality={95}
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover blur-[2.5px] scale-105 group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/30 to-transparent pointer-events-none" />
           <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white">
@@ -65,7 +65,7 @@ export const AtmosphereGallery: React.FC = () => {
               </p>
             </div>
             <span className="bg-white/15 backdrop-blur-md px-3 py-1 rounded-md text-xs text-white font-medium">
-              Frihamnen Fellowship
+              Gothenburg Fellowship
             </span>
           </div>
         </motion.div>

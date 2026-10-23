@@ -53,7 +53,7 @@ export const MissionStrip: React.FC = () => {
               alt="Warm Christian fellowship and welcome at Gothenburg ministry gathering"
               fill
               quality={95}
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              className="object-cover object-center blur-[2.5px] scale-105 group-hover:scale-110 transition-transform duration-700"
               sizes="(max-width: 1024px) 100vw, 45vw"
             />
             {/* Subtle Gradient Overlay */}
@@ -64,12 +64,12 @@ export const MissionStrip: React.FC = () => {
               <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#0D9488]">
                 <span>{isSv ? "SAMLINGAR" : "GATHERINGS"}</span>
                 <span className="text-slate-400">——</span>
-                <span>FRIHAMNEN</span>
+                <span>{isSv ? "GÖTEBORG" : "GOTHENBURG"}</span>
               </div>
               <span className="font-hanken text-xs sm:text-sm font-bold text-slate-900">
                 {isSv
-                  ? "Dörrarna öppnas 17:45 CET · Alla är välkomna"
-                  : "Doors open 17:45 CET · All are welcome"}
+                  ? "Tid meddelas inom kort · Alla är välkomna"
+                  : "Time announced soon · All are welcome"}
               </span>
             </div>
           </motion.div>

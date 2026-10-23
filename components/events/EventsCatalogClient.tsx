@@ -30,22 +30,22 @@ export const EventsCatalogClient: React.FC = () => {
     () => [
       {
         id: "holy-spirit-worship",
-        title: "Holy Spirit Worship 2026",
+        title: isSv ? "Göteborg Worship Night" : "Gothenburg Worship Night",
         category: isSv ? "Lovsångskväll inomhus" : "Indoor Sacred Gathering",
         categoryDotColor: "#0D9488",
         filterType: "indoor",
         status: "REGISTRATION_OPEN",
         dateBadge: {
-          day: "28",
-          month: isSv ? "Mar" : "Mar",
-          weekday: isSv ? "Lör" : "Sat",
+          day: "TBA",
+          month: isSv ? "DATUM" : "DATE",
+          weekday: isSv ? "Datum meddelas" : "Date TBA",
         },
-        timeString: "18:30 – 21:30 CET",
-        location: isSv ? "Smyrna Frihamnskyrkan, Göteborg" : "Smyrna Frihamnskyrkan, Gothenburg",
+        timeString: isSv ? "Tid meddelas inom kort" : "Time announced soon",
+        location: isSv ? "Göteborg · Plats meddelas" : "Gothenburg · Venue TBA",
         imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png",
         imageAlt: isSv
-          ? "Församlingen i tillbedjan och lovsång vid Holy Spirit Worship i Göteborg"
-          : "Congregation in reverent praise and unified worship at Holy Spirit Worship gathering in Gothenburg",
+          ? "Församlingen i tillbedjan och lovsång vid Gothenburg Worship Night i Göteborg"
+          : "Congregation in reverent praise and unified worship at Gothenburg Worship Night gathering in Gothenburg",
         href: "/events/holy-spirit-worship",
         description: isSv
           ? "En kväll präglad av bön, körharmoni och spontan tillbedjan tillsammans med Göteborgs partnerkyrkor."
@@ -53,17 +53,17 @@ export const EventsCatalogClient: React.FC = () => {
       },
       {
         id: "goteborgs-lovsangskonsert",
-        title: isSv ? "Göteborgs Lovsångskonsert 2027" : "Gothenburg Praise Concert 2027",
+        title: isSv ? "Göteborgs Lovsångskonsert" : "Gothenburg Praise Concert",
         category: isSv ? "Torglovsång & Evangelisation" : "Public Square Outreach",
         categoryDotColor: "#2DD4BF",
         filterType: "public-square",
         status: "YET_TO_COME",
         dateBadge: {
-          day: "12",
-          month: isSv ? "Jun" : "Jun",
-          weekday: isSv ? "Lör" : "Sat",
+          day: "TBA",
+          month: isSv ? "DATUM" : "DATE",
+          weekday: isSv ? "Datum meddelas" : "Date TBA",
         },
-        timeString: "17:00 – 20:30 CET",
+        timeString: isSv ? "Tid meddelas inom kort" : "Time announced soon",
         location: "Gustav Adolfs Torg, Göteborg",
         imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.07_am.png",
         imageAlt: isSv
@@ -71,31 +71,31 @@ export const EventsCatalogClient: React.FC = () => {
           : "Worship leaders and choir singing with hands raised in city-wide praise",
         href: "/events/holy-spirit-worship",
         description: isSv
-          ? "Stadsvid masskör som framför gospelsånger på svenska och engelska mitt i Göteborgs historiska hjärta. Anmälan öppnar våren 2027."
-          : "Citywide mass choir bringing Swedish and English gospel songs straight into Gothenburg's historic municipal heart. Registration opens Spring 2027.",
+          ? "Stadsvid masskör som framför gospelsånger på svenska och engelska mitt i Göteborgs historiska hjärta. Anmälan öppnar inom kort."
+          : "Citywide mass choir bringing Swedish and English gospel songs straight into Gothenburg's historic municipal heart. Registration opens soon.",
       },
       {
         id: "nordic-gospel-autumn-2027",
-        title: isSv ? "Nordisk Gospelkonferens & Lovsång 2027" : "Nordic Gospel Conference & Worship 2027",
+        title: isSv ? "Nordisk Gospelkonferens & Lovsång" : "Nordic Gospel Conference & Worship",
         category: isSv ? "Körledarworkshop & Konferens" : "Leadership Summit & Mass Choir",
         categoryDotColor: "#F59E0B",
         filterType: "indoor",
         status: "YET_TO_COME",
         dateBadge: {
-          day: "16",
-          month: isSv ? "Okt" : "Oct",
-          weekday: isSv ? "Lör" : "Sat",
+          day: "TBA",
+          month: isSv ? "DATUM" : "DATE",
+          weekday: isSv ? "Datum meddelas" : "Date TBA",
         },
-        timeString: "10:00 – 22:00 CET",
-        location: isSv ? "Betlehemskyrkan, Göteborg" : "Betlehemskyrkan, Gothenburg",
+        timeString: isSv ? "Tid meddelas inom kort" : "Time announced soon",
+        location: isSv ? "Göteborg (Plats meddelas)" : "Gothenburg (Venue TBA)",
         imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am.png",
         imageAlt: isSv
           ? "Gospelkör och dirigenter under repetition i kyrksalen"
           : "Gospel choir and conductors during rehearsal in sanctuary",
         href: "/events/holy-spirit-worship",
         description: isSv
-          ? "Heldagsmöte för körer och lovsångsteam från hela Norden. Program och anmälningslänk släpps under sommaren 2027."
-          : "Full-day convening for choirs and worship teams across the Nordic nations. Full itinerary and registration release in Summer 2027.",
+          ? "Heldagsmöte för körer och lovsångsteam från hela Norden. Program och anmälningslänk släpps inom kort."
+          : "Full-day convening for choirs and worship teams across the Nordic nations. Full itinerary and registration release soon.",
       },
     ],
     [isSv]

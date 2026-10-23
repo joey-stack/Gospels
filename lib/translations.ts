@@ -28,7 +28,7 @@ export const translations = {
       unsubscribeNotice: "Unsubscribe anytime. See our privacy terms.",
       hubsTitle: "Worship Hubs",
       hubs: [
-        { name: "Smyrna Frihamnen", desc: "Frihamnsgatan 20" },
+        { name: "Centrum Göteborg", desc: "City Center, Gothenburg" },
         { name: "Gustav Adolfs Torg", desc: "Central Public Square" },
         { name: "Vasakyrkan", desc: "Centrum, Göteborg" },
       ],
@@ -37,7 +37,7 @@ export const translations = {
       copyright: "© 2026 GOSPELS Gothenburg Ministry. Non-profit Christian fellowship.",
       privacy: "Privacy",
       givingTerms: "Giving Terms",
-      location: "Frihamnen · Göteborg",
+      location: "Göteborg · Sweden",
     },
     common: {
       readMore: "Read more",
@@ -74,7 +74,7 @@ export const translations = {
       missionTag: "— OUR SHARED HEART",
       missionTitle: "We believe Gothenburg was made to worship.",
       missionDescription:
-        "Not partitioned by denomination or divided by tradition. From the docks of Frihamnen to the open cobbles of Gustav Adolfs Torg, we bring the sound of heaven into our public spaces.",
+        "Not partitioned by denomination or divided by tradition. Across the neighborhoods of Gothenburg to the open cobbles of Gustav Adolfs Torg, we bring the sound of heaven into our public spaces.",
       statChurches: "Partner Congregations",
       statVoices: "Mass Choir Singers",
       statAttendance: "Gathered Believers Yearly",
@@ -286,7 +286,7 @@ export const translations = {
       unsubscribeNotice: "Avsluta när som helst. Se våra integritetsvillkor.",
       hubsTitle: "Samlingsplatser",
       hubs: [
-        { name: "Smyrna Frihamnen", desc: "Frihamnsgatan 20" },
+        { name: "Centrum Göteborg", desc: "Centrala Göteborg" },
         { name: "Gustav Adolfs Torg", desc: "Centralt Torg" },
         { name: "Vasakyrkan", desc: "Centrum, Göteborg" },
       ],
@@ -295,7 +295,7 @@ export const translations = {
       copyright: "© 2026 GOSPELS Göteborg. Ideell kristen gemenskap.",
       privacy: "Integritetspolicy",
       givingTerms: "Gåvovillkor",
-      location: "Frihamnen · Göteborg",
+      location: "Göteborg · Sverige",
     },
     common: {
       readMore: "Läs mer",
@@ -332,7 +332,7 @@ export const translations = {
       missionTag: "— VÅRT GEMENSAMMA HJÄRTA",
       missionTitle: "Vi tror att Göteborg skapades för att prisa Gud.",
       missionDescription:
-        "Inte uppdelat efter samfund eller splittrat av traditioner. Från Frihamnens kajer till Gustav Adolfs Torgs kullerstenar bär vi himlens lovsång ut i våra offentliga rum.",
+        "Inte uppdelat efter samfund eller splittrat av traditioner. Från Göteborgs stadsdelar till Gustav Adolfs Torgs kullerstenar bär vi himlens lovsång ut i våra offentliga rum.",
       statChurches: "Partnerförsamlingar",
       statVoices: "Masskorsångare",
       statAttendance: "Församlade årligen",

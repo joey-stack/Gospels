@@ -73,8 +73,8 @@ export default function AdminDashboardPage() {
           </div>
           <p className="text-xs text-slate-500 mt-1">
             {isSv
-              ? "Lördag, 28 Mars 2026 • Smyrna Frihamnskyrkan • Samling förberedd"
-              : "Saturday, 28 March 2026 • Smyrna Frihamnskyrkan • Sanctuary Ready"}
+              ? "Gothenburg Worship Night • Göteborg • Samling förberedd"
+              : "Gothenburg Worship Night • Gothenburg • Sanctuary Ready"}
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function AdminDashboardPage() {
             </p>
           </div>
           <div className="text-[11px] text-[#0D9488] font-semibold border-t border-slate-100 pt-2 flex items-center justify-between">
-            <span>Öppet inträde (Frihamnen)</span>
+            <span>Öppet inträde (Göteborg)</span>
             <span className="text-slate-500">Hall: 84%</span>
           </div>
         </div>

@@ -17,7 +17,7 @@ const STANDING_APPOINTMENTS: StandingAppointment[] = [
     day: "Tuesdays",
     time: "Every Tuesday · 18:30 – 20:30 CET",
     title: "Community Choir Rehearsals",
-    location: "Frihamnen Music Hall, Göteborg",
+    location: "Central Choir Hall, Göteborg",
     description:
       "Open multi-church choir rehearsals bringing vocalists together from across Västra Götaland to learn contemporary gospel arrangements and vocal polyphony.",
     tag: "Choral Fellowship",

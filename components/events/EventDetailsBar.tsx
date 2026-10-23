@@ -26,7 +26,7 @@ export const EventDetailsBar: React.FC = () => {
               Date
             </span>
             <p className="font-hanken text-[16px] text-slate-900 font-semibold leading-snug">
-              Saturday, Mar 28, 2026
+              Datum meddelas (TBA)
             </p>
           </div>
         </div>
@@ -41,7 +41,7 @@ export const EventDetailsBar: React.FC = () => {
               Time
             </span>
             <p className="font-hanken text-[16px] text-slate-900 font-semibold leading-snug">
-              18:30 CET <span className="text-xs text-slate-500 font-normal block sm:inline">(Doors 17:45)</span>
+              Tid meddelas inom kort
             </p>
           </div>
         </div>
@@ -56,9 +56,9 @@ export const EventDetailsBar: React.FC = () => {
               Venue
             </span>
             <p className="font-hanken text-[16px] text-slate-900 font-semibold leading-snug">
-              Smyrna Frihamnen
+              Göteborg
             </p>
-            <span className="text-xs text-slate-500">Gothenburg Hub</span>
+            <span className="text-xs text-slate-500">Plats meddelas inom kort</span>
           </div>
         </div>
 

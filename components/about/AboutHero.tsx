@@ -22,7 +22,7 @@ export const AboutHero: React.FC = () => {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center opacity-30 brightness-95 saturate-95"
+            className="object-cover object-center opacity-30 brightness-95 saturate-95 blur-[2.5px] scale-105"
           />
           {/* Multi-layered Nordic Reverence Teal Vignette Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A1530] via-[#0A1530]/85 to-transparent" />
@@ -81,8 +81,8 @@ export const AboutHero: React.FC = () => {
             className="font-inter text-slate-200 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl"
           >
             {isSv
-              ? "Gospels började 2024 med tolv lovsångsledare och en lånad akustisk gitarr i Frihamnen. Två år senare förenas över tjugofyra partnerkyrkor för att lyfta Jesus över Göteborg."
-              : "Gospels began in 2024 with twelve worship leaders and a shared acoustic guitar in Frihamnen. Two years later, over twenty-four partner churches unite to lift Jesus over Gothenburg."}
+              ? "Gospels började 2024 med tolv lovsångsledare och en lånad akustisk gitarr i Göteborg. Två år senare förenas över tjugofyra partnerkyrkor för att lyfta Jesus över Göteborg."
+              : "Gospels began in 2024 with twelve worship leaders and a shared acoustic guitar in Gothenburg. Two years later, over twenty-four partner churches unite to lift Jesus over Gothenburg."}
           </motion.p>
         </div>
 

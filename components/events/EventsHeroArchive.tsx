@@ -26,7 +26,7 @@ export const EventsHeroArchive: React.FC = () => {
             fill
             priority
             quality={95}
-            className="object-cover object-center brightness-95 contrast-[1.04] pointer-events-none"
+            className="object-cover object-center brightness-95 contrast-[1.04] blur-[3px] scale-105 pointer-events-none"
             sizes="100vw"
           />
           {/* Soft translucent tint overlay allowing vivid picture clarity */}

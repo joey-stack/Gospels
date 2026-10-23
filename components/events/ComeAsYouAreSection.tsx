@@ -24,7 +24,7 @@ export const ComeAsYouAreSection: React.FC = () => {
           Come As You Are
         </h2>
         <p className="font-inter text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Warm Scandinavian hospitality welcomes families, young believers, seekers, and all Christian denominations. Join us in Frihamnen for shared fellowship, warm Swedish fika coffee, and open communion.
+          Warm Scandinavian hospitality welcomes families, young believers, seekers, and all Christian denominations. Join us in Gothenburg for shared fellowship, warm Swedish fika coffee, and open communion.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mt-8 sm:mt-10 pt-8 sm:pt-10 border-t border-slate-200/60 text-left">

@@ -4,12 +4,12 @@ import path from "path";
 export interface TicketPass {
   id: string; // e.g. "HSW26-NAV-8842"
   eventId: string; // "holy-spirit-worship-2026"
-  eventTitle: string; // "Holy Spirit Worship 2026"
+  eventTitle: string; // "Gothenburg Worship Night"
   eventSubtitle: string; // "Night of Adoration & Gospel Praise"
-  dateString: string; // "Saturday, 28 March 2026"
-  timeString: string; // "18:30 CET • Doors open 17:45 CET"
-  venueName: string; // "Smyrna Frihamnskyrkan"
-  venueAddress: string; // "Frihamnsgatan 20, 417 55 Göteborg"
+  dateString: string; // "Datum meddelas inom kort (TBA)"
+  timeString: string; // "Tid meddelas inom kort"
+  venueName: string; // "Göteborg (Plats meddelas)"
+  venueAddress: string; // "Göteborg, Sverige"
   hall: string; // "Sanctuary Floor - Central Nave"
   name: string;
   email: string;
@@ -25,17 +25,17 @@ const SEED_TICKETS: TicketPass[] = [
   {
     id: "HSW26-NAV-0418",
     eventId: "holy-spirit-worship-2026",
-    eventTitle: "Holy Spirit Worship 2026",
+    eventTitle: "Gothenburg Worship Night",
     eventSubtitle: "Night of Adoration & Gospel Praise",
-    dateString: "Saturday, 28 March 2026",
+    dateString: "Datum meddelas inom kort",
     timeString: "18:30 CET • Doors open 17:45 CET",
-    venueName: "Smyrna Frihamnskyrkan",
-    venueAddress: "Frihamnsgatan 20, 417 55 Göteborg",
+    venueName: "Göteborg (Plats meddelas)",
+    venueAddress: "Göteborg, Sverige",
     hall: "Sanctuary Floor - Central Nave",
     name: "Astrid Lindgren",
     email: "astrid.lindgren@kyrka.se",
     guests: 2,
-    church: "Smyrna Göteborg",
+    church: "Gospels Nätverk Göteborg",
     checkedIn: true,
     checkedInAt: "2026-03-28T17:50:12Z",
     createdAt: "2026-03-15T10:14:00Z",
@@ -43,12 +43,12 @@ const SEED_TICKETS: TicketPass[] = [
   {
     id: "HSW26-NAV-1092",
     eventId: "holy-spirit-worship-2026",
-    eventTitle: "Holy Spirit Worship 2026",
+    eventTitle: "Gothenburg Worship Night",
     eventSubtitle: "Night of Adoration & Gospel Praise",
-    dateString: "Saturday, 28 March 2026",
+    dateString: "Datum meddelas inom kort",
     timeString: "18:30 CET • Doors open 17:45 CET",
-    venueName: "Smyrna Frihamnskyrkan",
-    venueAddress: "Frihamnsgatan 20, 417 55 Göteborg",
+    venueName: "Göteborg (Plats meddelas)",
+    venueAddress: "Göteborg, Sverige",
     hall: "Sanctuary Floor - Central Nave",
     name: "Lukas Bergström",
     email: "lukas.bergstrom@hillsong.se",
@@ -60,12 +60,12 @@ const SEED_TICKETS: TicketPass[] = [
   {
     id: "HSW26-BAL-2301",
     eventId: "holy-spirit-worship-2026",
-    eventTitle: "Holy Spirit Worship 2026",
+    eventTitle: "Gothenburg Worship Night",
     eventSubtitle: "Night of Adoration & Gospel Praise",
-    dateString: "Saturday, 28 March 2026",
+    dateString: "Datum meddelas inom kort",
     timeString: "18:30 CET • Doors open 17:45 CET",
-    venueName: "Smyrna Frihamnskyrkan",
-    venueAddress: "Frihamnsgatan 20, 417 55 Göteborg",
+    venueName: "Göteborg (Plats meddelas)",
+    venueAddress: "Göteborg, Sverige",
     hall: "Balcony East Gallery",
     name: "Miriam Ndayizeye",
     email: "miriam.ndayizeye@gospel.se",
@@ -78,12 +78,12 @@ const SEED_TICKETS: TicketPass[] = [
   {
     id: "HSW26-NAV-3450",
     eventId: "holy-spirit-worship-2026",
-    eventTitle: "Holy Spirit Worship 2026",
+    eventTitle: "Gothenburg Worship Night",
     eventSubtitle: "Night of Adoration & Gospel Praise",
-    dateString: "Saturday, 28 March 2026",
+    dateString: "Datum meddelas inom kort",
     timeString: "18:30 CET • Doors open 17:45 CET",
-    venueName: "Smyrna Frihamnskyrkan",
-    venueAddress: "Frihamnsgatan 20, 417 55 Göteborg",
+    venueName: "Göteborg (Plats meddelas)",
+    venueAddress: "Göteborg, Sverige",
     hall: "Sanctuary Floor - Central Nave",
     name: "Elias Lindgren",
     email: "elias.lindgren@svenskakyrkan.se",
@@ -95,12 +95,12 @@ const SEED_TICKETS: TicketPass[] = [
   {
     id: "HSW26-CHO-4911",
     eventId: "holy-spirit-worship-2026",
-    eventTitle: "Holy Spirit Worship 2026",
+    eventTitle: "Gothenburg Worship Night",
     eventSubtitle: "Night of Adoration & Gospel Praise",
-    dateString: "Saturday, 28 March 2026",
+    dateString: "Datum meddelas inom kort",
     timeString: "18:30 CET • Doors open 17:45 CET",
-    venueName: "Smyrna Frihamnskyrkan",
-    venueAddress: "Frihamnsgatan 20, 417 55 Göteborg",
+    venueName: "Göteborg (Plats meddelas)",
+    venueAddress: "Göteborg, Sverige",
     hall: "Choir Platform Section B",
     name: "Hannah Samuelsson",
     email: "hannah.samuelsson@gmail.com",
@@ -192,12 +192,12 @@ export function registerTicket(params: {
   const newTicket: TicketPass = {
     id: ticketId,
     eventId: params.eventId || "holy-spirit-worship-2026",
-    eventTitle: params.eventTitle || "Holy Spirit Worship 2026",
+    eventTitle: params.eventTitle || "Gothenburg Worship Night",
     eventSubtitle: "Night of Adoration & Gospel Praise",
-    dateString: "Saturday, 28 March 2026",
-    timeString: "18:30 CET • Doors open 17:45 CET",
-    venueName: "Smyrna Frihamnskyrkan",
-    venueAddress: "Frihamnsgatan 20, 417 55 Göteborg",
+    dateString: "Datum meddelas inom kort",
+    timeString: "Tid meddelas inom kort",
+    venueName: "Göteborg (Plats meddelas)",
+    venueAddress: "Göteborg, Sverige",
     hall: "Sanctuary Floor - Central Nave",
     name: params.name,
     email: params.email,

@@ -21,13 +21,13 @@ export const FloatingEventBanner: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 lg:gap-8">
           {/* Top/Left: Calendar Box + Gathering Info */}
           <div className="flex items-start gap-4 sm:gap-5 flex-1 min-w-0">
-            {/* Calendar Date Box matching EventHero */}
+            {/* Calendar Date Box - TBA state */}
             <div className="w-16 sm:w-20 rounded-md overflow-hidden border border-[#0D9488]/30 shrink-0 text-center shadow-xs">
               <div className="bg-[#0D9488] text-white text-[10px] sm:text-[11px] py-1 uppercase font-bold tracking-widest">
-                MAR
+                {isSv ? "DATUM" : "DATE"}
               </div>
-              <div className="bg-slate-50 py-1.5 sm:py-2 font-hanken text-2xl sm:text-3xl font-bold text-slate-900">
-                28
+              <div className="bg-slate-50 py-2 sm:py-2.5 font-hanken text-lg sm:text-xl font-bold text-slate-900 tracking-wider">
+                TBA
               </div>
             </div>
 
@@ -44,14 +44,18 @@ export const FloatingEventBanner: React.FC = () => {
               </div>
 
               <h3 className="font-hanken text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 leading-tight">
-                {isSv ? "Lovsång i den Helige Ande 2026" : "Holy Spirit Worship 2026"}
+                {isSv ? "Göteborg Worship Night" : "Gothenburg Worship Night"}
               </h3>
 
               <p className="font-inter text-xs sm:text-sm text-slate-600 flex items-center gap-1.5 pt-0.5">
                 <span className="material-symbols-outlined text-base text-[#0D9488] shrink-0">
-                  church
+                  location_on
                 </span>
-                <span className="truncate">Smyrna Frihamnskyrkan · Frihamnen</span>
+                <span className="truncate">
+                  {isSv
+                    ? "Göteborg · Plats meddelas inom kort"
+                    : "Gothenburg · Venue to be announced"}
+                </span>
               </p>
             </div>
           </div>
@@ -63,7 +67,7 @@ export const FloatingEventBanner: React.FC = () => {
                 <span className="material-symbols-outlined text-[16px] text-[#0D9488]">
                   schedule
                 </span>
-                {isSv ? "18:30 CET (Dörrarna öppnas 17:45)" : "18:30 CET (Doors open 17:45)"}
+                {isSv ? "Tid & datum meddelas snart" : "Date & time announced soon"}
               </span>
               <span className="text-[#0D9488] font-semibold bg-[#F0FDFA] px-2.5 py-1 rounded-md border border-[#2DD4BF]/30">
                 {isSv ? "Öppet inträde" : "Complimentary entry"}

@@ -151,7 +151,7 @@ export const PartnerRegistrationModal: React.FC<PartnerRegistrationModalProps> =
                         type="text"
                         name="churchName"
                         required
-                        placeholder="e.g. Smyrna Frihamnskyrkan"
+                        placeholder="e.g. Vasakyrkan Göteborg"
                         className="w-full px-3.5 py-2 text-xs font-inter border border-slate-300 rounded focus:ring-2 focus:ring-[#0D9488]/20 focus:border-[#0D9488] outline-none"
                       />
                       {fieldErrors.churchName && (
@@ -233,10 +233,10 @@ export const PartnerRegistrationModal: React.FC<PartnerRegistrationModalProps> =
                       </label>
                       <select
                         name="district"
-                        defaultValue="Frihamnen & Hisingen"
+                        defaultValue="Centrum & Haga"
                         className="w-full px-3 py-2 text-xs font-inter border border-slate-300 rounded focus:ring-2 focus:ring-[#0D9488]/20 focus:border-[#0D9488] outline-none bg-white"
                       >
-                        <option value="Frihamnen & Hisingen">Frihamnen &amp; Hisingen</option>
+                        <option value="Lindholmen & Hisingen">Lindholmen &amp; Hisingen</option>
                         <option value="Centrum & Haga">Centrum &amp; Haga</option>
                         <option value="Majorna & Linné">Majorna &amp; Linné</option>
                         <option value="Västra Frölunda">Västra Frölunda</option>

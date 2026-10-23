@@ -91,13 +91,13 @@ export const EventRSVPSection: React.FC = () => {
       "VERSION:2.0",
       "PRODID:-//Gospels Gothenburg//Gatherings//EN",
       "BEGIN:VEVENT",
-      "UID:holy-spirit-worship-2026@gospels.se",
+      "UID:gothenburg-worship-night@gospels.se",
       "DTSTAMP:20260328T120000Z",
       "DTSTART:20260328T173000Z",
       "DTEND:20260328T210000Z",
-      "SUMMARY:Holy Spirit Worship 2026",
+      "SUMMARY:Gothenburg Worship Night",
       "DESCRIPTION:An evening devoted entirely to uninterrupted praise, collective prayer, and multi-church gospel choirs convening in Gothenburg.",
-      "LOCATION:Smyrna Frihamnskyrkan, Frihamnsdagarna 4, 417 55 Göteborg",
+      "LOCATION:Göteborg, Sverige (Plats meddelas inom kort)",
       "STATUS:CONFIRMED",
       "END:VEVENT",
       "END:VCALENDAR",
@@ -106,13 +106,13 @@ export const EventRSVPSection: React.FC = () => {
     const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
     const link = document.createElement("a");
     link.href = window.URL.createObjectURL(blob);
-    link.setAttribute("download", "holy-spirit-worship-2026.ics");
+    link.setAttribute("download", "gothenburg-worship-night.ics");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Holy+Spirit+Worship+2026&dates=20260328T173000Z/20260328T210000Z&details=Uninterrupted+praise,+collective+prayer,+and+multi-church+gospel+choirs+convening+in+Gothenburg.&location=Smyrna+Frihamnskyrkan,+Frihamnsdagarna+4,+417+55+Göteborg`;
+  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gothenburg+Worship+Night&dates=20260328T173000Z/20260328T210000Z&details=Uninterrupted+praise,+collective+prayer,+and+multi-church+gospel+choirs+convening+in+Gothenburg.&location=Gothenburg,+Sweden`;
 
   return (
     <section className="w-full px-2.5 sm:px-5 py-12" id="rsvp-section">
@@ -194,7 +194,7 @@ export const EventRSVPSection: React.FC = () => {
                       Venue
                     </span>
                     <span className="font-semibold text-white block mt-0.5">
-                      Smyrna Frihamnskyrkan
+                      Göteborg (Plats meddelas inom kort)
                     </span>
                   </div>
                 </div>
@@ -404,7 +404,7 @@ export const EventRSVPSection: React.FC = () => {
               </h3>
             </div>
             <p className="font-inter text-xs text-slate-600 leading-relaxed">
-              Sync this gathering to your calendar of choice so you don't miss the 17:45 door opening in Frihamnen.
+              Sync this gathering to your calendar of choice so you receive venue and schedule announcements promptly.
             </p>
             <div className="grid grid-cols-3 gap-2">
               <a
@@ -456,7 +456,7 @@ export const EventRSVPSection: React.FC = () => {
             </p>
             <div className="grid grid-cols-3 gap-2">
               <a
-                href="https://api.whatsapp.com/send?text=Join%20us%20for%20Holy%20Spirit%20Worship%202026%20at%20Smyrna%20Frihamnen%20Gothenburg!%20Complimentary%20RSVP:%20https://gospels.se/events/holy-spirit-worship"
+                href="https://api.whatsapp.com/send?text=Join%20us%20for%20Gothenburg%20Worship%20Night%20in%20Gothenburg!%20Complimentary%20RSVP:%20https://gospels.se/events/holy-spirit-worship"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#E0F2FE] hover:bg-[#BAE6FD] text-[#0284C7] font-semibold text-xs py-2 px-3 rounded-md transition-colors flex items-center justify-center gap-1.5 text-center"

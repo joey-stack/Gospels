@@ -28,7 +28,7 @@ OUR CORE COMMITMENTS:
    social support initiatives throughout Gothenburg.
 
 MEMBER HUB VENUES:
-- Smyrna Frihamnskyrkan (Frihamnen)
+- Vasakyrkan (Centrum & Vasastan)
 - RCCG Jesus Connection (Västra Frölunda)
 - Göteborg Church (Centrum)
 - The Salvation Army (Haga / Södra Vägen)

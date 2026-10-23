@@ -50,13 +50,13 @@ export const WatchArchiveCatalog: React.FC = () => {
         date: isSv ? "14 NOV 2025" : "NOV 14, 2025",
         duration: "54 MIN",
         title: isSv
-          ? "Halleluja Till Vår Kung — Live i Smyrna Kyrksal"
-          : "Halleluja Till Vår Kung — Live at Smyrna Sanctuary",
-        speaker: isSv ? "SMYRNA LOVSÅNGSKÖR & ENSEMBLE" : "SMYRNA WORSHIP CHOIR & ENSEMBLE",
-        location: isSv ? "Smyrna Frihamnen, Göteborg" : "Smyrna Frihamnen, Gothenburg",
+          ? "Halleluja Till Vår Kung — Live i Göteborg"
+          : "Halleluja Till Vår Kung — Live in Gothenburg",
+        speaker: isSv ? "GÖTEBORGS LOVSÅNGSKÖR & ENSEMBLE" : "GOTHENBURG WORSHIP CHOIR & ENSEMBLE",
+        location: isSv ? "Göteborg, Sverige" : "Gothenburg, Sweden",
         description: isSv
-          ? "En storslagen tolkning av den svenska lovsångsklassikern framförd under höstens ekumeniska enhetssamling i Frihamnen."
-          : "A majestic rendition of the Swedish classic worship anthem performed during the autumn citywide unity gathering in Frihamnen.",
+          ? "En storslagen tolkning av den svenska lovsångsklassikern framförd under höstens ekumeniska enhetssamling i Göteborg."
+          : "A majestic rendition of the Swedish classic worship anthem performed during the autumn citywide unity gathering in Gothenburg.",
         imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png",
         videoSrc: "/assets/WhatsApp_Video_2026-10-16_at_8.28.07_AM.mp4",
       },
@@ -87,7 +87,7 @@ export const WatchArchiveCatalog: React.FC = () => {
           ? "Waterfront Praise 2025 vid Jubileumsparken"
           : "Waterfront Praise 2025 at Jubileumsparken",
         speaker: isSv ? "WATERFRONT GOSPEL COLLECTIVE" : "WATERFRONT GOSPEL COLLECTIVE",
-        location: isSv ? "Jubileumsparken, Frihamnen" : "Jubileumsparken, Frihamnen",
+        location: isSv ? "Jubileumsparken, Göteborg" : "Jubileumsparken, Gothenburg",
         description: isSv
           ? "Akustiska gitarrer, flygel och trestämmiga harmonier som ekar längs Göta älv i den nordiska sommarskymningen."
           : "Acoustic guitars, grand piano, and three-part harmonies echoing along the Göta älv harbor under the Nordic summer twilight.",
@@ -121,7 +121,7 @@ export const WatchArchiveCatalog: React.FC = () => {
           ? "Förbönskväll & Gospelhymner"
           : "Night of Intercession & Gospel Hymns",
         speaker: isSv ? "FÖRENADE EKUMENISKA KÖREN" : "UNITED ECUMENICAL CHOIR",
-        location: "Smyrna Frihamnskyrkan",
+        location: isSv ? "Göteborgs Kyrksal" : "Gothenburg Sanctuary",
         description: isSv
           ? "Hängiven akustisk kväll med djup bön och kontemplativ lovsång som samlar troende från pingst-, missions- och katolska gemenskaper."
           : "Sacred acoustic evening of deep prayer and contemplative worship convening members from Pentecostal, Mission, and Catholic fellowships.",
@@ -266,7 +266,7 @@ export const WatchArchiveCatalog: React.FC = () => {
                       alt={item.title}
                       fill
                       quality={95}
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500 brightness-95 group-hover:brightness-100"
+                      className="object-cover object-center group-hover:scale-110 transition-transform duration-500 brightness-95 group-hover:brightness-100 blur-[2.5px] scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />

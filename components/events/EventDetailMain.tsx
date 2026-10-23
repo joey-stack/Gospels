@@ -138,14 +138,12 @@ export const EventDetailMain: React.FC = () => {
       "VERSION:2.0",
       "PRODID:-//Gospels Gothenburg//Gatherings//EN",
       "BEGIN:VEVENT",
-      "UID:holy-spirit-worship-2026@gospels.se",
-      "DTSTAMP:20260328T120000Z",
-      "DTSTART:20260328T173000Z",
-      "DTEND:20260328T210000Z",
-      "SUMMARY:Holy Spirit Worship 2026",
+      "UID:gothenburg-worship-night@gospels.se",
+      "DTSTAMP:20261023T120000Z",
+      "SUMMARY:Gothenburg Worship Night",
       "DESCRIPTION:An evening devoted entirely to uninterrupted praise, collective prayer, and multi-church gospel choirs convening in Gothenburg.",
-      "LOCATION:Smyrna Frihamnskyrkan, Frihamnsdagarna 4, 417 55 Göteborg",
-      "STATUS:CONFIRMED",
+      "LOCATION:Gothenburg, Sweden",
+      "STATUS:TENTATIVE",
       "END:VEVENT",
       "END:VCALENDAR",
     ].join("\r\n");
@@ -153,13 +151,13 @@ export const EventDetailMain: React.FC = () => {
     const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
     const link = document.createElement("a");
     link.href = window.URL.createObjectURL(blob);
-    link.setAttribute("download", "holy-spirit-worship-2026.ics");
+    link.setAttribute("download", "gothenburg-worship-night.ics");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Holy+Spirit+Worship+2026&dates=20260328T173000Z/20260328T210000Z&details=Uninterrupted+praise,+collective+prayer,+and+multi-church+gospel+choirs+convening+in+Gothenburg.&location=Smyrna+Frihamnskyrkan,+Frihamnsdagarna+4,+417+55+Göteborg`;
+  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gothenburg+Worship+Night&details=Uninterrupted+praise,+collective+prayer,+and+multi-church+gospel+choirs+convening+in+Gothenburg.&location=Gothenburg,+Sweden`;
 
   return (
     <section className="w-full px-2.5 sm:px-5 py-10 sm:py-14 md:py-16">
@@ -175,13 +173,13 @@ export const EventDetailMain: React.FC = () => {
               src="/assets/whatsapp_image_2026_10_16_at_8.26.12_am.png"
               alt={
                 isSv
-                  ? "Händer lyfta i lovsång vid Holy Spirit Worship i Göteborg"
-                  : "Hands raised in reverent praise at Holy Spirit Worship gathering in Gothenburg"
+                  ? "Händer lyfta i lovsång vid Gothenburg Worship Night i Göteborg"
+                  : "Hands raised in reverent praise at Gothenburg Worship Night gathering in Gothenburg"
               }
               fill
               priority
               quality={95}
-              className="object-cover"
+              className="object-cover blur-[3px] scale-105"
               sizes="(max-width: 1024px) 100vw, 65vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
@@ -198,8 +196,8 @@ export const EventDetailMain: React.FC = () => {
           <div className="space-y-4 font-inter text-slate-600 text-sm sm:text-base leading-relaxed border-b border-slate-200/80 pb-10">
             <p>
               {isSv
-                ? "Lovsångsteam, körsångare och pastorer från hela Västsverige förenas i Smyrna Frihamnskyrkans kyrksal. Vi inleder med 90 minuter av sammanhängande gospel och tillbedjan, fortsätter med personliga bönestationer och avslutar med varmt kyrkfika."
-                : "Worship teams, choir members, and pastoral elders from across West Sweden unite in the sanctuary at Smyrna Frihamnskyrkan. We begin with 90 minutes of continuous gospel adoration, transition into confidential prayer stations, and wrap up with warm Scandinavian fika fellowship."}
+                ? "Lovsångsteam, körsångare och pastorer från hela Västsverige förenas i Göteborg. Vi inleder med 90 minuter av sammanhängande gospel och tillbedjan, fortsätter med personliga bönestationer och avslutar med varmt fika."
+                : "Worship teams, choir members, and pastoral elders from across West Sweden unite in Gothenburg. We begin with 90 minutes of continuous gospel adoration, transition into confidential prayer stations, and wrap up with warm Scandinavian fika fellowship."}
             </p>
             <p>
               {isSv
@@ -336,7 +334,7 @@ export const EventDetailMain: React.FC = () => {
                   {isSv ? "Datum" : "Date"}
                 </span>
                 <p className="font-hanken text-base font-semibold text-slate-900">
-                  {isSv ? "Lördag 28 mars 2026" : "Saturday, March 28, 2026"}
+                  {isSv ? "Datum meddelas inom kort" : "Date to be announced soon"}
                 </p>
               </div>
 
@@ -346,10 +344,7 @@ export const EventDetailMain: React.FC = () => {
                   {isSv ? "Tid" : "Time"}
                 </span>
                 <p className="font-hanken text-base font-semibold text-slate-900">
-                  {isSv ? "18:30 till 21:30 CET" : "18:30 to 21:30 CET"}{" "}
-                  <span className="text-xs font-normal text-slate-500">
-                    {isSv ? "(Dörrarna öppnas 17:45)" : "(Doors open 17:45)"}
-                  </span>
+                  {isSv ? "Tid meddelas inom kort" : "Time announced soon"}
                 </p>
               </div>
 
@@ -359,10 +354,10 @@ export const EventDetailMain: React.FC = () => {
                   {isSv ? "Plats" : "Where"}
                 </span>
                 <p className="font-hanken text-base font-semibold text-slate-900">
-                  {isSv ? "Smyrna Frihamnskyrkan, Göteborg" : "Smyrna Frihamnskyrkan, Gothenburg"}
+                  {isSv ? "Göteborg, Sverige" : "Gothenburg, Sweden"}
                 </p>
                 <p className="font-inter text-xs text-slate-500">
-                  Frihamnsdagarna 4, 417 55 Göteborg
+                  {isSv ? "Lokal & adress meddelas inom kort" : "Venue and address to be announced"}
                 </p>
               </div>
 
@@ -398,8 +393,8 @@ export const EventDetailMain: React.FC = () => {
                     </h3>
                     <p className="font-inter text-xs text-slate-600 mt-1.5 leading-relaxed">
                       {isSv
-                        ? "Din platsreservation har registrerats för Holy Spirit Worship 2026. En bekräftelse har skickats till "
-                        : "Your seat reservation has been recorded for Holy Spirit Worship 2026. A digital confirmation notice has been dispatched to "}
+                        ? "Din platsreservation har registrerats för Göteborg Worship Night. En bekräftelse har skickats till "
+                        : "Your seat reservation has been recorded for Gothenburg Worship Night. A digital confirmation notice has been dispatched to "}
                       <strong className="text-slate-900">{confirmedRSVP.email}</strong>.
                     </p>
                   </div>

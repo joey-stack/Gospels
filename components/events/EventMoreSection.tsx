@@ -16,11 +16,11 @@ export const EventMoreSection: React.FC = () => {
       category: isSv ? "Torglovsång & Evangelisation" : "City-Wide Outreach",
       categoryDotColor: "#2DD4BF",
       dateBadge: {
-        day: "13",
-        month: isSv ? "Jun" : "Jun",
-        weekday: isSv ? "Lör" : "Sat",
+        day: "TBA",
+        month: isSv ? "DATUM" : "DATE",
+        weekday: isSv ? "Datum meddelas" : "Date TBA",
       },
-      timeString: "17:00 – 20:30",
+      timeString: isSv ? "Tid meddelas inom kort" : "Time announced soon",
       location: isSv ? "Gustav Adolfs Torg, Göteborg" : "Gustav Adolfs Torg, Gothenburg",
       imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.07_am.png",
       imageAlt: isSv
@@ -30,16 +30,16 @@ export const EventMoreSection: React.FC = () => {
     },
     {
       id: "gospels-worship-night",
-      title: isSv ? "Smyrna Frihamnen Gospelsamling" : "Smyrna Frihamnen Gospel Gathering",
+      title: isSv ? "Göteborg Stadsvid Lovsång" : "Gothenburg Citywide Worship",
       category: isSv ? "Ekumenisk Samling" : "Ecumenical Gathering",
       categoryDotColor: "#0D9488",
       dateBadge: {
-        day: "28",
-        month: isSv ? "Mar" : "Mar",
-        weekday: isSv ? "Lör" : "Sat",
+        day: "TBA",
+        month: isSv ? "DATUM" : "DATE",
+        weekday: isSv ? "Datum meddelas" : "Date TBA",
       },
-      timeString: "18:30 – 21:30",
-      location: "Smyrna Frihamnskyrkan",
+      timeString: isSv ? "Tid meddelas inom kort" : "Time announced soon",
+      location: isSv ? "Göteborg · Plats meddelas" : "Gothenburg · Venue TBA",
       imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png",
       imageAlt: isSv
         ? "Församling förenad i bön och lovsång över hela Göteborg"

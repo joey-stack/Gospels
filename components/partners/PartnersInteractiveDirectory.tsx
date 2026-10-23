@@ -43,25 +43,25 @@ export interface ChurchPartner {
 
 export const CHURCH_PARTNERS: ChurchPartner[] = [
   {
-    id: "smyrna",
-    name: "Smyrna Frihamnskyrkan",
-    swedishName: "Smyrnakyrkan Göteborg",
-    tradition: "Evangelical · Pingst",
+    id: "vasakyrkan",
+    name: "Vasakyrkan Göteborg",
+    swedishName: "Vasakyrkan Göteborg",
+    tradition: "Evangelical · EFS / Svenska Kyrkan",
     languages: "Swedish & English",
     gatheringTime: "11:00 & 18:00",
     serviceDay: "SUN",
-    address: "Frihamnsgatan 20, 417 55 Göteborg",
-    district: "Frihamnen & Hisingen",
-    pastor: "Pastor Tomas Sjödin & Pastoral Team",
+    address: "Vasa Kyrkogata 1, 411 27 Göteborg",
+    district: "Centrum & Vasastan",
+    pastor: "Pastoral Team",
     ministryRole:
-      "Host venue for Holy Spirit Worship 2026, anchoring a collaborative 65-voice choir partnership and regional music director workshops.",
-    tags: ["Youth Choir", "Intercessory Prayer", "Accessible Sanctuary", "65-Voice Mass Choir"],
-    websiteUrl: "https://smyrna.se",
-    mapsUrl: "https://maps.google.com/?q=Frihamnsgatan+20+Goteborg",
+      "Central historic sanctuary anchoring ecumenical gospel choirs, citywide worship gatherings, and choral workshops.",
+    tags: ["Choral Fellowship", "Intercessory Prayer", "Accessible Sanctuary", "Mass Choir"],
+    websiteUrl: "https://vasakyrkan.se",
+    mapsUrl: "https://maps.google.com/?q=Vasa+Kyrkogata+1+Goteborg",
     imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.26.13_am.png",
-    logoUrl: "/logos/smyrna.png",
+    logoUrl: "/logos/svenska-kyrkan.svg",
     featured: true,
-    mapCoordinates: { top: "28%", left: "45%" },
+    mapCoordinates: { top: "42%", left: "52%" },
   },
   {
     id: "rccg",
@@ -131,7 +131,7 @@ export const CHURCH_PARTNERS: ChurchPartner[] = [
     gatheringTime: "11:30 & 17:00",
     serviceDay: "SUN",
     address: "Lindholmsallén 34, 417 56 Göteborg",
-    district: "Frihamnen & Hisingen",
+    district: "Lindholmen & Hisingen",
     pastor: "Campus Pastoral Team",
     ministryRole:
       "Contemporary youth worship production, audio recording engineering, and student vocal masterclasses across university campuses.",
@@ -166,7 +166,8 @@ export const CHURCH_PARTNERS: ChurchPartner[] = [
 
 const FILTER_OPTIONS = [
   { id: "all", label: "All Fellowships (6)" },
-  { id: "Frihamnen & Hisingen", label: "Frihamnen & Hisingen" },
+  { id: "Centrum & Vasastan", label: "Centrum & Vasastan" },
+  { id: "Lindholmen & Hisingen", label: "Lindholmen & Hisingen" },
   { id: "Centrum & Haga", label: "Centrum & Haga" },
   { id: "Västra Frölunda", label: "Västra Frölunda" },
   { id: "Swedish", label: "Swedish Speaking" },
@@ -177,7 +178,7 @@ export const PartnersInteractiveDirectory: React.FC = () => {
   const [viewMode, setViewMode] = useState<"map" | "grid">("map");
   const [selectedFilter, setSelectedFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeChurchId, setActiveChurchId] = useState<string>("smyrna");
+  const [activeChurchId, setActiveChurchId] = useState<string>("vasakyrkan");
 
   const filteredChurches = useMemo(() => {
     return CHURCH_PARTNERS.filter((church) => {
@@ -331,7 +332,7 @@ export const PartnersInteractiveDirectory: React.FC = () => {
                 opacity="0.85"
               />
 
-              {/* Harbor Basins & Frihamnen Water Inlet */}
+              {/* Harbor Basins & Gothenburg Water Inlet */}
               <path d="M470,250 L485,160 L550,170 L535,260 Z" fill="#BAE6FD" opacity="0.75" />
               <path d="M370,270 L360,195 L415,205 L425,265 Z" fill="#BAE6FD" opacity="0.65" />
 
@@ -355,7 +356,7 @@ export const PartnersInteractiveDirectory: React.FC = () => {
                 MAJORNA
               </text>
               <text x="430" y="135" fill="#0D9488" fontSize="13" fontWeight="800" letterSpacing="0.1em">
-                FRIHAMNEN · SMYRNA
+                LINDHOLMEN / HISINGEN
               </text>
               <text x="630" y="365" fill="#64748B" fontSize="13" fontWeight="700" letterSpacing="0.1em">
                 CENTRUM / DROTTNINGGATAN

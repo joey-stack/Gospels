@@ -22,7 +22,7 @@ export const HeroSection: React.FC = () => {
             fill
             priority
             quality={95}
-            className="object-cover object-center brightness-95 contrast-[1.04]"
+            className="object-cover object-center brightness-95 contrast-[1.04] blur-[3px] scale-105"
             sizes="100vw"
           />
           {/* Soft translucent tint overlay allowing vivid picture clarity */}
@@ -93,8 +93,8 @@ export const HeroSection: React.FC = () => {
             className="font-inter text-base sm:text-lg text-slate-300 max-w-2xl mb-8 leading-relaxed font-normal"
           >
             {isSv
-              ? "Förenar kyrkor, lovsångsledare och sökare över hela Göteborg genom hängivna gospelsamlingar och stadsvid lovsång. Möt oss i Smyrna Frihamnen."
-              : "Connecting churches, worship leaders, and seekers across Gothenburg through reverent gospel music gatherings and citywide praise. Gather with us at Smyrna Frihamnen."}
+              ? "Förenar kyrkor, lovsångsledare och sökare över hela Göteborg genom hängivna gospelsamlingar och stadsvid lovsång."
+              : "Connecting churches, worship leaders, and seekers across Gothenburg through reverent gospel music gatherings and citywide praise."}
           </motion.p>
 
           {/* Action Buttons: Morrow Style */}

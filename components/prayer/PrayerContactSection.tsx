@@ -98,7 +98,7 @@ export const PrayerContactSection: React.FC = () => {
                 Write, call or pray together.
               </h2>
               <p className="font-inter text-slate-600 text-sm sm:text-base leading-relaxed">
-                Tell us how we can stand in faith with you. Our intercession team gathers every Tuesday evening and Sunday morning at Frihamnskyrkan in central Gothenburg.
+                Tell us how we can stand in faith with you. Our intercession team gathers every Tuesday evening and Sunday morning across central Gothenburg.
               </p>
             </div>
 
@@ -156,12 +156,12 @@ export const PrayerContactSection: React.FC = () => {
                     Gothenburg Prayer Gathering
                   </div>
                   <a
-                    href="https://maps.google.com/?q=Frihamnsgatan+20,+417+56+Göteborg"
+                    href="https://maps.google.com/?q=Gothenburg+Sweden"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm sm:text-base font-semibold text-slate-900 hover:text-[#0D9488] transition-colors inline-flex items-center gap-1.5"
                   >
-                    <span>Frihamnsgatan 20, 417 56 Göteborg</span>
+                    <span>Göteborg, Sverige (Centrum)</span>
                     <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
                   </a>
                   <p className="text-xs text-slate-500">
@@ -181,7 +181,7 @@ export const PrayerContactSection: React.FC = () => {
                   </span>
                 </div>
                 <span className="text-[11px] font-medium text-slate-500 bg-white/80 px-2 py-0.5 rounded border border-slate-200">
-                  Frihamnen
+                  Göteborg
                 </span>
               </div>
 
@@ -195,7 +195,7 @@ export const PrayerContactSection: React.FC = () => {
                   <span>Next city prayer vigil: Tuesday 18:30 CET</span>
                 </div>
                 <a
-                  href="https://maps.google.com/?q=Frihamnsgatan+20,+417+56+Göteborg"
+                  href="https://maps.google.com/?q=Gothenburg+Sweden"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ml-auto text-xs font-semibold text-[#0D9488] hover:text-[#0B7A6F] inline-flex items-center gap-1"

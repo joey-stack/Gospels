@@ -9,8 +9,8 @@ async function downloadLogos() {
 
   const logos = [
     {
-      name: 'smyrna.png',
-      url: 'https://www.smyrna.se/Files/bilder/smyrna_logo_2023.png',
+      name: 'vasakyrkan.png',
+      url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Church_of_Sweden_logo.svg/512px-Church_of_Sweden_logo.svg.png',
     },
     {
       name: 'salvation-army.png',

@@ -9,10 +9,10 @@ export interface EventCardProps {
   category: string;
   categoryDotColor?: string;
   status?: "REGISTRATION_OPEN" | "YET_TO_COME";
-  dateBadge: {
-    day: string;
-    month: string;
-    weekday: string;
+  dateBadge?: {
+    day?: string;
+    month?: string;
+    weekday?: string;
   };
   timeString: string;
   location: string;
@@ -46,7 +46,7 @@ export const EventCard: React.FC<EventCardProps> = ({
           alt={imageAlt || title}
           fill
           quality={90}
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          className="object-cover blur-[2.5px] scale-105 transition-transform duration-500 ease-out group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
 
@@ -68,11 +68,11 @@ export const EventCard: React.FC<EventCardProps> = ({
 
         {/* Floating Date Chip in Top-Right Corner */}
         <div className="absolute top-3.5 right-3.5 z-10 min-w-[58px] px-3.5 py-2.5 rounded-md bg-[#F8F9FF]/95 dark:bg-slate-900/90 backdrop-blur-md shadow-sm border border-slate-200/60 dark:border-slate-700/60 flex flex-col items-center justify-center text-center">
-          <span className="font-hanken font-bold text-xl sm:text-2xl text-slate-900 dark:text-white leading-none">
-            {dateBadge.day}
+          <span className="font-hanken font-bold text-base sm:text-lg text-slate-900 dark:text-white leading-none">
+            {dateBadge?.day && dateBadge.day !== "TBA" ? dateBadge.day : "TBA"}
           </span>
           <span className="font-inter text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-1 leading-none">
-            {dateBadge.month}
+            {dateBadge?.month ? dateBadge.month : (isSv ? "DATUM" : "DATE")}
           </span>
         </div>
       </div>
@@ -103,7 +103,7 @@ export const EventCard: React.FC<EventCardProps> = ({
 
         {/* Meta Line: Weekday — Time — Location */}
         <div className="flex items-center flex-wrap gap-2.5 sm:gap-3 text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-inter">
-          <span>{dateBadge.weekday}</span>
+          <span>{dateBadge?.weekday || (isSv ? "Datum meddelas snart" : "Date announced soon")}</span>
           <span className="w-5 h-[1px] bg-slate-300 dark:bg-slate-700" />
           <span>{timeString}</span>
           <span className="w-5 h-[1px] bg-slate-300 dark:bg-slate-700" />

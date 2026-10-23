@@ -13,20 +13,20 @@ export const FeaturedEventsSection: React.FC = () => {
   const events: EventCardProps[] = [
     {
       id: "holy-spirit-worship",
-      title: "Holy Spirit Worship",
+      title: isSv ? "Göteborg Worship Night" : "Gothenburg Worship Night",
       category: isSv ? "Lovsångskväll i Göteborg" : "Gothenburg Worship Night",
       categoryDotColor: "#0D9488",
       dateBadge: {
-        day: "28",
-        month: isSv ? "Mar" : "Mar",
-        weekday: isSv ? "Lör" : "Sat",
+        day: "TBA",
+        month: isSv ? "DATUM" : "DATE",
+        weekday: isSv ? "Datum meddelas" : "Date TBA",
       },
-      timeString: "18:30 – 21:30",
-      location: isSv ? "Smyrna Frihamnen" : "Smyrna Frihamnen",
+      timeString: isSv ? "Tid meddelas inom kort" : "Time announced soon",
+      location: isSv ? "Göteborg · Plats meddelas" : "Gothenburg · Venue TBA",
       imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png",
       imageAlt: isSv
-        ? "Församlingen i tillbedjan och lovsång vid Holy Spirit Worship i Göteborg"
-        : "Congregation in reverent praise and unified worship at Holy Spirit Worship gathering in Gothenburg",
+        ? "Församlingen i tillbedjan och lovsång vid Gothenburg Worship Night i Göteborg"
+        : "Congregation in reverent praise and unified worship at Gothenburg Worship Night gathering in Gothenburg",
       href: "/events/holy-spirit-worship",
       status: "REGISTRATION_OPEN",
     },
@@ -37,12 +37,12 @@ export const FeaturedEventsSection: React.FC = () => {
       categoryDotColor: "#2DD4BF",
       status: "YET_TO_COME",
       dateBadge: {
-        day: "12",
-        month: isSv ? "Jun" : "Jun",
-        weekday: isSv ? "Lör" : "Sat",
+        day: "TBA",
+        month: isSv ? "DATUM" : "DATE",
+        weekday: isSv ? "Datum meddelas" : "Date TBA",
       },
-      timeString: "17:00 – 20:30",
-      location: "Gustav Adolfs Torg",
+      timeString: isSv ? "Tid meddelas inom kort" : "Time announced soon",
+      location: "Gustav Adolfs Torg, Göteborg",
       imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.07_am.png",
       imageAlt: isSv
         ? "Lovsångsledare och masskör med lyfta händer i torglovsång"
