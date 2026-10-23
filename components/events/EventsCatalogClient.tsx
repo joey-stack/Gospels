@@ -88,7 +88,7 @@ export const EventsCatalogClient: React.FC = () => {
         },
         timeString: isSv ? "Tid meddelas inom kort" : "Time announced soon",
         location: isSv ? "Göteborg (Plats meddelas)" : "Gothenburg (Venue TBA)",
-        imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am.png",
+        imageUrl: "/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png",
         imageAlt: isSv
           ? "Gospelkör och dirigenter under repetition i kyrksalen"
           : "Gospel choir and conductors during rehearsal in sanctuary",

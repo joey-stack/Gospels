@@ -5,6 +5,7 @@ import { GlobalFooter } from "@/components/ui/GlobalFooter";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gospels-mu.vercel.app"),
   title: "GOSPELS — Gothenburg Ministry Hub",
   description:
     "A sacred, modern digital platform connecting worshipers, choirs, partner churches, and community members through events, prayer, giving, and volunteer ministry across Gothenburg.",
