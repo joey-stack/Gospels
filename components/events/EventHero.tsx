@@ -25,7 +25,7 @@ export const EventHero: React.FC = () => {
             }
             fill
             priority
-            quality={95}
+            quality={82}
             className="object-cover object-center brightness-95 contrast-[1.04] blur-[3px] scale-105 pointer-events-none"
             sizes="100vw"
           />

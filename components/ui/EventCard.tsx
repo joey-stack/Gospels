@@ -45,7 +45,7 @@ export const EventCard: React.FC<EventCardProps> = ({
           src={imageUrl}
           alt={imageAlt || title}
           fill
-          quality={90}
+          quality={80}
           className="object-cover blur-[2.5px] scale-105 transition-transform duration-500 ease-out group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, 50vw"
         />

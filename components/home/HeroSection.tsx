@@ -21,7 +21,7 @@ export const HeroSection: React.FC = () => {
             alt="Congregation praising with raised hands at Gothenburg gospel worship gathering"
             fill
             priority
-            quality={95}
+            quality={82}
             className="object-cover object-center brightness-95 contrast-[1.04] blur-[3px] scale-105"
             sizes="100vw"
           />

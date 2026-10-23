@@ -118,7 +118,7 @@ export const WatchMediaSection: React.FC = () => {
               src={activeMedia.imageUrl}
               alt={activeMedia.title}
               fill
-              priority
+              quality={80}
               className="object-cover object-center group-hover:scale-[1.05] transition-transform duration-700 brightness-[0.72] blur-[2.5px] scale-105"
               sizes="(max-width: 1440px) 100vw, 1440px"
             />

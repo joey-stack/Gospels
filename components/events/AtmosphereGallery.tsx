@@ -20,7 +20,7 @@ export const AtmosphereGallery: React.FC = () => {
             src="/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png"
             alt="Fellowship choir and vibrant worship team leading praise in Gothenburg"
             fill
-            quality={95}
+            quality={80}
             className="object-cover blur-[2.5px] scale-105 group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/30 to-transparent pointer-events-none" />
@@ -51,7 +51,7 @@ export const AtmosphereGallery: React.FC = () => {
             src="/assets/whatsapp_image_2026_10_16_at_8.28.07_am.png"
             alt="Congregation members united in prayer and worship across Gothenburg"
             fill
-            quality={95}
+            quality={80}
             className="object-cover blur-[2.5px] scale-105 group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/30 to-transparent pointer-events-none" />

@@ -37,7 +37,7 @@ export const MobileHomepageView: React.FC = () => {
             src="/assets/whatsapp_image_2026_10_16_at_8.26.12_am.png"
             alt="Gothenburg Worship Night Live Praise"
             fill
-            quality={95}
+            quality={80}
             className="object-cover blur-[2.5px] scale-105"
             priority
           />
@@ -175,7 +175,7 @@ export const MobileHomepageView: React.FC = () => {
               src="/assets/whatsapp_image_2026_10_16_at_8.28.06_am_1.png"
               alt="Gothenburg Worship Night"
               fill
-              quality={95}
+              quality={80}
               className="object-cover blur-[2.5px] scale-105"
             />
             {/* Date Badge */}
@@ -242,7 +242,7 @@ export const MobileHomepageView: React.FC = () => {
                   src="/assets/whatsapp_image_2026_10_16_at_8.28.06_am_2.png"
                   alt="Prayer Intercession"
                   fill
-                  quality={95}
+                  quality={80}
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-[#00685f]/30 flex items-center justify-center">

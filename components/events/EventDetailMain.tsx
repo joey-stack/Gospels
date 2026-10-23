@@ -177,8 +177,7 @@ export const EventDetailMain: React.FC = () => {
                   : "Hands raised in reverent praise at Gothenburg Worship Night gathering in Gothenburg"
               }
               fill
-              priority
-              quality={95}
+              quality={82}
               className="object-cover blur-[3px] scale-105"
               sizes="(max-width: 1024px) 100vw, 65vw"
             />
